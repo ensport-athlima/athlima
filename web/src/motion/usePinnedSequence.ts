@@ -7,7 +7,7 @@
  * of it (decision D5). Never force horizontal scroll on touch for primary content.
  */
 import { useRef, type RefObject } from "react"
-import { gsap, useGSAP, ScrollTrigger, MOTION } from "./registry"
+import { gsap, useGSAP, ScrollTrigger, MOTION, registerMotion } from "./registry"
 import { sec } from "./durations"
 
 export interface PinnedSequenceOptions {
@@ -28,6 +28,7 @@ export function usePinnedSequence<T extends HTMLElement = HTMLElement>(
 
   useGSAP(
     () => {
+      registerMotion()
       const section = ref.current
       if (!section) return
       const mm = gsap.matchMedia()

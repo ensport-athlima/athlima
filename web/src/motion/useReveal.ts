@@ -5,15 +5,16 @@
  *   REVEAL        opacity 0 / y +24px → rest. MEDIUM, EASE_OUT. Once.
  *   REVEAL-LINES  each [data-line] child: y +100% → 0 inside its overflow-hidden parent. STAGGER_LINE, SLOW, EASE_ARCH.
  *   REVEAL-COVER  a [data-cover] child translates off in the scroll direction. SLOW, EASE_ARCH. Never clip-path (D10).
+ *   REVEAL (items) each [data-item] child gets REVEAL, staggered STAGGER_TIGHT. Lists and index grids.
  * Reduced motion: an opacity fade ≤ REDUCED_FADE_MAX, or instant. No transform, ever.
  * Only transform and opacity animate — CLAUDE.md V.4.
  */
 import { useRef, type RefObject } from "react"
-import { gsap, useGSAP, MOTION } from "./registry"
+import { gsap, useGSAP, MOTION, registerMotion } from "./registry"
 import { ease } from "./easings"
 import { DURATIONS, STAGGERS, REDUCED_FADE_MAX, sec } from "./durations"
 
-export type RevealVariant = "reveal" | "lines" | "cover"
+export type RevealVariant = "reveal" | "lines" | "cover" | "items"
 
 export interface RevealOptions {
   variant?: RevealVariant
@@ -50,6 +51,7 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
 
   useGSAP(
     () => {
+      registerMotion()
       const el = ref.current
       if (!el) return
       const mm = gsap.matchMedia()
@@ -65,6 +67,21 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
             ease: ease.EASE_ARCH,
             stagger: sec(STAGGERS.STAGGER_LINE),
             delay,
+            immediateRender: true,
+            scrollTrigger,
+          })
+          return
+        }
+        if (variant === "items") {
+          const items = el.querySelectorAll<HTMLElement>("[data-item]")
+          gsap.from(items, {
+            y: REVEAL_OFFSET_PX,
+            opacity: 0,
+            duration: sec(DURATIONS.MEDIUM),
+            ease: ease.EASE_OUT,
+            stagger: sec(STAGGERS.STAGGER_TIGHT),
+            delay,
+            immediateRender: true,
             scrollTrigger,
           })
           return
@@ -88,6 +105,7 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
           duration: sec(DURATIONS.MEDIUM),
           ease: ease.EASE_OUT,
           delay,
+          immediateRender: true,
           scrollTrigger,
         })
       })

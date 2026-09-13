@@ -88,6 +88,10 @@ lime hex was the only sampled colour not tagged; ENARR navy needed an explicit e
 purple/blue"; the two "recognition" moments in the Afterhours flow and ATHLIMA 20 were tagged as a
 question; route count 36 → 35; the conversion-strategy CTA table now declares `ctas.md` as its source.
 
+**Found while building screen 02 (13 September 2026):** `homepage.md` gave screen 02 a body paragraph
+while `components.md` and the B4 default assumed a stakeholder grid that no content file defined.
+Resolved by the project owner: the grid. `homepage.md` screen 02 now specifies it, with the four titles.
+
 **Not fixable in this pass, and said so:** the brochure PDFs are image-only; *brochure-sourced* marks
 follow the repository's own attributions and are tagged for verbatim verification.
 

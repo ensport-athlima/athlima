@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
+import { DiagnosisBlock } from "@/components/blocks/DiagnosisBlock"
 import { EntrySequence } from "@/components/blocks/EntrySequence"
+import { ProofNumbers } from "@/components/blocks/ProofNumbers"
+import { screen02 } from "@/content/homepage"
 import { site } from "@/content/site"
 
 /**
@@ -17,7 +20,17 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main id="content">
-      <EntrySequence />
+      <EntrySequence nextId={screen02.id} />
+      <DiagnosisBlock
+        id={screen02.id}
+        marker={screen02.marker}
+        headline={screen02.headline}
+        lead={screen02.lead}
+        disconnections={screen02.disconnections}
+        body={screen02.body}
+        pullLine={screen02.pullLine}
+        proof={<ProofNumbers figures={screen02.figures} />}
+      />
     </main>
   )
 }

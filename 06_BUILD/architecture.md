@@ -29,6 +29,7 @@ src/motion/
 ├── easings.ts                 # THE ONLY place easing curves are defined
 ├── durations.ts               # THE ONLY place durations are defined
 ├── useReveal.ts               # Standard entrance reveal, used by every block
+├── Reveal.tsx                 # The element form of useReveal — a client wrapper so blocks stay Server Components
 ├── usePinnedSequence.ts       # Pinned scrub sequences (the six portals, desktop only)
 ├── useCursor.ts               # The custom cursor: four modes, never magnetic (decision D11)
 ├── transitions.ts             # Page-transition choreography (§3)

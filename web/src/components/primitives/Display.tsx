@@ -57,8 +57,10 @@ function Lines({
       )}
     >
       {lines.map((line, i) => (
-        <span key={`${i}-${line.text}`} className={cn("block", line.lime && "text-lime")}>
-          {line.text}
+        <span key={`${i}-${line.text}`} className="block overflow-hidden">
+          <span data-line className={cn("block", line.lime && "text-lime")}>
+            {line.text}
+          </span>
         </span>
       ))}
     </span>

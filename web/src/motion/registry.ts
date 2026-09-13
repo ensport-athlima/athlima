@@ -39,6 +39,10 @@ export const MOTION = {
   touch: "(hover: none), (pointer: coarse)",
 } as const
 
+// Register at module evaluation, not in an effect: child effects run before parent effects, so a
+// block's reveal would otherwise create its tweens before the provider had registered ScrollTrigger.
+registerMotion()
+
 /** Runtime check for code that runs outside a matchMedia context. */
 export const prefersReducedMotion = (): boolean =>
   typeof window !== "undefined" && window.matchMedia(MOTION.reduced).matches

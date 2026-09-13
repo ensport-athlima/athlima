@@ -105,11 +105,20 @@ Lime: `SPORT ISN'T CONNECTED.`
 >
 > Every part of that ecosystem is growing. They are growing separately.
 
-**Body — `--fs-body`, one column, max 34em**
-> Developers do not routinely meet sporting operators. Federations do not routinely meet capital.
-> Technology companies struggle to reach institutional buyers. Athletes and performance professionals
-> remain disconnected from the businesses being built around them.
->
+**The stakeholder grid — L5 index, 2-up at `md`, 1-up below** *(decided 13 September 2026 when screen
+02 was built: `components.md` defines `DiagnosisBlock` as "the problem stated, then the stakeholder
+grid", and with the statistics cut (B4) the grid is what the screen rests on. The four sentences are
+the brief's own; the two-party titles are set as two art-directed lines each. Numerals in `--ink-700`
+— the background-device treatment — so the marker's numeral stays the only lime numeral in view.)*
+
+| # | Title (two lines) | Line |
+|---|---|---|
+| 01 | DEVELOPERS / SPORTING OPERATORS | Developers do not routinely meet sporting operators. |
+| 02 | FEDERATIONS / CAPITAL | Federations do not routinely meet capital. |
+| 03 | TECHNOLOGY / INSTITUTIONAL BUYERS | Technology companies struggle to reach institutional buyers. |
+| 04 | ATHLETES / THE BUSINESSES AROUND THEM | Athletes and performance professionals remain disconnected from the businesses being built around them. |
+
+**Body line — `--fs-body`, max 34em, beneath the grid**
 > We have the ambition. We have the talent. We have the market.
 
 **Pull line — `--fs-display-md`, standing alone**
@@ -130,14 +139,19 @@ TO BRING IT ALL TOGETHER.
 > **Binding:** every figure carries a visible source and year beneath it. **A figure without a source does
 > not ship.** If a source cannot be found, cut the figure — three sourced numbers are worth more than four
 > unsourced ones. See `01_STRATEGY/positioning.md` §7.
+>
+> **As built (B4 unresolved):** `screen02.figures` is an empty array and `ProofNumbers` renders nothing —
+> no wrapper, no gap. The `Figure` type requires `source` and `year`, so an unsourced figure cannot be
+> added by mistake. The screen rests on the stakeholder grid.
 
 ### Media
 None, or a single restrained image: an empty stadium at night. **This screen is type and data.** After the
 cinematic entry, the shift to a quiet, factual register is the point.
 
 ### Motion
-`REVEAL` on the statement. `REVEAL-LINES` on the pull line. `COUNTER` on the four figures — once, never
-re-counting.
+`REVEAL` on the marker and statement, on the lead and on the body line. `REVEAL` staggered at
+`STAGGER_TIGHT` across the four grid items. `REVEAL-LINES` on the pull line. `COUNTER` on the figures
+— once, never re-counting — when any exist.
 
 ### CTAs
 None.

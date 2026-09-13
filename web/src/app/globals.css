@@ -186,6 +186,10 @@
     text-transform: uppercase;
     color: var(--ink-300);
   }
+  /* Paragraph → paragraph is 1em, never an indent (typography.md §4). */
+  .stack-p > p + p {
+    margin-top: 1em;
+  }
   /* Visually hidden, focusable — the skip link and screen-reader text. */
   .sr-only-focusable:not(:focus):not(:focus-within) {
     position: absolute;
