@@ -26,6 +26,11 @@ export interface DisplayProps {
   as?: ElementType
   /** Sentence case is permitted at `md` and `sm` only (typography.md §3). */
   uppercase?: boolean
+  /**
+   * Permits every line to be lime. Only for a sub-line the brief designates lime in full — homepage
+   * screen 03's "ONE SHARED FUTURE FOR SPORT." (decision D14). Never a headline.
+   */
+  wholeLime?: boolean
   className?: string
   id?: string
 }
@@ -40,12 +45,14 @@ const SIZE_CLASS: Record<DisplaySize, string> = {
 function Lines({
   lines,
   hiddenAt,
+  wholeLime,
 }: {
   lines: readonly DisplayLine[]
   hiddenAt?: "narrow" | "wide"
+  wholeLime: boolean
 }) {
   const limeCount = lines.filter((l) => l.lime).length
-  if (limeCount > 2 || (limeCount > 0 && limeCount === lines.length)) {
+  if (!wholeLime && (limeCount > 2 || (limeCount > 0 && limeCount === lines.length))) {
     throw new Error("Display: at most two lime lines, and never the whole headline (colour.md §3).")
   }
   return (
@@ -73,6 +80,7 @@ export function Display({
   size,
   as: Tag = "h2",
   uppercase = true,
+  wholeLime = false,
   className,
   id,
 }: DisplayProps) {
@@ -83,8 +91,8 @@ export function Display({
       className={cn("display text-paper", SIZE_CLASS[size], !uppercase && "normal-case", className)}
     >
       <span className="sr-only">{accessible}</span>
-      <Lines lines={lines} hiddenAt={narrow ? "narrow" : undefined} />
-      {narrow ? <Lines lines={narrow} hiddenAt="wide" /> : null}
+      <Lines lines={lines} hiddenAt={narrow ? "narrow" : undefined} wholeLime={wholeLime} />
+      {narrow ? <Lines lines={narrow} hiddenAt="wide" wholeLime={wholeLime} /> : null}
     </Tag>
   )
 }

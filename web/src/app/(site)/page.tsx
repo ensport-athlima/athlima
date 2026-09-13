@@ -2,7 +2,9 @@ import type { Metadata } from "next"
 import { DiagnosisBlock } from "@/components/blocks/DiagnosisBlock"
 import { EntrySequence } from "@/components/blocks/EntrySequence"
 import { ProofNumbers } from "@/components/blocks/ProofNumbers"
-import { screen02 } from "@/content/homepage"
+import { StatementScreen } from "@/components/blocks/StatementScreen"
+import { AthlimaWordmark } from "@/components/marks/AthlimaWordmark"
+import { screen02, screen03 } from "@/content/homepage"
 import { site } from "@/content/site"
 
 /**
@@ -31,6 +33,32 @@ export default function HomePage() {
         pullLine={screen02.pullLine}
         proof={<ProofNumbers figures={screen02.figures} />}
       />
+      <StatementScreen
+        id={screen03.id}
+        marker={screen03.marker}
+        mark={<AthlimaWordmark />}
+        lines={screen03.headline}
+        sub={screen03.sub}
+        subNarrow={screen03.subNarrow}
+        subWholeLime
+        align="centred"
+        padding="dramatic"
+        stagger="loose"
+      >
+        {/* The five verbs — brochure-sourced, p03. Hairline-separated: vertical at md, horizontal below. */}
+        <ul className="grid grid-cols-1 border-t border-ink-800 text-left md:grid-cols-5 md:border-t-0">
+          {screen03.verbs.map((v) => (
+            <li
+              key={v.verb}
+              data-item
+              className="md:first:pl-0 border-b border-ink-800 py-4 md:border-b-0 md:border-l md:px-6 md:py-2 md:first:border-l-0"
+            >
+              <p className="label text-paper">{v.verb}</p>
+              <p className="mt-1 text-label text-ink-300">{v.descriptor}</p>
+            </li>
+          ))}
+        </ul>
+      </StatementScreen>
     </main>
   )
 }

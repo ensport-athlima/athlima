@@ -167,6 +167,20 @@ Added by decision D22 — these were always required and were never in the inven
 | `EmptyState` | On-brand copy with a route out — e.g. `Nothing here yet. The [PILLAR] thinking is being written.` |
 | `ErrorState` | The content of every `error.tsx` boundary. `SOMETHING BROKE.` Never a white screen, never a stack trace. |
 
+## MARKS (`components/marks/`)
+
+Supplied artwork, placed as inline SVG with a real `<title>` — never typeset, never approximated
+(`typography.md` §1). Not designed components: one file per mark, mirroring `05_MEDIA/logos/vector/`,
+and the only place brand artwork enters the build. Each takes `title` (accessible name) or `decorative`
+(`aria-hidden`, when adjacent text already names it). Letterforms use `currentColor`; the one lime accent
+uses `var(--lime)`. C2PA metadata is stripped on the way in.
+
+| Component | Source | Notes |
+|---|---|---|
+| `AthlimaWordmark` | `athlima-wordmark.svg` | Largest on homepage screen 03 (capped at 56rem wide); ~1.5rem tall in the nav. **Development placeholder until B2.** |
+| `AthlimaA` | `athlima-a.svg` · `athlima-a-stroke.svg` | `variant: "filled" \| "stroke"`. The stroke variant is what the entry overlay draws; exports the centreline length for `stroke-dasharray`. **Placeholder until B2.** |
+| ATHLIMAX · THE SYMPOSIUM · ACTIV8 · AFTERHOURS · ENARR · ENSPORT | not yet vector | Added here as each arrives (B2). ATHLIMA CONNECT and ATHLIMA 20 have no artwork at all. |
+
 ## `Icon`
 
 One component, one inline SVG sprite, tree-shaken. The set is defined in `03_DESIGN_SYSTEM/iconography.md`

@@ -97,6 +97,7 @@ web/src/            # the app lives under web/ ; the brief folders sit beside it
 │   ├── media/                # VideoHero, MicroFilm, ImageReveal
 │   ├── forms/                # TextField, TextArea, Select, Checkbox, FieldError, FormProgress
 │   ├── journal/              # JournalCard, ArticleBody, PullQuote, ShareRow, SubscribeInline
+│   ├── marks/                # Supplied artwork as inline SVG — AthlimaWordmark, AthlimaA (components.md, MARKS)
 │   └── layout/               # Nav, Footer, ApplyBar, SkipLink, CookieNotice, Breadcrumb
 ├── motion/                   # GSAP timelines, ScrollTrigger setups, easing constants
 ├── lib/                      # sanity client, queries, utils, env

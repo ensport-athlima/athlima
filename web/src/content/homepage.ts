@@ -62,3 +62,23 @@ export const screen02 = {
    */
   figures: [] as readonly Figure[],
 } as const
+
+export const screen03 = {
+  id: "solution",
+  marker: { number: 2, label: "THE SOLUTION" },
+  /** brochure-sourced, p03 */
+  headline: [{ text: "ONE ROOM." }, { text: "ONE ECOSYSTEM." }] satisfies readonly DisplayLine[],
+  sub: [{ text: "ONE SHARED FUTURE FOR SPORT.", lime: true }] satisfies readonly DisplayLine[],
+  subNarrow: [
+    { text: "ONE SHARED FUTURE", lime: true },
+    { text: "FOR SPORT.", lime: true },
+  ] satisfies readonly DisplayLine[],
+  /** brochure-sourced, verbatim from p03 — the documented exception for "unlock" (voice-and-tone.md §3) */
+  verbs: [
+    { verb: "CONNECT", descriptor: "the right people" },
+    { verb: "COLLABORATE", descriptor: "across sectors" },
+    { verb: "UNLOCK", descriptor: "opportunities" },
+    { verb: "BUILD", descriptor: "a stronger India" },
+    { verb: "CREATE", descriptor: "long-term impact" },
+  ],
+} as const

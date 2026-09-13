@@ -18,6 +18,12 @@ export type RevealVariant = "reveal" | "lines" | "cover" | "items"
 
 export interface RevealOptions {
   variant?: RevealVariant
+  /** Base reveal only. `arch` is for large elements — the wordmark, full-bleed reveals (motion.md §1). */
+  ease?: "out" | "arch"
+  /** Base reveal only. `slow` pairs with `arch` for large elements. */
+  duration?: "medium" | "slow"
+  /** Items only. `loose` for large distinct elements (motion.md §2). */
+  stagger?: "tight" | "loose"
   /** Seconds. Rare; prefer stagger. */
   delay?: number
   /** Cover direction for the "cover" variant. */
@@ -47,7 +53,18 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
   options: RevealOptions = {},
 ): RefObject<T | null> {
   const ref = useRef<T | null>(null)
-  const { variant = "reveal", delay = 0, direction = "up", start = TRIGGER_START } = options
+  const {
+    variant = "reveal",
+    delay = 0,
+    direction = "up",
+    start = TRIGGER_START,
+    ease: easeName = "out",
+    duration = "medium",
+    stagger = "tight",
+  } = options
+  const baseEase = easeName === "arch" ? ease.EASE_ARCH : ease.EASE_OUT
+  const baseDuration = duration === "slow" ? DURATIONS.SLOW : DURATIONS.MEDIUM
+  const itemStagger = stagger === "loose" ? STAGGERS.STAGGER_LOOSE : STAGGERS.STAGGER_TIGHT
 
   useGSAP(
     () => {
@@ -79,7 +96,7 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
             opacity: 0,
             duration: sec(DURATIONS.MEDIUM),
             ease: ease.EASE_OUT,
-            stagger: sec(STAGGERS.STAGGER_TIGHT),
+            stagger: sec(itemStagger),
             delay,
             immediateRender: true,
             scrollTrigger,
@@ -102,8 +119,8 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
         gsap.from(el, {
           y: REVEAL_OFFSET_PX,
           opacity: 0,
-          duration: sec(DURATIONS.MEDIUM),
-          ease: ease.EASE_OUT,
+          duration: sec(baseDuration),
+          ease: baseEase,
           delay,
           immediateRender: true,
           scrollTrigger,
@@ -123,7 +140,7 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
 
       return () => mm.revert()
     },
-    { scope: ref, dependencies: [variant, delay, direction, start] },
+    { scope: ref, dependencies: [variant, delay, direction, start, easeName, duration, stagger] },
   )
 
   return ref

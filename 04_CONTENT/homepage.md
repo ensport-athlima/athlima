@@ -189,8 +189,11 @@ No lime in the display line.
 ```
 ONE SHARED FUTURE FOR SPORT.
 ```
-Lime: `ONE SHARED FUTURE FOR SPORT.` — the sub-line, and nothing above it. This is the screen's one lime
-content element.
+At `md` and below the sub-line breaks `ONE SHARED FUTURE / FOR SPORT.` — two lines, still centred.
+
+Lime: `ONE SHARED FUTURE FOR SPORT.` — the sub-line in full (the one place a whole line is lime, D14),
+and nothing in the display above it. With the wordmark's final-A accent, the screen carries **two** lime
+content elements — within the rule of three (D3).
 
 **Five verbs — a horizontal row, `--fs-label`, hairline-separated** *(brochure-sourced, verbatim from p03 —
 this is why `UNLOCK` appears despite the banned list; see `voice-and-tone.md` §3)*
