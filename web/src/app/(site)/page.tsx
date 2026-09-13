@@ -1,12 +1,14 @@
 import type { Metadata } from "next"
+import { AudienceDoorways } from "@/components/blocks/AudienceDoorways"
 import { DiagnosisBlock } from "@/components/blocks/DiagnosisBlock"
 import { EcosystemPortals } from "@/components/blocks/EcosystemPortals"
 import { EntryOverlay } from "@/components/blocks/EntryOverlay"
 import { EntrySequence } from "@/components/blocks/EntrySequence"
 import { ProofNumbers } from "@/components/blocks/ProofNumbers"
+import { RoomComposition } from "@/components/blocks/RoomComposition"
 import { StatementScreen } from "@/components/blocks/StatementScreen"
 import { AthlimaWordmark } from "@/components/marks/AthlimaWordmark"
-import { screen02, screen03, screen04 } from "@/content/homepage"
+import { screen02, screen03, screen04, screen05, screen06 } from "@/content/homepage"
 import { site } from "@/content/site"
 
 /**
@@ -69,6 +71,23 @@ export default function HomePage() {
         portals={screen04.portals}
         closing={screen04.closing}
         anchorLine={screen04.anchorLine}
+        doorwaysId={screen06.id}
+      />
+      <RoomComposition
+        id={screen05.id}
+        marker={screen05.marker}
+        headline={screen05.headline}
+        lead={screen05.lead}
+        groups={screen05.groups}
+        closingLeft={screen05.closingLeft}
+        closingRight={screen05.closingRight}
+        cta={screen05.cta}
+      />
+      <AudienceDoorways
+        id={screen06.id}
+        marker={screen06.marker}
+        headline={screen06.headline}
+        doorways={screen06.doorways}
       />
     </main>
   )

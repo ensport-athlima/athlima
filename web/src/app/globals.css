@@ -268,6 +268,71 @@
   }
 }
 
+/* INDEX ITEMS (components.md IndexGrid): hover — the hairline turns lime, the content shifts 8px right. */
+@layer components {
+  .index-item {
+    border-bottom: 1px solid var(--ink-800);
+    transition: border-color var(--dur-base) var(--easing-sharp);
+  }
+  .index-item > [data-shift] {
+    transition: transform var(--dur-base) var(--easing-sharp);
+  }
+  @media (hover: hover) {
+    .index-item:hover,
+    .index-item:focus-within {
+      border-color: var(--lime);
+    }
+    .index-item:hover > [data-shift],
+    .index-item:focus-within > [data-shift] {
+      transform: translateX(var(--space-2));
+    }
+  }
+}
+
+/*
+ * THE DOORWAYS (interaction-map.md Signature 03). On hover-capable devices the audience line is collapsed
+ * at rest and expands on hover/focus; siblings recede to 50%. On touch and under reduced motion everything
+ * is expanded — no hover-dependent information, ever. The line is always in the DOM for AT.
+ */
+@layer components {
+  .doorway [data-line-wrap] {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+  .doorway [data-line-wrap] > * {
+    overflow: hidden;
+  }
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .doorway [data-line-wrap] {
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition:
+        grid-template-rows var(--dur-medium) var(--easing-out),
+        opacity var(--dur-medium) var(--easing-out);
+    }
+    .doorway:hover [data-line-wrap],
+    .doorway:focus-within [data-line-wrap] {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+    .doorway {
+      transition: opacity var(--dur-medium) var(--easing-out);
+    }
+    .doorways:has(.doorway:hover) .doorway:not(:hover),
+    .doorways:has(.doorway:focus-within) .doorway:not(:focus-within) {
+      opacity: 0.5;
+    }
+    .doorway [data-media] {
+      opacity: 0;
+      transition: opacity var(--dur-medium) var(--easing-out);
+    }
+    .doorway:hover [data-media],
+    .doorway:focus-within [data-media] {
+      opacity: 0.4;
+    }
+  }
+}
+
 /* accessibility.md §2 — the safety net. gsap.matchMedia() in src/motion/registry.ts is the strategy. */
 @media (prefers-reduced-motion: reduce) {
   *,

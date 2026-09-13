@@ -24,6 +24,8 @@ export interface RevealOptions {
   duration?: "medium" | "slow"
   /** Items only. `loose` for large distinct elements (motion.md §2). */
   stagger?: "tight" | "loose"
+  /** Base reveal only. Where the element comes from: below (default), or from the left / right for halves that converge. */
+  from?: "up" | "left" | "right"
   /** Seconds. Rare; prefer stagger. */
   delay?: number
   /** Cover direction for the "cover" variant. */
@@ -61,6 +63,7 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
     ease: easeName = "out",
     duration = "medium",
     stagger = "tight",
+    from: fromSide = "up",
   } = options
   const baseEase = easeName === "arch" ? ease.EASE_ARCH : ease.EASE_OUT
   const baseDuration = duration === "slow" ? DURATIONS.SLOW : DURATIONS.MEDIUM
@@ -117,7 +120,11 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
           return
         }
         gsap.from(el, {
-          y: REVEAL_OFFSET_PX,
+          ...(fromSide === "left"
+            ? { x: -REVEAL_OFFSET_PX }
+            : fromSide === "right"
+              ? { x: REVEAL_OFFSET_PX }
+              : { y: REVEAL_OFFSET_PX }),
           opacity: 0,
           duration: sec(baseDuration),
           ease: baseEase,
@@ -140,7 +147,10 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
 
       return () => mm.revert()
     },
-    { scope: ref, dependencies: [variant, delay, direction, start, easeName, duration, stagger] },
+    {
+      scope: ref,
+      dependencies: [variant, delay, direction, start, easeName, duration, stagger, fromSide],
+    },
   )
 
   return ref

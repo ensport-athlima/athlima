@@ -130,3 +130,117 @@ export const screen04 = {
   /** The mobile anchor line to the doorways (user-journeys.md Journey 04; ctas.md Tier 3). */
   anchorLine: "WHY SHOULD YOU CARE? IT DEPENDS WHO YOU ARE",
 } as const
+
+export const screen05 = {
+  id: "the-room",
+  marker: { number: 4, label: "THE PEOPLE" },
+  /** brochure-sourced, p05 */
+  headline: [
+    { text: "350 PEOPLE." },
+    { text: "THE RIGHT PEOPLE." },
+  ] satisfies readonly DisplayLine[],
+  lead: "A carefully curated group of 350 decision-makers, operators, builders, athletes and investors — united by a shared belief in the future of Indian sport.",
+  /** brochure-sourced, p05 — the four stakeholder groups, their definitions, who, and the verb triplets */
+  groups: [
+    {
+      title: "SPORT",
+      line: "Talent. Performance. Ecosystem.",
+      who: [
+        "Athletes",
+        "Coaches",
+        "Federations",
+        "Academies",
+        "Sports scientists",
+        "Leagues & franchises",
+      ],
+      verbs: "MEET · COLLABORATE · INVEST",
+    },
+    {
+      title: "INSTITUTIONS",
+      line: "Policy. Infrastructure. Enablers.",
+      who: [
+        "Government",
+        "Authorities",
+        "Universities",
+        "Sporting bodies",
+        "Public sector",
+        "Policy makers",
+      ],
+      verbs: "SHARE · LEARN · SHAPE POLICY",
+    },
+    {
+      title: "BUSINESS",
+      line: "Brands. Innovation. Execution.",
+      who: [
+        "CEOs & founders",
+        "Brands",
+        "Technology",
+        "Infrastructure",
+        "Media & entertainment",
+        "Professional services",
+      ],
+      verbs: "BUILD · PARTNER · CREATE OPPORTUNITIES",
+    },
+    {
+      title: "CAPITAL",
+      line: "Investment. Growth. Long-term impact.",
+      who: [
+        "Investors",
+        "Family offices",
+        "Funds",
+        "Advisors",
+        "Sporting entrepreneurs",
+        "Impact capital",
+      ],
+      verbs: "BACK · SCALE · DRIVE IMPACT",
+    },
+  ],
+  /** brochure-sourced — the closing statement, two halves converging */
+  closingLeft: [
+    { text: "THE VALUE IS NOT" },
+    { text: "HOW MANY PEOPLE ATTEND." },
+  ] satisfies readonly DisplayLine[],
+  closingRight: [
+    { text: "THE VALUE IS" },
+    { text: "WHO YOU MEET.", lime: true },
+  ] satisfies readonly DisplayLine[],
+  cta: { label: "SEE THE FULL COMPOSITION", href: routes.theRoom },
+} as const
+
+export const screen06 = {
+  id: "doorways",
+  marker: { number: 5, label: "YOUR PLACE IN IT" },
+  headline: [
+    { text: "SAME ECOSYSTEM." },
+    { text: "DIFFERENT DOORWAY." },
+  ] satisfies readonly DisplayLine[],
+  /** The six doorways — audiences.md §2 lines, verbatim; hrefs from the manifest. */
+  doorways: [
+    {
+      audience: "FOUNDER OR BUSINESS LEADER",
+      line: "Find the people shaping sport's next economy.",
+      href: routes.forBusiness,
+    },
+    {
+      audience: "ATHLETE, COACH OR PERFORMANCE PROFESSIONAL",
+      line: "Find your next level.",
+      href: routes.forAthletes,
+    },
+    {
+      audience: "INVESTOR OR FAMILY OFFICE",
+      line: "Find the opportunities behind India's sporting growth.",
+      href: routes.forCapital,
+    },
+    {
+      audience: "DEVELOPER, ARCHITECT OR OPERATOR",
+      line: "Sport needs places. Meet the people who decide where they get built.",
+      href: routes.forInfrastructure,
+    },
+    {
+      audience: "GOVERNMENT, FEDERATION OR INSTITUTION",
+      line: "Build the infrastructure around India's sporting future.",
+      href: routes.forInstitutions,
+    },
+    { audience: "BRAND", line: "Own a territory, not a logo.", href: routes.forBrands },
+  ],
+} as const

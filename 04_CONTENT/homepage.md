@@ -350,6 +350,10 @@ converging.
 ### CTAs
 `SEE THE FULL COMPOSITION →` → `/the-room` *(ghost variant, inline)*
 
+**As built (13 September 2026):** type only — the four portraits are B2. The groups are the `IndexGrid`
+block (4-up → 2 → 1), each with its "who" list and verb triplet in `--ink-300`; the closing statement's
+halves converge from left and right.
+
 ### Exit intent
 > *I'd be in a room with people I cannot otherwise reach in one place.*
 
@@ -405,6 +409,11 @@ The doorway expands on hover or focus; the image resolves at 40% opacity behind 
 
 ### CTAs
 Six — the doorways themselves. Real links.
+
+**As built (13 September 2026):** each doorway is a full-width row — name left, line right at `lg`; on
+hover-capable devices the line is collapsed at rest and expands on hover/focus (CSS, `MEDIUM`,
+`EASE_OUT`), siblings recede to 50%; on touch and under reduced motion every line is visible. The scene
+slot behind each row is positioned and empty (B2). The mobile anchor line after screen 04 is live.
 
 ### Exit intent
 > *That one is me.*
