@@ -89,7 +89,9 @@ footer logo.
 Five pillars, six IPs, a seven-stage partner journey, a two-day flow, a designed floor. The sheer
 *structural coherence* of ATHLIMA is itself the proof that this is a considered platform and not an
 occasion. The website should let people see the architecture — this is where information design earns its
-place, and where an interactive ecosystem map is justified rather than decorative.
+place: the navigable pillar diagram, the numbered sequences, the Room composition. *(An interactive
+ecosystem map would be justified rather than decorative — but only once relationship data exists. It is
+v2, decision D6.)*
 
 ---
 
@@ -149,10 +151,13 @@ The brochure carries four figures on page 02:
 
 | Claim | Status |
 |---|---|
-| $130B — India's sports economy by 2030 (est.) | `[TO VERIFY]` — needs a named, citable source and a date |
-| 3X — growth in sports infrastructure investment | `[TO VERIFY]` — over what period? against what baseline? |
-| 600M+ — young Indians under 25 | `[TO VERIFY]` — plausible; needs a census or UN source |
-| Global Top 3 — sports market potential | `[TO VERIFY]` — by what measure? whose projection? |
+| $130B — India's sports economy by 2030 (est.) | `[TO VERIFY — B4]` — needs a named, citable source and a date |
+| 3X — growth in sports infrastructure investment | `[TO VERIFY — B4]` — over what period? against what baseline? |
+| 600M+ — young Indians under 25 | `[TO VERIFY — B4]` — plausible; needs a census or UN source |
+| Global Top 3 — sports market potential | `[TO VERIFY — B4]` — by what measure? whose projection? |
+
+**Default if unanswered when screen 02 is built (decisions file, Part 2):** cut all four and let the screen
+rest on the stakeholder grid.
 
 These are strong and useful. They are also exactly the kind of number a sceptical investor will check.
 
@@ -172,7 +177,7 @@ relevant pages are built.
 - *Founding Partner Prospectus, p06:* "22 premium brand spaces. 12 categories."
 - *Floor plan:* 22 numbered spaces.
 
-These are two different commercial architectures. **`[TO VERIFY — DECISION REQUIRED]`** The website can
+These are two different commercial architectures. **`[TO VERIFY — B1 — DECISION REQUIRED]`** The website can
 only state one. Recommendation: the six-pavilion / 20-partner model, because it is the newer document and
 because six pavilions echo the six IPs, which strengthens the whole system. But this is a commercial
 decision, not a design one.
@@ -181,7 +186,7 @@ decision, not a design one.
 - *Revised brochure, p05, and all master-brief material:* **350** — and the scarcity is the entire proposition.
 - *Founding Partner Prospectus, p10:* "500+ CURATED LEADERS" alongside "30+ sessions".
 
-**`[TO VERIFY — DECISION REQUIRED]`** These cannot both be true, and the difference is strategically
+**`[TO VERIFY — B1 — DECISION REQUIRED]`** These cannot both be true, and the difference is strategically
 material: 350 is a proposition, 500+ is a number. Recommendation: **350 everywhere.** It is the more
 defensible claim, it is what the positioning is built on, and "the value is not how many people attend"
 sits badly next to a headline attendance figure. The 500+ figure should be removed from all material.

@@ -204,8 +204,10 @@ The things that separate typeset from typed. Every one of these is checked in `0
 - **Numerals:** tabular figures in tables and data, proportional in running text.
 - **Optical alignment:** a display line starting with a quotation mark or a `T` needs a negative left
   offset to look aligned. Mathematical alignment and optical alignment are not the same thing.
-- **All-caps tracking:** every uppercase setting gets positive letter-spacing. Uppercase at default
-  tracking looks broken.
+- **All-caps tracking:** uppercase at **label and body sizes** gets positive letter-spacing (`+0.14em`
+  labels, `+0.1em` buttons). Uppercase at default tracking looks broken at those sizes. Display type at
+  `display-xl` and `display-lg` is the opposite case: it keeps the **negative** tracking in §3 — at those
+  sizes uppercase needs tightening, not opening (decision D32).
 - **`text-wrap: balance`** on display headlines as a progressive enhancement — but the art-directed line
   array is the source of truth, not the browser's guess.
 - **`::selection`** is styled: lime ground, black text.

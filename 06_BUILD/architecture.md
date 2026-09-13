@@ -29,8 +29,9 @@ src/motion/
 ├── easings.ts                 # THE ONLY place easing curves are defined
 ├── durations.ts               # THE ONLY place durations are defined
 ├── useReveal.ts               # Standard entrance reveal, used by every block
-├── usePinnedSequence.ts       # Pinned scrub sequences (the ecosystem map, the six portals)
-├── useMagneticCursor.ts
+├── usePinnedSequence.ts       # Pinned scrub sequences (the six portals, desktop only)
+├── useCursor.ts               # The custom cursor: four modes, never magnetic (decision D11)
+├── transitions.ts             # Page-transition choreography (§3)
 └── registry.ts                # Registers GSAP plugins exactly once, client-side
 ```
 
@@ -79,40 +80,57 @@ Sanity  →  lib/sanity/queries.ts (GROQ, typed)  →  Server Component  →  pr
 
 This is architecturally special and must be built deliberately:
 
-1. **First visit** — full entry sequence plays. Store a flag in `sessionStorage`.
-2. **Subsequent navigations in the same session** — sequence is skipped, homepage renders at rest.
-3. **Reduced motion** — sequence is replaced by an immediate static hero.
-4. **Slow connection** (`navigator.connection.saveData` or `effectiveType` of `2g`/`slow-2g`) — sequence
-   skipped, poster frame only.
-5. The sequence must never block LCP. The hero headline is server-rendered in the DOM from the first byte
-   and revealed by the sequence, not injected by it.
+1. **The resting hero is painted at first byte** — poster image, server-rendered headline, navigation —
+   before any JavaScript runs. The poster is the LCP element. *(Decision D1.)*
+2. **First visit** — the entry sequence plays as an **overlay on top of the finished hero**: the A strokes
+   in over the poster, then dissolves. Store a flag in `sessionStorage`.
+3. **Subsequent navigations in the same session** — the overlay does not play; the hero is simply at rest.
+4. **Reduced motion** — no overlay. The hero is at rest.
+5. **Slow connection** (`navigator.connection.saveData` or `effectiveType` of `2g`/`slow-2g`) — no
+   overlay, poster frame only, no video.
+6. The sequence never hides, delays or creates the headline, the poster or the navigation. If JS never
+   loads, the visitor still gets a complete, correct hero.
 
 **Hard rule:** there is no "skip intro" button, because there is no intro long enough to need one.
-Target: 2.5 seconds maximum from first paint to interactive hero.
+The overlay completes within 1500ms of JS becoming available; the LCP budget (≤ 2.0s from navigation
+start, `06_BUILD/performance.md` §1) is measured on the poster and is unaffected by the overlay.
 
 ---
 
 ## 6. FORMS
 
-There are **three** conversion endpoints: the **Guest Application** (`/apply`), the **Partner Enquiry**
-(`/partner/enquire`) and the **ATHLIMA 20 Nomination** (`/athlima-20/nominate`). All three:
+There are **two** conversion endpoints in v1: the **Guest Application** (`/apply`) and the **Partner
+Enquiry** (`/partner/enquire`). The **ATHLIMA 20 Nomination** (`/athlima-20/nominate`) is v2 (decision D4)
+and is specified below so it is built from a decision, not from scratch. All forms:
 
 - One zod schema per endpoint, shared by client (`react-hook-form` resolver) and Server Action.
-- Multi-step, with progress preserved in component state (not localStorage — these forms contain personal data).
+- **The application is four steps** (`conversion-strategy.md` §4.1). **The partner enquiry is one page,
+  not multi-step** (decision D12) — this person is senior and busy.
+- Application progress persists in **`sessionStorage`** — current tab only, cleared on submit (decision
+  D13). It survives a tab switch on a phone; it does not persist personal data across sessions, and it is
+  never `localStorage`.
 - Honeypot field + rate limiting on the Server Action.
 - On success: a real confirmation *page*, not a toast. It has a URL so it can be a conversion goal.
 - Confirmation email via Resend, from a verified ATHLIMA domain.
 - Submission written to the datastore **before** the email is attempted. An email failure must never lose an application.
 
-### The nomination endpoint has extra obligations
-- It is **seasonal**: gated on a CMS boolean. When closed it renders a designed closed state with an email
-  capture, not a 404 and not a disabled form.
+### The nomination endpoint (v2) has extra obligations
+- It is **seasonal**: `/athlima-20` carries a CMS enum with three states — `pre-window`, `open`,
+  `post-selection` (decision D4). v1 ships `pre-window` only: a designed state with the opening month and
+  an email capture, not a 404 and not a disabled form. `open` renders the form; `post-selection` shows
+  the class.
+- Eligibility — under 20 on 14 December 2026 — is a stated criterion on `/athlima-20`
+  (`04_CONTENT/experiences.md`, tagged `[TO VERIFY]`), not form helper text. Most nominees will therefore
+  be minors; consent is the norm, not the edge case.
 - It collects data about **people who may be minors**. Guardian consent is a required, explicit,
   unticked-by-default field where the athlete is under 18, and the consenting adult's contact details are
   captured separately.
 - `[TO VERIFY — LEGAL GATE]` **This form does not ship until India's DPDP Act obligations for processing a
   minor's personal data have been reviewed by counsel** — verifiable parental consent, retention period,
-  and the lawful basis. This is a statutory requirement, not a checkbox. See `CLAUDE.md` Part IX #7.
+  and the lawful basis. A checkbox ticked by the nominator is not verifiable parental consent; the v2
+  design must obtain consent from the guardian directly. This is a statutory requirement, not a
+  checkbox. See `08_OPERATIONS/v2-backlog.md`.
+- Its datastore is decided with counsel and is **not** a dataset the content team can open.
 - Retention: nomination data is deleted or anonymised on a defined schedule. `[TO VERIFY]` — set the period
   with counsel.
 

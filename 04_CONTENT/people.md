@@ -45,7 +45,7 @@ A SHARED PURPOSE.
 A STRONGER INDIA.
 ```
 
-`[TO VERIFY — DECISION REQUIRED]` The Founding Partner Prospectus states "500+ curated leaders". Every
+`[TO VERIFY — B1 — DECISION REQUIRED]` The Founding Partner Prospectus states "500+ curated leaders". Every
 other document states 350. **These cannot both appear.** Recommendation: 350 everywhere. See
 `01_STRATEGY/positioning.md` §8.2.
 
@@ -83,7 +83,7 @@ Investors · Family offices · Funds · Advisors · Sporting entrepreneurs · Im
 
 ## Section 03 — THE COMPOSITION
 
-**Signature Interaction 05.** See `02_INFORMATION_ARCHITECTURE/interaction-map.md`.
+**Signature Interaction 04.** See `02_INFORMATION_ARCHITECTURE/interaction-map.md`.
 
 The core idea: the visitor can see **who meets whom**, and what that adjacency produces. Filterable by the
 four groups and the five pillars.
@@ -106,9 +106,12 @@ Example content, no names required:
 
 This is the page's most persuasive content, and it requires no confirmations whatsoever.
 
-**Sector composition** — presented as proportions of the 350, not as a list.
+**Sector composition** — presented as proportions of the 350, not as a list, and **labelled on the page as
+the target composition** until the room is confirmed. A target presented as a room is a claim the site
+cannot back.
 `[TO VERIFY]` The actual target composition percentages need to be supplied by the commercial team.
-Do not invent them.
+Do not invent them. Until they exist, the view shows the four groups and the adjacency examples without
+proportions.
 
 ---
 
@@ -196,7 +199,7 @@ ENSPORT VENTURES.
 > `BUILT TO INSPIRE VICTORY`
 
 **The ENARR Group**
-`[TO VERIFY — ENARR APPROVAL REQUIRED BEFORE PUBLICATION]`
+`[TO VERIFY — B3 — ENARR APPROVAL REQUIRED BEFORE PUBLICATION]`
 > The ENARR Group brings a multi-generational institutional history across enterprise, finance, industry
 > and philanthropy. Its belief is that long-term change is created by building institutions, not by
 > executing occasions.
@@ -232,8 +235,9 @@ The five questions, as a statement of how ATHLIMA operates. They are good copy a
 > **05** Can it become something more?
 
 ### CTA
-Tier 2: `APPLY TO ATTEND` (functional). Tier 3 inline: `ABOUT ENSPORT VENTURES →`, if a corporate site
-exists — see `ctas.md` §1.
+Tier 2: `APPLY TO ATTEND` (functional). Tier 3 inline: `ABOUT ENSPORT VENTURES →`, only if B3 confirms a
+corporate site exists — see `ctas.md` §1. The page never has its only CTA pointing at a URL that may not
+exist.
 
 ---
 

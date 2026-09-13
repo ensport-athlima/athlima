@@ -67,15 +67,15 @@ Carried over from `CLAUDE.md` Part IX. Close these before they become permanent.
 
 | # | Item | Status |
 |---|---|---|
-| 1 | ATHLIMAX architecture — six pavilions or 12 categories | Working assumption: six pavilions |
-| 2 | Room size — 350 or 500+ | Working assumption: 350 |
-| 3 | The four homepage statistics — sources | Must be sourced or cut before launch |
-| 4 | Photography and film — commission or generated | Decide early; long lead time |
-| 5 | Advisory Council — publish or hold | Hold until five written confirmations |
-| 6 | ENARR / ENSPORT copy — Group approval | Required before launch |
-| 7 | DPDP Act compliance for minor-athlete nominations | **Legal gate — form does not ship without it** |
-| 8 | Partner response-time commitment and named contact | Required before `/partner/enquire` goes live |
-| 9 | The unattributed Symposium quotation | Identify the author or rewrite |
+| B1 | ATHLIMAX architecture (six pavilions / 20 or 22 spaces / 12) **and** room size (350 or 500+) | Working assumption: six pavilions, 350 |
+| B2 | Photography and film — commission or type-only; vector artwork for every mark and the A device | Decide early; long lead time. Default: type-only, stated explicitly |
+| B3 | ENARR / ENSPORT copy, footer entity line, outbound corporate link — Group approval | Required before launch |
+| B4 | The four homepage statistics — sources | Source or cut. Default: cut all four |
+| B5 | Partner response-time commitment and named contact | Required before `/partner/enquire` goes live |
+| — | Advisory Council — publish or hold | Hold until five written confirmations (a condition, not a decision) |
+| — | The unattributed Symposium quotation | Identify the author or rewrite |
+| v2 | DPDP Act compliance for minor-athlete nominations | Deferred with the nomination form to v2 (decision D4). See `v2-backlog.md` |
+| v2 | GA4 consent under DPDP | Consent-gated by default (decision D33) until counsel confirms |
 
 ---
 

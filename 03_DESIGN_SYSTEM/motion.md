@@ -77,14 +77,17 @@ once: true
 ```
 The signature display entrance. A mask, not a fade.
 
-### REVEAL-MASK — imagery
+### REVEAL-COVER — imagery
 ```
-clip-path inset from 100% → 0% in the scroll direction
+a solid --void cover element sits over the image (same box, overflow hidden)
+cover: translateX/Y 0 → 100% in the scroll direction, then removed
 duration: SLOW (800)
 easing: EASE_ARCH
 once: true
 ```
-**Never a scale-up. Never a blur-in.**
+**Never a `clip-path` animation** (decision D10 — only `transform` and `opacity` animate on scroll, no
+exceptions). **Never a scale-up. Never a blur-in.** The reveal reads as a wipe; the mechanism is a
+translated cover.
 
 ### PARALLAX
 ```
@@ -173,20 +176,27 @@ View Transitions API where supported, GSAP fallback where not. Under reduced mot
 
 ## 7. THE ENTRY SEQUENCE
 
-The one `CINEMATIC` moment on the entire site.
+The one `CINEMATIC` moment on the entire site. **It is an overlay drawn on top of an already-finished
+hero — never a curtain in front of one.** *(Decision D1, `08_OPERATIONS/decisions-2026-09-13.md`.)*
+
+**At first byte, before any JavaScript runs,** the resting hero is complete and painted: the city poster,
+the server-rendered headline, the detail line, the navigation. The poster is the LCP element. If JS never
+loads, the visitor has a complete, correct hero.
 
 ```
-0ms      Black. Headline is already in the DOM, opacity 0.
-0–900    The A is drawn: two SVG strokes, EASE_ARCH.
-600–1400 The city poster resolves behind it, opacity 0 → 1, EASE_OUT.
-900–1700 Headline reveals by line, STAGGER_LINE, EASE_ARCH.
-1400–1800 Navigation fades in.
-1800–2500 The hero video begins, only after the page is interactive.
+0ms      The resting hero is already painted: poster, headline, nav. (JS has just become available.)
+0–900    The A is drawn over the poster: two SVG strokes, EASE_ARCH, in a full-viewport overlay.
+900–1500 The overlay dissolves, opacity 1 → 0, EASE_OUT. The A settles into its resting position in
+         the hero composition (a single transform, no re-layout).
+≥ 1500   The hero video begins, only after the page is interactive.
 ```
 
 **Hard constraints:**
-- ≤ 2.5s to an interactive hero
-- The headline is server-rendered; the sequence reveals it, it does not create it
+- The sequence never hides, delays, or creates the headline, the poster or the navigation. All three are
+  painted at first byte and remain visible beneath the overlay.
+- The overlay adds nothing to LCP: the LCP element is the poster, complete before the sequence starts.
+  The 2.0s LCP budget in `06_BUILD/performance.md` §1 applies unchanged.
+- Total overlay duration ≤ 1500ms. Nothing in the sequence exceeds `CINEMATIC` (1200ms).
 - Session-flagged — once per session
 - Skipped entirely under reduced motion, save-data, and `2g`/`slow-2g`
 - Keyboard-escapable from the first frame; the skip link is reachable immediately

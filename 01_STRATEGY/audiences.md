@@ -26,12 +26,18 @@ OPPORTUNITIES** — **BACK · SCALE · DRIVE IMPACT**
 The website must answer *"why should I care?"* differently for each. These are the six audience entry
 points, and each gets its own opening line, its own proof, its own destination.
 
+**"Our line" below is locked as each `/for/*` page's opening argument.** The emotional CTA *string* for
+each page is locked separately in `04_CONTENT/ctas.md` §1; where the two differ (athletes, infrastructure,
+brands), each wins in its own domain (decision D17).
+
 ### DOORWAY 01 — THE FOUNDER / BUSINESS LEADER
 **Their question:** Where is the sporting economy actually being decided?
 **Our line:** **Find the people shaping sport's next economy.**
-**What they need to see:** who is in the room, cross-sector; the Founding Partner model; ATHLIMA Connect.
+**What they need to see:** who is in the room, cross-sector; the Founding Partner model; ATHLIMA Connect
+*as a Founding Partner benefit — it is not offered to guests (decision D20)*.
 **Their fear:** another networking event that wastes two days.
-**The answer to that fear:** 350, not 5,000. Curated introductions arranged before arrival.
+**The answer to that fear:** 350, not 5,000. A room composed so the people you need are in it. And if
+your organisation partners, conversations arranged before you arrive.
 **Destination:** Partner with ATHLIMA.
 
 ### DOORWAY 02 — THE ATHLETE / COACH / PERFORMANCE PROFESSIONAL
@@ -42,7 +48,7 @@ that athletes are participants, not exhibits.
 **Their fear:** being decoration at a corporate event.
 **The answer to that fear:** ATHLIMA 20 is a platform for athletes, run with independent selection. The
 Symposium has athletes on stage, not just about them.
-**Destination:** Apply to attend / Nominate for ATHLIMA 20.
+**Destination:** Apply to attend / ATHLIMA 20 (the pre-window alert in v1; nomination in v2 — decision D4).
 
 ### DOORWAY 03 — THE INVESTOR / FAMILY OFFICE
 **Their question:** Is there real deal flow here, or is this a party?
@@ -91,7 +97,7 @@ Real, but not given a doorway on the homepage.
 | Audience | Where they are served |
 |---|---|
 | Media & press | A press page: assets, fact sheet, contact. Quiet, functional, complete. |
-| Young athletes & their coaches | ATHLIMA 20 nomination route. Must be reachable in one tap from the homepage during nomination season. |
+| Young athletes & their coaches | ATHLIMA 20. In v1, the pre-window email capture; in v2, the nomination route — which must then be reachable in one tap from the homepage during nomination season. |
 | Job seekers / students | A single line in the footer. Not a doorway. |
 | Curious public | The Journal. This is what the open-thinking strategy is for. |
 | Existing partners & confirmed guests | A logged-in or link-only area post-launch. Out of scope for v1. |

@@ -13,18 +13,22 @@ Before building anything, read in this order:
 
 ```
 1.  CLAUDE.md                              this file
-2.  01_STRATEGY/website-thesis.md          the parent document
-3.  01_STRATEGY/positioning.md             especially §6, the claims discipline
-4.  01_STRATEGY/brand-strategy.md
-5.  01_STRATEGY/audiences.md
-6.  02_INFORMATION_ARCHITECTURE/sitemap.md
-7.  03_DESIGN_SYSTEM/design-principles.md
-8.  03_DESIGN_SYSTEM/colour.md
-9.  03_DESIGN_SYSTEM/typography.md
-10. 04_CONTENT/voice-and-tone.md
-11. 06_BUILD/tech-stack.md
-12. 06_BUILD/component-rules.md
+2.  08_OPERATIONS/decisions-2026-09-13.md  BINDING. Part 1 is applied throughout; Part 2 (B1–B5) is what is still open
+3.  01_STRATEGY/website-thesis.md          the parent document
+4.  01_STRATEGY/positioning.md             especially §6, the claims discipline
+5.  01_STRATEGY/brand-strategy.md
+6.  01_STRATEGY/audiences.md
+7.  02_INFORMATION_ARCHITECTURE/sitemap.md
+8.  03_DESIGN_SYSTEM/design-principles.md
+9.  03_DESIGN_SYSTEM/colour.md
+10. 03_DESIGN_SYSTEM/typography.md
+11. 04_CONTENT/voice-and-tone.md
+12. 06_BUILD/tech-stack.md
+13. 06_BUILD/component-rules.md
 ```
+
+Where a brief file and the decisions file disagree, the decisions file wins and the brief file is wrong —
+fix the brief file. Decisions are cited inline as *(decision Dn)* wherever they changed a rule.
 
 Then the specific files for the task at hand.
 
@@ -97,6 +101,7 @@ who care how things look.
 
 > **Nothing appears on the public website as confirmed until it is independently confirmed in writing.**
 
+- **The nomination form is v2.** It collects minors' data and does not exist in v1 (decision D4).
 - **No named individual** — guest, speaker, or Advisory Council member — without their written
   confirmation and their approval of how they are described.
 - **No organisation's name or logo** without written permission.
@@ -137,7 +142,8 @@ a source, or a fact about ATHLIMA, ENSPORT or ENARR.
 
 ## V.4 — THE DESIGN NON-NEGOTIABLES
 
-- **Lime is a signal, never a surface.** More than three lime elements in a viewport triggers a review.
+- **Lime is a signal, never a surface.** More than three lime elements **in the content** of a viewport
+  triggers a review. The `SectionMarker` and the permanent `APPLY` are chrome and do not count (D3).
 - **White text on lime is forbidden.** Contrast 1.41. A lime surface always carries black text.
 - **Lime text on white is forbidden.** Use `--lime-ink` (`#5A6B04`).
 - **No glow. No gradient text. No glassmorphism. No card grids with shadows and rounded corners.**
@@ -158,7 +164,8 @@ a source, or a fact about ATHLIMA, ENSPORT or ENARR.
 ## V.6 — THE PERFORMANCE NON-NEGOTIABLES
 
 Measured on mid-range Android at 4G throttle, not on a MacBook:
-LCP ≤ 2.0s · INP ≤ 150ms · CLS ≤ 0.05 · JS ≤ 180KB gzipped · Lighthouse mobile ≥ 90.
+LCP ≤ 2.0s · INP ≤ 150ms · CLS ≤ 0.05 · JS ≤ 200KB gzipped, allocated in `06_BUILD/performance.md` §1 (D2) ·
+Lighthouse mobile ≥ 90.
 
 **A cinematic site that takes six seconds is not premium. It is slow.**
 
@@ -268,19 +275,24 @@ built on something that was quietly made up three hours ago.**
 
 # PART IX — THE OPEN DECISIONS
 
-These are unresolved in the source material. Each has a **working assumption** the content files already
-use, so the build is not blocked — but each must be confirmed before launch, and none may be changed
-silently in either direction.
+These need people, not a build session. They are `08_OPERATIONS/decisions-2026-09-13.md` Part 2, mirrored
+here. Each has a **default** the content files already use, so the build is not blocked — but each must be
+confirmed before launch, and none may be changed silently in either direction. Tag every dependent line
+`[TO VERIFY — Bn]`.
 
-| # | Decision | Options | Recommendation |
+| # | Decision | Who | Default if unanswered when the page is built |
 |---|---|---|---|
-| 1 | ATHLIMAX architecture | 20 founding partners / six pavilions **or** 22 spaces / 12 categories | **Working assumption: six pavilions** — newer, and six echoes the six IPs. Confirm before launch. |
-| 2 | Room size | 350 **or** 500+ | **Working assumption: 350 everywhere.** It is the proposition. Remove 500+ from all material. Confirm before launch. |
-| 3 | The four homepage statistics | Sources unknown | Source them, or cut them |
-| 4 | Photography and film | Commission a real shoot, or continue with generated imagery | Commission. Highest-return spend on the project. Long lead time — decide early. |
-| 5 | Advisory Council | Publish or hold | Hold until five written confirmations |
-| 6 | ENARR / ENSPORT copy | Needs Group approval | Get it before launch |
-| 7 | Minor-athlete data consent | DPDP Act compliance for under-18 nominations | **Legal advice required before the nomination form ships** |
+| B1 | ATHLIMAX architecture — 20 founding partners / six pavilions **or** 22 spaces / 12 categories — **and** room size, 350 **or** 500+ | Commercial team, one meeting | **Six pavilions. 350 everywhere.** Remove 500+ from all material. |
+| B2 | Photography and film — commission a real shoot, or design for a type-only launch. Plus **vector artwork for every mark and a standalone A device** — screen 01 cannot be built without it. | Project owner, budget | **Type-only**, and the design system says so explicitly. Artwork is requested now regardless. |
+| B3 | ENARR / ENSPORT approval of the provenance copy, the footer entity line and registration details, and whether an outbound corporate link exists | The Group | Nothing about the Group is published until approved. Homepage screen 07 and `/about` §03 are gated. |
+| B4 | The four homepage statistics ($130B, 3X, 600M+, Top 3) | Project owner | **Cut all four**; screen 02 rests on the stakeholder grid. |
+| B5 | Partner response time, and the named person enquiries route to | Commercial team | `/partner/enquire` confirmation copy does not ship until supplied. |
+
+**Standing conditions, not decisions:** the Advisory Council is held until five written confirmations
+(`04_CONTENT/people.md` §04); the unattributed Symposium quotation does not ship until sourced.
+
+**Deferred to v2, by decision D4:** the ATHLIMA 20 nomination form and its DPDP Act legal gate. See
+`08_OPERATIONS/v2-backlog.md`. The v1 page ships its pre-window state with an email capture.
 
 ---
 

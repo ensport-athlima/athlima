@@ -4,6 +4,13 @@
 > **All six pages share one skeleton.** Differentiation comes from imagery, register and motion — never
 > from restructuring the page. Six differently-structured IP pages would destroy the "one world" argument.
 
+> **Brochure-sourced marking (decision D31).** Lines marked *brochure-sourced* below are the ones this
+> repository already attributes to the ATHLIMA brochures — the pavilion, theme, zone, element and step
+> tables, the Connect disclaimer, the ATHLIMA 20 philosophy and the evening flow. `[TO VERIFY]` The two
+> brochure PDFs in `05_MEDIA/references/` are image-only and could not be text-checked in this pass; before
+> launch, verify every marked line against its brochure page, verbatim, and un-mark anything that is not.
+> Unmarked banned words found in the audit have been rewritten rather than marked.
+
 **The shared skeleton:**
 ```
 01 ENTRY          the mark, the line, the signature film
@@ -28,7 +35,7 @@
 A CURATED
 MARKETPLACE.
 ```
-**Sub:** `CONVERSATIONS. PARTNERSHIPS. REAL-WORLD IMPACT.`
+**Sub:** `CONVERSATIONS. PARTNERSHIPS. REAL-WORLD IMPACT.` *(the locked §4 line — brochure-sourced)*
 
 ### Proposition
 > ATHLIMAX is a curated, invitation-led marketplace bringing together founding partners across six
@@ -42,8 +49,8 @@ SOLUTIONS FIND SCALE.
 SPORT MOVES FORWARD.
 ```
 
-### Components — the six pavilions
-`[TO VERIFY — DECISION REQUIRED]` The source material carries two commercial architectures: six pavilions
+### Components — the six pavilions *(brochure-sourced, revised brochure p09)*
+`[TO VERIFY — B1 — DECISION REQUIRED]` The source material carries two commercial architectures: six pavilions
 with 20 founding partners (revised brochure) and 22 spaces across 12 categories (prospectus). **This page
 can only state one.** See `01_STRATEGY/positioning.md` §8.1. Partner counts below are placeholders until
 that decision is made.
@@ -52,9 +59,9 @@ that decision is made.
 |---|---|---|---|
 | 01 | PERFORMANCE & EQUIPMENT | Human potential. At a higher level. | Next-generation gear, materials, apparel and performance technology for every athlete. |
 | 02 | HEALTH, WELLNESS & RECOVERY | A stronger, longer India. | Solutions for physical, mental and nutritional wellbeing across the sporting ecosystem. |
-| 03 | TECHNOLOGY & INNOVATION | Solving for what's next. | AI, data, immersive experiences and platforms reshaping how sport is played, watched and managed. |
+| 03 | TECHNOLOGY & INNOVATION | Solving for what's next. | AI, data, and the platforms and environments reshaping how sport is played, watched and managed. |
 | 04 | INFRASTRUCTURE & ACTIVE CITIES | Built environments for active lives. | Stadiums, training centres, smart facilities and urban ecosystems that make sport more accessible and inclusive. |
-| 05 | MEDIA, CONTENT & ENTERTAINMENT | Stories that move a nation. | Content, broadcasting, immersive media and cultural IP that bring sport to new audiences. |
+| 05 | MEDIA, CONTENT & ENTERTAINMENT | Stories that move a nation. | Content, broadcasting, new media and cultural IP that bring sport to new audiences. |
 | 06 | INVESTMENT, POLICY & IMPACT | Capital for a brighter tomorrow. | Investment platforms, advisory, policy initiatives and models to enable a stronger, more sustainable sporting ecosystem. |
 
 **Principle line:**
@@ -85,7 +92,8 @@ A CONVERSATION.
 
 ### Entry
 **Eyebrow:** `THE WORLD / THE SYMPOSIUM`
-**Display:**
+**Mark:** THE SYMPOSIUM *(lime accent on the final M — `05_MEDIA/logos/the-symposium.jpg`, vector required)*
+**Display:** *(the locked §4 line)*
 ```
 A HIGHER
 CONVERSATION.
@@ -99,7 +107,7 @@ CONVERSATION.
 >
 > Every session has a reason to exist.
 
-### Components — the six themes
+### Components — the six themes *(brochure-sourced)*
 | # | Theme | Covers |
 |---|---|---|
 | 01 | THE NEXT GENERATION | Talent, pathways and high-performance ecosystems. |
@@ -109,7 +117,7 @@ CONVERSATION.
 | 05 | POLICY & GOVERNANCE | Regulation, institutions and a stronger sporting nation. |
 | 06 | CULTURE & IMPACT | Sport as a force for social change, identity and unity. |
 
-### The six formats
+### The six formats *(brochure-sourced)*
 | Format | Line |
 |---|---|
 | KEYNOTES | Bold ideas. New perspectives. |
@@ -117,7 +125,7 @@ CONVERSATION.
 | ROUNDTABLES | Closed-door, high-value conversations. |
 | FIRESIDE CHATS | Candid. Insightful. Inspiring. |
 | CASE STUDIES | Real examples. Real learnings. |
-| SPECIAL SESSIONS | Deep dives on critical themes. |
+| SPECIAL SESSIONS | Extended sessions on a single critical theme. |
 
 ### Voices
 Six categories: Athletes · Business Leaders · Policymakers · Global Experts · Investors · Cultural Voices.
@@ -145,14 +153,14 @@ Six categories: Athletes · Business Leaders · Policymakers · Global Experts �
 ### Entry
 **Eyebrow:** `THE WORLD / ACTIV8`
 **Mark:** ACTIV8
-**Display:**
+**Display:** *(the locked §4 line — brochure-sourced)*
 ```
 PLAY BEYOND
 THE GAME.
 ```
 
 ### Proposition
-> ACTIV8 is ATHLIMA's immersive, outdoor experience — where performance, play, wellness and community
+> ACTIV8 is ATHLIMA's outdoor, physical experience — where performance, play, wellness and community
 > come together. From elite showcases to open participation, ACTIV8 brings people, brands and technology
 > into motion.
 
@@ -162,7 +170,7 @@ HIGHER PERFORMANCE.
 A HEALTHIER, STRONGER INDIA.
 ```
 
-### Components — the six zones
+### Components — the six zones *(brochure-sourced)*
 | # | Zone | Line |
 |---|---|---|
 | 01 | PERFORMANCE | Athlete showcases. Training. Masterclasses. |
@@ -194,7 +202,7 @@ uses `--dusk-blue`.
 ### Entry
 **Eyebrow:** `THE WORLD / AFTERHOURS`
 **Mark:** AFTERHOURS *(gradient wordmark — the one gradient on the site)*
-**Display:**
+**Display:** *(the locked §4 line)*
 ```
 WHERE SPORT
 MEETS CULTURE.
@@ -214,27 +222,31 @@ A BRIGHTER TOMORROW.
 > `[TO VERIFY]` Athleisure and performance fashion take centre stage in a signature 60ft show. Confirm the
 > runway dimension against the production plan before publishing a figure.
 
-### Components — the six elements
+### Components — the six elements *(brochure-sourced — including "Networking", which is the brochure's
+name for the element; "networking event" remains banned as a description of ATHLIMA)*
 | # | Element | Line |
 |---|---|---|
 | 01 | DINING | Curated culinary experiences. |
 | 02 | COCKTAILS | Unwind. Connect. Celebrate. |
-| 03 | MUSIC | Live sets. Iconic artists. An unforgettable atmosphere. |
+| 03 | MUSIC | Live sets. Real artists. The atmosphere of the night. |
 | 04 | CULTURE | Fashion. Art. Film. Expression beyond sport. |
 | 05 | NETWORKING | Real conversations. Lasting relationships. |
 | 06 | ENTERTAINMENT | Surprises. Performances. Moments that stay. |
 
-### The evening flow
+### The evening flow *(brochure-sourced)*
 | Time | Moment |
 |---|---|
 | 6:30 PM | COCKTAIL RECEPTION — Champagne. Networking. Sunset views. |
-| 7:00 PM | OPENING PRODUCTION — Immersive audio-visual show. Music. Light. Motion. |
+| 7:00 PM | OPENING PRODUCTION — An audio-visual production. Music. Light. Motion. |
 | 7:15 PM | ATHLEISURE COLLECTIONS — Premium performance brands. Designer collaborations. Athletes. Models. |
 | 8:00 PM | PERFORMANCE SHOWCASE — Movement. Dance. Freerunning. Gymnastics. Contemporary sport. |
 | 8:30 PM | ATHLIMA RECOGNITION — Industry honours. Innovation. Leadership. Impact. |
 | 9:00 PM | CLOSING CELEBRATION — Music. Connections. Private networking. |
 
 `[TO VERIFY]` Timings are indicative and subject to final confirmation. Label them as such on the page.
+`[TO VERIFY]` Which day this flow belongs to, and how "ATHLIMA RECOGNITION" at 8:30 PM relates to
+"ATHLIMA 20 NIGHT — Recognition on Day 2" below: one recognition moment or two? The page cannot describe
+both until this is settled.
 
 **Closing:**
 ```
@@ -260,6 +272,11 @@ THE CONVERSATION
 STARTS BEFORE
 ATHLIMA.
 ```
+**Sub:** `CONNECT BEFORE YOU ARRIVE. COLLABORATE WHEN YOU GET THERE.` *(the locked §4 line — decision D16)*
+
+**Who it is for:** ATHLIMA Connect is a **Founding Partner benefit** (decision D20). It is described to
+partners, and the page's audience is partners. It is not offered to guests, and no guest-facing page
+promises pre-arranged introductions.
 
 ### Proposition
 > `[TO VERIFY]` Two weeks before ATHLIMA, Founding Partners begin relevant conversations ahead of the
@@ -268,19 +285,20 @@ ATHLIMA.
 > The two-week lead time is an operational commitment to partners. Confirm it is deliverable before it is
 > published as a promise.
 
-**The core reframe — set as a pull quote:**
+**The core reframe — set as a pull quote:** *(brochure-sourced — "attendees" is quoted here as the word
+ATHLIMA refuses, which is the one context it is permitted)*
 > We don't say: *here are 350 attendees.*
 > We ask: **who do you actually need to meet?**
 
-### Components — the four steps
+### Components — the four steps *(brochure-sourced)*
 | # | Step | Headline | Detail |
 |---|---|---|---|
 | 01 | IDENTIFY | Tell us who you want to meet. | Founding Partners share their business objectives, areas of interest and preferred guest profiles. |
 | 02 | MATCH | We identify relevant conversations. | The ATHLIMA team reviews the participating guest ecosystem and identifies potential matches based on relevance. |
-| 03 | PRE-BLOCK | Meetings are arranged before the show. | Selected one-to-one meetings are pre-blocked ahead of ATHLIMA, allowing both sides to prepare for a focused conversation. |
+| 03 | PRE-BLOCK | Meetings are arranged before ATHLIMA. | Selected one-to-one meetings are pre-blocked ahead of ATHLIMA, allowing both sides to prepare for a focused conversation. |
 | 04 | ARRIVE READY | Come to ATHLIMA with conversations already in motion. | The event becomes the continuation of relationships that have already begun. |
 
-### The mandatory disclaimer
+### The mandatory disclaimer *(brochure-sourced — survives verbatim)*
 > **This must appear on the page, verbatim, wherever Connect is described:**
 >
 > Meetings are subject to guest confirmation, availability and mutual suitability. ATHLIMA does not
@@ -316,7 +334,12 @@ TWENTY ATHLETES.
 TWENTY SPORTS.
 ONE FUTURE.
 ```
-**Sub:** `TOMORROW PLAYS HERE.`
+**Sub:** `TOMORROW PLAYS HERE.` *(the locked §4 line — brochure-sourced)*
+
+### Eligibility *(stated on the page — decision D4)*
+`[TO VERIFY]` **Athletes must be under 20 on 14 December 2026.** This criterion appears here, as a
+sentence on the page beside the disciplines, not only in form helper text. Most nominees are therefore
+minors — which is why the nomination form is v2 and gated on DPDP legal review.
 
 ### Proposition
 > ATHLIMA 20 celebrates India's most exceptional emerging athletes — twenty individuals across twenty
@@ -324,7 +347,7 @@ ONE FUTURE.
 > and visibility, ATHLIMA 20 shines a light on the people who will inspire a stronger, more active and
 > more united India.
 
-**The philosophy — set apart, the emotional centre of the site:**
+**The philosophy — set apart, the emotional centre of the site:** *(brochure-sourced)*
 > Do not wait until they become champions to tell their story.
 > Tell it while they are becoming one.
 
@@ -340,7 +363,7 @@ Performance · Potential · Character · Capacity to inspire
 
 **This is not an awards list.** Selection is independent.
 
-### Components — the twenty disciplines
+### Components — the twenty disciplines *(brochure-sourced)*
 ```
 01 ATHLETICS      02 SWIMMING       03 FOOTBALL       04 CRICKET        05 HOCKEY
 06 TENNIS         07 BADMINTON      08 TABLE TENNIS   09 BOXING         10 WRESTLING
@@ -370,9 +393,18 @@ WE CELEBRATE WHO WILL BUILD IT TOMORROW.
 > equal opportunity across disciplines, and to a future where sport creates stronger individuals,
 > communities and a nation.
 
+### The three states *(decision D4)*
+The page carries a CMS enum, never a boolean. **v1 ships `pre-window` only.**
+
+| State | What the page shows | Functional CTA |
+|---|---|---|
+| `pre-window` | Everything above, plus the opening month `[TO VERIFY]` and an `EmailCapture` (`ctas.md` §4a) | `TELL ME WHEN NOMINATIONS OPEN` → `#alert` |
+| `open` *(v2)* | The nomination form on `/athlima-20/nominate` | `NOMINATE AN ATHLETE` |
+| `post-selection` | The class — confirmed, consenting athletes only; `PortraitCard` renders nothing otherwise | `SEE THE 2026 CLASS` → `#class` |
+
 ### CTAs
-`TOMORROW PLAYS HERE` · `NOMINATE AN ATHLETE` → `/athlima-20/nominate`
-*(When the window is closed: `SEE THE 2026 CLASS` or the designed closed state.)*
+Emotional: `TOMORROW PLAYS HERE` — a statement set as display type, not a link. Functional: per state,
+above.
 
 ### Performance note
 **This page carries the strictest performance budget on the site.** Its audience — coaches, academies,

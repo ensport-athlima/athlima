@@ -18,12 +18,13 @@
 ## B. TYPOGRAPHY
 
 - [ ] Every type size maps to a token. No arbitrary `text-[Npx]`.
-- [ ] Display type is optically tracked in (negative letter-spacing at large sizes).
+- [ ] Display type at `display-xl` and `display-lg` is tracked **in** (negative letter-spacing); uppercase at
+      label and body sizes is tracked **out** (positive). `typography.md` §3 and §9 — decision D32.
 - [ ] No line of body copy exceeds ~75 characters.
 - [ ] No orphans or widows in headlines. Line breaks in display type are art-directed, not accidental.
 - [ ] No hyphenation in display type.
 - [ ] Baseline rhythm is consistent — headings and body sit on the same vertical system.
-- [ ] Caps-locked text has increased letter-spacing.
+- [ ] Caps-locked text at label and body sizes has increased letter-spacing.
 - [ ] No more than **three display sizes** visible in any one viewport (labels, captions and body sizes
       do not count). Two competing display sizes on one screen usually means two headlines.
 
@@ -42,7 +43,8 @@
 
 ## D. COLOUR
 
-- [ ] Lime is used as a **signal**, not a surface. Count its appearances in the viewport: more than three → review.
+- [ ] Lime is used as a **signal**, not a surface. Count its appearances in the **content** of the viewport
+      (the section marker and the permanent APPLY are chrome and do not count): more than three → review.
 - [ ] No glow, no neon bloom, no lime drop-shadows.
 - [ ] No gradient text.
 - [ ] Blacks are the token black, not `#000` unless the token says so.

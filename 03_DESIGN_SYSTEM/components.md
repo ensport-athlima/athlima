@@ -58,15 +58,18 @@ An animated numeral. Counts once. Final value in the DOM; the animating span is 
 ## TIER 2 — MEDIA
 
 ### `VideoHero`
-Mux player. Poster-first. Video begins after the page is interactive. Explicit aspect ratio. Pause control.
-Respects save-data and reduced motion.
+Poster-first — the poster is server-rendered and is the LCP element. A native `<video>` with a Mux-hosted
+HLS source begins after the page is interactive (never the Mux player component on the homepage —
+decision D2). Explicit aspect ratio. Pause control (`PAUSE FILM` / `PLAY FILM`). Respects save-data and
+reduced motion.
 
 ### `MicroFilm`
 A 5–8 second muted loop. `preload="none"`, `IntersectionObserver`-gated, ≤ 1.5MB, poster-first, pauses
 off-screen.
 
 ### `ImageReveal`
-`next/image` with the mask-wipe entrance. Mandatory `sizes`. Focal point from the CMS. Optional scrim.
+`next/image` with the `REVEAL-COVER` entrance — a translated cover element, never `clip-path`
+(`motion.md` §3, decision D10). Mandatory `sizes`. Focal point from the CMS. Optional scrim.
 
 ### `MediaFrame`
 A fixed-aspect frame containing an image or video that scales inside it on hover. The frame never moves —
@@ -98,9 +101,8 @@ Full-width page sections. Each carries the mandatory header comment from `06_BUI
 | `DiagnosisBlock` | The problem stated, then the stakeholder grid. | `/` screen 02, `/the-world` |
 | `PillarDiagram` | Five pillars converging on the mark. Navigable inline SVG. | `/the-world`, `/about` |
 | `EcosystemPortals` | The six IPs. Pinned horizontal scrub on desktop, stacked on touch. | `/`, `/the-world` |
-| `EcosystemMap` | The interactive relationship diagram. | `/the-world` |
-| `AudienceDoorways` | The six doorways. Type-led, not cards. | `/` |
-| `RoomComposition` | The 350, by group and pillar. **Static variant** on `/` screen 05; **filterable variant** (Signature 05) on `/the-room` section 03. | `/`, `/the-room` |
+| `AudienceDoorways` | The six doorways. Type-led, not cards. Signature 03. | `/` |
+| `RoomComposition` | The 350, by group and pillar. **Static variant** on `/` screen 05; **filterable variant** (Signature 04) on `/the-room` section 03. Composition figures are labelled as the **target** composition until the room is confirmed. | `/`, `/the-room` |
 | `ProofNumbers` | A row of 3–4 statistics. **Every one carries a visible source and year.** | `/`, `/the-world` |
 | `IndexGrid` | The L5 index: pavilions, zones, themes, disciplines. Rules and space, **not cards**. | The six IP pages |
 | `SequenceRail` | A numbered horizontal sequence with chevrons. The partner journey, the Connect steps. | `/partner/journey`, `/connect` |
@@ -109,12 +111,67 @@ Full-width page sections. Each carries the mandatory header comment from `06_BUI
 | `IPRail` | The other five IPs, at the foot of every IP page. | The six IP pages |
 | `JournalRail` | 3–4 featured articles. **Not on the homepage** — the nine-screen script has no Journal surface; JOURNAL is a top-level nav item instead. | IP pages, `/journal`, article footers |
 | `ApplyBlock` | The closing invitation. One emotional CTA, one functional. | Every page |
-| `FloorPlan` | The venue floor, annotated and navigable. | `/programme`, `/athlimax` |
+| `FloorPlan` | The venue floor, annotated and navigable. **`/programme` only in v1** (decision D21) — an operational artefact, not a proposition. Shows whichever commercial architecture B1 confirms. | `/programme` |
 | `DisciplineGrid` | The twenty ATHLIMA 20 sports. | `/athlima-20` |
-| `FormShell` | The wrapper for all three forms: progress, validation, error summary, trust panel. | `/apply`, `/partner/enquire`, `/athlima-20/nominate` |
+| `FormShell` | The wrapper for every form: progress (multi-step only), validation, error summary, trust panel. | `/apply`, `/partner/enquire`, `/contact`; `/athlima-20/nominate` in v2 |
+| `EmailCapture` | A single-field inline capture with its own confirmation: the ATHLIMA 20 pre-window alert, the 2027 list, the Journal subscription. | `/athlima-20`, `/apply/declined`, `/journal`, homepage (legacy phase) |
 
-**19 blocks. 10 primitives. 6 media components.** Every page on the site is composed from them. A page that needs a twentieth needs a
-conversation first.
+**19 blocks. 10 primitives. 7 media components. 6 layout components. 6 form components. 5 Journal
+components. 3 state components.** Every page on the site is composed from them. A page that needs
+something not on this list needs a conversation first.
+
+*(The `EcosystemMap` block was removed from v1 by decision D6 and `EmailCapture` added by decision D4;
+the inventory was reopened and completed by decision D22.)*
+
+---
+
+## TIER 4 — LAYOUT (`components/layout/`)
+
+Added by decision D22 — these were always required and were never in the inventory.
+
+| Component | Specification |
+|---|---|
+| `Nav` | The four items and the permanent APPLY. Behaviour in `02_INFORMATION_ARCHITECTURE/navigation.md` §§1–3, §7. Reads `data-surface` to invert. `aria-current="page"` plus underline. |
+| `Footer` | The `<footer>` landmark in `navigation.md` §5. Conditional Advisory Council link. Marks at their own colours. No newsletter form. |
+| `ApplyBar` | The mobile bottom bar. `env(safe-area-inset-bottom)`. Hides on scroll-down, reveals on scroll-up (decision D8). Absent on `/apply`. |
+| `SkipLink` | `SKIP TO CONTENT`. First focusable element. Visually hidden until focused. |
+| `CookieNotice` | Bottom-anchored, never a modal. `ACCEPT` · `DECLINE`. GA4 loads only after accept (decision D33). Remembered per viewer. |
+| `Breadcrumb` | `PARTNER / THE MODEL`, `JOURNAL / BUILD / [title]`. Nested routes only. `BreadcrumbList` JSON-LD. |
+
+## TIER 5 — FORMS (`components/forms/`)
+
+| Component | Specification |
+|---|---|
+| `TextField` | Persistent visible `<label>`. `inputmode` and `autocomplete` set per field. `--ink-850` well, `--border` boundary, lime focus ring. Error state pairs `--signal-error`, an icon and text. |
+| `TextArea` | As `TextField`. Auto-grows to content; never a fixed height that clips at 200% zoom. |
+| `Select` | Native `<select>` styled minimally; never a custom listbox. Options from typed constants. |
+| `Checkbox` | 24px box, lime check on `--void`, label is the click target. Consent checkboxes are unticked by default, always. |
+| `FieldError` | Inline, beneath the field, `aria-describedby`-linked. Voice per `ctas.md` §2. |
+| `FormProgress` | `01 YOU · 02 YOUR ORGANISATION · 03 YOUR INTEREST · 04 CONTEXT`. Current step indicated by more than colour. Multi-step forms only. |
+
+## TIER 6 — JOURNAL (`components/journal/`)
+
+| Component | Specification |
+|---|---|
+| `JournalCard` | One index entry: pillar tag, title, standfirst, byline, date, reading time, hairline. Not a card in the boxed sense — rules and space, as `IndexGrid`. |
+| `ArticleBody` | Portable Text serialisers with the typographic care in `journal.md` §6. 34em measure. |
+| `PullQuote` | `display-sm`, a lime rule, breaks the measure. |
+| `ShareRow` | Copy link, LinkedIn, X, WhatsApp. Small, last, in the sticky aside. |
+| `SubscribeInline` | The Journal subscription, in context. Uses `EmailCapture`. Never in the footer, never a modal. |
+
+## TIER 7 — STATES
+
+| Component | Specification |
+|---|---|
+| `Skeleton` | A designed placeholder matching the final layout's exact dimensions. Never a spinner, never the word "loading". |
+| `EmptyState` | On-brand copy with a route out — e.g. `Nothing here yet. The [PILLAR] thinking is being written.` |
+| `ErrorState` | The content of every `error.tsx` boundary. `SOMETHING BROKE.` Never a white screen, never a stack trace. |
+
+## `Icon`
+
+One component, one inline SVG sprite, tree-shaken. The set is defined in `03_DESIGN_SYSTEM/iconography.md`
+§2: the ten UI icons, the error and warning icons, and the social icons (decision D22). Decorative
+instances are `aria-hidden`; meaningful ones carry an accessible name.
 
 ---
 

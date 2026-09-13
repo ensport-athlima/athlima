@@ -17,9 +17,8 @@
 │   ├── /activ8                     ACTIV8 — the experience
 │   ├── /afterhours                 AFTERHOURS — the culture
 │   ├── /connect                    ATHLIMA CONNECT — the relationships
-│   └── /athlima-20                 ATHLIMA 20 — the next generation
-│       ├── /athlima-20/nominate    Nomination (seasonal)
-│       └── /athlima-20/nominate/received  Confirmation
+│   └── /athlima-20                 ATHLIMA 20 — the next generation  [three states — see §4]
+│       (the nomination form and its confirmation are v2 — decision D4, `08_OPERATIONS/v2-backlog.md`)
 │
 ├── /the-room                       THE ROOM — who is in it, and why the composition matters
 │   └── /the-room/advisory-council  ADVISORY COUNCIL  [conditional — see §4]
@@ -48,7 +47,8 @@
 ├── /about                          ATHLIMA, ENSPORT VENTURES & THE ENARR GROUP
 │
 ├── /apply                          APPLY TO ATTEND
-│   └── /apply/received             Confirmation (real URL, for conversion tracking)
+│   ├── /apply/received             Confirmation (real URL, for conversion tracking)
+│   └── /apply/declined             Reached only from the decision email. `noindex`. Offers the Journal and the 2027 list.
 │
 ├── /contact                        CONTACT — including the institutional route
 ├── /press                          PRESS — fact sheet, assets, contact
@@ -61,8 +61,9 @@
 └── /500
 ```
 
-**Total: 36 routes at launch** (excluding dynamic Journal entries). Deliberately small. Every route earns
-its place; there is no "Resources", no "FAQ", no "Blog", no "News".
+**Total: 35 routes at launch** (excluding dynamic Journal entries; counting `/for`, `/404` and `/500`).
+Deliberately small. Every route earns its place; there is no "Resources", no "FAQ", no "Blog", no "News".
+The two nomination routes were removed for v1 (decision D4) and `/apply/declined` was added (decision D34).
 
 ---
 
@@ -71,14 +72,13 @@ its place; there is no "Resources", no "FAQ", no "Blog", no "News".
 | Route | Purpose | Primary audience | Emotional CTA | Functional CTA | Render |
 |---|---|---|---|---|---|
 | `/` | Establish scale, seriousness, ecosystem; route to a doorway | All six | ENTER ATHLIMA | APPLY TO ATTEND | SSG + ISR 1h |
-| `/the-world` | Make the ecosystem legible as one system | All | SEE THE WHOLE ECOSYSTEM | EXPLORE THE SIX | SSG + ISR 1h |
+| `/the-world` | Make the ecosystem legible as one system | All | SEE THE WHOLE ECOSYSTEM (`#ecosystem`) | EXPLORE THE SIX (`#portals`) | SSG + ISR 1h |
 | `/athlimax` | The commercial layer; the pavilions | Brands, business | BUILD INSIDE THE MARKETPLACE | BECOME A FOUNDING PARTNER | SSG + ISR 1h |
 | `/symposium` | Intellectual authority; themes and formats | Institutions, capital | SHAPE THE CONVERSATION | SEE THE THEMES | SSG + ISR 1h |
 | `/activ8` | The physical layer; the six zones | Athletes, brands | PLAY BEYOND THE GAME | SEE THE EXPERIENCE | SSG + ISR 1h |
 | `/afterhours` | The cultural layer; the Runway | All | THE DAY INSPIRES. THE NIGHT CELEBRATES. | SEE THE EVENING | SSG + ISR 1h |
 | `/connect` | The relationship engine; the four steps | Brands, business | CONNECT BEFORE YOU ARRIVE | HOW CONNECT WORKS | SSG + ISR 1h |
-| `/athlima-20` | The athlete platform; 20 disciplines | Athletes, media, all | TOMORROW PLAYS HERE | NOMINATE AN ATHLETE | ISR 5m |
-| `/athlima-20/nominate` | Nomination capture | Coaches, academies, federations | — | SUBMIT NOMINATION | Client + Server Action |
+| `/athlima-20` | The athlete platform; 20 disciplines; three states | Athletes, media, all | TOMORROW PLAYS HERE | per state — see `ctas.md` §1 | ISR 5m |
 | `/the-room` | Prove the composition of the room | All | — | APPLY TO ATTEND | ISR 1h |
 | `/the-room/advisory-council` | Institutional depth | Institutions, capital | — | — | ISR 1h |
 | `/partner` | The partner proposition | Brands, business | DON'T JUST SHOW UP. SHAPE WHAT COMES NEXT. | START A PARTNER CONVERSATION | SSG |
@@ -86,13 +86,14 @@ its place; there is no "Resources", no "FAQ", no "Blog", no "News".
 | `/partner/journey` | The seven stages | Brands | — | START A PARTNER CONVERSATION | SSG |
 | `/partner/enquire` | Partner capture | Brands | — | SEND ENQUIRY | Client + Server Action |
 | `/for/*` | Audience-specific argument and proof | One each | per `conversion-strategy.md` | per audience | SSG |
-| `/programme` | The two-day flow | Applicants, confirmed guests | — | APPLY TO ATTEND | ISR 5m |
+| `/programme` | The two-day flow; the floor plan (v1's only instance — D21) | Applicants, confirmed guests | — | APPLY TO ATTEND | ISR 5m |
 | `/journal` | The content engine index | Industry, search | EXPLORE THE THINKING | SUBSCRIBE | ISR 1m |
 | `/journal/[slug]` | Article | Industry, search | — | MORE FROM [PILLAR] | ISR 1m |
-| `/about` | ATHLIMA, ENSPORT, ENARR | Institutions, capital, press | — | ABOUT ENSPORT VENTURES | SSG |
+| `/about` | ATHLIMA, ENSPORT, ENARR | Institutions, capital, press | — | APPLY TO ATTEND | SSG |
 | `/apply` | Guest application | All | — | SUBMIT APPLICATION | Client + Server Action |
-| `/contact` | General + institutional route | All | — | — | SSG |
-| `/press` | Media resources | Press | — | — | SSG |
+| `/apply/declined` | The honest no; the Journal and the 2027 list | Declined applicants, from email | — | EXPLORE THE JOURNAL | SSG, `noindex` |
+| `/contact` | General + institutional route | All | — | — *(form buttons only — `contact.md`)* | SSG |
+| `/press` | Media resources | Press | — | DOWNLOAD THE PRESS KIT | SSG |
 
 ---
 
@@ -120,7 +121,7 @@ unconfirmed page is a claims risk.
 | Route | Condition | Behaviour when the condition fails |
 |---|---|---|
 | `/the-room/advisory-council` | ≥ 5 members confirmed **in writing** | Route returns 404; `/the-room` carries one line: *"An Advisory Council is being formed."* No names. |
-| `/athlima-20/nominate` | Nomination window open | Designed closed state on `/athlima-20`, with the opening month and an email capture. Not a 404. |
+| `/athlima-20` state | CMS enum: `pre-window` · `open` · `post-selection` (decision D4) | **v1 ships `pre-window` only:** the opening month `[TO VERIFY]` and an email capture. `open` (the nomination form) is v2. `post-selection` shows the class. Never a 404, never a disabled form. |
 | `/programme` | Programme confirmed to session level | Shows the two-day *structure* — which the brochure already has — without session detail. Never a placeholder. |
 | Any partner logo display | Agreement signed | The component renders nothing. No "coming soon" grid, no greyed-out placeholders. |
 | Named individuals anywhere | Written confirmation | Absent. See `01_STRATEGY/positioning.md` §6. |
@@ -162,7 +163,7 @@ From the homepage, in three clicks or fewer, every audience must reach:
 | The partner proposition | 1 click — navigation |
 | What ATHLIMA actually is | 1 click — The World |
 | Who is behind it | 2 clicks — nav → About |
-| ATHLIMA 20 nomination | 2 clicks |
+| ATHLIMA 20 (and, in v2, nomination) | 2 clicks |
 | The two-day programme | 2 clicks |
 
 If anything important takes four, the navigation is wrong — not the sitemap.

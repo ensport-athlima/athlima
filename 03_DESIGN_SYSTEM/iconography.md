@@ -23,7 +23,7 @@ consumer app icon set.
 
 ## 2. THE ICON SETS
 
-### The five pillars — bespoke, essential
+### The five pillars — drawn for ATHLIMA, essential
 These five are drawn specifically for ATHLIMA. They appear on The World, in the Journal filters, and on
 every pillar-tagged item. They are worth commissioning properly.
 
@@ -45,8 +45,15 @@ node cluster, the numeral 20. These are usable as compact identifiers in navigat
 ### UI icons — minimal
 Arrow right · arrow down · close · menu · external link · play · pause · plus · minus · check.
 
-**Ten icons. That is the entire UI set.** If a new one is proposed, the first question is whether the
-interface needs a word instead.
+**Ten icons.** Plus, by decision D22, two that forms require and four that the footer requires:
+
+- **Error** and **warning** — a form error is never colour alone (`colour.md` §6). Drawn in the same
+  line style; an error is a circle with a diagonal, a warning is a triangle. Never an emoji, never a
+  filled badge.
+- **Social** — LinkedIn, Instagram, X, YouTube `[TO VERIFY — which accounts exist]`. Redrawn to the
+  1.5px line specification, monochrome `--ink-300`, small, last in the footer. Never brand-coloured.
+
+If a new one is proposed, the first question is whether the interface needs a word instead.
 
 ### Sport disciplines — ATHLIMA 20 only
 Twenty discipline glyphs for the ATHLIMA 20 grid. Same line style, same grid, drawn as a coherent family
@@ -101,9 +108,9 @@ Non-icon graphic elements from the brochure. These do more work for the identity
 | Device | Specification | Use |
 |---|---|---|
 | **Hairline** | 1px, `--ink-800` | Separation, alignment, implied structure |
-| **Lime rule** | 2px × 40px, `--lime` | The section marker. Only there. |
+| **Lime rule** | 2px × 40px, `--lime` | The section marker. The only place a *40px* lime rule appears; lime as a hover state on an index hairline, or as the rule on a Journal pull quote, is a different device and is specified in `components.md`. |
 | **Corner ticks** | 8px rules at the corners of a frame, 1px, `--ink-700` | Framing a technical element. **One per page.** |
-| **Connector line** | 1px with a 4px node at each end, `--lime` at 40% | Diagrams only — the ecosystem map, the pillar convergence |
+| **Connector line** | 1px with a 4px node at each end, `--lime` at 40% | Diagrams only — the pillar convergence, the Room composition (and the EcosystemMap, in v2) |
 | **Chevron** | A single `>` in the display face, lime | Between stages in a sequence. The partner journey. |
 | **Dot separator** | `·` with `--space-2` either side | `CONNECT · COLLABORATE · ELEVATE` |
 

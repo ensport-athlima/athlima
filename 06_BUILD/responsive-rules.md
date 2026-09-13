@@ -1,7 +1,8 @@
 # RESPONSIVE RULES
 
 > ATHLIMA is designed for a large desktop display **and** for a Mumbai commuter on a mid-range Android.
-> Both are primary. Neither is a fallback.
+> Both are primary, with different jobs (decision D26): **1440×900 is the primary design canvas. Mid-range
+> Android at 4G is the primary performance target.** Neither is a fallback.
 
 ---
 
@@ -13,8 +14,8 @@
 | `sm` | 640px | Large phone, small tablet portrait |
 | `md` | 768px | Tablet portrait |
 | `lg` | 1024px | Tablet landscape / small laptop |
-| `xl` | 1280px | Laptop — **the primary design canvas** |
-| `2xl` | 1536px | Desktop |
+| `xl` | 1280px | Laptop |
+| `2xl` | 1536px | Desktop — **1440×900 is the primary design canvas** (it falls in the `xl` range and is the most common desktop visitor) |
 | `3xl` | 1920px | Large desktop — layout caps here |
 
 Design is **mobile-first in code**, desktop-first in art direction. Write base styles for 390px and layer up.
@@ -81,7 +82,7 @@ Hard floors — these mirror `03_DESIGN_SYSTEM/typography.md` §2, which is the 
 ## 6. VIEWPORT UNITS
 
 Use `svh` / `dvh`, never bare `vh`, for full-height sections. Mobile browser chrome collapsing must not
-cause a jump. A full-bleed hero is `h-[100svh]`.
+cause a jump. A full-bleed hero is `h-svh` (a token utility, not an arbitrary value).
 
 ---
 
@@ -93,7 +94,7 @@ No page is "done" until it has been checked at:
 - 430 × 932 (iPhone Pro Max)
 - 768 × 1024 (iPad portrait)
 - 1024 × 768 (iPad landscape)
-- 1440 × 900 (MacBook — the most common visitor)
+- 1440 × 900 (MacBook — the primary design canvas and the most common desktop visitor)
 - 1920 × 1080
 - 390 × 844 with text size at 200% (browser zoom)
 

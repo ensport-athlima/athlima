@@ -12,7 +12,9 @@ light. Black is not a "dark theme" — it is the space.
 Lime is not a colour scheme. It is **a signal**: the thing that says *look here, this matters, this is
 ATHLIMA*. A signal used everywhere stops being a signal.
 
-**The test:** count the lime elements in any viewport. More than three and the system has broken.
+**The test:** count the lime elements **in the content** of any viewport. More than three and the system
+has broken. The section marker and the permanent APPLY are chrome, not content, and do not count
+(decision D3, `03_DESIGN_SYSTEM/colour.md` §3).
 
 ---
 
@@ -113,7 +115,9 @@ this site becomes a template.
   close-ups.
 - ❌ **Icon + heading + paragraph** three-column feature rows.
 - ❌ **Emoji.** Anywhere. Including in the CMS.
-- ❌ **Purple/blue anywhere except AFTERHOURS.**
+- ❌ **Purple/blue anywhere except AFTERHOURS** — and the ENARR mark, which is navy by its own identity and
+  is never recoloured. It appears only in the provenance section and the footer, at modest scale, per
+  `colour.md` §1.
 - ❌ **A second accent colour.** If something needs to stand out and lime is taken, the answer is scale,
   space or weight — not a new hue.
 

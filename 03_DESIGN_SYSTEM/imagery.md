@@ -91,7 +91,8 @@ Instant rejections. No discussion.
 **HERO FILM — 15–30 seconds**
 One per site, possibly one per major IP. Establishes the ATHLIMA world. **Not a montage of stock clips.**
 A directed film with a point of view: the city, the athletes, the room, the architecture, the light.
-Delivered through Mux, adaptive bitrate, with a chosen poster frame that matches frame one exactly.
+Hosted on Mux and delivered as adaptive HLS, with a chosen poster frame that matches frame one exactly.
+On the homepage it plays in a native `<video>`, not the Mux player component (decision D2).
 
 **MICRO-FILMS — 5–8 second loops**
 The living texture of the site. Used as portal backgrounds, section transitions, and ambient detail.
@@ -162,8 +163,11 @@ world convincingly. For a proposition document, that is legitimate.
 people-in-conversation frames. It is the single highest-return spend on the entire project, and it is what
 turns a well-designed site into a credible institution.
 
-`[TO VERIFY — DECISION REQUIRED]` Photography and film budget and schedule. This gates Phase 7 of the
-build and it has a long lead time. Decide it early.
+`[TO VERIFY — B2 — DECISION REQUIRED]` Photography and film budget and schedule. This gates Phase 7 of
+the build and it has a long lead time. Decide it early. **Default if unanswered:** a type-only launch —
+screens that were to carry people run on type (`homepage.md` screen 05 already specifies this), and the
+design system says so explicitly rather than filling the gap with generated people. Vector artwork for
+every mark and the A device is required regardless (`05_MEDIA/README.md`).
 
 ---
 

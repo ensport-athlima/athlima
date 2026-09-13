@@ -17,7 +17,7 @@
 | `robots.txt` | Generated. Blocks `/api/`, preview routes, and the Sanity Studio. |
 | Open Graph | `og:image` at 1200×630, generated per page with `next/og` using the ATHLIMA type system. Not a logo on a black square. |
 | Twitter | `summary_large_image`. |
-| Structured data | JSON-LD: `Organization` sitewide, `Event` on every event, `Article` on every Journal piece, `Person` on People profiles, `BreadcrumbList` on nested routes, `FAQPage` where genuine FAQs exist. |
+| Structured data | JSON-LD: `Organization` sitewide, **`Event` as the primary schema** for ATHLIMA 2026, `Article` on every Journal piece, `BreadcrumbList` on nested routes. **No `Person`** — there is no People route. **No `FAQPage`** — FAQs are forbidden (`sitemap.md` §3). **No `LocalBusiness`** for ATHLIMA (decision D28). |
 | URLs | Lowercase, hyphenated, no dates, no IDs. `/journal/the-business-of-sport-in-india` not `/journal/2026/03/post-482`. |
 | Redirects | Any URL that ever shipped and then changed gets a 301 in `next.config`. Zero 404s from internal links. |
 | `hreflang` | Only if a second language ships. Do not add speculatively. |
@@ -56,15 +56,17 @@ mechanism — do not overcomplicate it.
 
 ---
 
-## 3. LOCAL & ENTITY SEO
+## 3. ENTITY SEO
 
-- Google Business Profile for the Mumbai location, kept current.
+- **No Google Business Profile for ATHLIMA and none for The St. Regis** — ATHLIMA does not own that
+  address, and a profile for a hotel it does not operate is a false claim (decision D28).
 - `Event` JSON-LD is the primary structured data — ATHLIMA is an event at a third-party venue, not a
-  business location. `[TO VERIFY]` A Google Business Profile and `LocalBusiness` JSON-LD are appropriate
-  only for ENSPORT Ventures' own registered address, and require the entity's real name, address and phone
-  from the Group. Do not invent them, and do not claim The St. Regis as ATHLIMA's address.
-- Consistent name, address and phone across every directory. Inconsistency is the single most common
-  local-SEO failure.
+  business location. Its `location` is The St. Regis Mumbai as a venue, not as ATHLIMA's address.
+- `[TO VERIFY — B3]` A Google Business Profile and `LocalBusiness` JSON-LD may be appropriate for ENSPORT
+  Ventures' own registered address, and require the entity's real name, address and phone from the Group.
+  Do not invent them. If the Group does not supply them, nothing is published.
+- Where any name, address or phone is published, it is consistent across every directory. Inconsistency
+  is the single most common entity-SEO failure.
 - Wikipedia/Wikidata entity where warranted, plus Crunchbase and LinkedIn, so the knowledge graph
   understands what ATHLIMA is.
 

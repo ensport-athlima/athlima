@@ -86,14 +86,16 @@ the page has structure but no thinking.
 Detailed screen-by-screen in `04_CONTENT/homepage.md`. The shape:
 > **Scale → Diagnosis → Ecosystem → The Six → The Room → Your Doorway → Provenance → The Next Generation → Invitation**
 
-### `/the-world` — 7 sections
+### `/the-world` — 6 sections
+Scripted in `04_CONTENT/the-world.md`.
 1. What ATHLIMA is, in one paragraph
-2. The five pillars, as a navigable diagram
-3. The six IPs, as six enterable worlds
-4. How they connect — the ecosystem argument
-5. The two days, in outline
-6. The floor — one connected environment
-7. Invitation
+2. The five pillars, as a navigable diagram (`PillarDiagram` — static, navigable, complete without motion)
+3. The six IPs, as six enterable worlds (`EcosystemPortals`)
+4. How they connect — the ecosystem argument, as a statement (the interactive EcosystemMap is v2 — decision D6)
+5. The two days, in outline, with a route to `/programme`
+6. Invitation
+
+*(The floor plan was removed from this page by decision D21 — it appears on `/programme` only in v1.)*
 
 ### The six IP pages — 6 sections each, identical skeleton
 1. **Entry** — the mark, the line, the signature film
@@ -110,7 +112,7 @@ argument the site is built on.
 ### `/the-room` — 5 sections
 1. 350 people. The right people.
 2. The four stakeholder groups, in depth
-3. The composition — the interactive view of who meets whom
+3. The composition — the filterable view of who meets whom (Signature 04), labelled as the target composition
 4. The Advisory Council *(conditional)*
 5. Apply
 

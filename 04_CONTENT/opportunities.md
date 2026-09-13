@@ -9,6 +9,12 @@
 **Register:** business-serious, respectful, confident. This audience is senior and busy.
 **Absolute rule: no pricing table, no package tiers, no comparison grid, anywhere on any partner page.**
 
+> **Brochure-sourced marking (decision D31).** The seven capabilities, the value architecture, the eight
+> reasons, the six levels, the seven stages and the partner types are the Founding Partner Prospectus's
+> own structure and are marked *brochure-sourced*. `[TO VERIFY]` The prospectus PDF is image-only and
+> could not be text-checked in this pass; verify each marked table against its page, verbatim, before
+> launch. Banned words found unmarked in the audit have been rewritten.
+
 ---
 
 ## Section 01 — THE REFRAME
@@ -36,15 +42,15 @@ A LASTING IMPACT.
 
 ---
 
-## Section 02 — THE SEVEN CAPABILITIES
+## Section 02 — THE SEVEN CAPABILITIES *(brochure-sourced)*
 
-Straight from the brochure. The `IndexGrid` block — rules and space, not cards.
+Straight from the prospectus. The `IndexGrid` block — rules and space, not cards.
 
 | # | Capability | Detail |
 |---|---|---|
 | 01 | **OWN** | A definable territory with exclusive category rights. |
 | 02 | **LEAD** | A conversation that matters to your industry. |
-| 03 | **EXPERIENCE** | Bring your brand to life through immersive formats. |
+| 03 | **EXPERIENCE** | Bring your brand to life through formats people take part in. |
 | 04 | **CONNECT** | With a curated group of decision-makers. |
 | 05 | **CREATE** | Content and stories that travel beyond the event. |
 | 06 | **SUPPORT** | The next generation, through ATHLIMA 20. |
@@ -58,7 +64,7 @@ IT IS HOW THE ASSETS WORK TOGETHER.
 
 ---
 
-## Section 03 — THE VALUE ARCHITECTURE
+## Section 03 — THE VALUE ARCHITECTURE *(brochure-sourced)*
 
 Five ways a Founding Partner creates and captures value.
 
@@ -66,7 +72,7 @@ Five ways a Founding Partner creates and captures value.
 |---|---|---|---|
 | 01 | **ACCESS** | Meet the people who matter. | Athletes · Business leaders · Investors · Policymakers · Institutions · Media & cultural figures |
 | 02 | **CONVERSATION** | Put your ideas in the room. | Speaking opportunities · Closed-door roundtables · ATHLIMA Connect · Policy & industry dialogue · Thought leadership · Shaping the agenda |
-| 03 | **EXPERIENCE** | Let people experience your proposition. | Branded pavilions · Product demonstrations · Interactive activations · Hospitality environments · Participation opportunities · Immersive storytelling |
+| 03 | **EXPERIENCE** | Let people experience your proposition. | Branded pavilions · Product demonstrations · Interactive activations · Hospitality environments · Participation opportunities · Storytelling in the space |
 | 04 | **POSITIONING** | Be seen as a contributor, not a sponsor. | Association with impact · Alignment to key themes · Brand meaning and recall · Visibility across platforms · ESG and community initiatives · A seat at the table |
 | 05 | **IMPACT** | Turn conversations into what happens next. | Partnerships · Investment opportunities · Talent pipelines · Strategic collaborations · Long-term initiatives · Real-world change |
 
@@ -79,7 +85,7 @@ MEASURED IN LOGOS.
 
 ---
 
-## Section 04 — WHY BECOME A FOUNDING PARTNER
+## Section 04 — WHY BECOME A FOUNDING PARTNER *(brochure-sourced)*
 
 Eight reasons. `IndexGrid`, two rows of four.
 
@@ -112,7 +118,10 @@ AND WHAT HAPPENS NEXT.
 THE CONVERSATION STARTS
 BEFORE ATHLIMA.
 ```
-> Two weeks before the event, we ask you a single question: **who do you actually need to meet?**
+> Two weeks before ATHLIMA `[TO VERIFY — the two-week lead time is an operational commitment; see
+> experiences.md, Connect]`, we ask you a single question: **who do you actually need to meet?**
+
+ATHLIMA Connect is a Founding Partner benefit (decision D20). This is the page it is sold from.
 
 **CTA:** `HOW ATHLIMA CONNECT WORKS →` → `/connect`
 
@@ -138,6 +147,8 @@ OF PARTNERSHIP.
 >
 > Every ATHLIMA partnership begins with one question: **what does this organisation actually contribute to
 > Indian sport, and what part of ATHLIMA can it legitimately own?**
+
+*(brochure-sourced)*
 
 | Level | Name | What it means |
 |---|---|---|
@@ -191,14 +202,14 @@ ATHLIMA.
 
 **Sub:** `MORE THAN VISIBILITY. A CONTINUOUS PRESENCE.`
 
-The `SequenceRail` block — seven numbered stages with chevrons.
+The `SequenceRail` block — seven numbered stages with chevrons. *(brochure-sourced)*
 
 | # | Stage | Verb | Where | Detail |
 |---|---|---|---|---|
 | 01 | BEFORE | IDENTIFY | ATHLIMA CONNECT | Pre-event matchmaking to identify and engage the right people. |
 | 02 | DISCOVER | SHOW | ATHLIMAX | The marketplace to showcase your brand, solutions and innovation. |
 | 03 | THINK | LEAD | THE SYMPOSIUM | Lead conversations that shape the future of Indian sport. |
-| 04 | EXPERIENCE | DEMONSTRATE | ACTIV8 | Bring your brand to life through performance, wellness and immersive experiences. |
+| 04 | EXPERIENCE | DEMONSTRATE | ACTIV8 | Bring your brand to life through performance, wellness and participation. |
 | 05 | CONNECT | BUILD | HOSTED MEETINGS | Curated, high-value conversations with decision-makers. |
 | 06 | CULTURE | DEEPEN | AFTERHOURS | Strengthen relationships in a relaxed, high-energy environment. |
 | 07 | LEGACY | INSPIRE | ATHLIMA 20 | Support and celebrate the next generation, creating a legacy beyond the event. |
@@ -220,7 +231,10 @@ BE PART OF A JOURNEY
 THAT GOES FURTHER.
 ```
 
-### Ways to participate
+### Ways to participate *(brochure-sourced)*
+`[TO VERIFY — B1]` How these five partner types relate to the six levels and to the enquiry form's
+category field follows the commercial-architecture decision.
+
 | Type | For |
 |---|---|
 | INSTITUTIONAL PARTNERS | Government bodies · Federations · Institutions · Sporting organisations |
@@ -245,6 +259,10 @@ YOUR SPACE. YOUR EXPERIENCE. YOUR ROLE IN ATHLIMA.
 
 **Format for all six. Under 900 words. Five sections. Type-led. Fast.**
 
+The **Line** column below is each page's opening argument and is locked in `01_STRATEGY/audiences.md`
+§2. The emotional CTA string for each page is locked separately in `04_CONTENT/ctas.md` §1 and is set as
+a statement, not a link (decisions D17, D18). Where the two differ, that is by design.
+
 ```
 01  YOUR LINE          the display statement written for this reader
 02  YOUR QUESTION      named honestly, in their words
@@ -255,7 +273,7 @@ YOUR SPACE. YOUR EXPERIENCE. YOUR ROLE IN ATHLIMA.
 
 | Page | Line | Question | The three proofs | The fear, answered |
 |---|---|---|---|---|
-| `/for/business` | Find the people shaping sport's next economy. | Where is the sporting economy actually being decided? | The cross-sector composition of the 350 · The Founding Partner model · ATHLIMA Connect | *"Another networking event that wastes two days."* → 350, not 5,000. Introductions arranged before you arrive. |
+| `/for/business` | Find the people shaping sport's next economy. | Where is the sporting economy actually being decided? | The cross-sector composition of the 350 · The Founding Partner model · ATHLIMA Connect, for organisations that partner | *"Another networking event that wastes two days."* → 350, not 5,000. A room designed so the people you need are in it — and, for Founding Partners, conversations arranged before you arrive. |
 | `/for/athletes` | Find your next level. | What is here for me that isn't just business people talking about us? | ATHLIMA 20 · ACTIV8 · Athletes on the Symposium stage, not only in the subject matter | *"Being decoration at a corporate event."* → ATHLIMA 20 is an athlete platform with independent selection. |
 | `/for/capital` | Find the opportunities behind India's sporting growth. | Is there real deal flow here, or is this a party? | The Investment, Policy & Impact pavilion · Investment & Economics theme · The founder and infrastructure cohort | *"A low-quality pipeline."* → Curated composition. The room is designed, not filled. |
 | `/for/infrastructure` | Sport needs places. Meet the people who decide where they get built. | Will the people who commission and operate facilities actually be there? | The BUILD pillar · Infrastructure & Active Cities pavilion · Federations, government and operators in the same room | *"I'll just meet other developers."* → The cross-sector composition is the entire design of the room. |

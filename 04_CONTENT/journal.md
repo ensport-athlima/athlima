@@ -132,7 +132,8 @@ RELATED          three from the same pillar
 SUBSCRIBE        inline, in context, where it has been earned
 ```
 
-**Sticky aside:** reading progress, pillar tag, share, and a link up to the pillar piece.
+**Sticky aside:** pillar tag, share (`ShareRow`), and a link up to the pillar piece. Reading progress is
+the 1px lime rule at the top of the viewport (`interaction-map.md` §2) — one indicator, not two.
 
 **Typographic care in the body is what makes the Journal feel like a journal:**
 real curly quotes, en dashes in ranges, non-breaking spaces before units, tabular figures in data,
@@ -169,8 +170,8 @@ One list. No segmentation in v1.
 **The offer, stated plainly:**
 > New thinking on the business of Indian sport. Roughly fortnightly. Nothing else.
 
-**Placement:** the Journal index, article footers, and the confirmation page of a declined or pending
-application. **Never** a modal. **Never** in the site footer — subscription is earned in context.
+**Placement:** the Journal index, article footers, `/apply/received` and `/apply/declined`. **Never** a
+modal. **Never** in the site footer — subscription is earned in context.
 
 **Confirmation:** `You're on the list. First piece lands soon.`
 

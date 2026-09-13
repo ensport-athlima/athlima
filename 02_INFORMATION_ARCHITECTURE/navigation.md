@@ -31,7 +31,7 @@ ATHLIMA          THE WORLD     THE ROOM     PARTNER     JOURNAL          [ APPLY
 | Programme | Phase-dependent; would be a dead item for most of the year | The World, footer, `/apply` |
 | Contact | Never a primary nav item on a site with a permanent CTA | Footer |
 | Audience doorways | They are a homepage mechanism, not a menu | Homepage, footer |
-| Search | The site is 36 routes. Search implies you cannot find things. | — |
+| Search | The site is 35 routes. Search implies you cannot find things. | — |
 | Language switcher | Single language in v1 | — |
 
 ---
@@ -165,12 +165,11 @@ and worth reading.
 
 ## 7. THE ENTRY SEQUENCE AND THE NAVIGATION
 
-The homepage entry sequence is the one place the navigation behaves differently.
+The homepage entry sequence does not change the navigation.
 
-- The nav is **present in the DOM from the first byte** — it is never injected by the sequence.
-- It fades in at the end of the sequence — 1400–1800ms, per `03_DESIGN_SYSTEM/motion.md` §7.
-- Under reduced motion, on a slow connection, or on a repeat visit within the session, it is simply there
-  from the start.
+- The nav is **present in the DOM and painted from the first byte** — it is never injected, hidden or
+  delayed by the sequence. The entry sequence is an overlay on a finished hero (`03_DESIGN_SYSTEM/motion.md`
+  §7, decision D1); the nav sits beneath it, visible, throughout.
 - **It is keyboard-reachable throughout, including during the sequence.** A user who tabs immediately must
   reach the skip link and then the navigation. An animation must never trap a keyboard user in an intro.
 

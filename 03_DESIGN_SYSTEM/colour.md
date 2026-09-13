@@ -39,7 +39,7 @@ it.
 ### Signal — lime
 | Token | Hex | On `--void` | Use |
 |---|---|---|---|
-| `--lime` | `#C7E70C` | **14.86** | **The** ATHLIMA lime. Primary signal. |
+| `--lime` | `#C7E70C` | **14.86** | **The** ATHLIMA lime. Primary signal. `[TO VERIFY]` — averaged from three supplied marks (`05_MEDIA/README.md`), not taken from a brand guideline. If the official value differs, every ratio in this file is recomputed. |
 | `--lime-bright` | `#D8F53C` | **17.05** | Hover and active states only |
 | `--lime-deep` | `#9FBB08` | **9.59** | Pressed states, rules on lighter grounds |
 | `--lime-ink` | `#5A6B04` | *5.93 on white* | **Lime text on light surfaces. The only permitted one.** |
@@ -60,7 +60,7 @@ it.
 | `--enarr-gold` | `#E8B04C` | ENARR gold. 10.75 on black. |
 | `--ensport-gold` | `#C9A24B` | ENSPORT Ventures. 8.75 on black. |
 
-`[TO VERIFY]` — confirm these against the official ENARR and ENSPORT brand guidelines before launch.
+`[TO VERIFY — B3]` — confirm these against the official ENARR and ENSPORT brand guidelines before launch.
 They are sampled from supplied artwork, which is indicative but not authoritative.
 
 ### Light surface
@@ -124,10 +124,17 @@ way this site ends up looking like a crypto project.
 - Anything with a glow, bloom, or shadow
 - Gradients
 - A whole set of icons
-- More than three elements in one viewport — see the counting rule below
+- More than three **content** elements in one viewport — see the counting rule below
 
 ### The counting rule
-Screenshot any viewport. Count the distinct lime elements. **Four or more triggers a review.**
+Screenshot any viewport. Count the distinct lime elements **in the content**. **Four or more triggers a
+review.**
+
+**Chrome does not count** (decision D3): the `SectionMarker` (its numeral and its 40px rule) and the
+permanent `APPLY` affordance in the nav or the mobile bar are the site's frame. They are on every screen
+by design and are excluded from the count. Everything else — a lime word in a headline, a lime data
+highlight, a lime accent character in a mark, a lime CTA block, a lime rule that is not the section
+marker — counts.
 
 ---
 
@@ -161,11 +168,13 @@ violet-to-blue gradient wordmark, a night register.
 **Rules:**
 - The gradient appears on the **AFTERHOURS wordmark only.** Not on body text, not on backgrounds, not on
   buttons, not on other headlines.
-- On the AFTERHOURS page, the ground stays black. The accent shifts from lime to dusk. **Lime does not
-  appear on the AFTERHOURS page at all** except in the persistent navigation and footer — which keeps
-  ATHLIMA's frame around the room.
+- On the AFTERHOURS page, the ground stays black. The page's own accent is dusk, not lime. **Lime appears
+  on the AFTERHOURS page in exactly three places and nowhere else** (decision D15): the persistent
+  navigation, the footer, and the CTA buttons. No lime section markers, lime words, lime rules or lime
+  data highlights on this page — the section marker's numeral and rule use `--dusk-blue`.
 - Any AFTERHOURS text under 24px uses `--dusk-blue` (5.21), never violet or indigo.
-- CTAs on the AFTERHOURS page remain lime. The conversion path stays ATHLIMA's, not the sub-brand's.
+- The CTA buttons stay lime because the conversion path is ATHLIMA's, not the sub-brand's. The nav and
+  footer stay lime because they are ATHLIMA's frame around the room.
 
 **Why the exception is allowed:** it exists in the identity already, it maps to a real change of state
 (day to night), and it is contained to one page. **No other IP gets one.** ATHLIMAX, ACTIV8, The Symposium,

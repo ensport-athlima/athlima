@@ -7,7 +7,9 @@
 ## 1. THE THREE TIERS
 
 ### Tier 1 — Primitives (`components/primitives/`)
-Small, dumb, reusable. No layout opinions beyond their own box. No data fetching. No GSAP.
+Small, dumb, reusable. No layout opinions beyond their own box. No data fetching. No GSAP — with exactly
+three named exceptions that consume the motion layer through its hooks: **`Counter`, `Marquee` and
+`Cursor`** (decision D27). No others.
 Examples: `Button`, `Eyebrow`, `SectionMarker`, `Display`, `Rule`, `Tag`, `Caption`, `Marquee`, `Cursor`, `Counter`.
 
 ### Tier 2 — Media (`components/media/`)
@@ -17,6 +19,11 @@ Examples: `VideoHero`, `MicroFilm`, `ImageReveal`, `MediaFrame`, `PortraitCard`,
 ### Tier 3 — Blocks (`components/blocks/`)
 Full-bleed page sections. Each one is a named, documented moment in the experience.
 Examples: `EntrySequence`, `EcosystemPortals`, `AudienceDoorways`, `ProofNumbers`, `JournalRail`, `ApplyBlock`.
+
+### Tiers 4–7 — Layout, Forms, Journal, States
+`components/layout/` (`Nav`, `Footer`, `ApplyBar`, `SkipLink`, `CookieNotice`, `Breadcrumb`),
+`components/forms/`, `components/journal/` and the three state components — added to the inventory by
+decision D22. Specified in `03_DESIGN_SYSTEM/components.md`.
 
 **The complete, closed inventory is `03_DESIGN_SYSTEM/components.md`. Nothing is built that is not on it.**
 
@@ -68,8 +75,10 @@ If Claude cannot fill in "ROLE IN EXPERIENCE" in one sentence, the block should 
 
 ## 5. STATE
 
-- Local state first. Then URL state (`useSearchParams`) for anything shareable — a filtered Journal view must
-  have a URL.
+- Local state first. Then URL state for anything shareable. **Journal filters are routes, not query
+  strings:** `/journal/pillar/build`, `/journal/series/research` — real, crawlable paths from
+  `lib/routes.ts` (decision D19; `01_STRATEGY/brand-pillars.md` §3.2). `searchParams` is correct for the
+  Room composition view on `/the-room`, which is a shareable *view state* on one route, not a route.
 - Global state only for: nav open/closed, cursor mode, entry-sequence completion. One small Zustand store or
   a single context. Nothing more.
 - No global state for data. Data comes from the server.
@@ -87,6 +96,7 @@ Every interactive element must have:
 - A minimum hit area of 44 × 44px on touch, achieved with padding, not by making the visual larger.
 
 **The cursor.** ATHLIMA uses a custom cursor. It must:
+- Never be magnetic. Nothing pulls toward the pointer (decision D11).
 - Be disabled entirely on touch devices and under reduced motion.
 - Never replace the native cursor over text inputs or textareas.
 - Never lag more than ~80ms behind the pointer.

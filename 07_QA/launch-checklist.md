@@ -7,13 +7,18 @@
 
 ## T-14 DAYS — CONTENT COMPLETE
 
-- [ ] Every page has final copy. Zero placeholders, zero `[TO VERIFY]` tags remaining.
+- [ ] Every page has final copy. Zero placeholders, zero `[TO VERIFY]` tags remaining — **and zero bare
+      square-bracket tokens of any kind** (`[DATE]`, `[NAME]`, `[N]`, `[MONTH]`, `[email]`) in the rendered
+      HTML or the content files (decision D30). Grep for `\[[A-Za-z ]+\]`, not just for `TO VERIFY`.
 - [ ] Every image is final, licensed, art-directed and optimised.
 - [ ] Hero film delivered, graded, encoded, uploaded to Mux, poster frame chosen.
 - [ ] All micro-films delivered and encoded.
 - [ ] All people (names, roles, headshots, bios) confirmed **by those people**.
 - [ ] All partner logos confirmed, with written permission to display. (ATHLIMA has partners, not sponsors.)
 - [ ] Legal pages published and reviewed.
+- [ ] **The Journal gate (decision D34):** six articles live — one per pillar plus a second BUILD piece —
+      each 900+ words, each with a real named byline and photo, each sourced. `04_CONTENT/journal.md` §2.
+- [ ] Every ATHLIMA-owned wordmark and the A device delivered as SVG (`05_MEDIA/README.md`).
 - [ ] `content-qa.md` passed on every page.
 
 ---
@@ -30,9 +35,10 @@
 - [ ] `prefers-reduced-motion` pass on every route.
 - [ ] Zero console errors and zero console warnings in production build.
 - [ ] Zero 404s. Crawl the site (Screaming Frog or equivalent) and check every link, internal and external.
-- [ ] All three forms submit end-to-end — application, partner enquiry, nomination: data stored,
-      confirmation email received, confirmation page shown at its own URL.
-- [ ] `[LEGAL GATE]` Counsel has signed off DPDP Act compliance for the nomination form before it goes live.
+- [ ] Both v1 forms submit end-to-end — application and partner enquiry: data stored, confirmation email
+      received, confirmation page shown at its own URL. The ATHLIMA 20 email capture stores and confirms.
+- [ ] `/athlima-20` renders its `pre-window` state; no nomination form or route is reachable.
+- [ ] GA4 does not load before the cookie notice is accepted (decision D33).
 - [ ] Form spam protection live and tested.
 - [ ] 404 and 500 pages designed and working.
 
@@ -47,8 +53,9 @@
 - [ ] `robots.txt` correct — **confirm the staging `Disallow: /` is gone.** This is the single most common
       launch disaster.
 - [ ] `sitemap.xml` generating and submitted to Google Search Console and Bing Webmaster Tools.
-- [ ] Google Analytics 4 live, with conversion events defined for: application started, application completed,
-      enquiry submitted, newsletter signup, journal read >50%.
+- [ ] Google Analytics 4 live (consent-gated), with conversion events defined for: application started,
+      application completed, enquiry submitted, journal subscription, ATHLIMA 20 alert captured,
+      journal read >50%.
 - [ ] Vercel Analytics and Speed Insights enabled.
 - [ ] Uptime monitoring configured with a real alert destination.
 - [ ] Error tracking (Sentry or equivalent) live.
@@ -88,3 +95,17 @@
 - [ ] Review scroll depth on the homepage. If most people never reach the portals, the top of the page is too long.
 - [ ] Collect qualitative feedback from five people in each primary audience.
 - [ ] Log everything into `08_OPERATIONS/post-launch-log.md` and schedule the first iteration.
+
+---
+
+## V2 GATES — NOT ON THE LAUNCH PATH
+
+Moved here from the launch checklist by decision D4. These gate the v2 items in
+`08_OPERATIONS/v2-backlog.md`, not the launch.
+
+- [ ] `[LEGAL GATE]` Counsel has signed off DPDP Act compliance for the ATHLIMA 20 nomination form —
+      verifiable parental consent obtained from the guardian directly, retention period, lawful basis,
+      and a datastore the content team cannot open — before the form is built, let alone shipped.
+- [ ] Relationship data for the EcosystemMap exists and is confirmed before the map is built.
+- [ ] `[TO VERIFY — LEGAL]` DPDP position on analytics consent confirmed; the consent gate on GA4 is
+      relaxed only if counsel says it can be.

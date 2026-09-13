@@ -280,7 +280,7 @@ Write the homepage as a screen-by-screen script. For every screen:
 
 Constraints:
 - Maximum 9 screens. If it needs 12, the page is not decided.
-- No adjective from the banned list in 07_QA/content-qa.md.
+- No word from the banned list in 04_CONTENT/voice-and-tone.md §3.
 - Every claim must be verifiable. Tag anything you are unsure of as [TO VERIFY].
 - Indian English throughout.
 
@@ -350,16 +350,20 @@ Build **one screen at a time.** Never say "build the homepage."
 Read CLAUDE.md, 03_DESIGN_SYSTEM/*, 04_CONTENT/homepage.md, and
 06_BUILD/component-rules.md.
 
-We are building ONLY Screen 01 of the homepage: the entry sequence.
+We are building ONLY Screen 01 of the homepage: the resting hero, and then the
+entry overlay on top of it (decision D1 — the hero is complete at first byte; the
+sequence is an overlay that dissolves).
 
 First, in plan mode, tell me:
 1. Its role in the experience architecture, in one sentence
 2. The component breakdown, and which tier each component belongs to
-3. The exact GSAP timeline: what animates, in what order, with which easing token
-   and which duration token
+3. The exact GSAP timeline for the overlay: what animates, in what order, with which
+   easing token and which duration token — and confirm nothing in it hides the
+   poster, the headline or the nav
 4. How it behaves under prefers-reduced-motion
 5. How it behaves at 390px
-6. How the LCP element is server-rendered and NOT dependent on the sequence
+6. How the poster and headline are server-rendered and painted before any JS runs,
+   and what the LCP element is
 7. Every risk you can see
 
 Do not write code until I approve the plan.
@@ -389,7 +393,7 @@ guessing what it built. With screenshots, it can see that the headline is collid
 Repeat per screen. Commit after every screen:
 
 ```bash
-git add -A && git commit -m "Homepage screen 03: ecosystem portals"
+git add -A && git commit -m "Homepage screen 04: ecosystem portals"
 ```
 
 Once the whole homepage is standing:

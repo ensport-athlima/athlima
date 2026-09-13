@@ -14,14 +14,14 @@ Email link → /partner
     ↓  scrolls to the value architecture. Access · Conversation · Experience · Positioning · Impact
 → /partner/model
     ↓  the six levels. Recognises that Level 5 (IP) and Level 6 (Platform) are what she actually wants
-    ↓  no pricing anywhere. Reads this as bespoke, not as evasive — because the page says so
+    ↓  no pricing anywhere. Reads this as a proposition built around her, not as evasive — because the page says so
 → /the-room
     ↓  THE QUESTION: are the people I need actually going to be there?
     ↓  four stakeholder groups, cross-sector composition. Yes.
 → /connect
     ↓  the four steps. "So the meetings are arranged before I arrive."  ← the moment she converts
 → /partner/enquire
-    ↓  one page, six fields, no price selector
+    ↓  one page, nine fields, no price selector
 → /partner/enquire/received
 ```
 
@@ -41,20 +41,22 @@ mid-range Android, on mobile data, standing at the side of a court.
 Instagram → /athlima-20
     ↓  TOMORROW PLAYS HERE. 20 athletes. 20 sports.
     ↓  sees badminton in the twenty disciplines. Sees the philosophy line.
+    ↓  sees the eligibility criterion — under 20 on 14 December 2026. His athlete qualifies.
     ↓  needs to know: is this real, is it free, who decides
-→ /athlima-20/nominate
-    ↓  form works one-handed. Correct keyboards. Saves progress.
     ↓  "Selection is independent."  ← the credibility moment
-    ↓  guardian consent step, because the athlete is a minor
-→ /athlima-20/nominate/received
-    ↓  a real page. Tells him when he will hear back.
+    ↓  v1: the pre-window state. "Nominations open in [month]." Leaves his email, one-handed.
+    ↓  a real confirmation. Tells him he will hear the day nominations open.
 ```
+
+**In v2** (decision D4, `08_OPERATIONS/v2-backlog.md`) the journey continues into `/athlima-20/nominate`:
+a form that works one-handed, with correct keyboards, progress that survives a tab switch, and a guardian
+consent step obtained from the guardian directly, because the athlete is a minor.
 
 **The moment of conversion:** seeing his athlete's discipline listed among the twenty. Specificity beats
 persuasion.
 **What would lose him:** a slow page, a desktop-only form, or any suggestion of a fee.
 **Build implication:** this is the journey most likely to be on a poor connection. `/athlima-20` and its
-nomination form carry the strictest performance budget on the site. Test them at 3G throttle, on a real
+email capture carry the strictest performance budget on the site. Test them at 3G throttle, on a real
 Android device, before launch.
 
 ---

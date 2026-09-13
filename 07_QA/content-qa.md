@@ -6,10 +6,12 @@
 
 - [ ] Read every sentence aloud. Anything that sounds like a brochure gets cut.
 - [ ] No filler openers: "In today's fast-paced world", "We are excited to", "Welcome to".
-- [ ] No hollow adjectives: world-class, cutting-edge, state-of-the-art, premier, bespoke, curated,
-      seamless, holistic, synergy, leverage, unlock (as a verb), elevate (unless it is the actual brand word),
-      journey (unless literal).
-- [ ] No em-dash-heavy AI cadence. No "It's not just X — it's Y." No "In a world where…".
+- [ ] No word from the banned list in `04_CONTENT/voice-and-tone.md` §3 — that list is the source of truth,
+      not this line. *("Curated" is permitted for ATHLIMA's own selection process; "unlock" only in the
+      brochure-sourced five-verb row; "elevate" only as the brand word; "journey" only for the partner journey.)*
+- [ ] Every line marked *brochure-sourced* has been checked verbatim against its brochure page.
+- [ ] No AI cadence: no "It's not just X — it's Y", no "In a world where…", no paragraph where every
+      sentence pivots on an em dash. (Em dashes for asides are fine. Em dashes as a tic are not.)
 - [ ] Sentences vary in length. Some are very short.
 - [ ] Indian English spelling and idiom, consistently: *organisation, programme, centre, realise, colour.*
 - [ ] The copy sounds like a confident institution, not a startup asking for attention.
@@ -21,6 +23,10 @@
 - [ ] Every claim is true and attributable. Nothing invented — no fabricated statistics, partner names,
       testimonials, athlete names, or "trusted by" logos.
 - [ ] Anything unverified is tagged `[TO VERIFY]` in the source MD and does **not** ship to production.
+- [ ] **The bracket grep (decision D30):** search the production build and the content files for any bare
+      square-bracket token — `[DATE]`, `[NAME]`, `[N]`, `[MONTH]`, `[email]`, `[TO VERIFY]` and anything
+      of that shape. Template variables such as `[PILLAR]` are resolved at render; if one survives to HTML,
+      that is a failure too.
 - [ ] Numbers have a source and a date.
 - [ ] No placeholder text anywhere: no lorem ipsum, no "Coming soon" as a substitute for a decision.
 - [ ] Names, titles and spellings are correct. Check every person's name twice.

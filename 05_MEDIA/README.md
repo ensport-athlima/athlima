@@ -17,7 +17,9 @@ Supplied brand artwork. **These are raster reference files, not production asset
 
 **Missing, and required before build:** vector `.svg` versions of every mark, plus the ATHLIMA A device on
 its own. Every mark on the site is placed as SVG with a real `<title>` — never as a raster image, never
-typeset, never approximated. `[TO VERIFY — request vector artwork from the brand owner]`
+typeset, never approximated. `[TO VERIFY — B2 — request vector artwork from the brand owner]` **ATHLIMA CONNECT and ATHLIMA 20 have no
+supplied lock-up at all, even as raster.** Homepage screen 01 cannot be built until the A device exists as
+SVG.
 
 ### `/references`
 | File | What |

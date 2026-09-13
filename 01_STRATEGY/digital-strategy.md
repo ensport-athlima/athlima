@@ -110,7 +110,7 @@ The site has to work in all three phases without a rebuild. See `brand-strategy.
 | **Build** (12 → 6 months out) | Programme reveal, Advisory Council (as confirmed), ATHLIMA 20 nominations open, Symposium themes | Apply / Nominate |
 | **Approach** (6 months out → the day before) | ATHLIMA 20 twenty-day reveal, confirmed programme, guest composition, final applications | Apply |
 | **Live** (14–15 December) | Live programme, moments, the ATHLIMA 20 class | Follow live |
-| **Legacy** (16 December → the next cycle) | Films, outcomes, the 2026 class, what happens next | Register interest for 2027 |
+| **Legacy** (16 December → the next cycle) | Films, outcomes, the 2026 class, what happens next | Stay in touch for 2027 |
 
 **Build consequence:** the homepage hero, the primary CTA and the featured content are all CMS-driven.
 Changing phase is a content operation, not an engineering one.
@@ -122,27 +122,32 @@ Changing phase is a content operation, not an engineering one.
 Three conversions, in commercial priority order.
 
 ### 6.1 PARTNER ENQUIRY — highest value
-- Route: `/partner`
-- Short form. Organisation, role, category, what they want to own, contact.
-- **Never** a pricing table. **Never** a package selector. The proposition is bespoke and the form must say so.
+- Route: `/partner` → `/partner/enquire`
+- One page, nine fields, locked in `04_CONTENT/ctas.md` §3.
+- **Never** a pricing table. **Never** a package selector. Every proposition is built around what the
+  organisation wants to own, and the form must say so.
 - Goes to a named human, with a stated response time.
 - **Success = a conversation booked, not a form submitted.**
 
 ### 6.2 GUEST APPLICATION — highest volume
 - Route: `/apply`
-- Multi-step, 6–10 fields. Name, organisation, role, sector, why ATHLIMA, referral.
+- Four steps, eleven fields, locked in `04_CONTENT/ctas.md` §2.
 - Language throughout is **apply**, never *register* or *book*.
 - Explicitly states: applications are reviewed; not all are accepted; a decision arrives by a stated date.
 - The friction is the feature. A frictionless application devalues the room.
 
-### 6.3 ATHLIMA 20 NOMINATION — seasonal
-- Route: `/athlima-20/nominate`
-- Only live during the nomination window; otherwise a clear "nominations open in [month]" state.
+### 6.3 ATHLIMA 20 NOMINATION — seasonal — **v2**
+- Route: `/athlima-20/nominate` — **does not ship at launch** (decision D4). In v1, `/athlima-20` carries
+  the pre-window state: the opening month and an email capture.
+- When built: only live during the nomination window; otherwise the designed pre-window or
+  post-selection state.
 - Nominator details, athlete details, discipline, achievements, supporting links.
 - Must work well on a phone. Coaches will fill this in from the side of a pitch.
+- Collects minors' data. Gated on DPDP Act legal review. See `08_OPERATIONS/v2-backlog.md`.
 
 ### The universal rules
-- Every page has **one emotional CTA and one functional CTA.** Not three. Not zero.
+- Every destination page has **at most one Tier-2 emotional CTA and one Tier-2 functional CTA.** Utility
+  and sub-pages carry a functional CTA only. Never three. (`04_CONTENT/ctas.md` §6 is the source of truth.)
 - APPLY is permanently visible at every breakpoint.
 - No form asks for anything that will not be used.
 - Every submission gets a real confirmation page with a URL, plus a confirmation email, plus a stated
@@ -185,7 +190,9 @@ Detail lives in `06_BUILD/`. The strategic commitments:
 Saying no is what makes the yes possible in the time available.
 
 - ❌ Ticketing, payments, e-commerce
-- ❌ A logged-in attendee portal or delegate app
+- ❌ The ATHLIMA 20 nomination form — v2, after DPDP legal review (decision D4)
+- ❌ The interactive EcosystemMap — v2, when relationship data exists (decision D6)
+- ❌ A logged-in guest portal or delegate app
 - ❌ Live streaming infrastructure
 - ❌ A partner dashboard
 - ❌ Multi-language (Hindi is a v2 decision, and a real one)

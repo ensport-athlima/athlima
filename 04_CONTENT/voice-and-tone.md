@@ -52,9 +52,8 @@ never `December 14-15, 2026`.
 Every one of these appears in the average event website and none appears on this one.
 
 ### Empty adjectives
-world-class · cutting-edge · state-of-the-art · premier · unparalleled · unrivalled · bespoke · curated
-*(when applied to anything other than ATHLIMA's actual curation)* · seamless · holistic · immersive
-*(unless describing something genuinely immersive)* · transformative · game-changing · revolutionary ·
+world-class · cutting-edge · state-of-the-art · premier · unparalleled · unrivalled · bespoke · seamless ·
+holistic · immersive · transformative · game-changing · revolutionary ·
 disruptive · next-level · best-in-class · one-of-a-kind · must-attend · unmissable · iconic · legendary
 
 ### Business filler
@@ -81,10 +80,20 @@ pavilion)* · sponsor *(→ partner)* · expo · trade show · networking event 
 a symposium; it is not a conference)* · workshop · session *(fine for the Symposium, wrong for everything
 else)*
 
+### The word that is not banned: "curated"
+**"Curated" is permitted** (decision D31). It is ATHLIMA's own word for its own selection process — *a
+curated, invitation-led platform*, *350 curated decision-makers*, *A CURATED MARKETPLACE* — and it
+describes something ATHLIMA actually does: it chooses who is in the room. It is banned on most event sites
+because those sites do not curate; ATHLIMA does. Use it for ATHLIMA's selection of guests, partners and
+content. Do not use it as a general-purpose adjective for things ATHLIMA has not selected ("a curated
+skyline").
+
 ### The source-material override
 Where a line is **verbatim from the ATHLIMA brochures**, it takes precedence over this list. ATHLIMA's own
 words are the voice. This applies only to exact quotations, never to newly written copy in the same
-register, and every such line is marked *brochure-sourced* in the content files.
+register, and every such line is marked *brochure-sourced* in the content files. `[TO VERIFY]` The
+brochure PDFs are image-only; every *brochure-sourced* mark in `04_CONTENT/` follows the repository's own
+attributions and must be checked verbatim against the printed page before launch.
 
 ### The two words to be careful with
 **"Elevate"** — it is one of ATHLIMA's three brand words and it appears in the lock-up. That is exactly why

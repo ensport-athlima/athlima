@@ -49,7 +49,9 @@ Rule of thumb — *if it is a state change under 300ms, use CSS. If it is choreo
 ### Media
 | Package / service | Purpose |
 |---|---|
-| `@mux/mux-player-react` or `@mux/mux-video-react` | All hero and long-form video. Adaptive bitrate, poster frames, low-res placeholder, real analytics. |
+| Mux (hosting + HLS delivery) | All hero and long-form video is uploaded to Mux and served as adaptive HLS with a chosen poster frame. |
+| Native `<video>` + Mux HLS source | **The homepage hero.** A poster image painted at first byte, then a native `<video>` playing the Mux HLS URL after interactive (Safari plays HLS natively; elsewhere `hls.js` is lazy-loaded after interactive and counted in the app-code allocation). The Mux player component is **not** on the homepage (decision D2). |
+| `@mux/mux-player-react` | Long-form and captioned video UI only (Journal films, ATHLIMA 20 films, Symposium extensions). **Dynamically imported on those routes only.** Never in the shared layout. |
 | `next/image` | All stills. `sizes` is mandatory on every instance. |
 | Inline `<video>` with `muted playsinline loop preload="none"` | Micro-films (5–8s loops) only, served as MP4 (H.264) + WebM, under 1.5 MB each. |
 
@@ -62,15 +64,20 @@ Rule of thumb — *if it is a state change under 300ms, use CSS. If it is choreo
 ### Forms & data capture
 | Package / service | Purpose |
 |---|---|
-| `react-hook-form` + `zod` | Guest application, partner enquiry, ATHLIMA 20 nomination, newsletter. Client + server validation from one schema. |
+| `react-hook-form` + `zod` | Guest application, partner enquiry, newsletter. *(ATHLIMA 20 nomination is v2 — decision D4.)* Client + server validation from one schema. Loaded on form routes only. |
 | `resend` | Transactional email. |
-| Vercel Postgres or Sanity dataset | Application, enquiry and nomination submissions. **Decide before build; do not leave forms posting nowhere.** Nomination data has its own retention rule — see `architecture.md` §6. |
+| Vercel Postgres or Sanity dataset | Application and enquiry submissions. **Decide before build; do not leave forms posting nowhere.** `[TO VERIFY]` When the v2 nomination form is built, it collects minors' data and must **not** live in a dataset the content team can open — see `architecture.md` §6 and `08_OPERATIONS/v2-backlog.md`. |
 
 ### Analytics
 | Package / service | Purpose |
 |---|---|
-| `@vercel/analytics` + `@vercel/speed-insights` | Core Web Vitals in production, real users. |
-| GA4 via `@next/third-parties` | Marketing measurement. Loaded with `afterInteractive` strategy only. |
+| `@vercel/analytics` + `@vercel/speed-insights` | Core Web Vitals in production, real users. Cookieless. |
+| GA4 via `@next/third-parties` | Marketing measurement. Loaded with `afterInteractive` strategy, **and only after the cookie notice has been accepted** (decision D33 — `[TO VERIFY — LEGAL]` whether DPDP requires prior consent; consent-gated is the default until confirmed). |
+
+### Monitoring
+| Package / service | Purpose |
+|---|---|
+| `@sentry/nextjs` | Error tracking. **Lazy-loaded after the page is interactive**; never in the critical path; outside the 200 KB homepage allocation (decision D2). |
 
 ---
 
@@ -87,7 +94,9 @@ web/src/            # the app lives under web/ ; the brief folders sit beside it
 │   ├── primitives/           # Button, Eyebrow, Rule, Marquee — no business logic
 │   ├── blocks/               # Full-width page sections. One file per section.
 │   ├── media/                # VideoHero, MicroFilm, ImageReveal
-│   └── layout/               # Nav, Footer, ApplyBar
+│   ├── forms/                # TextField, TextArea, Select, Checkbox, FieldError, FormProgress
+│   ├── journal/              # JournalCard, ArticleBody, PullQuote, ShareRow, SubscribeInline
+│   └── layout/               # Nav, Footer, ApplyBar, SkipLink, CookieNotice, Breadcrumb
 ├── motion/                   # GSAP timelines, ScrollTrigger setups, easing constants
 ├── lib/                      # sanity client, queries, utils, env
 ├── styles/                   # tokens.css (design tokens as CSS custom properties)
@@ -114,6 +123,7 @@ MUX_TOKEN_ID=
 MUX_TOKEN_SECRET=
 RESEND_API_KEY=
 NEXT_PUBLIC_GA_ID=
+SENTRY_DSN=
 ```
 
 Validate these at boot with a zod schema in `lib/env.ts`. A missing env var must fail the build loudly,
@@ -124,10 +134,11 @@ never silently render an empty section.
 ## 5. WHAT CLAUDE MUST NEVER DO IN THIS REPO
 
 1. Add a dependency that is not listed here without asking first and stating the trade-off.
-2. Install a UI kit (Material, Chakra, Ant, shadcn/ui, DaisyUI, Bootstrap). ATHLIMA's components are bespoke.
-   Radix **primitives** are permitted for accessible dialog/dropdown behaviour only, unstyled.
+2. Install a UI kit (Material, Chakra, Ant, shadcn/ui, DaisyUI, Bootstrap). ATHLIMA's components are built
+   for ATHLIMA. Radix **primitives** are permitted for accessible dialog/dropdown behaviour only, unstyled.
 3. Use a CSS-in-JS runtime (styled-components, Emotion).
-4. Use `<img>` where `next/image` applies, or a raw `<video>` for hero-scale content where Mux applies.
+4. Use `<img>` where `next/image` applies, or a `<video>` without a Mux HLS source for hero-scale content
+   (a native `<video>` playing Mux HLS is the homepage hero by design — decision D2).
 5. Ship a `TODO`, a `lorem ipsum`, a placeholder image from an external service, or a dead `href="#"`.
 6. Disable TypeScript strict mode, add `// @ts-ignore`, or set `ignoreBuildErrors`.
 7. Use `dangerouslySetInnerHTML` on anything other than JSON-LD.

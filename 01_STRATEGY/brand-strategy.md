@@ -114,6 +114,7 @@ in the source material needs confirming against the production plan.
 **Line:** Connect before you arrive. Collaborate when you get there.
 **Role:** the relationship engine, and the single strongest commercial differentiator.
 **Register:** precise, mechanical, reassuring. This is the one place a diagram outperforms a photograph.
+**Who it is for:** Founding Partners. It is a partner benefit, not a guest promise (decision D20).
 **Four steps (locked):** Identify → Match → Pre-block → Arrive Ready.
 **Mandatory disclaimer wherever Connect is described:** *Meetings are subject to guest confirmation,
 availability and mutual suitability. ATHLIMA does not guarantee meetings with any specific individual or
@@ -125,6 +126,8 @@ organisation.* This is already in the source material and must survive to the we
 **Register:** the most human and the most emotional of the six. The only place portraiture leads.
 **Philosophy (locked):** *Do not wait until they become champions to tell their story. Tell it while they
 are becoming one.*
+**Eligibility:** `[TO VERIFY]` under 20 on 14 December 2026 — stated on the page, not buried in a form
+(decision D4). Most nominees are minors; the nomination form is v2, gated on DPDP legal review.
 **Twenty disciplines (locked):** Athletics · Swimming · Football · Cricket · Hockey · Tennis · Badminton ·
 Table Tennis · Boxing · Wrestling · Weightlifting · Shooting · Archery · Gymnastics · Cycling · Rowing ·
 Martial Arts · Equestrian · Surfing · Para Sport.
@@ -188,7 +191,7 @@ ENSPORT: gold and white). They are **not** recoloured to lime. They appear on a 
 scale, with generous clear space, in a section that is quieter and more formal than the rest of the site.
 The contrast in register is the point — it reads as provenance.
 
-`[TO VERIFY]` — the description of The ENARR Group's history and sectors, and any reference to the
+`[TO VERIFY — B3]` — the description of The ENARR Group's history and sectors, and any reference to the
 Singhania Family Sports Foundation, must be approved by the Group before publication.
 
 ---

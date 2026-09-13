@@ -12,8 +12,10 @@
 
 ## 1. THE SIGNATURE INTERACTIONS
 
-Five. Only five. These are what people will remember and what makes the site distinctive. Everything else
-is craft, not signature.
+Four. Only four. These are what people will remember and what makes the site distinctive. Everything
+else is craft, not signature. *(There were five; the EcosystemMap was cut from v1 by decision D6 — no
+relationship data exists, and a half-built ecosystem map is worse than none. It lives in
+`08_OPERATIONS/v2-backlog.md`.)*
 
 ---
 
@@ -21,14 +23,16 @@ is craft, not signature.
 **Where:** Homepage, first load, first visit of a session.
 **Purpose:** emotion + orientation.
 
-**What happens:** The page loads black. The ATHLIMA **A** is drawn as an architectural form — two strokes
-rising and meeting — over roughly 900ms. As it completes, the city resolves behind it. Then the headline
-is revealed, line by line, and the navigation fades in.
+**What happens:** The page arrives finished — poster, headline, navigation, all painted at first byte.
+Over that finished hero, the ATHLIMA **A** is drawn as an architectural form — two strokes rising and
+meeting — in an overlay, over roughly 900ms. The overlay then dissolves and the A settles into the
+composition. The hero was never hidden; the arrival was drawn on top of it. *(Decision D1.)*
 
 **Constraints — all binding:**
-- Total duration to interactive hero: **≤ 2.5 seconds**, and the headline is in the DOM from the first byte
+- The overlay completes within **1500ms** of JS becoming available; the poster is the LCP element and is
+  painted before any JavaScript runs — the sequence never hides or delays it
 - The A is drawn with SVG stroke animation, not video and not canvas
-- The city behind it is a poster image first; video begins only after the page is interactive
+- Video begins only after the page is interactive
 - Session-flagged: it plays once per session, never again
 - Skipped entirely under reduced motion, on save-data, and on `2g`/`slow-2g`
 - Fully keyboard-escapable at any moment — the skip link is reachable from the first frame
@@ -61,31 +65,7 @@ and relationship is spatial. A grid of six cards asserts it; a sequence demonstr
 
 ---
 
-### SIGNATURE 03 — THE ECOSYSTEM MAP
-**Where:** The World, section 04.
-**Purpose:** credibility + discovery.
-
-**What happens:** An interactive diagram of the sporting economy. Nodes for the stakeholder types —
-athletes, federations, government, developers, investors, technology, brands, academies. Lines between them
-show which relationships ATHLIMA creates. Selecting a node highlights its connections and dims the rest;
-a short line explains what that connection produces.
-
-**Constraints:**
-- Inline SVG with real text. Not canvas, not an image, not WebGL.
-- Every node is a real, focusable, keyboard-operable control.
-- It must be **legible and complete as a static picture.** If it only makes sense once it has animated or
-  been interacted with, it has failed.
-- A text alternative — a plain list of relationships — is available to assistive technology and is present
-  in the DOM.
-- On mobile it becomes a simplified vertical version. Complexity is reduced, not scrolled sideways.
-
-**Why it earns its place:** "the ecosystem is active but not connected" is the central claim of the entire
-platform. This is the one place the website can *prove* it rather than assert it. Build it properly or cut
-it — a half-built ecosystem map is worse than none.
-
----
-
-### SIGNATURE 04 — THE DOORWAYS
+### SIGNATURE 03 — THE DOORWAYS
 **Where:** Homepage screen 06.
 **Purpose:** conversion.
 
@@ -97,7 +77,9 @@ audience resolves behind it. Clicking enters that audience's page.
 - Six real links. Not buttons with JS handlers.
 - On touch, all six lines and their audience lines are visible without interaction. **No hover-dependent
   information.**
-- On mobile, this block sits **higher in the page order than on desktop** — see `user-journeys.md`, Journey 04.
+- On mobile the DOM is **not** reordered. A compact anchor line after homepage screen 04 —
+  `WHY SHOULD YOU CARE? IT DEPENDS WHO YOU ARE ↓` — brings the block within two taps. See
+  `04_CONTENT/homepage.md` screen 06 and `user-journeys.md`, Journey 04 (decision D9).
 - Keyboard: tabbing through the six triggers the same expansion as hovering.
 
 **Why it earns its place:** it is the highest-value interaction on the site. It converts an anonymous
@@ -106,7 +88,7 @@ without six homepages.
 
 ---
 
-### SIGNATURE 05 — THE ROOM
+### SIGNATURE 04 — THE ROOM
 **Where:** `/the-room`, section 03.
 **Purpose:** credibility.
 
@@ -138,7 +120,7 @@ a competent one.
 | **Button hover** | Per `03_DESIGN_SYSTEM/motion.md` §4 — primary brightens to `--lime-bright`; secondary fills from the bottom. `BASE`. No scale, no shadow, no glow. |
 | **Focus-visible** | 2px lime ring at 2px offset. Designed, consistent, and never removed. |
 | **Text reveal** | Display type reveals by line with `STAGGER_LINE` and a mask, not a fade. Body copy fades. |
-| **Image reveal** | A mask wipe in the scroll direction over `SLOW`. Never a scale-up, never a blur-in. |
+| **Image reveal** | A cover element slides off in the scroll direction over `SLOW`, translated with `transform` (decision D10). Never a `clip-path` animation, never a scale-up, never a blur-in. |
 | **Section entry** | `REVEAL` — 24px offset, 0 opacity, `MEDIUM`, `STAGGER_TIGHT`. |
 | **Number counters** | Count once, on first entry only. Never re-count. The final value is in the DOM; the animating span is `aria-hidden`. |
 | **Custom cursor** | Four modes only: default, link, drag, video. Off on touch, off under reduced motion, off during keyboard navigation. Never over text inputs. |
@@ -175,13 +157,16 @@ Never build these, whatever the reference site does:
 - Maximum **three** simultaneous animations
 - Maximum **eight** active ScrollTriggers
 - Maximum **two** playing videos
-- Every animation completes within 800ms of its trigger
+- Every animation completes within 800ms of its trigger. The two exceptions are the entry overlay
+  (`CINEMATIC`, 1200ms per tween, 1500ms total — `motion.md` §7) and scroll-scrubbed sequences, where the
+  visitor controls the pace.
 - Nothing loops except a deliberate ambient loop, and there is at most one per screen
 
 **Per page:**
 - At most **two scroll-triggered signature interactions**, and never two in the same viewport. The Entry
-  does not count against this — it completes before scrolling begins. The homepage therefore carries the
-  Entry plus the Portals (screen 04) and the Doorways (screen 06); no other page carries more than one.
+  does not count against this — it is an overlay that completes before scrolling begins. The homepage
+  therefore carries the Entry plus the Portals (screen 04) and the Doorways (screen 06); `/the-world`
+  carries the Portals; `/the-room` carries the Room. No other page carries one.
 - Two parallax moments
 - Three full-bleed dramatic sections
 
@@ -198,13 +183,13 @@ Never build these, whatever the reference site does:
 
 | Signature | Reduced-motion version |
 |---|---|
-| The Entry | No sequence. The homepage renders at its resting state, complete, from the first paint. |
+| The Entry | No overlay. The homepage is at its resting state, complete, from the first paint — which it is anyway. |
 | The Six Portals | Static six-panel grid. All six visible. Poster frames, no video. |
-| The Ecosystem Map | Fully rendered static diagram. Interaction still works; transitions are instant. |
 | The Doorways | All six expanded, all audience lines visible, all imagery present. |
 | The Room | Filters work; changes apply instantly. |
+| The Pillar Diagram | Fully rendered, static, navigable. |
 | Text reveals | Present, no transform. Or instant. |
-| Image reveals | Present, no mask animation. |
+| Image reveals | Present, no cover animation. |
 | Counters | Final value, rendered immediately. |
 | Cursor | Native cursor. |
 | Marquees | Static. |

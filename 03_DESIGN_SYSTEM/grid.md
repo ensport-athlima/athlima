@@ -55,16 +55,15 @@ L2 stays contained.
 
 ---
 
-## 3. THE BASELINE
+## 3. VERTICAL RHYTHM
 
-Base unit **4px**. Vertical spacing tokens in `spacing.md`.
+Base unit **4px**. Vertical spacing tokens in `spacing.md`. **There is no baseline grid** — a fluid body
+size with a 1.55 line-height cannot sit on one, and a rule that is only true at one viewport width is not
+a rule (decision D24). Rhythm comes from the spacing scale, which is real and enforceable.
 
-Type sits on a **28px baseline grid** at body size. Display type breaks the grid deliberately — that is
-what makes it read as display — but returns to it at the next body element.
-
-**Practical rule:** if two sections have body copy, the first line of body copy in each should land on the
-same baseline offset from the section top. Inconsistency here is invisible individually and cumulatively
-makes a page feel loose.
+**Practical rule:** the same relationship gets the same spacing token everywhere (`spacing.md` §3). If two
+sections have body copy, the first line of body copy in each sits the same token distance from the section
+top. Inconsistency here is invisible individually and cumulatively makes a page feel loose.
 
 ---
 
@@ -82,7 +81,9 @@ Not everything is full height. See `02_INFORMATION_ARCHITECTURE/page-hierarchy.m
 
 **Always `svh`/`dvh`, never `vh`.** Mobile browser chrome collapsing must not cause a jump.
 
-**Maximum three `100svh` sections per page.**
+**Maximum three `100svh` sections per page, counted per breakpoint.** A section that is one pinned
+sequence on desktop and a vertical stack of full-bleed panels on touch — the six portals — counts as
+**one** section at both (decision D25). The rule limits dramatic moments, not panels inside one.
 
 ---
 

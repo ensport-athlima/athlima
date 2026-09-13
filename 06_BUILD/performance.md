@@ -8,6 +8,8 @@
 ## 1. BUDGETS — HARD LIMITS
 
 Measured on **Moto G Power class hardware, 4G (Lighthouse mobile throttling)**, not on a MacBook on office wifi.
+**Mid-range Android at 4G is the primary performance target.** 1440×900 is the primary *design* canvas
+(`responsive-rules.md` §1); it is not where performance is measured. Both are true (decision D26).
 
 | Metric | Budget | Fail condition |
 |---|---|---|
@@ -15,10 +17,27 @@ Measured on **Moto G Power class hardware, 4G (Lighthouse mobile throttling)**, 
 | INP | ≤ 150ms | > 200ms |
 | CLS | ≤ 0.05 | > 0.1 |
 | TTFB | ≤ 400ms | > 800ms |
-| Total JS (gzipped, homepage) | ≤ 180 KB | > 250 KB |
+| Total JS (gzipped, homepage) | ≤ 200 KB | > 250 KB |
 | Total page weight, first view (excl. video stream) | ≤ 1.5 MB | > 2.5 MB |
 | Lighthouse Performance (mobile) | ≥ 90 | < 85 |
 | Fonts | ≤ 3 files, ≤ 120 KB total | — |
+
+### The JS budget, costed (decision D2)
+
+The 200 KB homepage budget is allocated, not aspirational:
+
+| Allocation | ~KB gzipped |
+|---|---|
+| Next.js App Router + React runtime | 90 |
+| GSAP core + ScrollTrigger | 40 |
+| Lenis | 4 |
+| ATHLIMA app code (blocks, motion layer, cursor, entry overlay) | 50 |
+| Headroom | 16 |
+
+**Not on the homepage:** `@mux/mux-player-react` (dynamically imported only on routes with real video UI),
+`react-hook-form` + `zod` (form routes only), the Sentry SDK (lazy-loaded after interactive), Sanity
+client code (server only). The homepage hero is a poster image plus a native `<video>` with a Mux-hosted
+HLS source. `@next/bundle-analyzer` output is checked against this table before every release.
 
 These are checked in CI. A PR that breaks a budget does not merge.
 
@@ -29,10 +48,13 @@ These are checked in CI. A PR that breaks a budget does not merge.
 Video is where this site will die if it is handled casually.
 
 **Rules**
-1. The hero **never** loads a video file before LCP. LCP is the poster image (AVIF, ≤ 120 KB) plus the
-   server-rendered headline. Video begins after the page is interactive.
-2. All substantial video goes through Mux: adaptive bitrate, so a 3G user gets 480p and a fibre user gets 1080p.
-   Never ship a single 20 MB MP4 to everyone.
+1. The hero **never** loads a video file before LCP. LCP is the poster image (AVIF, ≤ 120 KB), painted at
+   first byte with the server-rendered headline, before any JavaScript runs (decision D1). Video begins
+   after the page is interactive.
+2. All substantial video is hosted on Mux and served as adaptive HLS, so a 3G user gets 480p and a fibre
+   user gets 1080p. Never ship a single 20 MB MP4 to everyone. **On the homepage the HLS source is played
+   by a native `<video>` element, not the Mux player component** (decision D2); the Mux player is
+   dynamically imported only on routes with real video UI (captions, scrubbing, long-form).
 3. Micro-films (5–8s loops): ≤ 1.5 MB each, AV1/WebM with H.264 MP4 fallback, `preload="none"`,
    `IntersectionObserver`-gated. Off-screen video does not download.
 4. No more than **two** videos playing simultaneously on any screen. Pause anything scrolled out of view.
@@ -64,10 +86,15 @@ Video is where this site will die if it is handled casually.
 
 - Server Components by default. `"use client"` is a deliberate, justified decision each time.
 - GSAP plugins imported individually, never the whole bundle.
-- Heavy blocks (ecosystem map, 3D depth, the pinned sequence) are `next/dynamic` with `ssr: false`
-  and load on approach, not on mount.
-- Third-party scripts: GA4 with `afterInteractive`. Nothing else without an explicit decision. Every tag
-  manager container, chat widget and pixel is a performance tax — the answer is no by default.
+- Heavy **choreography modules** — the GSAP pin/scrub for the six portals, the Room composition's filter
+  transitions — are `next/dynamic` with `ssr: false` and load on approach, not on mount. **The content
+  they animate is never dynamic:** the six portals are a plain `<nav>` of six links with poster images in
+  the server response, in ecosystem order, and the module is applied on top (decision D5). The
+  choreography is progressive enhancement; the navigation is not.
+- Third-party scripts: GA4 with `afterInteractive`, **and only after the cookie notice has been accepted**
+  (decision D33, `[TO VERIFY — LEGAL]` pending DPDP advice). Sentry lazy-loaded after interactive.
+  Nothing else without an explicit decision. Every tag manager container, chat widget and pixel is a
+  performance tax — the answer is no by default.
 - `@next/bundle-analyzer` run before every release. Anything unexpected over 30 KB gets investigated.
 
 ---

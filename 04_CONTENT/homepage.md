@@ -58,12 +58,16 @@ ENTER ↓
 ```
 
 ### Media
-The hero film. Mumbai at night resolving behind the ATHLIMA A drawn as architecture. Poster frame first;
-video begins only after the page is interactive. A pause control sits bottom-right beside the scroll cue.
+The hero poster — Mumbai at night — painted at first byte as the LCP element, with the headline and the
+navigation. The hero film (a native `<video>` with a Mux-hosted HLS source, **not** the Mux player —
+decision D2) begins only after the page is interactive, and only on connections that permit it. A pause
+control sits bottom-right beside the scroll cue.
 
 ### Motion
-The entry sequence, exactly as specified in `03_DESIGN_SYSTEM/motion.md` §7. ≤ 2.5s to interactive hero.
-Once per session. Skipped under reduced motion, save-data, and slow connections.
+The entry sequence, exactly as specified in `03_DESIGN_SYSTEM/motion.md` §7: an **overlay on a finished
+hero** *(decision D1)*. The A strokes in over the poster and dissolves within 1500ms of JS arriving. The
+poster, headline and nav are never hidden. Once per session. Skipped under reduced motion, save-data, and
+slow connections — in which case the hero is simply at rest.
 
 ### CTAs
 None on this screen. The scroll cue is the only affordance. **The first screen sells nothing.**
@@ -158,17 +162,20 @@ None.
 
 **The mark** — the ATHLIMA wordmark, placed as SVG, larger than anywhere else on the site.
 
-**Display — `--fs-display-xl`, centred, two lines**
+**Display — `--fs-display-lg`, centred, two lines** *(brochure-sourced, p03. `display-xl` appears once
+per page — screen 01. Decision D14.)*
 ```
 ONE ROOM.
 ONE ECOSYSTEM.
 ```
+No lime in the display line.
 
 **Sub — `--fs-display-md`, centred**
 ```
 ONE SHARED FUTURE FOR SPORT.
 ```
-Lime: the whole sub-line.
+Lime: `ONE SHARED FUTURE FOR SPORT.` — the sub-line, and nothing above it. This is the screen's one lime
+content element.
 
 **Five verbs — a horizontal row, `--fs-label`, hairline-separated** *(brochure-sourced, verbatim from p03 —
 this is why `UNLOCK` appears despite the banned list; see `voice-and-tone.md` §3)*
@@ -220,16 +227,17 @@ Lime: `ONE CONNECTED ECOSYSTEM.`
 > Six distinct experiences under one platform, where sport, business, culture, innovation and the next
 > generation converge.
 
-**The six panels** — lines are the locked forms from `01_STRATEGY/brand-strategy.md` §4, which deliberately
-replace brochure p04's "Exhibition…" (trade-show language, banned) and "Under 20. A stronger tomorrow."
+**The six panels** — lines are the locked forms from `01_STRATEGY/brand-strategy.md` §4, verbatim
+*(decision D16)*. They deliberately replace brochure p04's "Exhibition…" (trade-show language, banned)
+and "Under 20. A stronger tomorrow."
 
 | # | Mark | Role | Line | Href |
 |---|---|---|---|---|
 | 01 | ATHLIMAX | THE MARKETPLACE | Conversations. Partnerships. Real-world impact. | `/athlimax` |
-| 02 | THE SYMPOSIUM | THE IDEAS | Knowledge. Policy. Leadership. Solutions. | `/symposium` |
-| 03 | ACTIV8 | THE EXPERIENCE | Playgrounds. Performance. Wellness. Community. | `/activ8` |
-| 04 | AFTERHOURS | THE CULTURE | Fashion. Artists. Entertainment. Connection. | `/afterhours` |
-| 05 | ATHLIMA CONNECT | THE RELATIONSHIPS | Curated meetings. Meaningful conversations. Real opportunities. | `/connect` |
+| 02 | THE SYMPOSIUM | THE IDEAS | A higher conversation. | `/symposium` |
+| 03 | ACTIV8 | THE EXPERIENCE | Play beyond the game. | `/activ8` |
+| 04 | AFTERHOURS | THE CULTURE | Where sport meets culture. | `/afterhours` |
+| 05 | ATHLIMA CONNECT | THE RELATIONSHIPS | Connect before you arrive. Collaborate when you get there. | `/connect` |
 | 06 | ATHLIMA 20 | THE NEXT GENERATION | 20 athletes. 20 sports. One future. | `/athlima-20` |
 
 **Closing line, after the sequence — `--fs-display-md`, centred**
@@ -269,12 +277,13 @@ Six — the panels themselves, as real links in a real `<nav>`.
 04 ──── THE PEOPLE
 ```
 
-**Display — `--fs-display-lg`**
+**Display — `--fs-display-lg`** *(brochure-sourced, p05)*
 ```
 350 PEOPLE.
 THE RIGHT PEOPLE.
 ```
-Lime: `THE RIGHT PEOPLE.`
+No lime in the display. The screen's one lime content element is `WHO YOU MEET.` in the closing statement
+(decision D3).
 
 **Lead — `--fs-body-lg`**
 > A carefully curated group of 350 decision-makers, operators, builders, athletes and investors — united
@@ -289,7 +298,8 @@ Lime: `THE RIGHT PEOPLE.`
 | 03 | BUSINESS | Brands. Innovation. Execution. | CEOs & founders · Brands · Technology · Infrastructure · Media & entertainment · Professional services |
 | 04 | CAPITAL | Investment. Growth. Long-term impact. | Investors · Family offices · Funds · Advisors · Sporting entrepreneurs · Impact capital |
 
-**Beneath each group, a verb triplet — `--fs-label`, lime**
+**Beneath each group, a verb triplet — `--fs-label`, `--ink-300`** *(brochure-sourced, p05. Not lime —
+decision D3: four lime triplets in one viewport broke the counting rule.)*
 ```
 MEET · COLLABORATE · INVEST
 SHARE · LEARN · SHAPE POLICY
@@ -297,12 +307,12 @@ BUILD · PARTNER · CREATE OPPORTUNITIES
 BACK · SCALE · DRIVE IMPACT
 ```
 
-**Closing statement — `--fs-display-md`, split left/right across the full width**
+**Closing statement — `--fs-display-md`, split left/right across the full width** *(brochure-sourced)*
 ```
 THE VALUE IS NOT                          THE VALUE IS
 HOW MANY PEOPLE ATTEND.                   WHO YOU MEET.
 ```
-Lime: `WHO YOU MEET.`
+Lime: `WHO YOU MEET.` — the only lime content element on this screen.
 
 ### Media
 Four portrait-format images, one per group, heavily graded, low saturation. **Real people in real
@@ -326,7 +336,7 @@ converging.
 **ROLE:** Conversion. The highest-value interaction on the site.
 **LAYOUT:** L2 Contained. A vertical stack of six, full width.
 **BLOCK:** `AudienceDoorways`
-**SIGNATURE INTERACTION 04**
+**SIGNATURE INTERACTION 03** *(renumbered — the EcosystemMap was cut in decision D6)*
 
 > **Responsive note, from `user-journeys.md` Journey 04:** mobile visitors often do not reach screen six.
 > **Do not reorder the DOM to fix this** — CSS `order` breaks tab order, breaks the CSS-off reading order,
@@ -402,7 +412,7 @@ AN EVENT COMPANY'S EVENT.
 **Body — `--fs-body`, `--ink-700`**
 > ATHLIMA is an IP of **ENSPORT Ventures Pvt. Ltd.**, the dedicated sports platform within
 > **The ENARR Group** — built on a multi-generational institutional history across enterprise, industry
-> and philanthropy. `[TO VERIFY — ENARR approval required]`
+> and philanthropy. `[TO VERIFY — B3 — ENARR approval required]`
 >
 > The Group's belief is straightforward: long-term change is created by building institutions, not by
 > executing occasions.
@@ -484,13 +494,15 @@ the light. Para athletes included, not as a separate category. This is the one m
 to be openly emotional.
 
 ### Motion
-`REVEAL-MASK` on the image. The discipline strip staggers at `STAGGER_TIGHT`. On mobile, the strip is a
+`REVEAL-COVER` on the image. The discipline strip staggers at `STAGGER_TIGHT`. On mobile, the strip is a
 slow marquee that pauses on interaction.
 
 ### CTAs
-- Emotional: `TOMORROW PLAYS HERE` → `/athlima-20`
-- Functional: `NOMINATE AN ATHLETE` → `/athlima-20/nominate` *(shown only when the window is open;
-  otherwise `SEE ATHLIMA 20`)*
+**Tier 3 inline only** *(decision D7 — the homepage's single Tier-2 pair is screen 09)*:
+- `SEE ATHLIMA 20 →` → `/athlima-20` *(ghost variant)*
+
+`TOMORROW PLAYS HERE.` is the closing display line on this screen, not a link. The nomination form does
+not ship in v1 (decision D4), so no nomination CTA appears on the homepage.
 
 ### Exit intent
 > *This is about more than business.*
@@ -554,9 +566,12 @@ After all nine screens are standing, run this before calling the homepage finish
    > doorway → ATHLIMA is not an event company's event → Twenty athletes, twenty sports, one future →
    > The room is 350 people.*
    It holds.
-3. Count the lime elements in each viewport. **Four or more triggers a review.**
-4. Count the `100svh` sections. **Maximum three** — screens 01, 04 and 08.
+3. Count the lime **content** elements in each viewport — the `SectionMarker` and the permanent `APPLY`
+   are chrome and do not count (decision D3). **Four or more triggers a review.**
+4. Count the `100svh` sections per breakpoint. **Maximum three** — screens 01, 04 and 08. On touch, the
+   six stacked portal panels of screen 04 count as **one** section (decision D25).
 5. Screenshot with reduced motion on. Does it look finished?
-6. Test at 390px. Does the doorways block appear before screen six?
-7. Time to interactive hero on a throttled mobile profile. **Under 2.5 seconds.**
+6. Test at 390px. Is the doorways anchor line present after screen 04, and does it land on the block?
+7. LCP on the throttled mobile profile, measured on the poster. **≤ 2.0s.** Confirm the poster, headline
+   and nav are in the server HTML and visible with JS disabled.
 8. Confirm there is no `[TO VERIFY]` content rendering anywhere.

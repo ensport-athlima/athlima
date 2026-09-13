@@ -29,8 +29,10 @@ them? If yes, it is too promotional.
 
 ### Tier 1 — THE PERMANENT CTA
 # **APPLY**
-Visible at every breakpoint, on every page, always. Desktop: in the navigation. Mobile: a bottom-anchored
-bar. Never scrolls away, never covers content, never animates for attention.
+Visible at every breakpoint, on every page, always. **Desktop:** in the navigation — never scrolls away,
+never animates for attention. **Mobile:** a bottom-anchored bar that hides on scroll-down and reveals on
+scroll-up, so it is always one gesture away and never covers content (decision D8;
+`02_INFORMATION_ARCHITECTURE/navigation.md` §3).
 
 One word. It is doing a lot of work: it says the room is closed, that entry is decided by someone else,
 and that you are being invited to ask. *Register* would destroy all three meanings.
@@ -54,6 +56,9 @@ Contextual links within content. Text links or subtle inline blocks, never butto
 
 **Locked. Do not improvise variants. Do not create synonyms.**
 
+**`04_CONTENT/ctas.md` §1 is the single source of truth for every string and every destination.** This
+table is a summary of the same strings and is never edited on its own; edit `ctas.md` and mirror it here.
+
 | Context | Emotional CTA | Functional CTA |
 |---|---|---|
 | Global / permanent | — | **APPLY** |
@@ -64,17 +69,20 @@ Contextual links within content. Text links or subtle inline blocks, never butto
 | ACTIV8 | **PLAY BEYOND THE GAME** | **SEE THE EXPERIENCE** |
 | Afterhours | **THE DAY INSPIRES. THE NIGHT CELEBRATES.** | **SEE THE EVENING** |
 | ATHLIMA Connect | **CONNECT BEFORE YOU ARRIVE** | **HOW CONNECT WORKS** |
-| ATHLIMA 20 | **TOMORROW PLAYS HERE** | **NOMINATE AN ATHLETE** |
+| ATHLIMA 20 (pre-window, v1) | **TOMORROW PLAYS HERE** | **TELL ME WHEN NOMINATIONS OPEN** |
+| ATHLIMA 20 (open, v2 · post-selection) | **TOMORROW PLAYS HERE** | **NOMINATE AN ATHLETE** · **SEE THE 2026 CLASS** |
 | Partner pages | **DON'T JUST SHOW UP. SHAPE WHAT COMES NEXT.** | **START A PARTNER CONVERSATION** |
 | Audience: Business | **FIND THE PEOPLE SHAPING SPORT'S NEXT ECONOMY** | **APPLY TO ATTEND** |
 | Audience: Athlete | **FIND YOUR NEXT LEVEL** | **APPLY TO ATTEND** |
 | Audience: Capital | **FIND THE OPPORTUNITIES BEHIND INDIA'S SPORTING GROWTH** | **APPLY TO ATTEND** |
-| Audience: Infrastructure | **SPORT NEEDS PLACES. MEET WHO BUILDS THEM.** | **APPLY TO ATTEND** |
+| Audience: Infrastructure | **SPORT NEEDS PLACES. MEET THE PEOPLE WHO DECIDE WHERE THEY GET BUILT.** | **APPLY TO ATTEND** |
 | Audience: Institutions | **BUILD THE INFRASTRUCTURE AROUND INDIA'S SPORTING FUTURE** | **INSTITUTIONAL ENQUIRY** |
 | Audience: Brands | **OWN A TERRITORY, NOT A LOGO** | **START A PARTNER CONVERSATION** |
 | Journal article | — | **MORE FROM [PILLAR]** |
 | Journal index | **EXPLORE THE THINKING** | **SUBSCRIBE** |
-| ENSPORT / ENARR | — | **ABOUT ENSPORT VENTURES** |
+| About (ENSPORT / ENARR) | — | **APPLY TO ATTEND** *(the outbound corporate link is Tier 3, conditional on B3)* |
+| `/apply/declined` | — | **EXPLORE THE JOURNAL** |
+| Homepage, legacy phase | **ENTER ATHLIMA** | **STAY IN TOUCH FOR 2027** |
 | Footer | **THE BUSINESS OF SPORT. THE FUTURE OF INDIA.** | **APPLY** |
 
 ### Permanently banned CTA language
@@ -115,10 +123,12 @@ Then: review, consent, submit.
 > Every ATHLIMA partnership is built around what your organisation wants to own. Tell us that, and we will
 > come back with a proposition — not a package.
 
-**One page, not multi-step.** This person is senior and busy.
+**One page, not multi-step** (decision D12). This person is senior and busy.
 
-Organisation · Your name and role · Category *(the pavilion / ATHLIMAX categories)* · What you would want
-to own at ATHLIMA · Indicative scale of interest *(a range, never a price list)* · Contact preference
+The nine fields are locked in `04_CONTENT/ctas.md` §3: organisation · name · role · email · phone ·
+category · what you would want to own · indicative scale of interest *(a range, never a price list)* ·
+prospectus request. `[TO VERIFY — B1]` The category taxonomy (six pavilions, or the prospectus's twelve
+categories) follows the commercial-architecture decision.
 
 **Rules**
 - Never displays a price, a tier, or a package comparison.
@@ -130,7 +140,11 @@ to own at ATHLIMA · Indicative scale of interest *(a range, never a price list)
 - Add-on: an option to request the Founding Partner Prospectus, which is emailed, not linked publicly —
   this creates a contact record instead of an anonymous download.
 
-### 4.3 ATHLIMA 20 NOMINATION — `/athlima-20/nominate`
+### 4.3 ATHLIMA 20 NOMINATION — `/athlima-20/nominate` — **v2, not at launch**
+
+> **Decision D4:** the nomination form does not ship in v1. `/athlima-20` launches as content with the
+> pre-window state and an email capture. Everything below is the specification for the v2 form and is
+> kept so the v2 build starts from a decision, not a blank page. See `08_OPERATIONS/v2-backlog.md`.
 
 **Framing:**
 > Do not wait until they become champions to tell their story. Tell it while they are becoming one.
@@ -179,9 +193,9 @@ Not everyone is ready to apply. Give them a smaller yes, so the relationship sta
 | Micro-conversion | Where | Value |
 |---|---|---|
 | Journal subscribe | Journal, article footers | The strongest long-term asset. One list, no spam, real editorial. |
-| Register interest for 2027 | Post-event, and for the declined | Keeps a relationship alive across a year. |
+| Stay in touch for 2027 | Post-event, and on `/apply/declined` | Keeps a relationship alive across a year. *("Register" is banned — the string is `STAY IN TOUCH FOR 2027`, `ctas.md` §1.)* |
 | Request the Prospectus | Partner pages | Turns an anonymous visitor into a named lead. |
-| Nominate an athlete | ATHLIMA 20 | Brings coaches and academies into the ecosystem. |
+| Nomination-window alert | ATHLIMA 20, pre-window state | An email capture: tell me the day nominations open. Brings coaches and academies into the ecosystem before the v2 form exists. |
 | Share a Journal piece | Every article | Distribution. Make the OG images good. |
 
 ---
@@ -194,7 +208,8 @@ Every form is a moment of doubt. Answer the doubt on the page, beside the form, 
 - **What happens to my data** — one plain sentence, then a link to the full policy
 - **When will I hear back** — a specific timeframe, honoured
 - **Who will contact me** — a named person or team
-- **What if I'm not accepted** — say it plainly, and offer the Journal and the 2027 list
+- **What if I'm not accepted** — say it plainly, and offer the Journal and the 2027 list. The decision email
+  links to `/apply/declined`, a real page that does exactly that (decision D34).
 
 ---
 
