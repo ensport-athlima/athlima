@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
+  // No favicon set exists yet (vector artwork — B2; launch checklist T-1). An empty data URL stops the
+  // browser requesting /favicon.ico, which 404s and logs a console error. Replaced by the real set.
+  icons: { icon: "data:," },
 }
 
 export const viewport: Viewport = {
