@@ -5,6 +5,8 @@
  */
 import type { DisplayLine } from "@/components/primitives/Display"
 import type { Figure } from "@/components/blocks/ProofNumbers"
+import type { IPId } from "@/components/marks/IPMark"
+import { routes } from "@/lib/routes"
 import { site } from "./site"
 
 export const screen01 = {
@@ -81,4 +83,50 @@ export const screen03 = {
     { verb: "BUILD", descriptor: "a stronger India" },
     { verb: "CREATE", descriptor: "long-term impact" },
   ],
+} as const
+
+export const screen04 = {
+  id: "portals",
+  marker: { number: 3, label: "THE WORLD" },
+  intro: [
+    { text: "ONE PLATFORM." },
+    { text: "MULTIPLE IPs." },
+    { text: "ONE CONNECTED ECOSYSTEM.", lime: true },
+  ] satisfies readonly DisplayLine[],
+  sub: "Six distinct experiences under one platform, where sport, business, culture, innovation and the next generation converge.",
+  /** Lines are the locked forms from brand-strategy.md §4 (decision D16). Hrefs from the manifest. */
+  portals: [
+    {
+      ip: "athlimax",
+      role: "THE MARKETPLACE",
+      line: "Conversations. Partnerships. Real-world impact.",
+      href: routes.athlimax,
+    },
+    { ip: "symposium", role: "THE IDEAS", line: "A higher conversation.", href: routes.symposium },
+    { ip: "activ8", role: "THE EXPERIENCE", line: "Play beyond the game.", href: routes.activ8 },
+    {
+      ip: "afterhours",
+      role: "THE CULTURE",
+      line: "Where sport meets culture.",
+      href: routes.afterhours,
+    },
+    {
+      ip: "connect",
+      role: "THE RELATIONSHIPS",
+      line: "Connect before you arrive. Collaborate when you get there.",
+      href: routes.connect,
+    },
+    {
+      ip: "athlima20",
+      role: "THE NEXT GENERATION",
+      line: "20 athletes. 20 sports. One future.",
+      href: routes.athlima20,
+    },
+  ] satisfies readonly { ip: IPId; role: string; line: string; href: string }[],
+  closing: [
+    { text: "MORE THAN AN EVENT." },
+    { text: "A MOVEMENT FOR INDIAN SPORT.", lime: true },
+  ] satisfies readonly DisplayLine[],
+  /** The mobile anchor line to the doorways (user-journeys.md Journey 04; ctas.md Tier 3). */
+  anchorLine: "WHY SHOULD YOU CARE? IT DEPENDS WHO YOU ARE",
 } as const

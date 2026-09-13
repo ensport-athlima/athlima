@@ -258,6 +258,12 @@ and "Under 20. A stronger tomorrow."
 | 05 | ATHLIMA CONNECT | THE RELATIONSHIPS | Connect before you arrive. Collaborate when you get there. | `/connect` |
 | 06 | ATHLIMA 20 | THE NEXT GENERATION | 20 athletes. 20 sports. One future. | `/athlima-20` |
 
+**As built (13 September 2026):** the six marks are the `IPMark` typeset fallback
+(`[TO VERIFY — B2 — TYPESET FALLBACK]`, `typography.md` §1); each panel carries a positioned slot for its
+micro-film loop (B2) with the scrim in place; desktop panels are `--portal-w` (60vw, capped 64rem) so the
+next panel peeks; the hover recedes siblings to 40% in CSS; the reduced-motion grid is CSS; the mobile
+anchor line renders only once screen 06 exists.
+
 **Closing line, after the sequence — `--fs-display-md`, centred**
 ```
 MORE THAN AN EVENT.

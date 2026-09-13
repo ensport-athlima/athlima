@@ -103,7 +103,7 @@ Maximum **two per page**.
 ```
 pin the section, translate the horizontal track by scroll
 scrub: 1
-snap: to panel, with a 300ms duration
+snap: to panel, with a BASE (300ms) duration
 ```
 Desktop only. **Abandoned entirely on touch.**
 

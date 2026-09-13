@@ -111,6 +111,8 @@
   --gutter: clamp(1rem, 1.6vw, 2.5rem);
   --margin: clamp(1.25rem, 4vw, 5rem);
   --lime-rule-w: 2.5rem; /* the 40px section-marker rule */
+  --section-tall: 80svh; /* grid.md §4 "Tall" — major sections, stacked portal panels on touch */
+  --portal-w: min(60vw, 64rem); /* one portal panel in the desktop track — ~1.6 panels visible */
   --touch-min: 2.75rem; /* 44px */
 
   /* ── Motion — CSS mirrors of src/motion/easings.ts and durations.ts (exposed to Tailwind as ease-* utilities) ──────── */

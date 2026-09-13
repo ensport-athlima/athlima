@@ -41,6 +41,12 @@ Build it so that swap is a one-line change.
 `<title>`/`aria-label` text. It is never typeset, never re-lettered, never approximated in Archivo. Same
 for ATHLIMAX, ACTIV8, THE SYMPOSIUM, AFTERHOURS, ENARR and ENSPORT.
 
+`[TO VERIFY — B2 — TYPESET FALLBACK]` **Temporary exception, 13 September 2026:** no usable vector exists
+for any of the six IP marks (four are small rasters; ATHLIMA CONNECT and ATHLIMA 20 have no artwork at
+all), and the site cannot wait. `IPMark` (`components/marks/IPMark.tsx`) sets them in the wordmark-adjacent
+voice with the accent rules from `brand-strategy.md` §2, clearly marked in code. Each is replaced by its
+SVG the day it arrives. This exception is a debt, not a precedent, and the launch grep catches its tag.
+
 ---
 
 ## 2. THE TYPE SCALE

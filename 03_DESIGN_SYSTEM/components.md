@@ -179,7 +179,8 @@ uses `var(--lime)`. C2PA metadata is stripped on the way in.
 |---|---|---|
 | `AthlimaWordmark` | `athlima-wordmark.svg` | Largest on homepage screen 03 (capped at 56rem wide); ~1.5rem tall in the nav. **Development placeholder until B2.** |
 | `AthlimaA` | `athlima-a.svg` · `athlima-a-stroke.svg` | `variant: "filled" \| "stroke"`. The stroke variant is what the entry overlay draws; exports the centreline length for `stroke-dasharray`. **Placeholder until B2.** |
-| ATHLIMAX · THE SYMPOSIUM · ACTIV8 · AFTERHOURS · ENARR · ENSPORT | not yet vector | Added here as each arrives (B2). ATHLIMA CONNECT and ATHLIMA 20 have no artwork at all. |
+| `IPMark` | none — **typeset fallback** | `[TO VERIFY — B2 — TYPESET FALLBACK]` The six IP marks set in the wordmark-adjacent voice with the accent rules (lime X / M / 8; AFTERHOURS' "HOURS" in the dusk gradient). Returns each IP's SVG component the day it exists. See `typography.md` §1. |
+| ENARR · ENSPORT | not yet vector | Added as each arrives (B2). |
 
 ## `Icon`
 

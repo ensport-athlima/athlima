@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
 import { DiagnosisBlock } from "@/components/blocks/DiagnosisBlock"
+import { EcosystemPortals } from "@/components/blocks/EcosystemPortals"
 import { EntryOverlay } from "@/components/blocks/EntryOverlay"
 import { EntrySequence } from "@/components/blocks/EntrySequence"
 import { ProofNumbers } from "@/components/blocks/ProofNumbers"
 import { StatementScreen } from "@/components/blocks/StatementScreen"
 import { AthlimaWordmark } from "@/components/marks/AthlimaWordmark"
-import { screen02, screen03 } from "@/content/homepage"
+import { screen02, screen03, screen04 } from "@/content/homepage"
 import { site } from "@/content/site"
 
 /**
@@ -60,6 +61,15 @@ export default function HomePage() {
           ))}
         </ul>
       </StatementScreen>
+      <EcosystemPortals
+        id={screen04.id}
+        marker={screen04.marker}
+        intro={screen04.intro}
+        sub={screen04.sub}
+        portals={screen04.portals}
+        closing={screen04.closing}
+        anchorLine={screen04.anchorLine}
+      />
     </main>
   )
 }

@@ -105,6 +105,8 @@
   --spacing-content-max: var(--content-max);
   --spacing-lime-rule: var(--lime-rule-w);
   --spacing-touch: var(--touch-min);
+  --spacing-section-tall: var(--section-tall);
+  --spacing-portal: var(--portal-w);
 
   --ease-out: var(--easing-out);
   --ease-in-out: var(--easing-in-out);
@@ -202,6 +204,67 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+  }
+}
+
+/*
+ * THE SIX PORTALS (interaction-map.md Signature 02; motion.md §3 PIN-SCRUB, §4 portal hover).
+ * The track is a horizontal row of panels on desktop, translated by usePinnedSequence; a vertical stack
+ * on touch; a static grid under reduced motion — all in CSS, so the choreography is enhancement only.
+ */
+@layer components {
+  .portals-track {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (min-width: 64rem) and (hover: hover) and (pointer: fine) {
+    .portals-track {
+      flex-direction: row;
+      gap: var(--gutter);
+      width: max-content;
+    }
+    .portals-track > li {
+      width: var(--portal-w);
+      flex: none;
+    }
+  }
+  /* Hover: the hovered panel's media frame scales 1.02 inside a fixed frame; siblings drop to 40% (motion.md §4). */
+  @media (hover: hover) {
+    .portal {
+      transition: opacity var(--dur-medium) var(--easing-out);
+    }
+    .portal [data-media] {
+      transition: transform var(--dur-medium) var(--easing-out);
+    }
+    .portals-track:has(.portal:hover) .portal:not(:hover),
+    .portals-track:has(.portal:focus-visible) .portal:not(:focus-visible) {
+      opacity: 0.4;
+    }
+    .portal:hover [data-media],
+    .portal:focus-visible [data-media] {
+      transform: scale(1.02);
+    }
+  }
+  /* Reduced motion: a static six-panel grid, all visible, no pin, no scrub. */
+  @media (prefers-reduced-motion: reduce) {
+    .portals-track {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--gutter);
+      width: auto;
+    }
+    .portals-track > li {
+      width: auto;
+      min-height: var(--section-tall);
+    }
+    @media (min-width: 64rem) {
+      .portals-track {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .portals-track > li {
+        min-height: 60svh;
+      }
+    }
   }
 }
 

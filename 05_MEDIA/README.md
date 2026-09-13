@@ -30,6 +30,10 @@ files are awaited:
 supplied raster before launch to confirm the outlines match** (`logos/vector/README.md`). Their C2PA
 `<metadata>` blocks are stripped when they are inlined into the build.
 
+**In the meantime the six IP marks are typeset** (`web/src/components/marks/IPMark.tsx`,
+`[TO VERIFY — B2 — TYPESET FALLBACK]`) — a flagged, temporary breach of `typography.md` §1 so the portals
+could be built. Each is replaced by its vector on arrival.
+
 **Still missing — `[TO VERIFY — B2 — request vector artwork from the brand owner]`:** the real ATHLIMA
 wordmark and A; ATHLIMAX, THE SYMPOSIUM, ACTIV8 and AFTERHOURS lock-ups as vector; the ENARR and ENSPORT
 marks as vector; the favicon and app-icon set. **ATHLIMA CONNECT and ATHLIMA 20 have no supplied lock-up

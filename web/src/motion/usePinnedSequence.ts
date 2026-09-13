@@ -8,7 +8,7 @@
  */
 import { useRef, type RefObject } from "react"
 import { gsap, useGSAP, ScrollTrigger, MOTION, registerMotion } from "./registry"
-import { sec } from "./durations"
+import { DURATIONS, sec } from "./durations"
 
 export interface PinnedSequenceOptions {
   /** Selector for the horizontal track inside the section. */
@@ -18,7 +18,6 @@ export interface PinnedSequenceOptions {
 }
 
 const SCRUB_SMOOTHING = 1
-const SNAP_DURATION_MS = 300
 
 export function usePinnedSequence<T extends HTMLElement = HTMLElement>(
   options: PinnedSequenceOptions,
@@ -42,13 +41,15 @@ export function usePinnedSequence<T extends HTMLElement = HTMLElement>(
           ease: "none",
           scrollTrigger: {
             trigger: section,
+            start: "top top",
             pin: true,
+            anticipatePin: 1,
             scrub: SCRUB_SMOOTHING,
             end: () => `+=${distance()}`,
             invalidateOnRefresh: true,
             snap: {
               snapTo: 1 / Math.max(panels - 1, 1),
-              duration: sec(SNAP_DURATION_MS),
+              duration: sec(DURATIONS.BASE),
               ease: "none",
             },
           },
