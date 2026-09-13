@@ -1,0 +1,127 @@
+/*
+ * ATHLIMA DESIGN TOKENS — the one source.
+ * Every colour, size, space, easing and duration on the site is defined here and nowhere else.
+ * Sources: 03_DESIGN_SYSTEM/colour.md · typography.md · spacing.md · motion.md
+ * A hex, a px or a cubic-bezier in a component is a bug (CLAUDE.md V.4).
+ */
+:root {
+  color-scheme: dark;
+
+  /* ── Ground — the black ramp (colour.md §1) ─────────────────────────────── */
+  --void: #000000;
+  --ink-950: #070908;
+  --ink-900: #0e110f;
+  --ink-850: #141814;
+  --ink-800: #1c211b; /* decorative hairlines only — 1.28 on void, never a control boundary */
+  --ink-700: #2b312a; /* decorative rules, disabled surfaces */
+  --ink-600: #454c43; /* disabled surfaces — never disabled text */
+  --border: #5f665c; /* the only permitted boundary for an interactive control — 3.54 */
+  --ink-disabled: #767e73; /* disabled text — 5.00 */
+
+  /* ── Text — the light ramp ───────────────────────────────────────────────── */
+  --paper: #ffffff; /* 21.00 — display type, primary text; also the light-section ground */
+  --paper-warm: #f4f5f2; /* light section alternate */
+  --ink-100: #e6e9e4; /* 17.14 — body copy */
+  --ink-200: #c9cec6; /* 13.13 — secondary text */
+  --ink-300: #a8b0a5; /* 9.42 — captions, labels, metadata */
+  --ink-400: #8b9488; /* 6.69 — the muted-text floor */
+  --ink-500: #6b7368; /* 4.28 — FAILS AA for body; large text ≥24px or non-text UI only */
+
+  /* ── Signal — lime ───────────────────────────────────────────────────────── */
+  --lime: #c7e70c; /* 14.86 on void. [TO VERIFY] sampled, not from a guideline — colour.md §1 */
+  --lime-bright: #d8f53c; /* hover / active */
+  --lime-deep: #9fbb08; /* pressed, rules on lighter grounds */
+  --lime-ink: #5a6b04; /* the ONLY lime permitted as text on a light surface — 5.93 on white */
+
+  /* ── AFTERHOURS — the single exception (colour.md §5) ────────────────────── */
+  --dusk-violet: #9341de; /* display ≥24px and graphics only */
+  --dusk-indigo: #5c57e4; /* display ≥24px and graphics only */
+  --dusk-blue: #3c7bea; /* 5.21 — any AFTERHOURS text under 24px */
+  --dusk-gradient: linear-gradient(
+    90deg,
+    var(--dusk-violet) 0%,
+    var(--dusk-indigo) 55%,
+    var(--dusk-blue) 100%
+  );
+
+  /* ── Corporate marks — never recoloured ──────────────────────────────────── */
+  --enarr-navy: #2e3192; /* [TO VERIFY — B3] sampled */
+  --enarr-gold: #e8b04c;
+  --ensport-gold: #c9a24b;
+
+  /* ── Semantic — forms only (colour.md §6) ────────────────────────────────── */
+  --signal-error: #ff5a4e; /* 6.82 — always paired with an icon and text */
+  --signal-success: var(--lime);
+  --signal-warning: #f0a93b;
+
+  /* ── Type scale — fluid, anchored 390px → 1920px (typography.md §2) ──────── */
+  --fs-display-xl: clamp(3.25rem, 1.2rem + 8.4vw, 10.5rem); /* 52 → 168. Once per page. */
+  --fs-display-lg: clamp(2.5rem, 1.3rem + 4.9vw, 6.5rem); /* 40 → 104 */
+  --fs-display-md: clamp(2rem, 1.4rem + 2.5vw, 4.25rem); /* 32 → 68 */
+  --fs-display-sm: clamp(1.625rem, 1.3rem + 1.3vw, 2.75rem); /* 26 → 44 */
+  --fs-body-lg: clamp(1.1875rem, 1.1rem + 0.4vw, 1.5rem); /* 19 → 24 */
+  --fs-body: clamp(1.0625rem, 1.02rem + 0.24vw, 1.1875rem); /* 17 → 19 — the floor is 17 */
+  --fs-body-sm: clamp(0.9375rem, 0.92rem + 0.07vw, 1rem); /* 15 → 16 */
+  --fs-caption: 0.875rem; /* 14 — the caption floor */
+  --fs-label: clamp(0.8125rem, 0.79rem + 0.07vw, 0.875rem); /* 13 → 14 — nothing smaller exists */
+
+  /* ── Display rules (typography.md §3) ────────────────────────────────────── */
+  --lh-display-xl: 0.88;
+  --lh-display-lg: 0.92;
+  --lh-display-md: 1;
+  --lh-display-sm: 1.05;
+  --lh-body: 1.55;
+  --lh-body-lg: 1.45;
+  --ls-display-xl: -0.03em;
+  --ls-display-lg: -0.02em;
+  --ls-display-md: -0.01em;
+  --ls-label: 0.14em; /* uppercase at label size is tracked OUT (decision D32) */
+  --ls-button: 0.1em;
+  --wdth-display: 66; /* Archivo wdth 62–72 for display-xl / display-lg */
+  --wdth-wide: 118; /* wordmark-adjacent eyebrows, wdth 110–125 */
+  --wdth-text: 100;
+  --measure: 34em; /* max-width of any body container — 62–75 characters */
+
+  /* ── Spacing — 4px base (spacing.md §1). No value outside this list. ─────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+  --space-40: 10rem;
+  --space-48: 12rem;
+  --space-64: 16rem;
+
+  /* ── Fluid section padding — padding-block only, never the shorthand ─────── */
+  --section-pad-tight: clamp(var(--space-12), 6vw, var(--space-16));
+  --section-pad-dense: clamp(var(--space-16), 8vw, var(--space-24));
+  --section-pad-standard: clamp(var(--space-20), 10vw, var(--space-32));
+  --section-pad-dramatic: clamp(var(--space-24), 13vw, var(--space-48));
+
+  /* ── Grid (grid.md §1) ───────────────────────────────────────────────────── */
+  --content-max: 100rem; /* 1600px cap from 2xl up */
+  --gutter: clamp(1rem, 1.6vw, 2.5rem);
+  --margin: clamp(1.25rem, 4vw, 5rem);
+  --lime-rule-w: 2.5rem; /* the 40px section-marker rule */
+  --touch-min: 2.75rem; /* 44px */
+
+  /* ── Motion — CSS mirrors of src/motion/easings.ts and durations.ts (exposed to Tailwind as ease-* utilities) ──────── */
+  --easing-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --easing-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --easing-sharp: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-arch: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-instant: 100ms;
+  --dur-fast: 200ms;
+  --dur-base: 300ms;
+  --dur-medium: 500ms;
+  --dur-slow: 800ms;
+  --dur-cinematic: 1200ms;
+}

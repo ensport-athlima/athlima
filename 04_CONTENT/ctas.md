@@ -217,7 +217,7 @@ not publish a commitment the team has not agreed to.
 | **404 heading** | `THIS ROOM DOESN'T EXIST.` |
 | **404 body** | `The page you're looking for isn't here. The rest of ATHLIMA is.` |
 | **500 heading** | `SOMETHING BROKE.` |
-| **500 body** | `Not your fault. Try again in a moment, or write to us at [email].` `[TO VERIFY — a monitored address from the project owner]` |
+| **500 body** | `Not your fault. Try again in a moment, or write to us at [email].` `[TO VERIFY — B5 — a monitored address]`. **Until B5 lands the page ships the first sentence only** — a bare bracket never renders. |
 | **Empty Journal filter** | `Nothing here yet. The [PILLAR] thinking is being written.` |
 | **Loading** | Nothing. A designed skeleton, never the word "loading". |
 | **Cookie notice** | `We use a small number of cookies to understand how the site is used. Nothing else.` — bottom-anchored, **never a modal**. Two buttons: `ACCEPT` · `DECLINE`. Analytics (GA4) loads only after `ACCEPT` (decision D33, `[TO VERIFY — LEGAL]`). Declining is remembered and the notice does not return. |

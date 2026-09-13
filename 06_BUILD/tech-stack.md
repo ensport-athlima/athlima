@@ -58,7 +58,8 @@ Rule of thumb — *if it is a state change under 300ms, use CSS. If it is choreo
 ### Content
 | Package / service | Purpose |
 |---|---|
-| `sanity` + `next-sanity` | Journal, People, Events, Partners. Structured content, not hardcoded arrays. |
+| `next-sanity` | The client, `defineQuery`, the revalidation webhook parser. **This is the only Sanity package in `web/`.** Journal, People, Events, Partners — structured content, not hardcoded arrays. |
+| Sanity Studio (`sanity`) | **Not embedded in the Next app.** Embedding it pulls in `styled-components`, which §5.3 prohibits, and that prohibition outranks the literal dependency line. The Studio lives in a separate `studio/` package or is Sanity-hosted; its schemas are the source for the zod schemas in `web/src/lib/sanity/schemas.ts`. |
 | `@portabletext/react` | Rendering rich text with custom serialisers. |
 
 ### Forms & data capture
@@ -103,6 +104,13 @@ web/src/            # the app lives under web/ ; the brief folders sit beside it
 └── types/
 ```
 
+`scripts/check-routes.mjs` (plain Node, no dependency) fails the build if `src/lib/routes.ts` and
+`02_INFORMATION_ARCHITECTURE/sitemap.md` §1 disagree.
+
+**Tooling versions worth knowing:** TypeScript is pinned to **5.x** — the 7.x native compiler is not
+something this project should be first to find bugs in. ESLint stays on **9.x** until
+`eslint-plugin-jsx-a11y` supports 10.
+
 **Rules**
 - One component per file. Filename matches the export. PascalCase.
 - Every page section lives in `components/blocks/` and is composed in the route file. Route files stay thin.
@@ -119,15 +127,18 @@ NEXT_PUBLIC_SITE_URL=
 NEXT_PUBLIC_SANITY_PROJECT_ID=
 NEXT_PUBLIC_SANITY_DATASET=
 SANITY_API_READ_TOKEN=
+SANITY_REVALIDATE_SECRET=      # verifies the Sanity → /api/revalidate webhook signature
 MUX_TOKEN_ID=
 MUX_TOKEN_SECRET=
 RESEND_API_KEY=
 NEXT_PUBLIC_GA_ID=
-SENTRY_DSN=
+SENTRY_DSN=                    # server and edge
+NEXT_PUBLIC_SENTRY_DSN=        # the same DSN, exposed to the browser for the lazy client SDK
 ```
 
 Validate these at boot with a zod schema in `lib/env.ts`. A missing env var must fail the build loudly,
-never silently render an empty section.
+never silently render an empty section. (`next build` throws; `next dev` warns and every consumer treats
+the empty value as "not configured" and renders nothing — never a placeholder.)
 
 ---
 

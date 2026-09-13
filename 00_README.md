@@ -53,6 +53,7 @@ Fix what it finds. Commit. Then follow the phase sequence in the operating manua
 ```
 CLAUDE.md                          THE CONSTITUTION — governs everything, read every session
 00_README.md                       this file
+web/                               the Next.js application — see web/README.md; the brief folders are its source of truth
 
 01_STRATEGY/                       what ATHLIMA is and what the site must achieve
 ├── website-thesis.md              ★ the parent document — read first

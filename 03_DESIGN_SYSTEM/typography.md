@@ -11,9 +11,11 @@
 
 **`Archivo` (variable — weight 100–900, width 62–125). SIL Open Font License. Free.**
 
-This is the workhorse for the entire site. One variable font family, two files, under 120KB total — which
-is what makes the performance budget in `06_BUILD/performance.md` achievable while still giving a genuine
-display voice.
+This is the workhorse for the entire site. One variable font family, **one file** —
+`web/src/fonts/archivo-var.woff2`, both axes intact, subset to latin + latin-ext, **117,628 bytes** —
+under the 120 KB budget in `06_BUILD/performance.md` §4 while still giving a genuine display voice.
+(Google Fonts' own split files came to 172 KB across two; the file was subset from the source TTF
+instead.)
 
 | Role | Family / axes | Why |
 |---|---|---|
