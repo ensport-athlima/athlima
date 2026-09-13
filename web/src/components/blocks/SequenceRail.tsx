@@ -16,7 +16,7 @@ export interface SequenceStep {
   /** An optional second label — the partner journey's "IDENTIFY · ATHLIMA CONNECT". */
   where?: string
   headline: string
-  detail: string
+  detail?: string
 }
 
 export interface SequenceRailProps {
@@ -25,6 +25,9 @@ export interface SequenceRailProps {
 }
 
 export function SequenceRail({ steps, className }: SequenceRailProps) {
+  // Lime chevrons for a four-step rail (three visible — the ceiling, CLAUDE.md V.4). A longer rail
+  // would put six lime marks in one viewport, so its chevrons step back to ink (iconography.md §5).
+  const limeChevrons = steps.length <= 4
   return (
     <Reveal
       as="ol"
@@ -39,11 +42,14 @@ export function SequenceRail({ steps, className }: SequenceRailProps) {
           <h3 className="label mt-4 text-paper">{s.step}</h3>
           {s.where ? <p className="label mt-1">{s.where}</p> : null}
           <p className="mt-3 text-body text-paper">{s.headline}</p>
-          <p className="mt-3 text-body-sm text-ink-200">{s.detail}</p>
+          {s.detail ? <p className="mt-3 text-body-sm text-ink-200">{s.detail}</p> : null}
           {i < steps.length - 1 ? (
             <span
               aria-hidden="true"
-              className="display absolute top-6 right-0 hidden text-display-sm leading-none text-lime lg:block"
+              className={cn(
+                "display absolute top-6 right-0 hidden text-display-sm leading-none lg:block",
+                limeChevrons ? "text-lime" : "text-ink-500",
+              )}
             >
               &gt;
             </span>

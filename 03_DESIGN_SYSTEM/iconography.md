@@ -113,7 +113,7 @@ Non-icon graphic elements from the brochure. These do more work for the identity
 | **Lime rule** | 2px × 40px, `--lime` | The section marker. The only place a *40px* lime rule appears; lime as a hover state on an index hairline, or as the rule on a Journal pull quote, is a different device and is specified in `components.md`. |
 | **Corner ticks** | 8px rules at the corners of a frame, 1px, `--ink-700` | Framing a technical element. **One per page.** |
 | **Connector line** | 1px with a 4px node at each end, `--lime` at 40% | Diagrams only — the pillar convergence, the Room composition (and the EcosystemMap, in v2) |
-| **Chevron** | A single `>` in the display face, lime | Between stages in a sequence. The partner journey. |
+| **Chevron** | A single `>` in the display face, lime — **in a rail of four or fewer**; a longer rail (the seven-stage partner journey) sets them in `--ink-500`, because six lime chevrons in one viewport breaks the three-lime rule (CLAUDE.md V.4) | Between stages in a sequence. The Connect steps, the partner journey. |
 | **Dot separator** | `·` with `--space-2` either side | `CONNECT · COLLABORATE · ELEVATE` |
 
 **The dot separator matters more than it looks.** `CONNECT · COLLABORATE · ELEVATE` is set with a middot,
