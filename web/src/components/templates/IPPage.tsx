@@ -8,10 +8,10 @@ import { EmailCapture } from "@/components/forms/EmailCapture"
 import { IPMark } from "@/components/marks/IPMark"
 import { Display, type DisplayLine } from "@/components/primitives/Display"
 import { SectionMarker } from "@/components/primitives/SectionMarker"
+import { CategoryRow } from "@/components/primitives/CategoryRow"
 import { Reveal } from "@/motion/Reveal"
 import { emailCapture, ipRail, type IPContent, type IPIndexSection, type IPSequenceSection } from "@/content/experiences"
 import { configured } from "@/lib/env"
-import { cn } from "@/lib/cn"
 
 /**
  * TEMPLATE: IPPage — the one skeleton all six experiences share (experiences.md):
@@ -25,21 +25,6 @@ import { cn } from "@/lib/cn"
  * MOTION: REVEAL variants only — no pin on these pages; the one pinned sequence is the homepage's.
  * One 100svh section (the entry). Every block is a Server Component; only EmailCapture is client.
  */
-function Categories({ label, items, className }: { label: string; items: readonly string[]; className?: string }) {
-  return (
-    <div className={cn("border-t border-ink-800 pt-6", className)}>
-      <p className="label">{label}</p>
-      <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
-        {items.map((c) => (
-          <li key={c} className="text-body text-paper">
-            {c}
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
 function SectionHead({
   number,
   marker,
@@ -100,7 +85,7 @@ function ComponentsSection({ section, number }: { section: IPIndexSection | IPSe
         )}
         {section.categories ? (
           <Reveal>
-            <Categories label={section.categories.label} items={section.categories.items} className="mt-16" />
+            <CategoryRow label={section.categories.label} items={section.categories.items} className="mt-16" />
           </Reveal>
         ) : null}
       </div>

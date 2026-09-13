@@ -115,6 +115,7 @@
   --portal-w: min(60vw, 64rem); /* one portal panel in the desktop track — ~1.6 panels visible */
   --touch-min: 2.75rem; /* 44px */
   --nav-h: 4rem; /* the fixed nav's height; the hero's eyebrow clears it */
+  --subnav-h: 2.75rem; /* the PARTNER secondary nav — one touch-height row */
   --cta-bar-h: 4.5rem; /* the mobile APPLY bar; pages carry this as bottom padding below lg */
 
   /* ── Motion — CSS mirrors of src/motion/easings.ts and durations.ts (exposed to Tailwind as ease-* utilities) ──────── */

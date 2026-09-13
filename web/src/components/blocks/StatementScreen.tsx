@@ -48,6 +48,11 @@ export interface StatementScreenProps {
   }
   align?: "editorial" | "centred"
   padding?: "standard" | "dramatic"
+  /**
+   * Entry variant: the hero normally pads for the fixed site nav that overlays it. Beneath a secondary
+   * nav (the PARTNER cluster) the page is already offset, so the hero pads as a section instead.
+   */
+  underSubNav?: boolean
   /** A footer slot beneath everything — e.g. the five-verb row, a pull line. [data-item] children stagger. */
   children?: ReactNode
   stagger?: "tight" | "loose"
@@ -71,6 +76,7 @@ export function StatementScreen({
   ctas,
   align = "editorial",
   padding = "standard",
+  underSubNav = false,
   children,
   stagger = "tight",
   className,
@@ -170,11 +176,21 @@ export function StatementScreen({
     // L3 editorial band beneath it (the-world.md §01: "L1 Full bleed, 100svh. Then L3 Editorial").
     return (
       <section id={id} aria-labelledby={headingId} className={cn("bg-void", className)}>
-        <div className="relative flex min-h-svh flex-col">
+        <div
+          className={cn(
+            "relative flex flex-col",
+            underSubNav ? "min-h-[calc(100svh-var(--nav-h)-var(--subnav-h))]" : "min-h-svh",
+          )}
+        >
           {/* THE STILL belongs here (B2): a single graded image, not a film — the film is the homepage's. */}
           <div aria-hidden="true" className="absolute inset-0 bg-ink-950" />
           <Scrim toward="bottom" />
-          <div className="pb-hero relative z-20 flex flex-1 flex-col px-margin pt-[calc(var(--nav-h)+var(--section-pad-dense))]">
+          <div
+            className={cn(
+              "pb-hero relative z-20 flex flex-1 flex-col px-margin",
+              underSubNav ? "pt-section-dense" : "pt-[calc(var(--nav-h)+var(--section-pad-dense))]",
+            )}
+          >
             <div className="mx-auto flex w-full max-w-content-max flex-1 flex-col">
               {eyebrow ? (
                 <Reveal>

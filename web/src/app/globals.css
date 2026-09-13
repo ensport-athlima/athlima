@@ -107,6 +107,7 @@
   --spacing-touch: var(--touch-min);
   --spacing-section-tall: var(--section-tall);
   --spacing-nav: var(--nav-h);
+  --spacing-subnav: var(--subnav-h);
   --spacing-cta-bar: var(--cta-bar-h);
   --spacing-portal: var(--portal-w);
 

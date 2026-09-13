@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn"
 /**
  * BLOCK: SequenceRail
  * ROLE IN EXPERIENCE: Credibility — a process shown as a sequence is a promise with steps in it.
- * POSITION: /connect section 03 (the four steps); /partner/journey.
+ * POSITION: /connect section 03 (the four steps); /partner/journey (the seven stages).
  * PRIMARY CTA: none.
  * SOURCE OF TRUTH: the calling page's content file.
  * MOTION: REVEAL (items, STAGGER_TIGHT) via <Reveal> — each step, then its chevron. Server Component.
@@ -13,6 +13,8 @@ import { cn } from "@/lib/cn"
  */
 export interface SequenceStep {
   step: string
+  /** An optional second label — the partner journey's "IDENTIFY · ATHLIMA CONNECT". */
+  where?: string
   headline: string
   detail: string
 }
@@ -35,6 +37,7 @@ export function SequenceRail({ steps, className }: SequenceRailProps) {
             {String(i + 1).padStart(2, "0")}
           </span>
           <h3 className="label mt-4 text-paper">{s.step}</h3>
+          {s.where ? <p className="label mt-1">{s.where}</p> : null}
           <p className="mt-3 text-body text-paper">{s.headline}</p>
           <p className="mt-3 text-body-sm text-ink-200">{s.detail}</p>
           {i < steps.length - 1 ? (
