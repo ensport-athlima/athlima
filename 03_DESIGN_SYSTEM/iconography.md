@@ -89,7 +89,9 @@ reasons; `20` for ATHLIMA 20; `22`, `350`, `12` as data. This is a signature.
 - Always two digits with a leading zero for sequences under 10: `01`, not `1`
 - Set in the display face, weight 800, condensed width
 - Large — often `--fs-display-md` or above, even when it labels a small item
-- `--lime` when it is a marker, `--ink-700` when it is a background device
+- `--lime` when it is a marker, `--ink-500` when it is a supporting numeral on an index item (decorative,
+  `aria-hidden`, but visible — 4.28 on void), `--ink-700` only when it is oversized and cropped as a true
+  background device
 - Frequently oversized and partially cropped, sitting behind or beside content as a graphic element
 
 **The section marker, sitewide:**

@@ -77,7 +77,7 @@ export function DiagnosisBlock({
             {disconnections.map((d, i) => (
               <li key={d.line} data-item className="border-b border-ink-800 pb-6">
                 <span
-                  className="display text-display-sm leading-none text-ink-700"
+                  className="display text-display-sm leading-none text-ink-500"
                   aria-hidden="true"
                 >
                   {String(i + 1).padStart(2, "0")}

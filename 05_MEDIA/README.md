@@ -15,11 +15,26 @@ Supplied brand artwork. **These are raster reference files, not production asset
 | `enarr-group.png` | The ENARR Group | Navy `#2E3192` and gold. **Never recoloured.** |
 | `ensport-ventures.png` | ENSPORT Ventures | Gold and white. **BUILT TO INSPIRE VICTORY.** |
 
-**Missing, and required before build:** vector `.svg` versions of every mark, plus the ATHLIMA A device on
-its own. Every mark on the site is placed as SVG with a real `<title>` — never as a raster image, never
-typeset, never approximated. `[TO VERIFY — B2 — request vector artwork from the brand owner]` **ATHLIMA CONNECT and ATHLIMA 20 have no
-supplied lock-up at all, even as raster.** Homepage screen 01 cannot be built until the A device exists as
-SVG.
+### `/logos/vector` — development placeholders, not production artwork
+Three SVGs, added 13 September 2026, **traced and rebuilt from the supplied raster** — see
+`logos/vector/README.md` for exactly how. They unblock screens 01, 03, 04, 07, 08 and 09 while the real
+files are awaited:
+
+| File | What | Status |
+|---|---|---|
+| `athlima-a.svg` | The A device, filled — clean symmetric geometry, `currentColor` | placeholder |
+| `athlima-a-stroke.svg` | The A device as one stroked centreline — what the entry sequence draws | placeholder |
+| `athlima-wordmark.svg` | The ATHLIMA wordmark, potrace outline of `athlima-master.jpg`, lime accent on the final A | placeholder |
+
+**They are replaced, file for file, when the brand owner's vectors arrive, and each is overlaid on the
+supplied raster before launch to confirm the outlines match** (`logos/vector/README.md`). Their C2PA
+`<metadata>` blocks are stripped when they are inlined into the build.
+
+**Still missing — `[TO VERIFY — B2 — request vector artwork from the brand owner]`:** the real ATHLIMA
+wordmark and A; ATHLIMAX, THE SYMPOSIUM, ACTIV8 and AFTERHOURS lock-ups as vector; the ENARR and ENSPORT
+marks as vector; the favicon and app-icon set. **ATHLIMA CONNECT and ATHLIMA 20 have no supplied lock-up
+at all, even as raster.** Every mark on the site is placed as SVG with a real `<title>` — never as a raster
+image, never typeset, never approximated.
 
 ### `/references`
 | File | What |

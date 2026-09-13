@@ -108,8 +108,9 @@ Lime: `SPORT ISN'T CONNECTED.`
 **The stakeholder grid — L5 index, 2-up at `md`, 1-up below** *(decided 13 September 2026 when screen
 02 was built: `components.md` defines `DiagnosisBlock` as "the problem stated, then the stakeholder
 grid", and with the statistics cut (B4) the grid is what the screen rests on. The four sentences are
-the brief's own; the two-party titles are set as two art-directed lines each. Numerals in `--ink-700`
-— the background-device treatment — so the marker's numeral stays the only lime numeral in view.)*
+the brief's own; the two-party titles are set as two art-directed lines each. Numerals in `--ink-500`
+— decorative and `aria-hidden`, but visible: `--ink-700` at 1.58 read as a fault, and a wayfinding
+marker has to be seen — so the marker's numeral stays the only lime numeral in view.)*
 
 | # | Title (two lines) | Line |
 |---|---|---|
