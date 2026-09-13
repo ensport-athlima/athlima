@@ -24,7 +24,9 @@ export interface ApplyBlockProps {
   detail?: string
   lockup?: readonly DisplayLine[]
   emotional?: { label: string; href: string }
-  functional: { label: string; href: string }
+  functional?: { label: string; href: string }
+  /** A Tier-3 inline link instead of a Tier-2 pair — for pages whose pair lives elsewhere. */
+  tertiary?: { label: string; href: string }
   className?: string
 }
 
@@ -37,6 +39,7 @@ export function ApplyBlock({
   lockup,
   emotional,
   functional,
+  tertiary,
   className,
 }: ApplyBlockProps) {
   const headingId = `${id}-headline`
@@ -76,16 +79,27 @@ export function ApplyBlock({
           </Reveal>
         ) : null}
 
-        <Reveal className="mt-16 flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
-          {emotional ? (
-            <Button variant="secondary" href={emotional.href}>
-              {emotional.label}
+        {emotional || functional ? (
+          <Reveal className="mt-16 flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
+            {emotional ? (
+              <Button variant="secondary" href={emotional.href}>
+                {emotional.label}
+              </Button>
+            ) : null}
+            {functional ? (
+              <Button variant="primary" href={functional.href}>
+                {functional.label}
+              </Button>
+            ) : null}
+          </Reveal>
+        ) : null}
+        {tertiary ? (
+          <Reveal className="mt-12">
+            <Button variant="ghost" href={tertiary.href}>
+              {tertiary.label}
             </Button>
-          ) : null}
-          <Button variant="primary" href={functional.href}>
-            {functional.label}
-          </Button>
-        </Reveal>
+          </Reveal>
+        ) : null}
 
         {lockup ? (
           <Reveal variant="lines" className="mt-24">

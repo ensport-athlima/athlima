@@ -33,7 +33,7 @@ export interface EcosystemPortalsProps {
   intro: readonly DisplayLine[]
   sub: string
   portals: readonly Portal[]
-  closing: readonly DisplayLine[]
+  closing?: readonly DisplayLine[]
   /** The doorways block's id. When present, the mobile anchor line renders after the closing line. */
   doorwaysId?: string
   anchorLine?: string
@@ -106,21 +106,27 @@ export function EcosystemPortals({
         </PinnedSequence>
       </nav>
 
-      <div className="px-margin pt-section-dense pb-section-standard">
-        <Reveal variant="lines" className="mx-auto max-w-content-max text-center">
-          <Display as="p" size="md" lines={closing} />
-        </Reveal>
-        {doorwaysId && anchorLine ? (
-          <p className="mx-auto mt-16 max-w-content-max text-center lg:hidden">
-            <a
-              href={`#${doorwaysId}`}
-              className="label inline-block text-paper transition-colors duration-(--dur-fast) ease-sharp hover:text-lime"
-            >
-              {anchorLine} <span aria-hidden="true">↓</span>
-            </a>
-          </p>
-        ) : null}
-      </div>
+      {closing || (doorwaysId && anchorLine) ? (
+        <div className="px-margin pt-section-dense pb-section-standard">
+          {closing ? (
+            <Reveal variant="lines" className="mx-auto max-w-content-max text-center">
+              <Display as="p" size="md" lines={closing} />
+            </Reveal>
+          ) : null}
+          {doorwaysId && anchorLine ? (
+            <p className="mx-auto mt-16 max-w-content-max text-center lg:hidden">
+              <a
+                href={`#${doorwaysId}`}
+                className="label inline-block text-paper transition-colors duration-(--dur-fast) ease-sharp hover:text-lime"
+              >
+                {anchorLine} <span aria-hidden="true">↓</span>
+              </a>
+            </p>
+          ) : null}
+        </div>
+      ) : (
+        <div className="pb-section-standard" />
+      )}
     </section>
   )
 }

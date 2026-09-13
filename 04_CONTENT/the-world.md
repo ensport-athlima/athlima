@@ -69,6 +69,10 @@ belongs to the homepage; two hero films would flatten the crescendo.
 - Emotional: `SEE THE WHOLE ECOSYSTEM` → `#ecosystem` (section 02, in-page) — *secondary variant*
 - Functional: `EXPLORE THE SIX` → `#portals` (section 03, in-page) — *primary variant*
 
+**As built (13 September 2026):** the hero holds the eyebrow, the statement and the two in-page CTAs at
+`100svh`; the paragraph follows beneath in the L3 band. The still is a positioned slot (B2). "IPs" keeps
+its lowercase s under the uppercase display transform.
+
 ### Exit intent
 > *I can now say what ATHLIMA is in one sentence. And there is a structure underneath it.*
 
@@ -119,6 +123,10 @@ Under reduced motion the diagram is simply complete.
 
 ### CTAs
 None. The pillars themselves are links (Tier 3).
+
+**As built (13 September 2026):** inline SVG, five nodes on an arc converging on the A, each node an
+`<a>` with a `<title>`, connectors in the lime-at-40% device; a visually-hidden list for AT; below `md`
+the arc becomes a numbered column with the A above.
 
 ### Exit intent
 > *There is a taxonomy here. This has been thought about.*

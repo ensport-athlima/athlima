@@ -42,6 +42,24 @@ const SIZE_CLASS: Record<DisplaySize, string> = {
   sm: "text-display-sm",
 }
 
+/**
+ * Display type is set uppercase by CSS; a deliberate lowercase run in the copy — "IPs" — must survive it.
+ * Lowercase letters are wrapped so `text-transform` leaves them alone; everything else is untouched.
+ */
+function keepCase(text: string) {
+  const parts = text.split(/([a-z]+)/)
+  if (parts.length === 1) return text
+  return parts.map((part, i) =>
+    /^[a-z]+$/.test(part) ? (
+      <span key={i} className="normal-case">
+        {part}
+      </span>
+    ) : (
+      part
+    ),
+  )
+}
+
 function Lines({
   lines,
   hiddenAt,
@@ -66,7 +84,7 @@ function Lines({
       {lines.map((line, i) => (
         <span key={`${i}-${line.text}`} className="block overflow-hidden">
           <span data-line className={cn("block", line.lime && "text-lime")}>
-            {line.text}
+            {keepCase(line.text)}
           </span>
         </span>
       ))}
