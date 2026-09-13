@@ -14,9 +14,9 @@ import { cn } from "@/lib/cn"
  * PRIMARY CTA: none. The scroll cue is the only affordance. The first screen sells nothing.
  * SOURCE OF TRUTH: 04_CONTENT/homepage.md, screen 01.
  * MOTION: none in the resting state — this block is a Server Component and ships no client JS. The
- *   entry overlay (motion.md §7, decision D1) is a separate client module that mounts through the
- *   `overlay` slot when the A vector artwork exists (B2). It draws over this finished hero; it never
- *   hides, delays or creates anything rendered here.
+ *   entry overlay (motion.md §7, decision D1) is EntryOverlay.tsx, the client half of this block, mounted
+ *   through the `overlay` slot. It draws over this finished hero; it never hides, delays or creates
+ *   anything rendered here, and it is absent from the server HTML.
  *
  * Provisional until the layout tier lands: the eyebrow "appears with the nav" — its top offset is the
  * section padding today and is set to clear the Nav when Nav exists.
@@ -24,7 +24,7 @@ import { cn } from "@/lib/cn"
 export interface EntrySequenceProps {
   /** The id of the next screen. When absent the scroll cue is text — never a dead href. */
   nextId?: string
-  /** The entry overlay, mounted here when it exists. Unused in v1 until B2. */
+  /** The entry overlay — <EntryOverlay />. Client-only; renders nothing on the server. */
   overlay?: ReactNode
   className?: string
 }
@@ -48,7 +48,7 @@ export function EntrySequence({ nextId, overlay, className }: EntrySequenceProps
         image and its LCP element (performance.md §2–3). Until then: a correctly sized, correctly
         positioned slot on --ink-950, so the layout, the scrim and the type are already right.
       */}
-      <div aria-hidden="true" className="inset-0 absolute bg-ink-950" />
+      <div aria-hidden="true" className="absolute inset-0 bg-ink-950" />
       <Scrim toward="bottom" />
 
       <div

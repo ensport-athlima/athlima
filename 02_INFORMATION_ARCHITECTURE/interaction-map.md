@@ -24,9 +24,10 @@ relationship data exists, and a half-built ecosystem map is worse than none. It 
 **Purpose:** emotion + orientation.
 
 **What happens:** The page arrives finished — poster, headline, navigation, all painted at first byte.
-Over that finished hero, the ATHLIMA **A** is drawn as an architectural form — two strokes rising and
-meeting — in an overlay, over roughly 900ms. The overlay then dissolves and the A settles into the
-composition. The hero was never hidden; the arrival was drawn on top of it. *(Decision D1.)*
+Over that finished hero, the ATHLIMA **A** is drawn as an architectural form — one continuous stroke,
+rising to the apex and down — in an overlay, over 900ms, in the hero's void beside the headline. The
+overlay then dissolves completely. The hero was never hidden; the arrival was drawn on top of it and
+leaves nothing behind. *(Decision D1; the settle-onto-the-poster transform returns with the poster, B2.)*
 
 **Constraints — all binding:**
 - The overlay completes within **1500ms** of JS becoming available; the poster is the LCP element and is

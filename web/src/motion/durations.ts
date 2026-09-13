@@ -13,8 +13,12 @@ export const DURATIONS = {
   MEDIUM: 500,
   /** Large reveals, image covers. */
   SLOW: 800,
-  /** The entry overlay, and nothing else. */
+  /** The ceiling. Nothing exceeds it. */
   CINEMATIC: 1200,
+  /** The entry overlay only: the A draws (motion.md §7). */
+  ENTRY_DRAW: 900,
+  /** The entry overlay only: the overlay dissolves (motion.md §7). ENTRY_DRAW + ENTRY_DISSOLVE = 1500. */
+  ENTRY_DISSOLVE: 600,
 } as const
 
 export const STAGGERS = {

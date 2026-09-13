@@ -88,9 +88,15 @@ This is architecturally special and must be built deliberately:
 3. **Subsequent navigations in the same session** — the overlay does not play; the hero is simply at rest.
 4. **Reduced motion** — no overlay. The hero is at rest.
 5. **Slow connection** (`navigator.connection.saveData` or `effectiveType` of `2g`/`slow-2g`) — no
-   overlay, poster frame only, no video.
-6. The sequence never hides, delays or creates the headline, the poster or the navigation. If JS never
-   loads, the visitor still gets a complete, correct hero.
+   overlay, poster frame only, no video. (`navigator.connection` is Chromium-only; elsewhere the check
+   is simply absent.)
+6. **Not at the top, or a hash in the URL** — no overlay. An arrival at `/#diagnosis` is not an arrival.
+7. **Late JavaScript** — if JS becomes available more than three seconds after navigation, no overlay:
+   the visitor has been reading the hero; drawing an arrival over it then would be wrong.
+8. The sequence never hides, delays or creates the headline, the poster or the navigation. If JS never
+   loads, the visitor still gets a complete, correct hero. The overlay is `EntryOverlay.tsx`, the client
+   half of `EntrySequence`; it renders nothing on the server and decides once, on the client, through
+   `useSyncExternalStore` so hydration is clean.
 
 **Hard rule:** there is no "skip intro" button, because there is no intro long enough to need one.
 The overlay completes within 1500ms of JS becoming available; the LCP budget (≤ 2.0s from navigation

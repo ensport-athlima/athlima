@@ -17,6 +17,8 @@ export interface AthlimaAProps {
   className?: string
   /** stroke variant only — forwarded so the overlay can address the path. */
   pathRef?: React.Ref<SVGPathElement>
+  /** stroke variant only — the initial dash state, so the first paint is empty before GSAP runs. */
+  pathStyle?: React.CSSProperties
 }
 
 export const ATHLIMA_A_VIEWBOX = "0 0 460 348"
@@ -29,6 +31,7 @@ export function AthlimaA({
   decorative = false,
   className,
   pathRef,
+  pathStyle,
 }: AthlimaAProps) {
   return (
     <svg
@@ -43,6 +46,7 @@ export function AthlimaA({
       {variant === "stroke" ? (
         <path
           ref={pathRef}
+          style={pathStyle}
           d="M49 348 L230 76.5 L411 348"
           fill="none"
           stroke="currentColor"

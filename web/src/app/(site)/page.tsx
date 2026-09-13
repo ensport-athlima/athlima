@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { DiagnosisBlock } from "@/components/blocks/DiagnosisBlock"
+import { EntryOverlay } from "@/components/blocks/EntryOverlay"
 import { EntrySequence } from "@/components/blocks/EntrySequence"
 import { ProofNumbers } from "@/components/blocks/ProofNumbers"
 import { StatementScreen } from "@/components/blocks/StatementScreen"
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main id="content">
-      <EntrySequence nextId={screen02.id} />
+      <EntrySequence nextId={screen02.id} overlay={<EntryOverlay />} />
       <DiagnosisBlock
         id={screen02.id}
         marker={screen02.marker}
@@ -51,7 +52,7 @@ export default function HomePage() {
             <li
               key={v.verb}
               data-item
-              className="md:first:pl-0 border-b border-ink-800 py-4 md:border-b-0 md:border-l md:px-6 md:py-2 md:first:border-l-0"
+              className="border-b border-ink-800 py-4 md:border-b-0 md:border-l md:px-6 md:py-2 md:first:border-l-0 md:first:pl-0"
             >
               <p className="label text-paper">{v.verb}</p>
               <p className="mt-1 text-label text-ink-300">{v.descriptor}</p>

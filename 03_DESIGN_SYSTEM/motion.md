@@ -35,7 +35,9 @@ Defined once in `web/src/motion/durations.ts`.
 | `BASE` | 300 | The default UI transition |
 | `MEDIUM` | 500 | Content reveals |
 | `SLOW` | 800 | Large reveals, image masks |
-| `CINEMATIC` | 1200 | The entry sequence, and nothing else |
+| `CINEMATIC` | 1200 | The ceiling. Nothing exceeds it. |
+| `ENTRY_DRAW` | 900 | The entry overlay only: the A draws (§7). |
+| `ENTRY_DISSOLVE` | 600 | The entry overlay only: the overlay dissolves (§7). `ENTRY_DRAW + ENTRY_DISSOLVE = 1500`, the overlay's ceiling. |
 
 **Nothing exceeds 1200ms.** If something needs longer, it is a scroll-scrubbed sequence, where the user
 controls the pace.
@@ -185,11 +187,21 @@ loads, the visitor has a complete, correct hero.
 
 ```
 0ms      The resting hero is already painted: poster, headline, nav. (JS has just become available.)
-0–900    The A is drawn over the poster: two SVG strokes, EASE_ARCH, in a full-viewport overlay.
-900–1500 The overlay dissolves, opacity 1 → 0, EASE_OUT. The A settles into its resting position in
-         the hero composition (a single transform, no re-layout).
+0–900    The A is drawn over the hero: ONE continuous centreline stroke, stroke-dasharray/offset from
+         its full length to 0, ENTRY_DRAW, EASE_ARCH, in a full-viewport, pointer-transparent overlay.
+         The A sits in the hero's void — the empty right half from `sm` up, the empty upper half on
+         portrait phones — and never over the headline.
+900–1500 The overlay dissolves completely, opacity 1 → 0, ENTRY_DISSOLVE, EASE_OUT, and unmounts. The A
+         is the arrival, not a permanent element of the resting hero. (A settle-onto-the-poster
+         transform returns when the poster carries the A as architecture — B2.)
 ≥ 1500   The hero video begins, only after the page is interactive.
 ```
+
+**The gate** (`06_BUILD/architecture.md` §5): the overlay mounts only if every one of these holds — not
+yet played this session · no reduced-motion preference · no save-data and not `2g`/`slow-2g` · the page
+is at the top with no hash · **JS became available within 3 seconds of navigation** (an arrival drawn
+over a hero the visitor has been reading for three seconds is not an arrival). It is absent from the
+server HTML entirely.
 
 **Hard constraints:**
 - The sequence never hides, delays, or creates the headline, the poster or the navigation. All three are

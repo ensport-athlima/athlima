@@ -23,7 +23,7 @@ export function Scrim({ toward = "bottom", className }: ScrimProps) {
     <div
       aria-hidden="true"
       className={cn(
-        "inset-0 pointer-events-none absolute from-void/0 via-void/35 to-void/70",
+        "pointer-events-none absolute inset-0 from-void/0 via-void/35 to-void/70",
         DIRECTION[toward],
         className,
       )}
