@@ -75,14 +75,21 @@ corrosive in aggregate.
 
 Premium is emptiness. Specifically:
 
-- A hero statement should occupy **less than half** the viewport it sits in.
+- A hero statement should occupy **less than half** the viewport it sits in — **except the entry hero
+  on the homepage** (screen 01). It is the one `display-xl` on the page and it is meant to dominate:
+  the four locked lines at the locked token measure ~55% of a 1440×900 viewport, and that is the
+  design, not a defect. The token is not lowered to make a rule fit. Every other statement on the site,
+  including `/the-world`'s entry, obeys the half-viewport rule.
 - A section should feel like it has more space than it needs.
 - **When a layout feels crowded, remove content. Never reduce spacing.**
 - The right-hand void in the L3 Editorial layout is not wasted space; it is the layout.
 - One idea per screen. If a screen has two ideas, it is two screens.
 
 **The 60% test:** on a signature page, roughly 60% of any given viewport should be empty or atmospheric.
-If it is under 40%, the page is a document, not an experience.
+If it is under 40%, the page is a document, not an experience. **The entry hero is the one exception:**
+its headline is the atmosphere — the poster behind it is dark, the type is the statement, and a first
+screen that whispers fails the ten-second test in `CLAUDE.md` Part XI. The test applies to every screen
+after it. (Decided 13 September 2026, after measuring the built screen 01.)
 
 ---
 
