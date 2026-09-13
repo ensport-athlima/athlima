@@ -31,7 +31,7 @@ approved, added to the locked dependency list, and lazy-loaded.
 Amend `06_BUILD/performance.md` §1, `06_BUILD/tech-stack.md` §2.
 
 ### D3 — The lime counting rule counts content only. *(item 3)*
-The `SectionMarker` and the permanent `APPLY` affordance are **chrome, not content**, and do not count.
+The `SectionMarker` and the permanent CTA affordance (`APPLY` then; `BUILD WITH ATHLIMA` since decision A2) are **chrome, not content**, and do not count.
 The rule is: **at most three lime elements in the content of any viewport.**
 
 Rewrite `04_CONTENT/homepage.md` screen 05 — the four verb triplets become `--ink-300`, and only the
@@ -65,7 +65,7 @@ Move the EcosystemMap to a v2 backlog. Amend `02_INFORMATION_ARCHITECTURE/intera
 ### D7 — Homepage CTA tiers. *(item 5)*
 Screen 08's CTAs are **Tier 3 inline**. The homepage's single Tier-2 pair is screen 09.
 
-### D8 — The APPLY bar. *(item 9)*
+### D8 — The mobile CTA bar. *(item 9)* *(carried `APPLY`; carries `BUILD WITH ATHLIMA` since decision A2)*
 **Desktop:** never hides. **Mobile:** hides on scroll-down, reveals on scroll-up. Amend
 `01_STRATEGY/conversion-strategy.md` §2 to scope "never scrolls away" to desktop.
 
@@ -82,9 +82,9 @@ Delete `useMagneticCursor.ts` from `06_BUILD/architecture.md` §2. Four cursor m
 ### D12 — Partner enquiry is one page. *(item 13)*
 Not multi-step. Amend `06_BUILD/architecture.md` §6.
 
-### D13 — Application progress persists in `sessionStorage`. *(item 14)*
-Current tab only, cleared on submit. Survives a tab switch on a phone; does not persist personal data
-across sessions.
+### D13 — Application progress persists in `sessionStorage`. *(item 14)* — **superseded by decision A1**
+There is no guest application. The rule stands for any future multi-step form (the v2 nomination):
+current tab only, cleared on submit, never `localStorage`.
 
 ### D14 — `display-xl` appears once per page. *(item 15)*
 Homepage screen 03 drops to `display-lg`. Screen 03's sub-line is **not** entirely lime — only
@@ -167,8 +167,8 @@ Correct `typography.md` §9.
 
 ### D34 — The Journal gate goes on the checklist. *(item 42)*
 Add to `launch-checklist.md` T-14: six articles, one per pillar plus a second BUILD piece, each 900+ words,
-each with a real named byline and photo. Add a "declined application" page to the sitemap, since
-`journal.md` places subscription on it.
+each with a real named byline and photo. *(The "declined application" page this decision added was removed
+with the application itself — decision A1.)*
 
 ### D35 — The reconciliation log is corrected. *(item 44)*
 Items #2, #6, #15, #20 and #25 were marked resolved and were not fully resolved. Correct those entries to
@@ -178,6 +178,9 @@ overstates itself is worse than none.**
 ---
 
 ## PART 2 — DECISIONS THAT NEED PEOPLE (blocked — do not guess)
+
+> Later decisions, each binding and applied: `decisions-b3-provenance.md` (B3 closed) and
+> `decisions-2026-09-13-access.md` (A1–A7: no guest application; `BUILD WITH ATHLIMA` is the permanent CTA).
 
 Leave these as `[TO VERIFY]`. Build around them.
 

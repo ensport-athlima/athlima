@@ -3,7 +3,7 @@ import Image from "next/image"
 import { CORPORATE_MARKS } from "@/components/blocks/ProvenanceBlock"
 import { AthlimaWordmark } from "@/components/marks/AthlimaWordmark"
 import { Button } from "@/components/primitives/Button"
-import { footer, applyCta } from "@/content/navigation"
+import { footer, permanentCta } from "@/content/navigation"
 import { routes } from "@/lib/routes"
 import { cn } from "@/lib/cn"
 
@@ -30,8 +30,8 @@ export function Footer() {
             <p className="display mt-6 text-display-sm text-paper">{footer.statement}</p>
             <p className="label mt-4">{footer.detail}</p>
           </div>
-          <Button variant="primary" href={applyCta.href}>
-            {applyCta.label}
+          <Button variant="primary" href={permanentCta.href}>
+            {permanentCta.label}
           </Button>
         </div>
 

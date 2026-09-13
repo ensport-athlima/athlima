@@ -98,7 +98,7 @@ after it. (Decided 13 September 2026, after measuring the built screen 01.)
 - Minimum target: **44 × 44px**, achieved with padding, not by enlarging the visual.
 - Minimum gap between adjacent targets: **8px**.
 - Bottom-anchored elements respect `env(safe-area-inset-bottom)`.
-- The page carries bottom padding equal to the mobile APPLY bar height, so the bar never covers the last
+- The page carries bottom padding equal to the mobile CTA bar height, so the bar never covers the last
   line of content.
 
 ---

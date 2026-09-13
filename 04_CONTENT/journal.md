@@ -170,7 +170,7 @@ One list. No segmentation in v1.
 **The offer, stated plainly:**
 > New thinking on the business of Indian sport. Roughly fortnightly. Nothing else.
 
-**Placement:** the Journal index, article footers, `/apply/received` and `/apply/declined`. **Never** a
+**Placement:** the Journal index and article footers. **Never** a
 modal. **Never** in the site footer — subscription is earned in context.
 
 **Confirmation:** `You're on the list. First piece lands soon.`
@@ -187,7 +187,7 @@ Covered fully in `06_BUILD/seo.md`. The Journal-specific points:
 - Pillar and series pages are indexable, with unique metadata written by a human
 - Infinite scroll, if used at all, sits on top of paginated crawlable URLs
 - ISR at 60 seconds, with on-demand revalidation from a Sanity webhook, so editors publish and see it live
-- **The Journal is never gated.** Gate the application, never the thinking.
+- **The Journal is never gated.** Gate the room, never the thinking.
 
 ---
 

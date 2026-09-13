@@ -12,7 +12,7 @@
 | Home, The World, Experiences, People, Opportunity | Static (SSG) with ISR `revalidate: 3600` | Marketing surfaces. Must be instant. |
 | Journal index + articles | ISR `revalidate: 60` + on-demand revalidation webhook from Sanity | Editors publish and see it live within a minute. |
 | Events (with dates/status) | ISR `revalidate: 300` | Time-sensitive but not real-time. |
-| Application / Enquiry forms | Client components inside a static shell; Server Actions for submission | No reason to server-render a form. |
+| Enquiry forms and email captures | Client components inside a static shell; Server Actions for submission | No reason to server-render a form. |
 | `/api/*` | Route Handlers, Node runtime unless the handler is edge-safe | — |
 
 **Never** make the homepage dynamic. If something on it needs freshness, fetch that one island.
@@ -106,20 +106,19 @@ start, `06_BUILD/performance.md` §1) is measured on the poster and is unaffecte
 
 ## 6. FORMS
 
-There are **two** conversion endpoints in v1: the **Guest Application** (`/apply`) and the **Partner
-Enquiry** (`/partner/enquire`). The **ATHLIMA 20 Nomination** (`/athlima-20/nominate`) is v2 (decision D4)
-and is specified below so it is built from a decision, not from scratch. All forms:
+There is **one** conversion endpoint in v1: the **Partner Enquiry** (`/partner/enquire`), plus the contact
+and institutional routes (`/contact`) and the single-field email captures (`EmailCapture` → Vercel
+Postgres). **There is no guest application** (decision A1; `/apply` and its four-step form are withdrawn —
+decision D13 on `sessionStorage` progress no longer applies to anything in v1). The **ATHLIMA 20
+Nomination** (`/athlima-20/nominate`) is v2 (decision D4) and is specified below so it is built from a
+decision, not from scratch. All forms:
 
 - One zod schema per endpoint, shared by client (`react-hook-form` resolver) and Server Action.
-- **The application is four steps** (`conversion-strategy.md` §4.1). **The partner enquiry is one page,
-  not multi-step** (decision D12) — this person is senior and busy.
-- Application progress persists in **`sessionStorage`** — current tab only, cleared on submit (decision
-  D13). It survives a tab switch on a phone; it does not persist personal data across sessions, and it is
-  never `localStorage`.
+- **The partner enquiry is one page, not multi-step** (decision D12) — this person is senior and busy.
 - Honeypot field + rate limiting on the Server Action.
 - On success: a real confirmation *page*, not a toast. It has a URL so it can be a conversion goal.
 - Confirmation email via Resend, from a verified ATHLIMA domain.
-- Submission written to the datastore **before** the email is attempted. An email failure must never lose an application.
+- Submission written to the datastore **before** the email is attempted. An email failure must never lose an enquiry.
 
 ### The nomination endpoint (v2) has extra obligations
 - It is **seasonal**: `/athlima-20` carries a CMS enum with three states — `pre-window`, `open`,

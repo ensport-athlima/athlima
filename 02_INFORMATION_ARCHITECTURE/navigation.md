@@ -8,11 +8,13 @@
 ## 1. THE PRIMARY NAVIGATION
 
 ```
-ATHLIMA          THE WORLD     THE ROOM     PARTNER     JOURNAL          [ APPLY ]
-(wordmark →/)                                                           (permanent)
+ATHLIMA          THE WORLD     THE ROOM     PARTNER     JOURNAL     [ BUILD WITH ATHLIMA ]
+(wordmark →/)                                                                (permanent)
 ```
 
-**Four navigation items and one permanent CTA. This is locked.**
+**Four navigation items and one permanent CTA. This is locked.** The CTA was `APPLY` until decision A2
+(`08_OPERATIONS/decisions-2026-09-13-access.md`): there is no guest application, and the one commercial
+action — the partner conversation — takes the permanent slot.
 
 | Item | Route | Why it is here |
 |---|---|---|
@@ -20,7 +22,7 @@ ATHLIMA          THE WORLD     THE ROOM     PARTNER     JOURNAL          [ APPLY
 | **THE ROOM** | `/the-room` | Who is in it. The proof. The most distinctive item in the nav. |
 | **PARTNER** | `/partner` | The primary commercial conversion. Earns a top-level slot on value. |
 | **JOURNAL** | `/journal` | The year-round platform. Its presence in the nav is a statement that ATHLIMA is not only an event. |
-| **APPLY** | `/apply` | Permanent, visually distinct, always visible. |
+| **BUILD WITH ATHLIMA** | `/partner` | Permanent, visually distinct, always visible. The only door the public site opens (A2). |
 
 ### What is deliberately NOT in the primary nav
 
@@ -28,10 +30,10 @@ ATHLIMA          THE WORLD     THE ROOM     PARTNER     JOURNAL          [ APPLY
 |---|---|---|
 | The six IPs individually | Six items would double the nav and flatten the hierarchy. They are *inside* the world. | The World mega-panel, homepage portals |
 | About / ENSPORT | Important, but not a browsing destination | Footer, and a homepage section |
-| Programme | Phase-dependent; would be a dead item for most of the year | The World, footer, `/apply` |
+| Programme | Phase-dependent; would be a dead item for most of the year | The World, footer |
 | Contact | Never a primary nav item on a site with a permanent CTA | Footer |
 | Audience doorways | They are a homepage mechanism, not a menu | Homepage, footer |
-| Search | The site is 35 routes. Search implies you cannot find things. | — |
+| Search | The site is 32 routes. Search implies you cannot find things. | — |
 | Language switcher | Single language in v1 | — |
 
 ---
@@ -65,7 +67,7 @@ is the navigation. The six IPs use the typeset mark fallback (B2).
 
 ### Desktop
 - Fixed to the top. Always present.
-- **At rest over dark content:** transparent background, white type, lime APPLY.
+- **At rest over dark content:** transparent background, white type, lime CTA.
 - **On scroll past 100px:** a subtle backdrop appears — a near-black surface at high opacity, not a blur
   panel. No frosted glass.
 - **Over a light section:** inverts to black type via the `data-surface="light"` attribute on the section.
@@ -79,16 +81,16 @@ is the navigation. The six IPs use the typeset mark fallback (B2).
   clarity.
 - Opening it takes over the full screen: the four navigation items as large type, generous spacing, the six
   IPs listed beneath THE WORLD as a secondary tier, then About / Programme / Contact / Press as a tertiary row.
-- **APPLY** is not in the mobile menu — it is a permanent bottom bar, always visible, so it is reachable
-  without opening anything.
+- **BUILD WITH ATHLIMA** is not in the mobile menu — it is a permanent bottom bar (the CTA bar), always
+  visible, so it is reachable without opening anything.
 - Focus is trapped while open. Escape closes. Route change closes. Background scroll is locked, and the
   scroll position is restored exactly on close.
 
-### The mobile APPLY bar
+### The mobile CTA bar
 - Bottom-anchored, respecting `env(safe-area-inset-bottom)`.
 - Hides on scroll-down, reveals on scroll-up.
 - The page carries bottom padding equal to the bar height so it never covers the last line of content.
-- Present on every route except `/apply` itself, where it would be pointing at the current page.
+- Present on every route except `/partner` and its children, where it would be pointing at the current page.
 
 ---
 
@@ -119,12 +121,12 @@ and worth reading.
 │  ATHLIMA                                                                     │
 │  THE BUSINESS OF SPORT. THE FUTURE OF INDIA.                                 │
 │                                                                              │
-│  14–15 DECEMBER 2026 · THE ST. REGIS MUMBAI                     [ APPLY ]    │
+│  14–15 DECEMBER 2026 · THE ST. REGIS MUMBAI          [ BUILD WITH ATHLIMA ]  │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │  THE WORLD        THE ROOM         PARTNER          MORE                     │
 │  ATHLIMAX         The composition  The proposition  The Journal              │
 │  The Symposium    Advisory Council*The model        About ATHLIMA            │
-│  ACTIV8           Apply to attend  The journey      ENSPORT Ventures         │
+│  ACTIV8                            The journey      ENSPORT Ventures         │
 │  Afterhours                        Enquire          The ENARR Group          │
 │  ATHLIMA Connect                                    Press                    │
 │  ATHLIMA 20                                         Contact                  │
@@ -194,7 +196,7 @@ Before the nav is signed off, five people who have never seen ATHLIMA are asked 
 
 1. What ATHLIMA actually is
 2. When and where it happens
-3. How to apply
+3. Whether they can attend — and that the answer is that ATHLIMA is by invitation
 4. What ATHLIMA 20 is
 5. Who is behind it
 

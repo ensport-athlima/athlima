@@ -7,8 +7,8 @@
 >
 > **Tier:** T3 Argument. Type-led, disciplined, fast. Density 25 / 55 / 20.
 > **Phase-dependent:** the page is real in every phase, but what it can show depends on what is confirmed
-> (`sitemap.md` §4). It is reached from The World (section 05), the World panel in the nav, the footer,
-> and `/apply`. It is not in the primary nav.
+> (`sitemap.md` §4). It is reached from The World (section 05), the World panel in the nav and the footer.
+> It is not in the primary nav.
 > **Written 13 September 2026 by decision D29.**
 
 **Five sections**
@@ -17,7 +17,7 @@
 02 THE SHAPE      the structure of the two days — what is settled
 03 THE FLOOR      the venue, as a plan — the only page that shows it (decision D21)
 04 THE NIGHT      Afterhours, in outline, routed to its page
-05 INVITATION     functional CTA only
+05 INVITATION     the statement — no CTA (decision A4)
 ```
 
 ---
@@ -79,7 +79,7 @@ shows the table above as structure. **Never** a schedule with invented times, an
 
 **Section marker:** `02 ──── THE FLOOR`
 **Block:** `FloorPlan` — the venue, annotated and navigable. **This is the only page it appears on in
-v1** (decision D21). It is an operational artefact for applicants and partners, not a proposition, and it
+v1** (decision D21). It is an operational artefact for invited guests and partners, not a proposition, and it
 is deep in the page.
 
 **Display — `--fs-display-md`**
@@ -127,7 +127,7 @@ wordmark on `/afterhours` only.
 
 ## SECTION 05 — INVITATION
 
-**Block:** `ApplyBlock` (functional only — T3 page)
+**Block:** `ApplyBlock` (statement only — decision A4)
 
 **Display — `--fs-display-md`, centred**
 ```
@@ -135,7 +135,12 @@ THE ROOM IS 350 PEOPLE.
 ```
 `[TO VERIFY — B1]`
 
-**CTA:** `APPLY TO ATTEND` → `/apply`
+**Statement — `--fs-display-lg`, centred; the second of the two places it is said (A4):**
+```
+ATHLIMA IS BY INVITATION.
+```
+
+**CTA:** none. The page has done its work; the permanent `BUILD WITH ATHLIMA` is in the chrome.
 
 ---
 

@@ -92,7 +92,7 @@ export function MobileMenu() {
 
           <nav
             aria-label="More"
-            className="mt-16 mb-apply-bar flex flex-wrap gap-x-8 gap-y-3 border-t border-ink-800 pt-8"
+            className="mt-16 mb-cta-bar flex flex-wrap gap-x-8 gap-y-3 border-t border-ink-800 pt-8"
           >
             {tertiaryNav.map((t) => (
               <Link

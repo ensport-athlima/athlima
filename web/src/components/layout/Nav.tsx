@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation"
 import { useCallback, useEffect, useId, useRef, useState } from "react"
 import { AthlimaWordmark } from "@/components/marks/AthlimaWordmark"
 import { Button } from "@/components/primitives/Button"
-import { primaryNav, applyCta } from "@/content/navigation"
+import { primaryNav, permanentCta } from "@/content/navigation"
 import { routes } from "@/lib/routes"
 import { gsap } from "@/motion/registry"
 import { MobileMenu } from "./MobileMenu"
@@ -137,8 +137,8 @@ export function Nav() {
           </ul>
 
           <div className="ml-auto hidden lg:block">
-            <Button variant="primary" href={applyCta.href} className="min-h-10 px-6">
-              {applyCta.label}
+            <Button variant="primary" href={permanentCta.href} className="min-h-10 px-6">
+              {permanentCta.label}
             </Button>
           </div>
 

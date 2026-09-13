@@ -14,6 +14,7 @@ Before building anything, read in this order:
 ```
 1.  CLAUDE.md                              this file
 2.  08_OPERATIONS/decisions-2026-09-13.md  BINDING. Part 1 is applied throughout; Part 2 (B1–B5) is what is still open
+    08_OPERATIONS/decisions-b3-provenance.md and decisions-2026-09-13-access.md — later decisions, binding, applied
 3.  01_STRATEGY/website-thesis.md          the parent document
 4.  01_STRATEGY/positioning.md             especially §6, the claims discipline
 5.  01_STRATEGY/brand-strategy.md
@@ -49,7 +50,8 @@ An ENSPORT Ventures initiative within the ENARR Group. *(The public word is "ini
 **The diagnosis:** The ecosystem is active. But not connected.
 **The answer:** One room. One ecosystem. One shared future for sport.
 
-**The room:** 350 people. Curated, not crowded. Invitation-led.
+**The room:** 350 people. Curated, not crowded. By invitation — there is no application (decision A1).
+**The one commercial action:** an organisation starts a partner conversation — `BUILD WITH ATHLIMA` (A2).
 **The pillars:** BUILD · EQUIP · ENABLE · PERFORM · GOVERN
 **The six IPs:** ATHLIMAX · THE SYMPOSIUM · ACTIV8 · AFTERHOURS · ATHLIMA CONNECT · ATHLIMA 20
 
@@ -143,7 +145,7 @@ a source, or a fact about ATHLIMA, ENSPORT or ENARR.
 ## V.4 — THE DESIGN NON-NEGOTIABLES
 
 - **Lime is a signal, never a surface.** More than three lime elements **in the content** of a viewport
-  triggers a review. The `SectionMarker` and the permanent `APPLY` are chrome and do not count (D3).
+  triggers a review. The `SectionMarker` and the permanent `BUILD WITH ATHLIMA` are chrome and do not count (D3).
 - **White text on lime is forbidden.** Contrast 1.41. A lime surface always carries black text.
 - **Lime text on white is forbidden.** Use `--lime-ink` (`#5A6B04`).
 - **No glow. No gradient text. No glassmorphism. No card grids with shadows and rounded corners.**
@@ -156,7 +158,9 @@ a source, or a fact about ATHLIMA, ENSPORT or ENARR.
 
 - Indian English throughout: *organisation, programme, centre, realise, colour.*
 - No word from the banned list in `04_CONTENT/voice-and-tone.md` §3.
-- Guests, not attendees. Apply, not register. Partners, not sponsors. Spaces, not booths.
+- Guests, not attendees. Partners, not sponsors. Spaces, not booths. **Nobody applies, registers or books** —
+  access is by invitation and the public site does not process it (decision A1). The one statement of it is
+  `ATHLIMA IS BY INVITATION.`, said twice on the whole site; *exclusive*, *invite-only*, *members only* are banned.
 - Every page carries **at most one Tier-2 emotional CTA and one Tier-2 functional CTA.** Utility and
   sub-pages may carry a functional CTA only. Tier-3 inline links are unlimited but always subordinate.
 - CTA strings come from `04_CONTENT/ctas.md` §1, exactly. No improvised variants.

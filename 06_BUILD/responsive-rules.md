@@ -46,7 +46,7 @@ Hard floors — these mirror `03_DESIGN_SYSTEM/typography.md` §2, which is the 
 - The entry moment. It is shorter and simpler, but the emotional beat survives.
 - The six portals. They become a vertical stack of full-bleed panels, not a shrunken grid.
 - The audience doorways.
-- The permanent APPLY affordance.
+- The permanent CTA affordance (BUILD WITH ATHLIMA).
 - All video — as poster-first, tap-to-play, or short muted loops.
 
 **Must change on mobile:**
@@ -60,9 +60,9 @@ Hard floors — these mirror `03_DESIGN_SYSTEM/typography.md` §2, which is the 
 
 ---
 
-## 4. THE APPLY BAR
+## 4. THE CTA BAR
 
-`APPLY` is permanently visible at every breakpoint. On mobile it is a bottom-anchored bar that:
+`BUILD WITH ATHLIMA` is permanently visible at every breakpoint (decision A2). On mobile it is a bottom-anchored bar that:
 - Respects `env(safe-area-inset-bottom)`.
 - Hides on scroll-down, reveals on scroll-up.
 - Never covers the last line of page content — the page gets bottom padding equal to the bar height.

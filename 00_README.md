@@ -92,7 +92,6 @@ web/                               the Next.js application — see web/README.md
 ├── opportunities.md               the partner pages and the six audience doorways
 ├── journal.md                     the content engine and its launch requirement
 ├── programme.md                   /programme — the two days, and the floor
-├── apply.md                       /apply, /apply/received, /apply/declined
 ├── contact.md                     /contact — the general route and the institutional route
 ├── press.md                       /press — fact sheet, boilerplate, assets, contact
 └── legal.md                       /legal/privacy, /legal/terms, /legal/cookies
@@ -120,7 +119,7 @@ federation president discovering they are listed at an event they never agreed t
 than a mediocre website ever could.
 
 **2. Lime is a signal, not a surface.** More than three lime elements in the content of a viewport and the
-system has broken — the section marker and the permanent APPLY are chrome and do not count. Black + neon green is the easiest wrong reading of this brand and it ends in a crypto landing page.
+system has broken — the section marker and the permanent BUILD WITH ATHLIMA are chrome and do not count. Black + neon green is the easiest wrong reading of this brand and it ends in a crypto landing page.
 
 **3. Fast is part of the design.** LCP ≤ 2.0s on a mid-range Android at 4G. A cinematic site that takes six
 seconds is not premium; it is slow.

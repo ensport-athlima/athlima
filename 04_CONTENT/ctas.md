@@ -16,44 +16,44 @@ statement set as display type rather than a link, it is marked `— (statement, 
 
 | Context | Emotional CTA | Emotional destination | Functional CTA | Functional destination |
 |---|---|---|---|---|
-| Global permanent | — | — | `APPLY` | `/apply` |
-| Homepage | `ENTER ATHLIMA` | `/the-world` | `APPLY TO ATTEND` | `/apply` |
+| Global permanent | — | — | `BUILD WITH ATHLIMA` | `/partner` |
+| Homepage | `ENTER ATHLIMA` | `/the-world` | `BUILD WITH ATHLIMA` | `/partner` |
 | The World | `SEE THE WHOLE ECOSYSTEM` | `#ecosystem` (section 02, in-page) | `EXPLORE THE SIX` | `#portals` (in-page) |
 | ATHLIMAX | `BUILD INSIDE THE MARKETPLACE` | `/partner/model` | `BECOME A FOUNDING PARTNER` | `/partner` |
-| The Symposium | `SHAPE THE CONVERSATION` | `/apply` | `SEE THE THEMES` | `#themes` |
-| ACTIV8 | `PLAY BEYOND THE GAME` | `/apply` | `SEE THE EXPERIENCE` | `#zones` |
+| The Symposium | `SHAPE THE CONVERSATION` | — (statement, not a link) | `SEE THE THEMES` | `#themes` |
+| ACTIV8 | `PLAY BEYOND THE GAME` | — (statement, not a link) | `SEE THE EXPERIENCE` | `#zones` |
 | Afterhours | `THE DAY INSPIRES. THE NIGHT CELEBRATES.` | — (statement, not a link) | `SEE THE EVENING` | `#evening` |
 | ATHLIMA Connect | `CONNECT BEFORE YOU ARRIVE` | `/partner` *(Connect is a Founding Partner benefit — decision D20)* | `HOW CONNECT WORKS` | `#how` |
 | ATHLIMA 20 — `pre-window` *(v1 ships this state)* | `TOMORROW PLAYS HERE` | — (statement, not a link) | `TELL ME WHEN NOMINATIONS OPEN` | `#alert` (in-page email capture) |
 | ATHLIMA 20 — `open` *(v2)* | `TOMORROW PLAYS HERE` | — (statement, not a link) | `NOMINATE AN ATHLETE` | `/athlima-20/nominate` *(v2)* |
 | ATHLIMA 20 — `post-selection` | `TOMORROW PLAYS HERE` | — (statement, not a link) | `SEE THE 2026 CLASS` | `#class` |
-| The Room | — | — | `APPLY TO ATTEND` | `/apply` |
+| The Room | `ATHLIMA IS BY INVITATION.` | — (statement, not a link) | `BUILD WITH ATHLIMA` | `/partner` |
 | Partner | `DON'T JUST SHOW UP. SHAPE WHAT COMES NEXT.` | — (statement, not a link) | `START A PARTNER CONVERSATION` | `/partner/enquire` |
 | Partner / Model | — | — | `START A PARTNER CONVERSATION` | `/partner/enquire` |
 | Partner / Journey | — | — | `START A PARTNER CONVERSATION` | `/partner/enquire` |
-| For / Business | `FIND THE PEOPLE SHAPING SPORT'S NEXT ECONOMY` | — (statement, not a link) | `APPLY TO ATTEND` | `/apply` |
-| For / Athletes | `FIND YOUR NEXT LEVEL` | — (statement, not a link) | `APPLY TO ATTEND` | `/apply` |
-| For / Capital | `FIND THE OPPORTUNITIES BEHIND INDIA'S SPORTING GROWTH` | — (statement, not a link) | `APPLY TO ATTEND` | `/apply` |
-| For / Infrastructure | `SPORT NEEDS PLACES. MEET THE PEOPLE WHO DECIDE WHERE THEY GET BUILT.` | — (statement, not a link) | `APPLY TO ATTEND` | `/apply` |
+| For / Business | `FIND THE PEOPLE SHAPING SPORT'S NEXT ECONOMY` | — (statement, not a link) | `BUILD WITH ATHLIMA` | `/partner` |
+| For / Athletes | `FIND YOUR NEXT LEVEL` | — (statement, not a link) | — *(Tier 3: `SEE ATHLIMA 20 →`)* | — |
+| For / Capital | `FIND THE OPPORTUNITIES BEHIND INDIA'S SPORTING GROWTH` | — (statement, not a link) | `BUILD WITH ATHLIMA` | `/partner` |
+| For / Infrastructure | `SPORT NEEDS PLACES. MEET THE PEOPLE WHO DECIDE WHERE THEY GET BUILT.` | — (statement, not a link) | `BUILD WITH ATHLIMA` | `/partner` |
 | For / Institutions | `BUILD THE INFRASTRUCTURE AROUND INDIA'S SPORTING FUTURE` | — (statement, not a link) | `INSTITUTIONAL ENQUIRY` | `/contact#institutional` |
 | For / Brands | `OWN A TERRITORY, NOT A LOGO` | — (statement, not a link) | `START A PARTNER CONVERSATION` | `/partner/enquire` |
-| Programme | — | — | `APPLY TO ATTEND` | `/apply` |
+| Programme | `ATHLIMA IS BY INVITATION.` | — (statement, not a link) | — | — |
 | Journal index | `EXPLORE THE THINKING` | — (statement, not a link) | `SUBSCRIBE` | inline |
 | Journal article | — | — | `MORE FROM [PILLAR]` | `/journal/pillar/[x]` |
-| About | — | — | `APPLY TO ATTEND` | `/apply` |
+| About | — | — | — *(Tier 3: `Explore the Group →`)* | — |
 | Press | — | — | `DOWNLOAD THE PRESS KIT` | asset |
 | Contact | — | — | — *(form buttons are microcopy — `contact.md`)* | — |
-| `/apply/declined` | — | — | `EXPLORE THE JOURNAL` | `/journal` |
 | Homepage, `legacy` phase | `ENTER ATHLIMA` | `/the-world` | `STAY IN TOUCH FOR 2027` | `#2027` (in-page email capture) |
-| Footer | `THE BUSINESS OF SPORT. THE FUTURE OF INDIA.` | — (statement, not a link) | `APPLY` | `/apply` |
+| Footer | `THE BUSINESS OF SPORT. THE FUTURE OF INDIA.` | — (statement, not a link) | `BUILD WITH ATHLIMA` | `/partner` |
 | 404 | — | — | `RETURN TO ATHLIMA` | `/` |
 
 **Strings added on 13 September 2026** (not in the original locked table; added because a decision created
 the need, and locked from now): `TELL ME WHEN NOMINATIONS OPEN` (D4 — the pre-window email capture),
 `STAY IN TOUCH FOR 2027` (replaces "Register interest for 2027", which used a banned word), and the
-corrected infrastructure line (D17). `/about`'s functional CTA is `APPLY TO ATTEND`; the outbound
-corporate link is Tier 3 and conditional on B3 — one page cannot have its only CTA pointing at a URL that
-may not exist.
+corrected infrastructure line (D17). **Added by decision A (evening):** `BUILD WITH ATHLIMA` (the
+permanent CTA, A2) and `ATHLIMA IS BY INVITATION.` (a statement, A4). Removed by the same decision:
+`APPLY`, `APPLY TO ATTEND`, `SUBMIT APPLICATION` — there is no guest application. `/about` carries the
+Tier-3 outbound `Explore the Group →` (B3) and no Tier-2 CTA.
 
 ### Tier-3 inline CTAs — also locked
 These are subordinate text links, not buttons. They do not count against the two-CTA rule.
@@ -64,8 +64,6 @@ These are subordinate text links, not buttons. They do not count against the two
 | Home screen 07 | `ABOUT ATHLIMA, ENSPORT AND ENARR →` | `/about` |
 | Home screen 08 *(always — decision D7)* | `SEE ATHLIMA 20 →` | `/athlima-20` |
 | `/partner` §05 | `HOW ATHLIMA CONNECT WORKS →` | `/connect` |
-| `/apply/received` | `EXPLORE THE JOURNAL →` | `/journal` |
-| `/apply/declined` | `STAY IN TOUCH FOR 2027 →` | inline email capture on the same page |
 | Mobile, after Home screen 04 | `WHY SHOULD YOU CARE? IT DEPENDS WHO YOU ARE ↓` | `#doorways` |
 | Home screen 07 · `/about` section 03 *(decision B3 §3)* | `Explore the Group →` | `https://www.enarr.com` — outbound, `rel="noopener"`, new tab, announced. Sentence case, not a button: it sits quietly beneath the institutional copy. |
 | `/the-world` section 05 | `THE TWO DAYS →` | `/programme` |
@@ -75,39 +73,19 @@ These are subordinate text links, not buttons. They do not count against the two
 
 ### Permanently banned
 Buy · Buy now · Book now · Book your spot · Get tickets · Reserve · Sign up · Register · Join now ·
-Learn more · Click here · Read more *(standalone)* · Submit *(bare — `SUBMIT APPLICATION` and `SUBMIT NOMINATION` are correct)* · Get started · Don't miss out · Limited
+Apply · Apply to attend · Application *(decision A1)* · Exclusive · Invite-only · Private · Members only · By invitation only *(decision A4 — the one permitted form is the statement `ATHLIMA IS BY INVITATION.`)* ·
+Learn more · Click here · Read more *(standalone)* · Submit *(bare — `SUBMIT NOMINATION` is correct, in v2)* · Get started · Don't miss out · Limited
 spots · Hurry · Contact us *(as a primary CTA)* · Download brochure *(as a primary CTA)*
 
 ---
 
-## 2. FORM MICROCOPY — THE APPLICATION
+## 2. SHARED FORM MICROCOPY
 
-**Page intro**
-> ## APPLY TO ATTEND
-> ATHLIMA is limited to 350 people. Every application is read. Not every application is accepted.
+> **Withdrawn — the guest application (decision A1, `08_OPERATIONS/decisions-2026-09-13-access.md`).**
+> There is no `/apply`; nobody applies to attend. The application's page intro, steps, fields, buttons
+> and confirmation page are gone. What survives is the error copy every form on the site shares.
 
-**Step labels**
-`01 YOU` · `02 YOUR ORGANISATION` · `03 YOUR INTEREST` · `04 CONTEXT`
-
-**Field labels and helpers**
-
-| Field | Label | Helper |
-|---|---|---|
-| Name | `FULL NAME` | — |
-| Email | `EMAIL` | `We'll send our decision here.` |
-| Phone | `PHONE` | `Including country code.` |
-| City | `CITY` | — |
-| Organisation | `ORGANISATION` | — |
-| Role | `YOUR ROLE` | — |
-| Sector | `SECTOR` | `Which part of the ecosystem do you work in?` |
-| Pillars | `WHAT ARE YOU HERE FOR?` | `Select up to two.` |
-| Interest | `WHAT WOULD YOU WANT TO GET FROM THE ROOM?` | `A few sentences. This is the part we read most closely.` |
-| Referral | `HOW DID YOU HEAR ABOUT ATHLIMA?` | — |
-| Consent | `I agree to ATHLIMA contacting me about my application.` | Unticked by default. |
-
-**Buttons:** `CONTINUE` · `BACK` · `SUBMIT APPLICATION`
-
-**Errors**
+**Errors — every form**
 | Situation | Message |
 |---|---|
 | Required, empty | `We need this one.` |
@@ -116,16 +94,6 @@ spots · Hurry · Contact us *(as a primary CTA)* · Download brochure *(as a pr
 | Too short | `A little more detail would help.` |
 | Submission failed | `Something went wrong at our end. Your answers are still here — try again in a moment.` |
 | Summary at top | `There are [n] things to fix before you can submit.` — each linked to its field |
-
-**Confirmation page — `/apply/received`**
-> ## YOUR APPLICATION IS IN.
->
-> We read every application. You'll hear from us by **[DATE]** `[TO VERIFY — decision date from the
-> project owner]`, either way.
->
-> In the meantime, the thinking is open to everyone.
->
-> `EXPLORE THE JOURNAL`
 
 ---
 
@@ -235,7 +203,7 @@ posts nowhere, never an anchor to nothing. Adults only: the list is the alert, n
 | **Contact — general form button** | `SEND MESSAGE` — see `contact.md` §02 |
 | **Contact — institutional form button** | `SEND INSTITUTIONAL ENQUIRY` — see `contact.md` §03 |
 | **Press — copy control on boilerplate** | `COPY` / `COPIED` |
-| **Email captures** | `TELL ME WHEN NOMINATIONS OPEN` (ATHLIMA 20) · `STAY IN TOUCH FOR 2027` (`/apply/declined`, legacy homepage) · `SUBSCRIBE` (Journal). Each has its own one-line confirmation in its content file. |
+| **Email captures** | `TELL ME WHEN NOMINATIONS OPEN` (ATHLIMA 20) · `STAY IN TOUCH FOR 2027` (legacy homepage) · `SUBSCRIBE` (Journal). Each has its own one-line confirmation in its content file. |
 
 ---
 
@@ -243,7 +211,7 @@ posts nowhere, never an anchor to nothing. Adults only: the list is the alert, n
 
 1. **At most one Tier-2 emotional CTA and one Tier-2 functional CTA per page.** Utility and sub-pages
    carry a functional CTA only. Tier-3 inline links are unlimited but subordinate.
-2. **APPLY is permanently visible** at every breakpoint, on every page.
+2. **BUILD WITH ATHLIMA is permanently visible** at every breakpoint, on every page (decision A2).
 3. **Every CTA goes somewhere real.** Zero `href="#"` in production.
 4. **No CTA promises something the next page does not deliver.**
 5. **Every form field has a persistently visible label.** Placeholder-as-label is forbidden.

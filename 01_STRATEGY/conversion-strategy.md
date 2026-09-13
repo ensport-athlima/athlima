@@ -5,7 +5,9 @@
 
 ## 1. THE PRINCIPLE
 
-ATHLIMA is invitation-led. The website therefore converts **in a register of invitation, not of sale.**
+ATHLIMA is by invitation. The website therefore converts **in a register of invitation, not of sale** — and,
+since decision A1, it does not convert guests at all: it converts *organisations*. A guest is shown the room;
+an organisation is invited to build it.
 
 Every conventional conversion instinct has to be inverted:
 
@@ -14,7 +16,7 @@ Every conventional conversion instinct has to be inverted:
 | Reduce friction | Keep meaningful friction — it signals selectivity |
 | Create urgency | Create consequence — this matters, not *hurry* |
 | Show the price | Never show a price |
-| "Register now" | "Apply" |
+| "Register now" | Nothing. There is no way to ask for access (A1) |
 | Maximise submissions | Maximise *qualified* submissions |
 | Countdown timers | Never |
 | Exit-intent popups | Never |
@@ -28,14 +30,15 @@ them? If yes, it is too promotional.
 ## 2. THE CTA HIERARCHY
 
 ### Tier 1 — THE PERMANENT CTA
-# **APPLY**
+# **BUILD WITH ATHLIMA**
 Visible at every breakpoint, on every page, always. **Desktop:** in the navigation — never scrolls away,
 never animates for attention. **Mobile:** a bottom-anchored bar that hides on scroll-down and reveals on
 scroll-up, so it is always one gesture away and never covers content (decision D8;
 `02_INFORMATION_ARCHITECTURE/navigation.md` §3).
 
-One word. It is doing a lot of work: it says the room is closed, that entry is decided by someone else,
-and that you are being invited to ask. *Register* would destroy all three meanings.
+Three words, and the only door the public site opens (decision A2). It says the ecosystem is being built,
+that organisations build it, and that the conversation starts here. It was `APPLY` until the owner
+decided there is no guest application; *Partner with us* would make ATHLIMA a sponsorship deck.
 
 ### Tier 2 — THE PAGE CTAs
 Every destination page carries **at most two**: one emotional, one functional.
@@ -43,7 +46,7 @@ Every destination page carries **at most two**: one emotional, one functional.
 - **Emotional** — speaks to why this matters. Larger, higher, aspirational.
 - **Functional** — the actual next action. Smaller, lower, unambiguous.
 
-Two Tier-2 CTAs is the ceiling, not a target. Three is indecision. Utility pages (`/apply`, `/contact`,
+Two Tier-2 CTAs is the ceiling, not a target. Three is indecision. Utility pages (`/contact`,
 `/press`, legal) and sub-pages (`/partner/model`, `/partner/journey`) carry a functional CTA only — an
 emotional CTA on a form page is noise. Tier-3 inline links do not count against this.
 
@@ -61,61 +64,51 @@ table is a summary of the same strings and is never edited on its own; edit `cta
 
 | Context | Emotional CTA | Functional CTA |
 |---|---|---|
-| Global / permanent | — | **APPLY** |
-| Homepage | **ENTER ATHLIMA** | **APPLY TO ATTEND** |
+| Global / permanent | — | **BUILD WITH ATHLIMA** |
+| Homepage | **ENTER ATHLIMA** | **BUILD WITH ATHLIMA** |
 | The World | **SEE THE WHOLE ECOSYSTEM** | **EXPLORE THE SIX** |
 | ATHLIMAX | **BUILD INSIDE THE MARKETPLACE** | **BECOME A FOUNDING PARTNER** |
-| The Symposium | **SHAPE THE CONVERSATION** | **SEE THE THEMES** |
-| ACTIV8 | **PLAY BEYOND THE GAME** | **SEE THE EXPERIENCE** |
+| The Symposium | **SHAPE THE CONVERSATION** *(statement)* | **SEE THE THEMES** |
+| ACTIV8 | **PLAY BEYOND THE GAME** *(statement)* | **SEE THE EXPERIENCE** |
 | Afterhours | **THE DAY INSPIRES. THE NIGHT CELEBRATES.** | **SEE THE EVENING** |
 | ATHLIMA Connect | **CONNECT BEFORE YOU ARRIVE** | **HOW CONNECT WORKS** |
 | ATHLIMA 20 (pre-window, v1) | **TOMORROW PLAYS HERE** | **TELL ME WHEN NOMINATIONS OPEN** |
 | ATHLIMA 20 (open, v2 · post-selection) | **TOMORROW PLAYS HERE** | **NOMINATE AN ATHLETE** · **SEE THE 2026 CLASS** |
 | Partner pages | **DON'T JUST SHOW UP. SHAPE WHAT COMES NEXT.** | **START A PARTNER CONVERSATION** |
-| Audience: Business | **FIND THE PEOPLE SHAPING SPORT'S NEXT ECONOMY** | **APPLY TO ATTEND** |
-| Audience: Athlete | **FIND YOUR NEXT LEVEL** | **APPLY TO ATTEND** |
-| Audience: Capital | **FIND THE OPPORTUNITIES BEHIND INDIA'S SPORTING GROWTH** | **APPLY TO ATTEND** |
-| Audience: Infrastructure | **SPORT NEEDS PLACES. MEET THE PEOPLE WHO DECIDE WHERE THEY GET BUILT.** | **APPLY TO ATTEND** |
+| Audience: Business | **FIND THE PEOPLE SHAPING SPORT'S NEXT ECONOMY** | **BUILD WITH ATHLIMA** |
+| Audience: Athlete | **FIND YOUR NEXT LEVEL** | — *(Tier 3: SEE ATHLIMA 20 →)* |
+| Audience: Capital | **FIND THE OPPORTUNITIES BEHIND INDIA'S SPORTING GROWTH** | **BUILD WITH ATHLIMA** |
+| Audience: Infrastructure | **SPORT NEEDS PLACES. MEET THE PEOPLE WHO DECIDE WHERE THEY GET BUILT.** | **BUILD WITH ATHLIMA** |
 | Audience: Institutions | **BUILD THE INFRASTRUCTURE AROUND INDIA'S SPORTING FUTURE** | **INSTITUTIONAL ENQUIRY** |
 | Audience: Brands | **OWN A TERRITORY, NOT A LOGO** | **START A PARTNER CONVERSATION** |
 | Journal article | — | **MORE FROM [PILLAR]** |
 | Journal index | **EXPLORE THE THINKING** | **SUBSCRIBE** |
-| About (ENSPORT / ENARR) | — | **APPLY TO ATTEND** *(the outbound corporate link is Tier 3, conditional on B3)* |
-| `/apply/declined` | — | **EXPLORE THE JOURNAL** |
+| The Room | **ATHLIMA IS BY INVITATION.** *(statement)* | **BUILD WITH ATHLIMA** |
+| Programme | **ATHLIMA IS BY INVITATION.** *(statement)* | — |
+| About (ENSPORT / ENARR) | — | — *(Tier 3: Explore the Group → enarr.com, decision B3)* |
 | Homepage, legacy phase | **ENTER ATHLIMA** | **STAY IN TOUCH FOR 2027** |
-| Footer | **THE BUSINESS OF SPORT. THE FUTURE OF INDIA.** | **APPLY** |
+| Footer | **THE BUSINESS OF SPORT. THE FUTURE OF INDIA.** | **BUILD WITH ATHLIMA** |
 
 ### Permanently banned CTA language
 Buy · Buy now · Book now · Book your spot · Get tickets · Reserve · Sign up · Register · Join now ·
-Learn more · Click here · Read more (as a standalone link) · bare Submit *(`SUBMIT APPLICATION` is correct)* · Get started · Don't miss out ·
+Apply · Application · Exclusive · Invite-only · Members only *(decisions A1, A4)* ·
+Learn more · Click here · Read more (as a standalone link) · bare Submit · Get started · Don't miss out ·
 Limited spots · Hurry · Contact us (as a primary CTA) · Download brochure (as a primary CTA)
 
 ---
 
 ## 4. THE THREE CONVERSION FLOWS
 
-### 4.1 GUEST APPLICATION — `/apply`
+### 4.1 THE GUEST — NO FLOW *(decision A1, `08_OPERATIONS/decisions-2026-09-13-access.md`)*
 
-**Framing above the form, verbatim intent:**
-> ATHLIMA is limited to 350 people. Every application is read. Not every application is accepted.
+There is no guest application. The guest list is curated by invitation and the public site does not
+sell, grant, request or process access. A guest's journey on the site ends in understanding — the room,
+the six, the people, the thinking — and, if they choose, a micro-conversion (§6). The absence of a form is
+the proposition: the room is composed, not filled. The one statement of it, `ATHLIMA IS BY INVITATION.`,
+appears on `/the-room` and `/programme` and nowhere else (A4).
 
-**Four steps. Progress visible. Nothing asked twice.**
-
-1. **You** — name, email, phone, city
-2. **Your organisation** — organisation, role, sector *(sector maps to the four stakeholder groups)*
-3. **Your interest** — which pillars, which IPs, what you would want to get from the room
-4. **Context** — how you heard about ATHLIMA, referral if any
-
-Then: review, consent, submit.
-
-**Rules**
-- Maximum four steps. Someone senior will abandon at five.
-- Every field has a persistent visible label. No placeholder-as-label.
-- Correct `inputmode` and `autocomplete` on every field.
-- Consent is specific and unticked by default.
-- On submit: a real confirmation **page** with a URL, a confirmation email, and a stated decision date.
-- **Never** an auto-acceptance. That destroys the entire proposition.
-- Mobile-first. Assume a phone, one hand, poor signal.
+*(The four-step application that stood here — steps, rules, decision date, `/apply/received`,
+`/apply/declined` — is withdrawn. Its shared error copy survives in `ctas.md` §2.)*
 
 ### 4.2 PARTNER ENQUIRY — `/partner/enquire`
 
@@ -166,8 +159,7 @@ Plus: a short statement of why.
 ## 5. FRICTION — WHERE TO KEEP IT AND WHERE TO KILL IT
 
 **Keep friction:**
-- The word *apply*, and everything it implies
-- Application review, and the wait for a decision
+- The absence of any way to ask for access (A1) — the strongest friction there is
 - Partner conversations rather than self-serve packages
 - The absence of a price
 - Independent selection for ATHLIMA 20
@@ -188,12 +180,12 @@ carelessness is a bug.
 
 ## 6. THE MICRO-CONVERSIONS
 
-Not everyone is ready to apply. Give them a smaller yes, so the relationship starts.
+A guest cannot convert; an organisation may not be ready to. Give both a smaller yes, so the relationship starts.
 
 | Micro-conversion | Where | Value |
 |---|---|---|
 | Journal subscribe | Journal, article footers | The strongest long-term asset. One list, no spam, real editorial. |
-| Stay in touch for 2027 | Post-event, and on `/apply/declined` | Keeps a relationship alive across a year. *("Register" is banned — the string is `STAY IN TOUCH FOR 2027`, `ctas.md` §1.)* |
+| Stay in touch for 2027 | Post-event (the homepage's legacy phase) | Keeps a relationship alive across a year. *("Register" is banned — the string is `STAY IN TOUCH FOR 2027`, `ctas.md` §1.)* |
 | Request the Prospectus | Partner pages | Turns an anonymous visitor into a named lead. |
 | Nomination-window alert | ATHLIMA 20, pre-window state | An email capture: tell me the day nominations open. Brings coaches and academies into the ecosystem before the v2 form exists. |
 | Share a Journal piece | Every article | Distribution. Make the OG images good. |
@@ -208,8 +200,7 @@ Every form is a moment of doubt. Answer the doubt on the page, beside the form, 
 - **What happens to my data** — one plain sentence, then a link to the full policy
 - **When will I hear back** — a specific timeframe, honoured
 - **Who will contact me** — a named person or team
-- **What if I'm not accepted** — say it plainly, and offer the Journal and the 2027 list. The decision email
-  links to `/apply/declined`, a real page that does exactly that (decision D34).
+- **What happens next** — a proposition, not a package; a named person, when B5 supplies one.
 
 ---
 

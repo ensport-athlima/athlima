@@ -10,11 +10,9 @@
  * Council and ATHLIMA 20 NIGHT, the under-20 eligibility line, the nominations month, and the
  * unattributed Symposium quotation. Each returns to the page the day it is verified.
  *
- * HELD — THE ACCESS DECISION (13 September 2026, project owner, conversational): there is to be no guest
- * application on the public site; access is curated by invitation. Until the decision is written into
- * the repository (conversion-strategy.md, ctas.md, sitemap.md) every guest-facing CTA that pointed to
- * /apply is withheld here: the Symposium's and ACTIV8's emotional CTAs, and the guest doorways' links.
- * Partner-facing CTAs (→ /partner, /partner/model) stand.
+ * There is no guest application (decision A1, 08_OPERATIONS/decisions-2026-09-13-access.md): the guest
+ * doorways are statements, and the Symposium's and ACTIV8's emotional CTAs are statements set as the
+ * invitation's headline (D18). Partner-facing CTAs (→ /partner, /partner/model) stand.
  */
 import type { DisplayLine } from "@/components/primitives/Display"
 import type { IPId } from "@/components/marks/IPMark"
@@ -79,7 +77,7 @@ export interface IPContent {
   forYou?: {
     marker: string
     headline: readonly DisplayLine[]
-    /** No href = a statement. Guest doorways are statements until the access decision lands (see below). */
+    /** No href = a statement. Guest doorways are statements — there is nothing to apply to (A1). */
     doorways: readonly { audience: string; line: string; href?: string }[]
   }
   closing?: {
@@ -234,7 +232,7 @@ export const symposium: IPContent = {
   ],
   invitation: {
     headline: [{ text: "SHAPE THE" }, { text: "CONVERSATION.", lime: true }],
-    // emotional: SHAPE THE CONVERSATION → /apply — held, the access decision.
+    // The emotional CTA is the headline itself — a statement, not a link (decisions A1, D18).
   },
 }
 
@@ -288,7 +286,7 @@ export const activ8: IPContent = {
   },
   invitation: {
     headline: [{ text: "PLAY BEYOND" }, { text: "THE GAME.", lime: true }],
-    // emotional: PLAY BEYOND THE GAME → /apply — held, the access decision.
+    // The emotional CTA is the headline itself — a statement, not a link (decisions A1, D18).
   },
 }
 

@@ -166,7 +166,7 @@ This is the most common conceptual error when working on ATHLIMA, and it produce
 SPORT · INSTITUTIONS · BUSINESS · CAPITAL describe **who is in the room**. BUILD · EQUIP · ENABLE ·
 PERFORM · GOVERN describe **what part of the ecosystem a thing is about**. CAPITAL has no pillar of its
 own because capital is not a part of sport — it is a party that acts on every part of it. This is why the
-application form asks for a *sector* (the stakeholder group) **and** for pillars: they are orthogonal, and
+partner enquiry asks for a *category* (the stakeholder group) **and** the room is composed by pillars: they are orthogonal, and
 an investor answers CAPITAL for one and BUILD or EQUIP for the other.
 
 **They intersect, they do not map one-to-one.** A single Symposium session can be GOVERN + BUILD. A single

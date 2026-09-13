@@ -85,7 +85,7 @@ The site is built as a **descent into a room**.
 
 The visitor arrives outside — the city, night, scale, ambition. Mumbai. The A as architecture, not as logo.
 Then the site moves inward: from the country, to the industry, to the building, to the floor, to the six
-spaces, to the people, to the individual conversation, to the application.
+spaces, to the people, to the individual conversation — and to the door, which is by invitation.
 
 **Scale → Diagnosis → Ecosystem → The Six → The Room → Your Doorway → Provenance → The Next Generation
 → Invitation.**
@@ -106,7 +106,7 @@ In strict priority order. When two goals conflict, the higher number wins.
 | # | Goal | Measured by |
 |---|---|---|
 | 1 | Convert a qualified organisation into a Founding Partner conversation | Partner enquiries from named, relevant organisations |
-| 2 | Convert a qualified individual into a guest application | Applications, and their quality |
+| 2 | Make a qualified individual want to be in the room — and understand that it is by invitation (decision A1) | Depth of reading; doorway click-through; micro-conversions (Journal, ATHLIMA 20 alert) |
 | 3 | Establish ATHLIMA as institutional, not promotional | Qualitative: does a federation secretary or a family office take it seriously? |
 | 4 | Make the six IPs legible as one ecosystem | Scroll depth to the portals; navigation into more than one IP per session |
 | 5 | Give ATHLIMA a reason to exist after 15 December 2026 | Journal traffic, returning visitors, ATHLIMA 20 nominations |
@@ -130,10 +130,10 @@ A site that is purely exclusive is invisible. A site that is purely open destroy
 
 - **Never gated:** the thinking. The Journal, the Symposium themes, the diagnosis of Indian sport, the
   research, ATHLIMA 20 athlete stories, the films. This is what earns attention, links and authority.
-- **Always gated:** the room. Attendance is by application. Partnership is by conversation. There is no
+- **Always gated:** the room. Attendance is by invitation — the site does not process it. Partnership is by conversation. There is no
   "Buy Ticket" button anywhere on this website, at any price, ever.
 
-The public content builds the reputation. The reputation makes the closed room worth applying to. That is
+The public content builds the reputation. The reputation makes the closed room worth being invited into. That is
 the entire growth model, and it is why the Journal is a strategic asset and not a content-marketing
 afterthought.
 

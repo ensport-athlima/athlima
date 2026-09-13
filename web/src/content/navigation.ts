@@ -1,6 +1,6 @@
 /**
  * Navigation and footer content (02_INFORMATION_ARCHITECTURE/navigation.md; 04_CONTENT/ctas.md §5).
- * Four items and one permanent CTA — locked. Every href is a manifest route.
+ * Four items and one permanent CTA — locked (decision A2 for the CTA). Every href is a manifest route.
  */
 import { routes, journalPillar, pillars, type Pillar } from "@/lib/routes"
 import type { IPId } from "@/components/marks/IPMark"
@@ -13,7 +13,8 @@ export const primaryNav = [
   { label: "JOURNAL", href: routes.journal },
 ] as const
 
-export const applyCta = { label: "APPLY", href: routes.apply } as const
+/** The permanent CTA — decision A2. The one commercial action on the site. */
+export const permanentCta = { label: "BUILD WITH ATHLIMA", href: routes.partner } as const
 
 /** The six IPs as they appear in the World panel and the mobile menu — brand-strategy.md §4 lines. */
 export const worldIPs: readonly { ip: IPId; descriptor: string; href: string }[] = [
@@ -80,7 +81,6 @@ export const footer = {
       links: [
         { label: "The composition", href: routes.theRoom },
         // Advisory Council renders only when the route exists (sitemap.md §4) — see Footer.
-        { label: "Apply to attend", href: routes.apply },
       ],
     },
     {

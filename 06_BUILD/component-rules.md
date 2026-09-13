@@ -21,7 +21,7 @@ Full-bleed page sections. Each one is a named, documented moment in the experien
 Examples: `EntrySequence`, `EcosystemPortals`, `AudienceDoorways`, `ProofNumbers`, `JournalRail`, `ApplyBlock`.
 
 ### Tiers 4–7 — Layout, Forms, Journal, States
-`components/layout/` (`Nav`, `Footer`, `ApplyBar`, `SkipLink`, `CookieNotice`, `Breadcrumb`),
+`components/layout/` (`Nav`, `Footer`, `CtaBar`, `SkipLink`, `CookieNotice`, `Breadcrumb`),
 `components/forms/`, `components/journal/` and the three state components — added to the inventory by
 decision D22. Specified in `03_DESIGN_SYSTEM/components.md`.
 

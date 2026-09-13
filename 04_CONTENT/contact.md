@@ -1,8 +1,8 @@
 # CONTACT
 ### `/contact` — the general route, and the institutional route
 
-> **Role in the experience:** Commit, for the two audiences who will not use a form called "apply" or
-> "enquire": the press, and institutions. The institutional route is the one Journey 03 depends on — a
+> **Role in the experience:** Commit, for the two audiences who will not use a form called "enquire":
+> the press, and institutions. The institutional route is the one Journey 03 depends on — a
 > federation secretary's path must never pass through a commercial page, and this is where it ends.
 >
 > **Tier:** T4 Utility. Functional only. No Tier-2 CTAs (`sitemap.md` §2). Density 10 / 20 / 70.
@@ -11,7 +11,7 @@
 
 **Three sections**
 ```
-01 ENTRY          one line, and the three routes named
+01 ENTRY          one line, and the routes named
 02 GENERAL        a short form
 03 INSTITUTIONAL  id="institutional" — a quieter, separate route
 ```
@@ -31,10 +31,11 @@ WRITE TO US.
 ```
 
 **Lead — `--fs-body-lg`**
-> Three routes. Applications go through `APPLY`. Partnership conversations start at
-> `/partner/enquire`. Everything else — including institutional and press enquiries — starts here.
+> Two routes. Partnership conversations start at `/partner/enquire`. Everything else — including
+> institutional and press enquiries — starts here. *(ATHLIMA is by invitation; there is nothing here for a
+> guest to submit — decision A1.)*
 
-**The three routes, as a short index (`IndexGrid`, 3-up → 1-up):**
+**The routes, as a short index (`IndexGrid`, 3-up → 1-up):**
 
 | # | Route | Line | Destination |
 |---|---|---|---|

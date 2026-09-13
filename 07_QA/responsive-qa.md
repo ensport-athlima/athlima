@@ -11,7 +11,7 @@ Run at every viewport in the matrix in `06_BUILD/responsive-rules.md`. Do not sa
 - [ ] No image squashed, stretched, or cropping its subject out.
 - [ ] Full-height sections use `svh`/`dvh` and do not jump when browser chrome collapses.
 - [ ] Tap targets ≥ 44×44px with ≥ 8px separation.
-- [ ] The APPLY affordance is present, reachable, and not covering content.
+- [ ] The BUILD WITH ATHLIMA affordance is present, reachable, and not covering content.
 - [ ] Nav opens, closes, traps focus, and closes on route change and on Escape.
 - [ ] Every hover-dependent piece of information is reachable without hover.
 - [ ] Video behaves per the rules: no autoplay of large files on mobile.

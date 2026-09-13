@@ -13,7 +13,7 @@ Not all pages are equal, and the build effort should not be either.
 | **T1 — Signature** | `/`, `/the-world` | Full art direction. Bespoke motion. Hero film. Unique layouts. | ~40% of the total |
 | **T2 — Destination** | The six IPs, `/the-room`, `/partner`, `/about` | Strong art direction, composed from the shared block library with IP-specific media. | ~35% |
 | **T3 — Argument** | `/for/*`, `/partner/*`, `/programme` | Type-led, disciplined, fast. Persuasion over spectacle. | ~15% |
-| **T4 — Utility** | `/apply`, `/contact`, `/press`, `/journal/[slug]`, legal, error pages | Clear, beautiful, unshowy. Craft in the detail, not the drama. | ~10% |
+| **T4 — Utility** | `/contact`, `/press`, `/journal/[slug]`, legal, error pages | Clear, beautiful, unshowy. Craft in the detail, not the drama. | ~10% |
 
 **The failure mode to avoid:** treating every page as T1. A site where everything is a spectacle has no
 crescendo, and the homepage stops meaning anything.
@@ -114,7 +114,7 @@ argument the site is built on.
 2. The four stakeholder groups, in depth
 3. The composition — the filterable view of who meets whom (Signature 04), labelled as the target composition
 4. The Advisory Council *(conditional)*
-5. Apply
+5. The invitation — `ATHLIMA IS BY INVITATION.`, then `BUILD WITH ATHLIMA` (decisions A1, A2, A4)
 
 ### `/partner` — 6 sections
 1. Don't just partner with an event. Help build the ecosystem.

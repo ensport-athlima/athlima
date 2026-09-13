@@ -104,9 +104,11 @@ Google "athlima" → /
     ↓  the specific proof that lands: the Investment, Policy & Impact pavilion + startup showcase
 → /the-room
     ↓  confirms the founder and infrastructure composition
-→ /apply
-    ↓  four steps. Finishes in the car.
+    ↓  "ATHLIMA IS BY INVITATION." — no form. He forwards the link to the person who can get him in.
 ```
+
+*(Amended by decision A1: the journey used to end at `/apply`. Now it ends in understanding — and in a
+forward, which is how invitations actually happen.)*
 
 **The moment of conversion:** the doorways block. Without it he bounces from the homepage — he has no
 patience for a generic argument.
@@ -134,8 +136,11 @@ Forwarded link → /the-world
 → /for/infrastructure
     ↓  "Sport needs places. Meet the people who decide where they get built."
     ↓  his fear, named: "will I just meet other developers?"  ← answered directly
-→ /apply
+→ BUILD WITH ATHLIMA → /partner
+    ↓  his development has a sports component; a territory, not a stall. He starts a conversation.
 ```
+
+*(Amended by decision A1/A2: the journey used to end at `/apply`.)*
 
 **The moment of conversion:** the Journal. **This journey is the entire argument for the open-thinking
 strategy.** He was converted by useful content, not by marketing copy.
@@ -189,6 +194,8 @@ Six journeys, seven build consequences. These are decisions, not observations.
 6. **Mobile performance on `/athlima-20` is a strategic requirement**, not a technical nicety. That
    audience is on the worst connections.
 7. **`/press` completeness at launch is non-negotiable.** It is the cheapest credibility on the site.
+8. **No journey ends in a guest form** (decision A1). A guest journey ends in understanding, a forward, or
+   a micro-conversion; only an organisation's journey ends in a submission — `BUILD WITH ATHLIMA`.
 
 ---
 

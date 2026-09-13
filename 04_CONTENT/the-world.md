@@ -281,7 +281,7 @@ Lime: `ONE SHARED FUTURE FOR SPORT.`
 The page's Tier-2 pair sits in section 01. Here, Tier 3 inline only:
 - `SEE THE FULL COMPOSITION →` → `/the-room`
 
-The permanent `APPLY` is in the nav and the mobile bar.
+The permanent `BUILD WITH ATHLIMA` is in the nav and the mobile bar (decision A2).
 
 ### Exit intent
 > *I know what it is. Now I want to know who is in it.*

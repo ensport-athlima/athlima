@@ -86,4 +86,4 @@ A cinematic site that takes 6 seconds to become useful will lose to a plain one 
   actively suppresses the good stuff.
 - No hidden text, no doorway pages, no purchased links.
 - No infinite scroll on the Journal index without paginated, crawlable URLs underneath.
-- Do not gate the Journal. Gate the *application*, never the thinking.
+- Do not gate the Journal. Gate the *room*, never the thinking.

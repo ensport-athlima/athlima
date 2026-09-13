@@ -209,7 +209,7 @@ site becoming a countdown.
 **The `phase` enum has five values** — the source of truth is `01_STRATEGY/digital-strategy.md` §5:
 `foundation` · `build` · `approach` · `live` · `legacy`. They collapse into three broad states:
 
-1. **Pre-event** (now → 13 Dec 2026) — anticipation, applications, partner acquisition, Journal, ATHLIMA 20
+1. **Pre-event** (now → 13 Dec 2026) — anticipation, partner acquisition, Journal, ATHLIMA 20
    nomination and reveal.
 2. **Live** (14–15 Dec 2026) — the site becomes a live surface. Programme, moments, ATHLIMA 20 class reveal.
 3. **Post-event** (16 Dec 2026 →) — the archive becomes an asset. Films, outcomes, the 2026 class, and the

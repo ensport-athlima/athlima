@@ -66,8 +66,8 @@ The Journal, ATHLIMA 20's 20-day reveal, films, the post-event archive. The site
 ATHLIMA exists in December *and* in June.
 
 ### 3.5 THE ACTUAL CONVERSION
-Applications and partner enquiries. Print ends in an email address. The site ends in a qualified,
-structured, tracked submission.
+Partner and institutional enquiries. Print ends in an email address. The site ends in a qualified,
+structured, tracked conversation. Guests are not a conversion — the room is by invitation (decision A1).
 
 ---
 
@@ -107,8 +107,8 @@ The site has to work in all three phases without a rebuild. See `brand-strategy.
 | Phase | Site emphasis | Primary CTA |
 |---|---|---|
 | **Foundation** (start → 12 months out) | Positioning, ENSPORT/ENARR credibility, Journal launch, partner acquisition | Partner with ATHLIMA |
-| **Build** (12 → 6 months out) | Programme reveal, Advisory Council (as confirmed), ATHLIMA 20 nominations open, Symposium themes | Apply / Nominate |
-| **Approach** (6 months out → the day before) | ATHLIMA 20 twenty-day reveal, confirmed programme, guest composition, final applications | Apply |
+| **Build** (12 → 6 months out) | Programme reveal, Advisory Council (as confirmed), ATHLIMA 20 nominations open, Symposium themes | Build with ATHLIMA / Nominate |
+| **Approach** (6 months out → the day before) | ATHLIMA 20 twenty-day reveal, confirmed programme, guest composition, partners announced | Build with ATHLIMA |
 | **Live** (14–15 December) | Live programme, moments, the ATHLIMA 20 class | Follow live |
 | **Legacy** (16 December → the next cycle) | Films, outcomes, the 2026 class, what happens next | Stay in touch for 2027 |
 
@@ -129,12 +129,10 @@ Three conversions, in commercial priority order.
 - Goes to a named human, with a stated response time.
 - **Success = a conversation booked, not a form submitted.**
 
-### 6.2 GUEST APPLICATION — highest volume
-- Route: `/apply`
-- Four steps, eleven fields, locked in `04_CONTENT/ctas.md` §2.
-- Language throughout is **apply**, never *register* or *book*.
-- Explicitly states: applications are reviewed; not all are accepted; a decision arrives by a stated date.
-- The friction is the feature. A frictionless application devalues the room.
+### 6.2 GUEST APPLICATION — **withdrawn** (decision A1, `08_OPERATIONS/decisions-2026-09-13-access.md`)
+- There is no `/apply`. The guest list is curated by invitation; the site does not process access.
+- The friction is now total, and it is the proposition: the absence of a form says the room is composed,
+  not filled. The site's job for a guest is understanding and desire, not submission.
 
 ### 6.3 ATHLIMA 20 NOMINATION — seasonal — **v2**
 - Route: `/athlima-20/nominate` — **does not ship at launch** (decision D4). In v1, `/athlima-20` carries
@@ -148,7 +146,7 @@ Three conversions, in commercial priority order.
 ### The universal rules
 - Every destination page has **at most one Tier-2 emotional CTA and one Tier-2 functional CTA.** Utility
   and sub-pages carry a functional CTA only. Never three. (`04_CONTENT/ctas.md` §6 is the source of truth.)
-- APPLY is permanently visible at every breakpoint.
+- BUILD WITH ATHLIMA is permanently visible at every breakpoint (decision A2).
 - No form asks for anything that will not be used.
 - Every submission gets a real confirmation page with a URL, plus a confirmation email, plus a stated
   next step and timeframe.
@@ -160,8 +158,7 @@ Three conversions, in commercial priority order.
 **The five numbers that matter**, in order:
 
 1. Qualified partner enquiries — measured by organisation quality, not count
-2. Guest applications, and their acceptance rate — a falling acceptance rate means the site is attracting
-   the wrong people
+2. Institutional enquiries, and the organisations they come from
 3. Doorway click-through from the homepage — the health of the self-selection model
 4. Journal returning visitors — the health of the year-round platform
 5. Scroll depth to the homepage portals — whether the top of the page is doing its job

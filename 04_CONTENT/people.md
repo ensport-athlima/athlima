@@ -144,15 +144,21 @@ A proposed council member is not council content — they are a sales conversati
 
 ---
 
-## Section 05 — APPLY
+## Section 05 — THE INVITATION
 
 **Display:**
 ```
 THE ROOM IS 350 PEOPLE.
 ```
-> Every application is read. Not every application is accepted.
+> Curated, not crowded. The room is composed, not filled.
 
-**CTA:** `APPLY TO ATTEND`
+**Statement — `--fs-display-md`, the one place on the site it is said (decision A4):**
+```
+ATHLIMA IS BY INVITATION.
+```
+
+**CTA:** functional `BUILD WITH ATHLIMA` → `/partner` (decision A2). There is nothing for a guest to
+submit; the page shows who is in the room and lets the absence of a form say the rest.
 
 ---
 
@@ -248,8 +254,8 @@ The five questions, as a statement of how ATHLIMA operates. They are good copy a
 > **05** Can it become something more?
 
 ### CTA
-Tier 2: `APPLY TO ATTEND` (functional). Tier 3 inline: `Explore the Group →` → `https://www.enarr.com`
-(decision B3 §3) — see `ctas.md` §1.
+No Tier-2 CTA (decision A1). Tier 3 inline: `Explore the Group →` → `https://www.enarr.com` (decision
+B3 §3) — see `ctas.md` §1. The permanent `BUILD WITH ATHLIMA` is in the chrome.
 
 ---
 

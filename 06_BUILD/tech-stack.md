@@ -65,9 +65,9 @@ Rule of thumb — *if it is a state change under 300ms, use CSS. If it is choreo
 ### Forms & data capture
 | Package / service | Purpose |
 |---|---|
-| `react-hook-form` + `zod` | Guest application, partner enquiry, newsletter. *(ATHLIMA 20 nomination is v2 — decision D4.)* Client + server validation from one schema. Loaded on form routes only. |
+| `react-hook-form` + `zod` | Partner enquiry, contact, the email captures. *(No guest application — decision A1. ATHLIMA 20 nomination is v2 — decision D4.)* Client + server validation from one schema. Loaded on form routes only. |
 | `resend` | Transactional email. |
-| **Vercel Postgres** (`@vercel/postgres`) | Application, enquiry and email-capture submissions. **Decided by the project owner, 13 September 2026: Vercel Postgres, not a Sanity dataset** — submissions are private records, not content, and the v2 nomination form (minors' data) must never live in a dataset the content team can open (`architecture.md` §6, `08_OPERATIONS/v2-backlog.md`). Schema and migrations live in `web/db/`; server actions write, Resend confirms. Until `POSTGRES_URL` is set, every form renders an honest not-configured state — never posts nowhere. |
+| **Vercel Postgres** (`@vercel/postgres`) | Enquiry and email-capture submissions. **Decided by the project owner, 13 September 2026: Vercel Postgres, not a Sanity dataset** — submissions are private records, not content, and the v2 nomination form (minors' data) must never live in a dataset the content team can open (`architecture.md` §6, `08_OPERATIONS/v2-backlog.md`). Schema and migrations live in `web/db/`; server actions write, Resend confirms. Until `POSTGRES_URL` is set, every form renders an honest not-configured state — never posts nowhere. |
 
 ### Analytics
 | Package / service | Purpose |
@@ -103,7 +103,7 @@ web/src/            # the app lives under web/ ; the brief folders sit beside it
 │   ├── forms/                # TextField, TextArea, Select, Checkbox, FieldError, FormProgress
 │   ├── journal/              # JournalCard, ArticleBody, PullQuote, ShareRow, SubscribeInline
 │   ├── marks/                # Supplied artwork as inline SVG — AthlimaWordmark, AthlimaA (components.md, MARKS)
-│   └── layout/               # Nav, Footer, ApplyBar, SkipLink, CookieNotice, Breadcrumb
+│   └── layout/               # Nav, Footer, CtaBar, SkipLink, CookieNotice, Breadcrumb
 ├── motion/                   # GSAP timelines, ScrollTrigger setups, easing constants
 ├── lib/                      # sanity client, queries, utils, env
 ├── styles/                   # tokens.css (design tokens as CSS custom properties)
@@ -137,7 +137,7 @@ SANITY_REVALIDATE_SECRET=      # verifies the Sanity → /api/revalidate webhook
 MUX_TOKEN_ID=
 MUX_TOKEN_SECRET=
 RESEND_API_KEY=
-POSTGRES_URL=                  # Vercel Postgres — applications, enquiries, email capture
+POSTGRES_URL=                  # Vercel Postgres — enquiries, email captures
 NEXT_PUBLIC_GA_ID=
 SENTRY_DSN=                    # server and edge
 NEXT_PUBLIC_SENTRY_DSN=        # the same DSN, exposed to the browser for the lazy client SDK

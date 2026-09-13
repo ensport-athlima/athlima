@@ -47,9 +47,11 @@
 - [ ] Every destination page has at most one Tier-2 emotional CTA and one Tier-2 functional CTA.
       Utility and sub-pages: functional only. Tier-3 inline links do not count.
 - [ ] The primary CTA is unambiguous about what happens next.
-- [ ] No "Learn more", no "Click here", no bare "Submit", no "Read more" as a standalone link. (`SUBMIT APPLICATION` and `SUBMIT NOMINATION` are the approved form buttons.)
+- [ ] No "Learn more", no "Click here", no bare "Submit", no "Read more" as a standalone link. (`SEND ENQUIRY`, `SEND MESSAGE`, `SEND INSTITUTIONAL ENQUIRY` are the approved form buttons; `SUBMIT NOMINATION` in v2.)
 - [ ] CTA language matches `04_CONTENT/ctas.md` exactly. No improvised variants.
-- [ ] The APPLY affordance is present and visible.
+- [ ] The BUILD WITH ATHLIMA affordance is present and visible. **No "apply", "register", "tickets" or
+      "exclusive" anywhere on the site (decisions A1, A4); `ATHLIMA IS BY INVITATION.` appears on
+      `/the-room` and `/programme` only.**
 - [ ] Every CTA goes somewhere real. Zero `href="#"`.
 
 ---

@@ -103,6 +103,19 @@ line *BUILT TO INSPIRE VICTORY* is no longer repeated beneath the marks because 
 carries it. Also recorded: the ENARR/ENSPORT marks ship as raster cut-outs — the one exception to "marks
 are never raster" — and Vercel Postgres is the datastore (`tech-stack.md` §2).
 
+**Decision A applied (13 September 2026, evening):** the project owner ruled that there is no guest
+application — access is by invitation and the public site does not process it
+(`decisions-2026-09-13-access.md`). Forty-odd files carried the application: `CLAUDE.md` II and V.5,
+`00_README.md`, `website-thesis.md`, `digital-strategy.md` §3.5/§5/§6.2/§7, `conversion-strategy.md`
+§1–§7, `audiences.md`, `brand-strategy.md`, `brand-pillars.md`, `sitemap.md` §1–§6, `navigation.md`,
+`user-journeys.md` 04–05 and the findings, `page-hierarchy.md`, `ctas.md` §1/§2/§5/§6, `homepage.md` 09,
+`people.md` (/the-room 05, /about CTA), `programme.md` 05, `contact.md`, `press.md`, `voice-and-tone.md`,
+`the-world.md`, `experiences.md`, `journal.md`, `legal.md`, `architecture.md` §6, `tech-stack.md`,
+`component-rules.md`, `responsive-rules.md`, `accessibility.md`, `seo.md`, `components.md`,
+`design-principles.md`, `colour.md`, `spacing.md`, the four QA files, the decisions file (D8, D13, D34)
+— and the build (`routes.ts`, the chrome, `homepage.ts`, `experiences.ts`). `apply.md` is deleted.
+`/apply` redirects to `/the-room`. The permanent CTA is `BUILD WITH ATHLIMA` → `/partner`.
+
 **Not fixable in this pass, and said so:** the brochure PDFs are image-only; *brochure-sourced* marks
 follow the repository's own attributions and are tagged for verbatim verification.
 

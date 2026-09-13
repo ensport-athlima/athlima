@@ -107,7 +107,7 @@
   --spacing-touch: var(--touch-min);
   --spacing-section-tall: var(--section-tall);
   --spacing-nav: var(--nav-h);
-  --spacing-apply-bar: var(--apply-bar-h);
+  --spacing-cta-bar: var(--cta-bar-h);
   --spacing-portal: var(--portal-w);
 
   --ease-out: var(--easing-out);
@@ -436,7 +436,7 @@
   }
   /* The cookie notice sits above the mobile APPLY bar below lg, at the bottom from lg. */
   .cookie-notice {
-    bottom: calc(var(--apply-bar-h) + env(safe-area-inset-bottom));
+    bottom: calc(var(--cta-bar-h) + env(safe-area-inset-bottom));
   }
   @media (min-width: 64rem) {
     .cookie-notice {
@@ -444,17 +444,17 @@
     }
   }
   /* The page carries bottom padding for the mobile APPLY bar below lg (navigation.md §3). */
-  .has-apply-bar {
-    padding-bottom: calc(var(--apply-bar-h) + env(safe-area-inset-bottom));
+  .has-cta-bar {
+    padding-bottom: calc(var(--cta-bar-h) + env(safe-area-inset-bottom));
   }
   @media (min-width: 64rem) {
-    .has-apply-bar {
+    .has-cta-bar {
       padding-bottom: 0;
     }
   }
   /* A 100svh hero's bottom edge: the tight pad, the safe area, and — while the apply bar is present — its height. */
   .pb-hero {
-    padding-bottom: calc(var(--section-pad-tight) + env(safe-area-inset-bottom) + var(--apply-bar-h));
+    padding-bottom: calc(var(--section-pad-tight) + env(safe-area-inset-bottom) + var(--cta-bar-h));
   }
   @media (min-width: 64rem) {
     .pb-hero {

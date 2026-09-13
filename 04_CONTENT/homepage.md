@@ -562,8 +562,9 @@ the closing line over it (B2).
 THE ROOM IS 350 PEOPLE.
 ```
 
-**Sub — `--fs-body-lg`, centred, max 30em**
-> Every application is read. Not every application is accepted.
+**Sub — `--fs-body-lg`, centred, max 30em** *(decision A1 — no application; the words are the locked room
+line, `CLAUDE.md` Part II)*
+> Curated, not crowded. Invitation-led.
 > That is the point.
 
 **Detail — `--fs-label`, centred**
@@ -588,7 +589,7 @@ invitation land instead of arriving as one more crescendo.
 
 ### CTAs
 - Emotional: `ENTER ATHLIMA` → `/the-world` *(secondary variant)*
-- Functional: `APPLY TO ATTEND` → `/apply` *(primary — lime ground, black text)*
+- Functional: `BUILD WITH ATHLIMA` → `/partner` *(primary — lime ground, black text; decision A2)*
 
 **As built (13 September 2026):** the A is the filled device in lime, revealed with `EASE_ARCH`/`SLOW`
 on transform and opacity — not a stroke draw on scroll, which would animate a non-transform property on
@@ -610,7 +611,7 @@ After all nine screens are standing, run this before calling the homepage finish
    > doorway → ATHLIMA is not an event company's event → Twenty athletes, twenty sports, one future →
    > The room is 350 people.*
    It holds.
-3. Count the lime **content** elements in each viewport — the `SectionMarker` and the permanent `APPLY`
+3. Count the lime **content** elements in each viewport — the `SectionMarker` and the permanent CTA
    are chrome and do not count (decision D3). **Four or more triggers a review.**
 4. Count the `100svh` sections per breakpoint. **Maximum three** — screens 01, 04 and 08. On touch, the
    six stacked portal panels of screen 04 count as **one** section (decision D25).

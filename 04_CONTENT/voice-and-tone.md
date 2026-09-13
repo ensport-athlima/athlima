@@ -75,7 +75,9 @@ Get ready
 *Delve into* · *Navigate the landscape*
 
 ### Wrong-register words for ATHLIMA specifically
-attendees *(→ guests)* · delegates *(→ guests)* · tickets *(→ applications)* · booth · stall *(→ space,
+attendees *(→ guests)* · delegates *(→ guests)* · tickets · apply · application *(→ nothing: ATHLIMA is by
+invitation and the site does not process access — decision A1)* · exclusive · invite-only · members only
+*(insecure luxury language — A4)* · booth · stall *(→ space,
 pavilion)* · sponsor *(→ partner)* · expo · trade show · networking event · conference *(ATHLIMA contains
 a symposium; it is not a conference)* · workshop · session *(fine for the Symposium, wrong for everything
 else)*
@@ -118,7 +120,7 @@ The voice is constant. The tone shifts.
 | AFTERHOURS | Looser, more atmospheric | *The day inspires. The night celebrates.* |
 | Partner pages | Business-serious, respectful | *The value isn't measured in logos.* |
 | Institutional pages | Formal, restrained, unhurried | *An ENSPORT Ventures initiative · ENARR Group* |
-| Forms and microcopy | Plain, helpful, human | *We read every application. You'll hear from us by 30 September.* |
+| Forms and microcopy | Plain, helpful, human | *Tell us what your organisation wants to own. We'll come back with a proposition, not a package.* |
 | Errors | Direct, never cute | *That email address doesn't look right. Check it and try again.* |
 | The Journal | Editorial, longer sentences permitted | Full paragraphs. Real argument. Sources. |
 
@@ -133,7 +135,7 @@ institutional, it is rude.
 |---|---|
 | a platform · an ecosystem · a room | an event · a show · a conference |
 | guests | attendees · delegates · visitors |
-| apply | register · sign up · book |
+| by invitation *(said once, as a statement)* | apply · register · sign up · book |
 | partners · Founding Partners | sponsors · exhibitors |
 | spaces · pavilions | booths · stalls |
 | the room | the venue · the hall |

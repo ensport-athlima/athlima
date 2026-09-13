@@ -13,7 +13,7 @@ Lime is not a colour scheme. It is **a signal**: the thing that says *look here,
 ATHLIMA*. A signal used everywhere stops being a signal.
 
 **The test:** count the lime elements **in the content** of any viewport. More than three and the system
-has broken. The section marker and the permanent APPLY are chrome, not content, and do not count
+has broken. The section marker and the permanent CTA are chrome, not content, and do not count
 (decision D3, `03_DESIGN_SYSTEM/colour.md` §3).
 
 ---

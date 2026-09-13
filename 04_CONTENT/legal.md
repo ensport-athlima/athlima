@@ -7,7 +7,7 @@
 > written by counsel. **This file specifies what each page must contain. It does not contain legal text,
 > and nothing here is legal advice.**
 >
-> **Tier:** T4 Utility. No CTAs. The mobile APPLY bar is present. Density 10 / 20 / 70.
+> **Tier:** T4 Utility. No CTAs. The mobile CTA bar is present. Density 10 / 20 / 70.
 > **Layout:** L3 Editorial. Sentence case is permitted for headings at `display-md` and below; the body is
 > `--fs-body` on `--ink-100`, 34em measure, real typographic care. A legal page set badly reads as a
 > template — the same discipline as the Journal.
@@ -36,15 +36,15 @@ Each page:
 ## `/legal/privacy` — PRIVACY
 
 **Summary line — `--fs-body-lg`** *(plain English, in voice; counsel approves it)*
-> We collect what we need to consider your application, answer your enquiry, or send you the Journal —
+> We collect what we need to answer your enquiry or send you the Journal —
 > and we tell you, on each form, what that is. We do not sell it. You can ask us what we hold and ask us
 > to delete it.
 
 **Must cover** `[TO VERIFY — LEGAL]`:
-- Who the data fiduciary is (the ENSPORT Ventures entity, `[TO VERIFY — B3]`), and how to reach it.
-- What is collected, per form: the guest application (`ctas.md` §2), the partner enquiry (§3), the
-  contact and institutional routes (`contact.md`), the Journal subscription, the ATHLIMA 20 pre-window
-  email capture, the 2027 list.
+- Who the data fiduciary is — ENSPORT Ventures Private Limited, CIN U93110MH2026PTC474328 (decision B3) —
+  and how to reach it `[TO VERIFY — B3a]`.
+- What is collected, per form: the partner enquiry (`ctas.md` §3), the contact and institutional routes
+  (`contact.md`), the Journal subscription, the ATHLIMA 20 pre-window email capture, the 2027 list.
 - The purpose of each, the lawful basis, how long it is kept, and with whom it is shared (email
   delivery, hosting, analytics — named).
 - The rights available under the DPDP Act, and how to exercise them, including erasure.
@@ -64,8 +64,8 @@ Each page:
 
 **Must cover** `[TO VERIFY — LEGAL]`:
 - The entity operating the site and the governing law and jurisdiction.
-- That an application is a request, reviewed at ATHLIMA's discretion; that submission is not acceptance
-  and confers no right to attend.
+- That attendance is by invitation at ATHLIMA's discretion; that nothing on the site confers a right to
+  attend.
 - That a partner enquiry is not an offer and that partnerships are agreed separately in writing.
 - Intellectual property: the ATHLIMA marks and content; what press may use (the press kit) and on what
   terms.

@@ -76,7 +76,7 @@ This is the safety net, not the strategy. The strategy is `gsap.matchMedia()`.
 | Number counters | The final value is in the DOM. Wrap the animating span in `aria-hidden` and expose the real figure. |
 | Masked video text | The headline is real text in the DOM, masked with CSS. Never an image of text. Never a canvas. |
 | Marquee | `aria-hidden` on the duplicated copies. One readable instance only. |
-| Modal / application steps | Focus moves in, is trapped, Escape closes, focus returns to the trigger. Use Radix primitives. |
+| Modal / dialog | Focus moves in, is trapped, Escape closes, focus returns to the trigger. Use Radix primitives. |
 
 ---
 

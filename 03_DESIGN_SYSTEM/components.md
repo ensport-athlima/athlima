@@ -113,8 +113,8 @@ Full-width page sections. Each carries the mandatory header comment from `06_BUI
 | `ApplyBlock` | The closing invitation. One emotional CTA, one functional. | Every page |
 | `FloorPlan` | The venue floor, annotated and navigable. **`/programme` only in v1** (decision D21) — an operational artefact, not a proposition. Shows whichever commercial architecture B1 confirms. | `/programme` |
 | `DisciplineGrid` | The twenty ATHLIMA 20 sports. | `/athlima-20` |
-| `FormShell` | The wrapper for every form: progress (multi-step only), validation, error summary, trust panel. | `/apply`, `/partner/enquire`, `/contact`; `/athlima-20/nominate` in v2 |
-| `EmailCapture` | A single-field inline capture with its own confirmation: the ATHLIMA 20 pre-window alert, the 2027 list, the Journal subscription. | `/athlima-20`, `/apply/declined`, `/journal`, homepage (legacy phase) |
+| `FormShell` | The wrapper for every form: progress (multi-step only), validation, error summary, trust panel. | `/partner/enquire`, `/contact`; `/athlima-20/nominate` in v2 |
+| `EmailCapture` | A single-field inline capture with its own confirmation: the ATHLIMA 20 pre-window alert, the 2027 list, the Journal subscription. | `/athlima-20`, `/journal`, homepage (legacy phase) |
 
 **19 blocks. 10 primitives. 7 media components. 6 layout components. 6 form components. 5 Journal
 components. 3 state components.** Every page on the site is composed from them. A page that needs
@@ -131,9 +131,9 @@ Added by decision D22 — these were always required and were never in the inven
 
 | Component | Specification |
 |---|---|
-| `Nav` | The four items and the permanent APPLY. Behaviour in `02_INFORMATION_ARCHITECTURE/navigation.md` §§1–3, §7. Reads `data-surface` to invert. `aria-current="page"` plus underline. |
+| `Nav` | The four items and the permanent BUILD WITH ATHLIMA (decision A2). Behaviour in `02_INFORMATION_ARCHITECTURE/navigation.md` §§1–3, §7. Reads `data-surface` to invert. `aria-current="page"` plus underline. |
 | `Footer` | The `<footer>` landmark in `navigation.md` §5. Conditional Advisory Council link. Marks at their own colours. No newsletter form. |
-| `ApplyBar` | The mobile bottom bar. `env(safe-area-inset-bottom)`. Hides on scroll-down, reveals on scroll-up (decision D8). Absent on `/apply`. |
+| `CtaBar` | The mobile bottom bar carrying the permanent CTA. `env(safe-area-inset-bottom)`. Hides on scroll-down, reveals on scroll-up (decision D8). Absent on `/partner` and its children. |
 | `SkipLink` | `SKIP TO CONTENT`. First focusable element. Visually hidden until focused. |
 | `CookieNotice` | Bottom-anchored, never a modal. `ACCEPT` · `DECLINE`. GA4 loads only after accept (decision D33). Remembered per viewer. |
 | `Breadcrumb` | `PARTNER / THE MODEL`, `JOURNAL / BUILD / [title]`. Nested routes only. `BreadcrumbList` JSON-LD. |

@@ -295,12 +295,14 @@ export const screen08 = {
 export const screen09 = {
   id: "invitation",
   headline: [{ text: "THE ROOM IS 350 PEOPLE." }] satisfies readonly DisplayLine[],
-  sub: ["Every application is read. Not every application is accepted.", "That is the point."],
+  /** Decision A1 — no application. The locked room line (CLAUDE.md Part II) carries the close. */
+  sub: ["Curated, not crowded. Invitation-led.", "That is the point."],
   detail: `${site.datesLabel}  ·  ${site.venueLabel}`,
   lockup: [
     { text: "THE BUSINESS OF SPORT." },
     { text: "THE FUTURE OF INDIA.", lime: true },
   ] satisfies readonly DisplayLine[],
   emotional: { label: "ENTER ATHLIMA", href: routes.theWorld },
-  functional: { label: "APPLY TO ATTEND", href: routes.apply },
+  /** Decision A2 — the one commercial action; there is no guest application (A1). */
+  functional: { label: "BUILD WITH ATHLIMA", href: routes.partner },
 } as const

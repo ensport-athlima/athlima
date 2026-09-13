@@ -131,7 +131,7 @@ Screenshot any viewport. Count the distinct lime elements **in the content**. **
 review.**
 
 **Chrome does not count** (decision D3): the `SectionMarker` (its numeral and its 40px rule) and the
-permanent `APPLY` affordance in the nav or the mobile bar are the site's frame. They are on every screen
+permanent `BUILD WITH ATHLIMA` affordance in the nav or the mobile bar are the site's frame. They are on every screen
 by design and are excluded from the count. Everything else — a lime word in a headline, a lime data
 highlight, a lime accent character in a mark, a lime CTA block, a lime rule that is not the section
 marker — counts.

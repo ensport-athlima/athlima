@@ -35,11 +35,11 @@
 - [ ] All performance budgets in `06_BUILD/performance.md` met on throttled mobile.
 - [ ] axe: zero violations on every route.
 - [ ] Full keyboard pass on every route.
-- [ ] VoiceOver pass on the homepage, the guest application and the nomination flow.
+- [ ] VoiceOver pass on the homepage, the partner enquiry and the ATHLIMA 20 email capture.
 - [ ] `prefers-reduced-motion` pass on every route.
 - [ ] Zero console errors and zero console warnings in production build.
 - [ ] Zero 404s. Crawl the site (Screaming Frog or equivalent) and check every link, internal and external.
-- [ ] Both v1 forms submit end-to-end — application and partner enquiry: data stored, confirmation email
+- [ ] Every v1 form submits end-to-end — partner enquiry, contact, institutional: data stored, confirmation email
       received, confirmation page shown at its own URL. The ATHLIMA 20 email capture stores and confirms.
 - [ ] `/athlima-20` renders its `pre-window` state; no nomination form or route is reachable.
 - [ ] GA4 does not load before the cookie notice is accepted (decision D33).
@@ -62,8 +62,8 @@
 - [ ] `robots.txt` correct — **confirm the staging `Disallow: /` is gone.** This is the single most common
       launch disaster.
 - [ ] `sitemap.xml` generating and submitted to Google Search Console and Bing Webmaster Tools.
-- [ ] Google Analytics 4 live (consent-gated), with conversion events defined for: application started,
-      application completed, enquiry submitted, journal subscription, ATHLIMA 20 alert captured,
+- [ ] Google Analytics 4 live (consent-gated), with conversion events defined for: partner enquiry started,
+      partner enquiry submitted, institutional enquiry submitted, journal subscription, ATHLIMA 20 alert captured,
       journal read >50%.
 - [ ] Vercel Analytics and Speed Insights enabled.
 - [ ] Uptime monitoring configured with a real alert destination.
@@ -80,7 +80,8 @@
 - [ ] Favicon and app icons verified on iOS and Android home screens.
 - [ ] Test the site on a real mid-range Android phone on real mobile data, in India.
 - [ ] Every email address on the site receives mail.
-- [ ] Someone outside the project has used the site and tried to apply. Watch them do it. Say nothing.
+- [ ] Someone outside the project has used the site and tried to work out how to get in. Watch them.
+      Say nothing. They should arrive at "it's by invitation" — not at a dead end, and not at a form.
 
 ---
 
@@ -100,7 +101,7 @@
 
 - [ ] Review Core Web Vitals field data — lab data lied to you somewhere; find where.
 - [ ] Review Search Console coverage for crawl errors.
-- [ ] Review the application funnel: how many started, how many finished, where the drop-off is.
+- [ ] Review the enquiry funnel: how many started, how many finished, where the drop-off is.
 - [ ] Review scroll depth on the homepage. If most people never reach the portals, the top of the page is too long.
 - [ ] Collect qualitative feedback from five people in each primary audience.
 - [ ] Log everything into `08_OPERATIONS/post-launch-log.md` and schedule the first iteration.

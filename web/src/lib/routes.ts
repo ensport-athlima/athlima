@@ -41,10 +41,6 @@ export const routes = {
 
   about: "/about",
 
-  apply: "/apply",
-  applyReceived: "/apply/received",
-  applyDeclined: "/apply/declined", // reached only from the decision email; noindex
-
   contact: "/contact",
   contactInstitutional: "/contact#institutional",
   press: "/press",
@@ -78,10 +74,7 @@ export const journalPillar = (pillar: Pillar) => `${routes.journal}/pillar/${pil
 export const journalSeries = (s: Series) => `${routes.journal}/series/${s}` as const
 
 /** Routes that never appear in sitemap.xml. */
-export const noindexRoutes: readonly RoutePath[] = [
-  routes.applyDeclined,
-  routes.contactInstitutional,
-]
+export const noindexRoutes: readonly RoutePath[] = [routes.contactInstitutional]
 
 /** Every static route that belongs in sitemap.xml, in sitemap order. */
 export const indexableStaticRoutes: readonly RoutePath[] = (
@@ -92,8 +85,11 @@ export const indexableStaticRoutes: readonly RoutePath[] = (
 export const redirects: ReadonlyArray<{ source: string; destination: RoutePath }> = [
   { source: "/home", destination: routes.home },
   { source: "/index", destination: routes.home },
-  { source: "/tickets", destination: routes.apply },
-  { source: "/register", destination: routes.apply },
+  // There is no guest application (decision A1). Old access URLs land on the room.
+  { source: "/apply", destination: routes.theRoom },
+  { source: "/tickets", destination: routes.theRoom },
+  { source: "/register", destination: routes.theRoom },
+  { source: "/pricing", destination: routes.theRoom },
   { source: "/sponsor", destination: routes.partner },
   { source: "/sponsors", destination: routes.partner },
   { source: "/exhibitors", destination: routes.partner },

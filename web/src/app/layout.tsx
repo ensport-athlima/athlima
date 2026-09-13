@@ -7,7 +7,7 @@ import { SmoothScrollProvider } from "@/motion/SmoothScrollProvider"
 import { SkipLink } from "@/components/layout/SkipLink"
 import { Nav } from "@/components/layout/Nav"
 import { Footer } from "@/components/layout/Footer"
-import { ApplyBar } from "@/components/layout/ApplyBar"
+import { CtaBar } from "@/components/layout/CtaBar"
 import { CookieNotice } from "@/components/layout/CookieNotice"
 import { env } from "@/lib/env"
 import { site } from "@/content/site"
@@ -60,14 +60,14 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-IN" className={archivo.variable}>
-      <body className="has-apply-bar bg-void text-ink-100 antialiased">
+      <body className="has-cta-bar bg-void text-ink-100 antialiased">
         <SkipLink />
         <SmoothScrollProvider>
           <Nav />
           {children}
           <Footer />
         </SmoothScrollProvider>
-        <ApplyBar />
+        <CtaBar />
         <CookieNotice gaId={env.NEXT_PUBLIC_GA_ID} />
         <Analytics />
         <SpeedInsights />

@@ -49,7 +49,7 @@ else is tagged and does not ship.
 | **When** | 14–15 December 2026 |
 | **Where** | The St. Regis Mumbai, 9th floor |
 | **Edition** | The first. ATHLIMA 2026. |
-| **The room** | 350 people, across four groups: sport, institutions, business and capital. Invitation-led; attendance is by application. `[TO VERIFY — B1]` |
+| **The room** | 350 people, across four groups: sport, institutions, business and capital. By invitation. `[TO VERIFY — B1]` |
 | **The six experiences** | ATHLIMAX (the marketplace) · The Symposium (the ideas) · ACTIV8 (the experience) · Afterhours (the culture) · ATHLIMA Connect (the relationships) · ATHLIMA 20 (the next generation) |
 | **The five pillars** | BUILD · EQUIP · ENABLE · PERFORM · GOVERN |
 | **Built by** | ENSPORT Ventures Private Limited (CIN U93110MH2026PTC474328), within the ENARR Group — decision B3. In running copy: *an ENSPORT Ventures initiative within the ENARR Group*. |

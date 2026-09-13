@@ -48,7 +48,7 @@ that athletes are participants, not exhibits.
 **Their fear:** being decoration at a corporate event.
 **The answer to that fear:** ATHLIMA 20 is a platform for athletes, run with independent selection. The
 Symposium has athletes on stage, not just about them.
-**Destination:** Apply to attend / ATHLIMA 20 (the pre-window alert in v1; nomination in v2 — decision D4).
+**Destination:** ATHLIMA 20 (the pre-window alert in v1; nomination in v2 — decision D4). No guest application (A1).
 
 ### DOORWAY 03 — THE INVESTOR / FAMILY OFFICE
 **Their question:** Is there real deal flow here, or is this a party?
@@ -57,7 +57,7 @@ Symposium has athletes on stage, not just about them.
 the startup showcase; the composition of the founder and infrastructure cohort.
 **Their fear:** a low-quality pipeline and a wasted evening.
 **The answer to that fear:** curated composition, and the specific pavilion architecture.
-**Destination:** Apply to attend.
+**Destination:** Build with ATHLIMA (a partner conversation) — or understanding, and a forward. No guest application (A1).
 
 ### DOORWAY 04 — THE DEVELOPER / ARCHITECT / INFRASTRUCTURE LEADER
 **Their question:** Are the people who commission and operate sporting facilities actually going to be there?
@@ -66,7 +66,7 @@ the startup showcase; the composition of the founder and infrastructure cohort.
 government and operators in the room together.
 **Their fear:** meeting other developers instead of clients.
 **The answer to that fear:** the cross-sector composition is the entire design of the room.
-**Destination:** Partner with ATHLIMA / Apply to attend.
+**Destination:** Build with ATHLIMA (a partner conversation). No guest application (A1).
 
 ### DOORWAY 05 — THE GOVERNMENT / FEDERATION / INSTITUTION
 **Their question:** Is this serious, and is it appropriate for us to be associated with it?
@@ -135,7 +135,7 @@ profile" gates. Too fragile, too creepy, and it breaks sharing and SEO. The door
 ```
 DISCOVER            UNDERSTAND           SELF-IDENTIFY        QUALIFY            COMMIT
 ───────────────────────────────────────────────────────────────────────────────────────────
-Homepage       →    The World       →    Doorways        →   Audience page  →   Apply
+Homepage       →    The World       →    Doorways        →   Audience page  →   Build with ATHLIMA
 Journal        →    Six IPs         →    "this is me"    →   The proof      →   Enquire
 Social / press →    The People                               ATHLIMA Connect    Nominate
 LinkedIn       →    ENSPORT/ENARR                            The programme
@@ -161,4 +161,4 @@ them, it should not exist.
 
 1. **This is serious.** Institutionally backed, properly built, not a promoter's event.
 2. **The room is small and deliberately composed.** I would be in it with people I could not otherwise reach.
-3. **Getting in is not automatic.** There is an application. That is the point.
+3. **Getting in is not automatic.** It is by invitation, and there is no form (decision A1). That is the point.

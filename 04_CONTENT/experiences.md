@@ -33,10 +33,8 @@ footer and buttons stay lime (D15). **Every `[TO VERIFY]` in this file is honour
 partner counts, the two-week lead, the lawn and the Astor Terrace, the 60ft, the evening flow (its day
 and its recognition moment are unsettled, so the flow is not on the page; `#evening` anchors the six
 elements), the Selection Council's name, ATHLIMA 20 NIGHT, the under-20 line, the opening month and the
-unattributed quotation. **Held pending the access decision** (project owner, 13 September, not yet in
-the repository): the guest-facing CTAs to `/apply` — the Symposium's and ACTIV8's emotional CTAs and the
-guest doorways' links render as statements until `conversion-strategy.md`, `ctas.md` and `sitemap.md`
-are amended.
+unattributed quotation. **Decision A1 (no guest application):** the Symposium's and ACTIV8's emotional
+CTAs are statements set as the invitation's headline, and the guest doorways are statements.
 
 ---
 
@@ -88,7 +86,7 @@ LIMITED. CURATED. COMPLEMENTARY.
 
 ### For you
 **If you are a brand or a business:** the offer is not a space. It is a territory. → `/partner`
-**If you are a guest:** this is where you find the companies solving the problem you have. → `/apply`
+**If you are a guest:** this is where you find the companies solving the problem you have. *(a statement — there is nothing to apply to, decision A1)*
 
 **Closing statement:**
 ```
