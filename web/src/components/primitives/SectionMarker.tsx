@@ -18,12 +18,15 @@ export function SectionMarker({ number, label, className }: SectionMarkerProps) 
   return (
     <div className={cn("flex items-center gap-4", className)}>
       <span
-        className="display text-display-sm leading-none text-lime tabular-nums"
+        className="display on-light-lime text-display-sm leading-none text-lime tabular-nums"
         aria-hidden="true"
       >
         {numeral}
       </span>
-      <span className="w-lime-rule border-t-2 border-lime" aria-hidden="true" />
+      <span
+        className="on-light-lime-border w-lime-rule border-t-2 border-lime"
+        aria-hidden="true"
+      />
       <Eyebrow as="span">
         <span className="sr-only">Section {numeral}: </span>
         {label}

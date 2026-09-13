@@ -333,6 +333,58 @@
   }
 }
 
+/* On a light surface lime becomes --lime-ink for anything that is text or a line (colour.md §4).
+   In the utilities layer so it outranks the lime utilities it corrects. */
+@layer utilities {
+  /* Display type and the lime word on a light surface: void, and lime-ink — colour.md §4. */
+  [data-surface="light"] .display {
+    color: var(--void);
+  }
+  [data-surface="light"] .text-lime {
+    color: var(--lime-ink);
+  }
+  [data-surface="light"] .on-light-lime {
+    color: var(--lime-ink);
+  }
+  [data-surface="light"] .on-light-lime-border {
+    border-color: var(--lime-ink);
+  }
+  [data-surface="light"] .on-light-lime-bg {
+    background-color: var(--lime-ink);
+  }
+}
+
+/* MARQUEE (components.md): continuous, pauses on hover and focus, static under reduced motion. */
+@layer components {
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee var(--marquee-duration, 40s) linear infinite;
+  }
+  .marquee:hover .marquee-track,
+  .marquee:focus-within .marquee-track {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+      width: auto;
+      flex-wrap: wrap;
+    }
+    .marquee-track > [aria-hidden] {
+      display: none;
+    }
+  }
+}
+
 /* accessibility.md §2 — the safety net. gsap.matchMedia() in src/motion/registry.ts is the strategy. */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -470,6 +470,11 @@ After six screens of black, the shift is arresting on its own.
 ### CTAs
 `ABOUT ATHLIMA, ENSPORT AND ENARR →` → `/about` *(ghost variant)*
 
+**As built (13 September 2026):** only the locked relationship sentence and ATHLIMA's own line render;
+the ENARR history and the Group's belief are held in `screen07.pendingApproval` and never render until
+B3. The two marks are named `--paper-warm` plates until vectors arrive (B2). Marker, lime word, ghost arrow
+and focus ring are `--lime-ink` on this surface.
+
 ### Exit intent
 > *There is a real institution behind this. It is not a promoter's event.*
 
@@ -537,6 +542,11 @@ slow marquee that pauses on interaction.
 `TOMORROW PLAYS HERE.` is the closing display line on this screen, not a link. The nomination form does
 not ship in v1 (decision D4), so no nomination CTA appears on the homepage.
 
+**As built (13 September 2026):** the ATHLIMA 20 mark is the typeset fallback (B2); the philosophy is
+set at `display-sm`, weight 500, sentence case (Archivo has no italic); the twenty are a wrapping strip
+from `lg` and a CSS marquee below it (static under reduced motion); the image is a positioned slot with
+the closing line over it (B2).
+
 ### Exit intent
 > *This is about more than business.*
 
@@ -582,6 +592,10 @@ invitation land instead of arriving as one more crescendo.
 ### CTAs
 - Emotional: `ENTER ATHLIMA` → `/the-world` *(secondary variant)*
 - Functional: `APPLY TO ATTEND` → `/apply` *(primary — lime ground, black text)*
+
+**As built (13 September 2026):** the A is the filled device in lime, revealed with `EASE_ARCH`/`SLOW`
+on transform and opacity — not a stroke draw on scroll, which would animate a non-transform property on
+scroll. Three lime content elements in the viewport: the A, `THE FUTURE OF INDIA.`, the primary button.
 
 ### Exit intent
 > *I want in. And I understand that wanting in is not the same as getting in.*

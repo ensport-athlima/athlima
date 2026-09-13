@@ -33,3 +33,27 @@ export const ips = [
   { name: "ATHLIMA CONNECT", role: "THE RELATIONSHIPS" },
   { name: "ATHLIMA 20", role: "THE NEXT GENERATION" },
 ] as const
+
+/** ATHLIMA 20 — the twenty disciplines, locked (brand-strategy.md §4). */
+export const disciplines = [
+  "ATHLETICS",
+  "SWIMMING",
+  "FOOTBALL",
+  "CRICKET",
+  "HOCKEY",
+  "TENNIS",
+  "BADMINTON",
+  "TABLE TENNIS",
+  "BOXING",
+  "WRESTLING",
+  "WEIGHTLIFTING",
+  "SHOOTING",
+  "ARCHERY",
+  "GYMNASTICS",
+  "CYCLING",
+  "ROWING",
+  "MARTIAL ARTS",
+  "EQUESTRIAN",
+  "SURFING",
+  "PARA SPORT",
+] as const

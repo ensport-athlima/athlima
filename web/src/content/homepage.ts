@@ -7,7 +7,7 @@ import type { DisplayLine } from "@/components/primitives/Display"
 import type { Figure } from "@/components/blocks/ProofNumbers"
 import type { IPId } from "@/components/marks/IPMark"
 import { routes } from "@/lib/routes"
-import { site } from "./site"
+import { site, disciplines } from "./site"
 
 export const screen01 = {
   eyebrow: site.descriptor.toUpperCase(), // INDIA'S FESTIVAL OF SPORT, BUSINESS & PERFORMANCE
@@ -243,4 +243,63 @@ export const screen06 = {
     },
     { audience: "BRAND", line: "Own a territory, not a logo.", href: routes.forBrands },
   ],
+} as const
+
+export const screen07 = {
+  id: "provenance",
+  marker: { number: 6, label: "WHO IS BUILDING THIS" },
+  headline: [
+    { text: "ATHLIMA IS NOT" },
+    { text: "AN EVENT COMPANY'S EVENT." },
+  ] satisfies readonly DisplayLine[],
+  /** Approved: the locked relationship (website-thesis.md §2) and ATHLIMA's own line. */
+  body: [
+    "ATHLIMA is an IP of ENSPORT Ventures Pvt. Ltd., the dedicated sports platform within The ENARR Group.",
+    "ATHLIMA is being built as an institution. The two days in December are its annual convergence point, not its purpose.",
+  ],
+  /**
+   * [TO VERIFY — B3 — ENARR approval required] Never rendered until the Group approves it. Kept here so
+   * it drops into `body` on approval without a rewrite.
+   */
+  pendingApproval: [
+    "Built on a multi-generational institutional history across enterprise, industry and philanthropy.",
+    "The Group's belief is straightforward: long-term change is created by building institutions, not by executing occasions.",
+  ],
+  ensportLine: "BUILT TO INSPIRE VICTORY",
+  cta: { label: "ABOUT ATHLIMA, ENSPORT AND ENARR", href: routes.about },
+} as const
+
+export const screen08 = {
+  id: "next-generation",
+  marker: { number: 7, label: "ATHLIMA 20" },
+  headline: [
+    { text: "TWENTY ATHLETES." },
+    { text: "TWENTY SPORTS." },
+    { text: "ONE FUTURE.", lime: true },
+  ] satisfies readonly DisplayLine[],
+  /** brochure-sourced — the philosophy, locked */
+  pullLine: [
+    "Do not wait until they become champions to tell their story.",
+    "Tell it while they are becoming one.",
+  ],
+  body: [
+    "ATHLIMA 20 celebrates India's most exceptional emerging athletes — twenty individuals across twenty sporting disciplines who embody the nation's next chapter in sport.",
+    "Selection is independent.",
+  ],
+  disciplines,
+  closing: [{ text: "TOMORROW PLAYS HERE." }] satisfies readonly DisplayLine[],
+  cta: { label: "SEE ATHLIMA 20", href: routes.athlima20 },
+} as const
+
+export const screen09 = {
+  id: "invitation",
+  headline: [{ text: "THE ROOM IS 350 PEOPLE." }] satisfies readonly DisplayLine[],
+  sub: ["Every application is read. Not every application is accepted.", "That is the point."],
+  detail: `${site.datesLabel}  ·  ${site.venueLabel}`,
+  lockup: [
+    { text: "THE BUSINESS OF SPORT." },
+    { text: "THE FUTURE OF INDIA.", lime: true },
+  ] satisfies readonly DisplayLine[],
+  emotional: { label: "ENTER ATHLIMA", href: routes.theWorld },
+  functional: { label: "APPLY TO ATTEND", href: routes.apply },
 } as const

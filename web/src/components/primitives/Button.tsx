@@ -32,7 +32,7 @@ interface ActionProps extends BaseProps {
 export type ButtonProps = LinkProps | ActionProps
 
 const BASE =
-  "group inline-flex min-h-touch items-center justify-center gap-2 rounded-none text-label font-medium tracking-(--ls-button) uppercase no-underline transition-colors duration-(--dur-base) ease-sharp focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
+  "group inline-flex min-h-touch items-center justify-center gap-2 rounded-none text-label font-medium tracking-(--ls-button) uppercase no-underline transition-colors duration-(--dur-base) ease-sharp focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime [[data-surface=light]_&]:focus-visible:outline-lime-ink"
 
 const VARIANT: Record<ButtonVariant, string> = {
   primary:
@@ -40,7 +40,7 @@ const VARIANT: Record<ButtonVariant, string> = {
   secondary:
     "relative isolate overflow-hidden border border-border bg-transparent px-8 py-3 text-paper hover:border-lime active:border-lime-deep active:text-ink-200 disabled:cursor-not-allowed disabled:border-ink-700 disabled:text-ink-disabled before:absolute before:inset-0 before:-z-10 before:translate-y-full before:bg-ink-900 before:transition-transform before:duration-(--dur-base) before:ease-sharp hover:before:translate-y-0",
   ghost:
-    "relative px-0 text-paper active:text-ink-200 disabled:cursor-not-allowed disabled:text-ink-disabled after:absolute after:bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-lime after:transition-[width] after:duration-(--dur-fast) after:ease-sharp hover:after:w-[calc(100%-1.5em)]",
+    "relative px-0 text-paper [[data-surface=light]_&]:text-void active:text-ink-200 disabled:cursor-not-allowed disabled:text-ink-disabled after:absolute after:bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-lime [[data-surface=light]_&]:after:bg-lime-ink after:transition-[width] after:duration-(--dur-fast) after:ease-sharp hover:after:w-[calc(100%-1.5em)]",
 }
 
 function Label({ variant, children }: { variant: ButtonVariant; children: ReactNode }) {
@@ -50,7 +50,7 @@ function Label({ variant, children }: { variant: ButtonVariant; children: ReactN
       {children}
       <span
         aria-hidden="true"
-        className="text-lime transition-transform duration-(--dur-fast) ease-sharp group-hover:translate-x-1 group-disabled:text-ink-disabled"
+        className="on-light-lime text-lime transition-transform duration-(--dur-fast) ease-sharp group-hover:translate-x-1 group-disabled:text-ink-disabled"
       >
         →
       </span>

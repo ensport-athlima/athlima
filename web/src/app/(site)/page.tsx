@@ -1,14 +1,26 @@
 import type { Metadata } from "next"
+import { ApplyBlock } from "@/components/blocks/ApplyBlock"
 import { AudienceDoorways } from "@/components/blocks/AudienceDoorways"
+import { DisciplineGrid } from "@/components/blocks/DisciplineGrid"
 import { DiagnosisBlock } from "@/components/blocks/DiagnosisBlock"
 import { EcosystemPortals } from "@/components/blocks/EcosystemPortals"
 import { EntryOverlay } from "@/components/blocks/EntryOverlay"
 import { EntrySequence } from "@/components/blocks/EntrySequence"
 import { ProofNumbers } from "@/components/blocks/ProofNumbers"
+import { ProvenanceBlock } from "@/components/blocks/ProvenanceBlock"
 import { RoomComposition } from "@/components/blocks/RoomComposition"
 import { StatementScreen } from "@/components/blocks/StatementScreen"
 import { AthlimaWordmark } from "@/components/marks/AthlimaWordmark"
-import { screen02, screen03, screen04, screen05, screen06 } from "@/content/homepage"
+import {
+  screen02,
+  screen03,
+  screen04,
+  screen05,
+  screen06,
+  screen07,
+  screen08,
+  screen09,
+} from "@/content/homepage"
 import { site } from "@/content/site"
 
 /**
@@ -88,6 +100,35 @@ export default function HomePage() {
         marker={screen06.marker}
         headline={screen06.headline}
         doorways={screen06.doorways}
+      />
+      <ProvenanceBlock
+        id={screen07.id}
+        marker={screen07.marker}
+        headline={screen07.headline}
+        body={screen07.body}
+        pendingApproval={screen07.pendingApproval}
+        ensportLine={screen07.ensportLine}
+        cta={screen07.cta}
+      />
+      <DisciplineGrid
+        id={screen08.id}
+        marker={screen08.marker}
+        headline={screen08.headline}
+        pullLine={screen08.pullLine}
+        body={screen08.body}
+        disciplines={screen08.disciplines}
+        closing={screen08.closing}
+        cta={screen08.cta}
+      />
+      <ApplyBlock
+        id={screen09.id}
+        showMark
+        headline={screen09.headline}
+        sub={screen09.sub}
+        detail={screen09.detail}
+        lockup={screen09.lockup}
+        emotional={screen09.emotional}
+        functional={screen09.functional}
       />
     </main>
   )
