@@ -146,7 +146,7 @@ Added by decision D22 — these were always required and were never in the inven
 | `TextArea` | As `TextField`. Auto-grows to content; never a fixed height that clips at 200% zoom. |
 | `Select` | Native `<select>` styled minimally; never a custom listbox. Options from typed constants. |
 | `Checkbox` | 24px box, lime check on `--void`, label is the click target. Consent checkboxes are unticked by default, always. |
-| `FieldError` | Inline, beneath the field, `aria-describedby`-linked. Voice per `ctas.md` §2. |
+| `FieldError` | Inline, beneath the field, `aria-describedby`-linked. Voice per `ctas.md` §2. **As built:** `TextField`, `TextArea` (`field-sizing: content`, a min-height never a fixed one), native `Select`, `Checkbox` (native input visually hidden, box and lime check drawn beside it via `peer`), `FieldError` (icon + text), `FormShell` (error summary in an `aria-live` region, focused on an invalid submit, every error linked to its field; trust panel beside the form). |
 | `FormProgress` | `01 YOU · 02 YOUR ORGANISATION · 03 YOUR INTEREST · 04 CONTEXT`. Current step indicated by more than colour. Multi-step forms only. |
 
 ## TIER 6 — JOURNAL (`components/journal/`)

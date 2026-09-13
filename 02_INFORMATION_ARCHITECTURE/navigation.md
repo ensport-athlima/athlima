@@ -103,7 +103,9 @@ six pages feel like one world.
 
 ### Within PARTNER
 A simple sub-nav: `THE PROPOSITION · THE MODEL · THE JOURNEY · ENQUIRE`. Four items, current state
-indicated by more than colour.
+indicated by more than colour. **As built:** `PartnerSubNav` in a shared `/partner` layout beneath the
+site nav — one row at every width (it scrolls, never wraps), `aria-current="page"`, weight and a lime
+rule on the current item. The CTA bar is absent on `/partner/*` (it would point at the current cluster).
 
 ### Within JOURNAL
 Filter by pillar (five) and by series (three). Filters are real URLs. Never a select element styled to

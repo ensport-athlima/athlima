@@ -126,6 +126,18 @@ spots · Hurry · Contact us *(as a primary CTA)* · Download brochure *(as a pr
 `[TO VERIFY — B5]` Both the name and the response time. The source material implies two working days; do
 not publish a commitment the team has not agreed to.
 
+**As built (13 September 2026):** `PartnerEnquiryForm` — one page (D12), react-hook-form + the shared zod
+schema on the client, the same schema again in the Server Action, honeypot and a too-fast check, stored in
+Vercel Postgres (`web/db/002_partner_enquiries.sql`) **before** any email; Resend confirms to the enquirer
+and forwards to `ENQUIRY_NOTIFY_EMAIL` when set (B5). Then a redirect to `/partner/enquire/received`,
+which says `THANK YOU.` and *The ATHLIMA partnerships team will be in touch.* — no name, no working days
+until B5. **Two judgement calls until B1:** `YOUR CATEGORY` offers the five partner types
+(`opportunities.md`, brochure-sourced) plus *Something else*; `INDICATIVE SCALE OF INTEREST` offers the
+six levels of partnership (Presence → Platform) plus *Not sure yet* — a range, never a price. The trust
+panel beside the form carries who is behind this, what happens to the data, and what happens next. While
+`POSTGRES_URL` is not configured the page renders one line — *Partner enquiries open shortly.* — and no
+form (CLAUDE.md V.3).
+
 ---
 
 ## 4. FORM MICROCOPY — THE ATHLIMA 20 NOMINATION — **v2, not at launch**

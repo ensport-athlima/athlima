@@ -15,6 +15,8 @@ const schema = z.object({
   MUX_TOKEN_SECRET: z.string().min(1),
   RESEND_API_KEY: z.string().min(1),
   POSTGRES_URL: z.string().min(1),
+  EMAIL_FROM: z.string().min(1),
+  ENQUIRY_NOTIFY_EMAIL: z.string().optional(),
   NEXT_PUBLIC_GA_ID: z.string().min(1),
   SENTRY_DSN: z.string().min(1),
   NEXT_PUBLIC_SENTRY_DSN: z.string().min(1),
@@ -32,6 +34,8 @@ const raw: Record<keyof Env, string | undefined> = {
   MUX_TOKEN_SECRET: process.env.MUX_TOKEN_SECRET,
   RESEND_API_KEY: process.env.RESEND_API_KEY,
   POSTGRES_URL: process.env.POSTGRES_URL,
+  EMAIL_FROM: process.env.EMAIL_FROM,
+  ENQUIRY_NOTIFY_EMAIL: process.env.ENQUIRY_NOTIFY_EMAIL,
   NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
   SENTRY_DSN: process.env.SENTRY_DSN,
   NEXT_PUBLIC_SENTRY_DSN: process.env.NEXT_PUBLIC_SENTRY_DSN,
@@ -59,4 +63,5 @@ export const configured = {
   analytics: Boolean(env.NEXT_PUBLIC_GA_ID),
   sentry: Boolean(env.NEXT_PUBLIC_SENTRY_DSN),
   postgres: Boolean(env.POSTGRES_URL),
+  email: Boolean(env.RESEND_API_KEY && env.EMAIL_FROM),
 } as const

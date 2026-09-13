@@ -74,7 +74,7 @@ export const journalPillar = (pillar: Pillar) => `${routes.journal}/pillar/${pil
 export const journalSeries = (s: Series) => `${routes.journal}/series/${s}` as const
 
 /** Routes that never appear in sitemap.xml. */
-export const noindexRoutes: readonly RoutePath[] = [routes.contactInstitutional]
+export const noindexRoutes: readonly RoutePath[] = [routes.contactInstitutional, routes.partnerEnquireReceived]
 
 /** Every static route that belongs in sitemap.xml, in sitemap order. */
 export const indexableStaticRoutes: readonly RoutePath[] = (

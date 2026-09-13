@@ -131,6 +131,14 @@ ATHLIMA Connect is a Founding Partner benefit (decision D20). This is the page i
 
 `DON'T JUST SHOW UP. SHAPE WHAT COMES NEXT.` · `START A PARTNER CONVERSATION`
 
+**As built (13 September 2026):** the cluster shares a sub-nav (`PartnerSubNav`, `navigation.md` §4) and
+the two arguments carry a `Breadcrumb` with `BreadcrumbList` JSON-LD. Section headlines that the brief
+left implicit are set from the brief's own words (the seven verbs, the six level names, *Eight reasons*).
+The Connect cross-link withholds the two-week lead time. `/partner/model`: the twelve territories as a
+`CategoryRow`, no brand name anywhere. `/partner/journey`: the seven stages on `SequenceRail` with the
+verb·place line; its chevrons are ink, not lime — six lime chevrons in one viewport would break the
+three-lime rule (`iconography.md` §5). `/partner/enquire`: see `ctas.md` §3.
+
 ---
 
 # `/partner/model`
