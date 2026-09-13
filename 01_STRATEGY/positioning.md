@@ -77,8 +77,8 @@ not the fame of any individual in it. The website expresses this as a structure 
 their presence matters to each other — rather than as a wall of headshots.
 
 ### PROOF 2 — THE INSTITUTION BEHIND IT
-ATHLIMA is not a promoter's event. It is an IP of **ENSPORT Ventures Pvt. Ltd.**, the dedicated sports
-platform within **The ENARR Group**. This is the credibility anchor and it is currently under-used in the
+ATHLIMA is not a promoter's event. It is an **ENSPORT Ventures** initiative within **the ENARR Group**
+*(the public word is "initiative", never "IP" — decision B3 §5)*. This is the credibility anchor and it is currently under-used in the
 source material — the brochures carry the ENARR and ENSPORT marks only on the back cover.
 
 **On the website this must be raised.** An institutional backer is exactly what separates ATHLIMA from the

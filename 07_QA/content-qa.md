@@ -81,5 +81,6 @@
 - [ ] Privacy policy, terms, and a cookie notice that reflects what is actually set.
 - [ ] Form consent language is specific, and consent checkboxes are unticked by default.
 - [ ] Contact details are real and monitored.
-- [ ] Company registration details in the footer — the ENSPORT Ventures Pvt. Ltd. entity name and CIN if
-      required by Indian company law. `[TO VERIFY]` Obtain from the Group; do not invent.
+- [ ] The statutory block in the footer — ENSPORT Ventures Private Limited, CIN U93110MH2026PTC474328,
+      registered office, telephone, email (Companies Act 2013 s.12(3)(c)). Name and CIN are in
+      (`decisions-b3-provenance.md`); the rest is `[TO VERIFY — B3a/B3b]` — launch checklist T-3.

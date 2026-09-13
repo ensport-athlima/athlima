@@ -1,14 +1,18 @@
 import Link from "next/link"
+import Image from "next/image"
+import { CORPORATE_MARKS } from "@/components/blocks/ProvenanceBlock"
 import { AthlimaWordmark } from "@/components/marks/AthlimaWordmark"
 import { Button } from "@/components/primitives/Button"
 import { footer, applyCta } from "@/content/navigation"
 import { routes } from "@/lib/routes"
+import { cn } from "@/lib/cn"
 
 /**
  * THE FOOTER (navigation.md §5) — where the completeness lives, so the header can stay minimal. A real
  * <footer> landmark with headings, not a wall of anonymous links. No newsletter form. The Advisory
- * Council link renders only when the route exists. The ENARR and ENSPORT marks are named plates until
- * their vectors arrive (B2); social icons render only once the accounts are confirmed [TO VERIFY].
+ * Council link renders only when the route exists. The entity block follows decision B3 §4d — the brand
+ * line and the statutory line; registered office, telephone and email join it when supplied (B3a/B3b).
+ * Social icons render only once the accounts are confirmed [TO VERIFY].
  */
 export function Footer() {
   return (
@@ -79,16 +83,29 @@ export function Footer() {
         </nav>
 
         <div className="mt-12 border-t border-ink-800 pt-8">
-          {/* THE MARKS belong here (B2): ENARR and ENSPORT at their own colours, generous clear space, as SVG. */}
-          <div className="flex flex-wrap gap-4">
-            <span className="label flex min-h-12 items-center bg-ink-850 px-6 text-ink-300">
-              THE ENARR GROUP
-            </span>
-            <span className="label flex min-h-12 items-center bg-ink-850 px-6 text-ink-300">
-              ENSPORT VENTURES
-            </span>
-          </div>
-          <p className="mt-6 text-body-sm text-ink-200">{footer.entityLine}</p>
+          {/* ENARR and ENSPORT at their own colours on their own plates — see ProvenanceBlock's MARKS note. */}
+          <ul className="flex flex-wrap gap-4" aria-label="Built by">
+            {CORPORATE_MARKS.map((m) => (
+              <li
+                key={m.src}
+                className={cn(
+                  "flex min-h-20 items-center px-6 py-4",
+                  m.plate === "light" ? "bg-paper-warm" : "bg-void",
+                )}
+              >
+                <Image
+                  src={m.src}
+                  alt={m.alt}
+                  width={m.width}
+                  height={m.height}
+                  sizes="120px"
+                  className="h-auto w-auto max-h-12"
+                />
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-body-sm text-ink-200">{footer.brandLine}</p>
+          <p className="mt-1 text-caption text-ink-400">{footer.statutoryLine}</p>
         </div>
 
         <div className="mt-8 flex flex-col gap-4 border-t border-ink-800 pt-6 text-caption text-ink-300 sm:flex-row sm:items-center sm:justify-between">

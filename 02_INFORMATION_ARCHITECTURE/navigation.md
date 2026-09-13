@@ -134,9 +134,11 @@ and worth reading.
 │  FOR INSTITUTIONS · FOR BRANDS                                               │
 ├──────────────────────────────────────────────────────────────────────────────┤
 │  [ENARR mark]  [ENSPORT mark]                                                │
-│  An IP of ENSPORT Ventures Pvt. Ltd., within The ENARR Group.                │
+│  ATHLIMA 2026 · An ENSPORT Ventures initiative · ENARR Group                 │
+│  ENSPORT Ventures Private Limited · CIN U93110MH2026PTC474328                │
+│  [registered office] · [telephone] · [email]        [TO VERIFY — B3a/B3b]    │
 │                                                                              │
-│  Privacy · Terms · Cookies              © 2026 ENSPORT Ventures Pvt. Ltd.    │
+│  Privacy · Terms · Cookies      © 2026 ENSPORT Ventures Private Limited      │
 │                                          [social]                            │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -146,9 +148,13 @@ and worth reading.
 - No newsletter form in the footer — the Journal owns subscription, in context, where it is earned.
 - Social icons are small and last. They are an exit, not a destination. `[TO VERIFY]` Which accounts
   exist (LinkedIn, Instagram, X, YouTube?) — none render until confirmed.
-- **As built (13 September 2026):** the ENARR and ENSPORT marks are named plates until their vectors
-  arrive (B2); "ENSPORT Ventures" and "The ENARR Group" in MORE link to `/about` until B3 confirms
-  outbound corporate sites.
+- **The entity block (decision B3 §4d):** line one is brand, the rest is the statutory block —
+  `--fs-caption`, `--ink-400`, quiet, complete. The full legal name and the CIN, never "Pvt. Ltd.".
+  Until the registered office, telephone and email are supplied (`[TO VERIFY — B3a/B3b]`, Companies Act
+  2013 s.12(3)(c)) the footer renders the first two lines only — launch checklist T-3.
+- **As built (13 September 2026):** the ENARR and ENSPORT marks are the supplied cut-outs on their own
+  plates (ENARR light, ENSPORT black); "ENSPORT Ventures" and "The ENARR Group" in MORE link to `/about`,
+  which carries the one outbound link (B3 §3 — the corporate site is not in the navigation).
 - **`*` Advisory Council is conditional.** The link renders only when the route exists (five or more
   members confirmed — see `sitemap.md` §4). It is never a link to a 404, because `06_BUILD/seo.md`
   requires zero 404s from internal links.

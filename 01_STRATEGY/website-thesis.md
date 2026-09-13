@@ -34,7 +34,7 @@ These are settled by the source material and are not open for reinvention:
 | Edition | ATHLIMA 2026 |
 | Dates | 14–15 December 2026 |
 | Venue | The St. Regis Mumbai, 9th floor |
-| Built by | ENSPORT Ventures Pvt. Ltd., within The ENARR Group |
+| Built by | An ENSPORT Ventures initiative within the ENARR Group. Legal entity: ENSPORT Ventures Private Limited (`08_OPERATIONS/decisions-b3-provenance.md`) |
 | Domain | athlima.in |
 | Five pillars | BUILD · EQUIP · ENABLE · PERFORM · GOVERN |
 | Six IPs | ATHLIMAX · THE SYMPOSIUM · ACTIV8 · AFTERHOURS · ATHLIMA CONNECT · ATHLIMA 20 |

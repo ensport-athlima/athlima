@@ -16,29 +16,26 @@ Supplied brand artwork. **These are raster reference files, not production asset
 | `ensport-ventures.png` | ENSPORT Ventures | Gold and white. **BUILT TO INSPIRE VICTORY.** |
 
 ### `/logos/vector` — development placeholders, not production artwork
-Three SVGs, added 13 September 2026, **traced and rebuilt from the supplied raster** — see
-`logos/vector/README.md` for exactly how. They unblock screens 01, 03, 04, 07, 08 and 09 while the real
-files are awaited:
+Added 13 September 2026, **traced or cut out from the supplied raster** — see `logos/vector/README.md` for
+exactly how. They unblock every screen that carries a mark while the real files are awaited:
 
-| File | What | Status |
+| File | What | In the build |
 |---|---|---|
-| `athlima-a.svg` | The A device, filled — clean symmetric geometry, `currentColor` | placeholder |
-| `athlima-a-stroke.svg` | The A device as one stroked centreline — what the entry sequence draws | placeholder |
-| `athlima-wordmark.svg` | The ATHLIMA wordmark, potrace outline of `athlima-master.jpg`, lime accent on the final A | placeholder |
+| `athlima-a.svg` · `athlima-a-stroke.svg` | The A device, filled and as one stroked centreline | `AthlimaA` — the entry sequence draws the stroke |
+| `athlima-wordmark.svg` | The ATHLIMA wordmark, lime on the final A | `AthlimaWordmark` |
+| `athlimax.svg` · `symposium.svg` · `activ8.svg` · `afterhours.svg` | Four of the six IP lock-ups, two-tone, `currentColor` + accent | `IPMark` via `ip-mark-artwork.ts` |
+| `enarr.png` · `ensport.png` (+ `@2x`) | The corporate marks, cut out with alpha — **deliberately raster** | `web/public/marks/`, the one raster-mark exception (`components.md` MARKS) |
+| `icons/` | Favicon and app-icon set from the A device, lime on black | `web/src/app/icon0.png`, `icon1.svg`, `apple-icon.png`, `manifest.ts` + `web/public/icons/` |
 
-**They are replaced, file for file, when the brand owner's vectors arrive, and each is overlaid on the
-supplied raster before launch to confirm the outlines match** (`logos/vector/README.md`). Their C2PA
-`<metadata>` blocks are stripped when they are inlined into the build.
+C2PA `<metadata>` blocks and sub-pixel trace specks are stripped when the SVGs are inlined into the build.
+**Each is replaced, file for file, when the brand owner's vectors arrive, and each is overlaid on the
+supplied raster before launch to confirm the outlines match** — launch checklist T-14.
 
-**In the meantime the six IP marks are typeset** (`web/src/components/marks/IPMark.tsx`,
-`[TO VERIFY — B2 — TYPESET FALLBACK]`) — a flagged, temporary breach of `typography.md` §1 so the portals
-could be built. Each is replaced by its vector on arrival.
-
-**Still missing — `[TO VERIFY — B2 — request vector artwork from the brand owner]`:** the real ATHLIMA
-wordmark and A; ATHLIMAX, THE SYMPOSIUM, ACTIV8 and AFTERHOURS lock-ups as vector; the ENARR and ENSPORT
-marks as vector; the favicon and app-icon set. **ATHLIMA CONNECT and ATHLIMA 20 have no supplied lock-up
-at all, even as raster.** Every mark on the site is placed as SVG with a real `<title>` — never as a raster
-image, never typeset, never approximated.
+**Still missing — `[TO VERIFY — B2 — request from the brand owner]`:** genuine vector originals for all of
+the above; the Group's own ENARR and ENSPORT vectors; the brand owner's own icon set if one exists; and
+**ATHLIMA CONNECT and ATHLIMA 20 lock-ups, which have no artwork at all, even as raster** — until a
+designer draws them, `IPMark` sets those two in type (`data-typeset-fallback`, a flagged breach of
+`typography.md` §1). Every ATHLIMA-owned mark on the site is placed as inline SVG with a real `<title>`.
 
 ### `/references`
 | File | What |

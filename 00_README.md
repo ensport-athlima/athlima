@@ -2,7 +2,7 @@
 
 **India's Festival of Sport, Business & Performance**
 14–15 December 2026 · The St. Regis Mumbai
-An IP of ENSPORT Ventures Pvt. Ltd., within The ENARR Group
+An ENSPORT Ventures initiative within the ENARR Group
 
 ---
 

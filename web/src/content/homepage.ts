@@ -6,8 +6,9 @@
 import type { DisplayLine } from "@/components/primitives/Display"
 import type { Figure } from "@/components/blocks/ProofNumbers"
 import type { IPId } from "@/components/marks/IPMark"
+import type { RichParagraph } from "@/components/primitives/RichText"
 import { routes } from "@/lib/routes"
-import { site, disciplines } from "./site"
+import { site, entity, disciplines } from "./site"
 
 export const screen01 = {
   eyebrow: site.descriptor.toUpperCase(), // INDIA'S FESTIVAL OF SPORT, BUSINESS & PERFORMANCE
@@ -252,21 +253,21 @@ export const screen07 = {
     { text: "ATHLIMA IS NOT" },
     { text: "AN EVENT COMPANY'S EVENT." },
   ] satisfies readonly DisplayLine[],
-  /** Approved: the locked relationship (website-thesis.md §2) and ATHLIMA's own line. */
-  body: [
-    "ATHLIMA is an IP of ENSPORT Ventures Pvt. Ltd., the dedicated sports platform within The ENARR Group.",
-    "ATHLIMA is being built as an institution. The two days in December are its annual convergence point, not its purpose.",
-  ],
   /**
-   * [TO VERIFY — B3 — ENARR approval required] Never rendered until the Group approves it. Kept here so
-   * it drops into `body` on approval without a rewrite.
+   * The provenance paragraph, approved verbatim — decision B3 (decisions-b3-provenance.md §4a) — with
+   * "the room" carrying the weight, and ATHLIMA's own line beneath it.
    */
-  pendingApproval: [
-    "Built on a multi-generational institutional history across enterprise, industry and philanthropy.",
-    "The Group's belief is straightforward: long-term change is created by building institutions, not by executing occasions.",
-  ],
-  ensportLine: "BUILT TO INSPIRE VICTORY",
+  body: [
+    [
+      "ATHLIMA is an ENSPORT Ventures initiative within the ENARR Group, bringing together sport, business, capital, institutions and ideas around the future of performance in India. Built on the Group's broader experience across finance, enterprise, industry, media and philanthropy, ATHLIMA exists to create ",
+      { strong: "the room" },
+      " where the people shaping Indian sport can connect, collaborate and build what comes next.",
+    ],
+    ["ATHLIMA is being built as an institution. The two days in December are its annual convergence point, not its purpose."],
+  ] satisfies readonly RichParagraph[],
   cta: { label: "ABOUT ATHLIMA, ENSPORT AND ENARR", href: routes.about },
+  /** Tier 3, outbound, restrained — B3 §3. Quietly beneath the institutional copy. */
+  groupCta: { label: "Explore the Group", href: entity.groupUrl },
 } as const
 
 export const screen08 = {

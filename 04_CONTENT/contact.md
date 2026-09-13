@@ -77,7 +77,7 @@ A SEPARATE ROUTE.
 ```
 
 **Body — `--fs-body`, max 34em** *(formal, restrained, unhurried — `voice-and-tone.md` §4)*
-> ATHLIMA is an IP of ENSPORT Ventures Pvt. Ltd., within The ENARR Group. `[TO VERIFY — B3]`
+> ATHLIMA is an ENSPORT Ventures initiative within the ENARR Group.
 >
 > Enquiries from government bodies, federations, sports authorities, universities and sporting
 > institutions are handled separately from commercial conversations, by a named person, without a sales

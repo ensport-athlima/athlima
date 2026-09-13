@@ -79,7 +79,7 @@ export function MobileMenu() {
                           href={w.href}
                           className="inline-flex min-h-touch items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
                         >
-                          <IPMark ip={w.ip} decorative className="text-label" />
+                          <IPMark ip={w.ip} decorative className="text-body" />
                           <span className="sr-only">{IP_NAMES[w.ip]}</span>
                         </Link>
                       </li>

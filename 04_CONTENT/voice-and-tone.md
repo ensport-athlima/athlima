@@ -117,7 +117,7 @@ The voice is constant. The tone shifts.
 | ATHLIMA 20 | Warm, human — the only place the voice softens | *Do not wait until they become champions to tell their story.* |
 | AFTERHOURS | Looser, more atmospheric | *The day inspires. The night celebrates.* |
 | Partner pages | Business-serious, respectful | *The value isn't measured in logos.* |
-| Institutional pages | Formal, restrained, unhurried | *An IP of ENSPORT Ventures, within The ENARR Group.* |
+| Institutional pages | Formal, restrained, unhurried | *An ENSPORT Ventures initiative · ENARR Group* |
 | Forms and microcopy | Plain, helpful, human | *We read every application. You'll hear from us by 30 September.* |
 | Errors | Direct, never cute | *That email address doesn't look right. Check it and try again.* |
 | The Journal | Editorial, longer sentences permitted | Full paragraphs. Real argument. Sources. |

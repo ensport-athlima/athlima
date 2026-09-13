@@ -52,7 +52,7 @@ else is tagged and does not ship.
 | **The room** | 350 people, across four groups: sport, institutions, business and capital. Invitation-led; attendance is by application. `[TO VERIFY — B1]` |
 | **The six experiences** | ATHLIMAX (the marketplace) · The Symposium (the ideas) · ACTIV8 (the experience) · Afterhours (the culture) · ATHLIMA Connect (the relationships) · ATHLIMA 20 (the next generation) |
 | **The five pillars** | BUILD · EQUIP · ENABLE · PERFORM · GOVERN |
-| **Built by** | ENSPORT Ventures Pvt. Ltd., the dedicated sports platform within The ENARR Group `[TO VERIFY — B3: entity description and registration details from the Group]` |
+| **Built by** | ENSPORT Ventures Private Limited (CIN U93110MH2026PTC474328), within the ENARR Group — decision B3. In running copy: *an ENSPORT Ventures initiative within the ENARR Group*. |
 | **Website** | athlima.in |
 
 **Deliberately absent:** partner names, speaker names, Advisory Council members, attendance figures other

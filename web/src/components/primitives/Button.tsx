@@ -19,6 +19,8 @@ interface BaseProps {
 }
 interface LinkProps extends BaseProps {
   href: string
+  /** An outbound link: plain <a>, new tab, rel="noopener", announced to assistive technology. */
+  external?: boolean
   type?: never
   onClick?: never
   disabled?: never
@@ -62,6 +64,14 @@ export function Button(props: ButtonProps) {
   const { variant, children, className } = props
   const classes = cn(BASE, VARIANT[variant], className)
   if ("href" in props && props.href) {
+    if (props.external) {
+      return (
+        <a href={props.href} target="_blank" rel="noopener" className={classes}>
+          <Label variant={variant}>{children}</Label>
+          <span className="sr-only">(opens in a new tab)</span>
+        </a>
+      )
+    }
     return (
       <Link href={props.href} className={classes}>
         <Label variant={variant}>{children}</Label>

@@ -106,8 +106,7 @@ export default function HomePage() {
         marker={screen07.marker}
         headline={screen07.headline}
         body={screen07.body}
-        pendingApproval={screen07.pendingApproval}
-        ensportLine={screen07.ensportLine}
+        groupCta={screen07.groupCta}
         cta={screen07.cta}
       />
       <DisciplineGrid

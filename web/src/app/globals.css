@@ -154,6 +154,12 @@
     outline-color: var(--lime-ink);
   }
 
+  /* Emphasis in body copy is weight, never italic — Archivo ships none (typography.md §1). */
+  strong,
+  b {
+    font-weight: 600;
+  }
+
   /* typography.md §3 — display type never hyphenates. */
   h1,
   h2,
@@ -261,7 +267,7 @@
     }
     @media (min-width: 64rem) {
       .portals-track {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
       .portals-track > li {
         min-height: 60svh;

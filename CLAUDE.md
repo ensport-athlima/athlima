@@ -41,7 +41,7 @@ building is for.** If you cannot, say so and stop.
 
 **ATHLIMA — India's Festival of Sport, Business & Performance.**
 14–15 December 2026. The St. Regis Mumbai, 9th floor.
-An IP of ENSPORT Ventures Pvt. Ltd., within The ENARR Group.
+An ENSPORT Ventures initiative within the ENARR Group. *(The public word is "initiative", never "IP" — decision B3.)*
 `athlima.in`
 
 **The proposition:** THE BUSINESS OF SPORT. THE FUTURE OF INDIA.
@@ -284,7 +284,7 @@ confirmed before launch, and none may be changed silently in either direction. T
 |---|---|---|---|
 | B1 | ATHLIMAX architecture — 20 founding partners / six pavilions **or** 22 spaces / 12 categories — **and** room size, 350 **or** 500+ | Commercial team, one meeting | **Six pavilions. 350 everywhere.** Remove 500+ from all material. |
 | B2 | Photography and film — commission a real shoot, or design for a type-only launch. Plus **vector artwork for every mark and a standalone A device** — screen 01 cannot be built without it. | Project owner, budget | **Type-only**, and the design system says so explicitly. Artwork is requested now regardless. |
-| B3 | ENARR / ENSPORT approval of the provenance copy, the footer entity line and registration details, and whether an outbound corporate link exists | The Group | Nothing about the Group is published until approved. Homepage screen 07 and `/about` §03 are gated. |
+| B3 | **Closed — `08_OPERATIONS/decisions-b3-provenance.md`** (provenance copy, ENSPORT Ventures Private Limited + CIN, corporate office, `enarr.com` Tier-3 outbound, "initiative" sitewide). Open: **B3a/B3b** — registered office per MCA, telephone, email for the statutory footer block (Companies Act 2013 s.12(3)(c)). | The Group (B3a) | Footer renders name and CIN only. Launch checklist T-3 blocks launch until the block is complete and checked against the MCA record. |
 | B4 | The four homepage statistics ($130B, 3X, 600M+, Top 3) | Project owner | **Cut all four**; screen 02 rests on the stakeholder grid. |
 | B5 | Partner response time, and the named person enquiries route to | Commercial team | `/partner/enquire` confirmation copy does not ship until supplied. |
 

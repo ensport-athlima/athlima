@@ -171,6 +171,19 @@ AN INSTITUTION
 IN DEVELOPMENT.
 ```
 
+**Lead — the About micro-copy, approved (decision B3 §4b):**
+> ATHLIMA is India's platform for the business, culture and future of sport.
+>
+> Across athletes, federations, government, capital, brands, institutions and the next generation,
+> ATHLIMA creates a connected environment for the conversations, relationships and opportunities that
+> move sport forward.
+
+**Institutional line beneath it** — `--fs-label`, `--ink-300`, `+0.14em`, the middot a middot (B3 §4c):
+```
+An ENSPORT Ventures initiative · ENARR Group
+```
+
+**Body:**
 > ATHLIMA is India's Festival of Sport, Business & Performance — a curated, invitation-led platform
 > bringing together 350 of the people who build, equip, enable, perform and govern Indian sport.
 >
@@ -188,29 +201,29 @@ The `PillarDiagram` block. Same diagram as `/the-world`. Navigable.
 
 **Display:**
 ```
-ATHLIMA IS AN IP OF
-ENSPORT VENTURES.
+AN ENSPORT VENTURES
+INITIATIVE.
 ```
 
-> ENSPORT Ventures Pvt. Ltd. is the dedicated sports platform of **The ENARR Group**, working at the
-> intersection of sport, infrastructure, capital, technology, institutions, athlete development,
-> government and business.
->
-> `BUILT TO INSPIRE VICTORY`
+**The provenance paragraph** — approved, decision B3 (`08_OPERATIONS/decisions-b3-provenance.md` §4a),
+the same paragraph as homepage screen 07:
+> ATHLIMA is an ENSPORT Ventures initiative within the ENARR Group, bringing together sport, business,
+> capital, institutions and ideas around the future of performance in India. Built on the Group's broader
+> experience across finance, enterprise, industry, media and philanthropy, ATHLIMA exists to create **the
+> room** where the people shaping Indian sport can connect, collaborate and build what comes next.
 
-**The ENARR Group**
-`[TO VERIFY — B3 — ENARR APPROVAL REQUIRED BEFORE PUBLICATION]`
-> The ENARR Group brings a multi-generational institutional history across enterprise, finance, industry
-> and philanthropy. Its belief is that long-term change is created by building institutions, not by
-> executing occasions.
+**Corporate Office** — `--fs-caption`, `--ink-500` *(labelled Corporate Office, never Registered Office,
+until `[TO VERIFY — B3a]` is resolved)*
+> 324, A to Z Estate, G K Marg, Lower Parel West, Mumbai – 400013, Maharashtra, India
+
+**Tier 3 outbound, beneath the section:** `Explore the Group →` → `https://www.enarr.com`
+(`rel="noopener"`). Restrained: not a button, not in the navigation.
+
+The previous ENARR history line (*"multi-generational institutional history…"*) is **withdrawn** by the
+Group — B3 §4. The Singhania Family Sports Foundation is not mentioned.
 
 **Marks:** ENARR and ENSPORT, at their own colours — navy and gold, gold and white. Never recoloured to
 lime. Generous clear space. A quieter, more formal register than the rest of the site.
-
-`[TO VERIFY]` Confirm with the Group: the exact corporate description, the sectors named, the entity name
-and registration details for the footer, whether the Singhania Family Sports Foundation is mentioned at
-all *(recommendation: not until it is formally constituted and announced)*, and whether an outbound link
-to an ENSPORT or ENARR site exists.
 
 ### Section 04 — WHY NOW
 
@@ -235,9 +248,8 @@ The five questions, as a statement of how ATHLIMA operates. They are good copy a
 > **05** Can it become something more?
 
 ### CTA
-Tier 2: `APPLY TO ATTEND` (functional). Tier 3 inline: `ABOUT ENSPORT VENTURES →`, only if B3 confirms a
-corporate site exists — see `ctas.md` §1. The page never has its only CTA pointing at a URL that may not
-exist.
+Tier 2: `APPLY TO ATTEND` (functional). Tier 3 inline: `Explore the Group →` → `https://www.enarr.com`
+(decision B3 §3) — see `ctas.md` §1.
 
 ---
 

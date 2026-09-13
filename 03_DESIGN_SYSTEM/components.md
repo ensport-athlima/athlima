@@ -179,8 +179,8 @@ uses `var(--lime)`. C2PA metadata is stripped on the way in.
 |---|---|---|
 | `AthlimaWordmark` | `athlima-wordmark.svg` | Largest on homepage screen 03 (capped at 56rem wide); ~1.5rem tall in the nav. **Development placeholder until B2.** |
 | `AthlimaA` | `athlima-a.svg` · `athlima-a-stroke.svg` | `variant: "filled" \| "stroke"`. The stroke variant is what the entry overlay draws; exports the centreline length for `stroke-dasharray`. **Placeholder until B2.** |
-| `IPMark` | none — **typeset fallback** | `[TO VERIFY — B2 — TYPESET FALLBACK]` The six IP marks set in the wordmark-adjacent voice with the accent rules (lime X / M / 8; AFTERHOURS' "HOURS" in the dusk gradient). Returns each IP's SVG component the day it exists. See `typography.md` §1. |
-| ENARR · ENSPORT | not yet vector | Added as each arrives (B2). |
+| `IPMark` | `athlimax.svg` · `symposium.svg` · `activ8.svg` · `afterhours.svg` (via `ip-mark-artwork.ts`, metadata and specks stripped) | Inline SVG, `currentColor` letterforms, lime accent (X / M / 8) or the dusk `<linearGradient>` for AFTERHOURS. Sized by the surrounding font-size: each mark's principal cap height = 1em, so `text-display-md` sizes a mark as it sizes type. **Placeholders until B2.** ATHLIMA CONNECT and ATHLIMA 20: `[TO VERIFY — B2 — TYPESET FALLBACK]` — no artwork exists; set in the wordmark-adjacent voice, `data-typeset-fallback`, until a designer draws them. |
+| ENARR · ENSPORT | `web/public/marks/{enarr,ensport}.png` (360px cut-outs, alpha) via `next/image` at 180px | **The one raster-mark exception on the site.** Both are gradient marks; a single-colour trace would destroy them, and a bad trace of another company's mark is worse than a clean raster (`05_MEDIA/logos/vector/README.md`). ENARR on a light plate, ENSPORT on black — their own colours, never recoloured. Replaced by the Group's vectors on arrival (B2); launch checklist T-14. |
 
 ## `Icon`
 

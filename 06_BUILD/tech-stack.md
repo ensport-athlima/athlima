@@ -67,7 +67,7 @@ Rule of thumb — *if it is a state change under 300ms, use CSS. If it is choreo
 |---|---|
 | `react-hook-form` + `zod` | Guest application, partner enquiry, newsletter. *(ATHLIMA 20 nomination is v2 — decision D4.)* Client + server validation from one schema. Loaded on form routes only. |
 | `resend` | Transactional email. |
-| Vercel Postgres or Sanity dataset | Application and enquiry submissions. **Decide before build; do not leave forms posting nowhere.** `[TO VERIFY]` When the v2 nomination form is built, it collects minors' data and must **not** live in a dataset the content team can open — see `architecture.md` §6 and `08_OPERATIONS/v2-backlog.md`. |
+| **Vercel Postgres** (`@vercel/postgres`) | Application, enquiry and email-capture submissions. **Decided by the project owner, 13 September 2026: Vercel Postgres, not a Sanity dataset** — submissions are private records, not content, and the v2 nomination form (minors' data) must never live in a dataset the content team can open (`architecture.md` §6, `08_OPERATIONS/v2-backlog.md`). Schema and migrations live in `web/db/`; server actions write, Resend confirms. Until `POSTGRES_URL` is set, every form renders an honest not-configured state — never posts nowhere. |
 
 ### Analytics
 | Package / service | Purpose |
@@ -137,6 +137,7 @@ SANITY_REVALIDATE_SECRET=      # verifies the Sanity → /api/revalidate webhook
 MUX_TOKEN_ID=
 MUX_TOKEN_SECRET=
 RESEND_API_KEY=
+POSTGRES_URL=                  # Vercel Postgres — applications, enquiries, email capture
 NEXT_PUBLIC_GA_ID=
 SENTRY_DSN=                    # server and edge
 NEXT_PUBLIC_SENTRY_DSN=        # the same DSN, exposed to the browser for the lazy client SDK

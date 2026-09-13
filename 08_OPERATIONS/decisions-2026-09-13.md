@@ -185,7 +185,7 @@ Leave these as `[TO VERIFY]`. Build around them.
 |---|---|---|---|
 | B1 | Six pavilions / 20 partners **or** 22 spaces / 12 categories. And 350 **or** 500+. | Commercial team, one meeting | `/athlimax`, `/partner/model`, the enquiry category field, `/for/capital`, `/for/infrastructure`, every "350" |
 | B2 | Commission the photography and film, or design for a type-only launch. Plus **vector artwork for every mark and a standalone A device** — screen 01 cannot be built without it. | Project owner, budget | Screens 01, 05, 06, 08, all six IP entries, ATHLIMA 20, the doorways |
-| B3 | ENARR / ENSPORT approval of the provenance copy, entity details for the footer, and whether an outbound corporate link exists. | The Group | Homepage screen 07, `/about`, the footer, `/about`'s only CTA |
+| B3 | **Closed 13 September 2026 — `decisions-b3-provenance.md`.** Provenance paragraph, entity (ENSPORT Ventures Private Limited, CIN U93110MH2026PTC474328), corporate office, `https://www.enarr.com` as a Tier-3 outbound, "initiative" not "IP" sitewide. Open: **B3a** registered office per MCA, telephone, email (Companies Act s.12(3)(c)); **B3b** the footer renders name and CIN only until supplied. | The Group (B3a) | The statutory footer block — launch checklist T-3 |
 | B4 | Source or cut the four statistics ($130B, 3X, 600M+, Top 3). | Project owner | Homepage screen 02's proof role |
 | B5 | Partner response time, and the named person enquiries route to. | Commercial team | `/partner/enquire` |
 

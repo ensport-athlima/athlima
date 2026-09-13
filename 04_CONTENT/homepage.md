@@ -442,23 +442,18 @@ ATHLIMA IS NOT
 AN EVENT COMPANY'S EVENT.
 ```
 
-**Body — `--fs-body`, `--ink-700`**
-> ATHLIMA is an IP of **ENSPORT Ventures Pvt. Ltd.**, the dedicated sports platform within
-> **The ENARR Group** — built on a multi-generational institutional history across enterprise, industry
-> and philanthropy. `[TO VERIFY — B3 — ENARR approval required]`
->
-> The Group's belief is straightforward: long-term change is created by building institutions, not by
-> executing occasions.
+**Body — `--fs-body`, `--ink-700`** *(approved — decision B3, `08_OPERATIONS/decisions-b3-provenance.md` §4a)*
+> ATHLIMA is an ENSPORT Ventures initiative within the ENARR Group, bringing together sport, business,
+> capital, institutions and ideas around the future of performance in India. Built on the Group's broader
+> experience across finance, enterprise, industry, media and philanthropy, ATHLIMA exists to create **the
+> room** where the people shaping Indian sport can connect, collaborate and build what comes next.
 >
 > ATHLIMA is being built as an institution. The two days in December are its annual convergence point,
 > not its purpose.
 
-**The two marks** — ENARR and ENSPORT, at their own colours, generous clear space, modest scale.
-
-**ENSPORT line — `--fs-label`**
-```
-BUILT TO INSPIRE VICTORY
-```
+**The two marks** — ENARR and ENSPORT, at their own colours, generous clear space, modest scale. ENARR
+on a light plate, ENSPORT on black (`colour.md` §1). The ENSPORT lock-up carries its own line — *BUILT TO
+INSPIRE VICTORY* — so the screen does not repeat it.
 
 ### Media
 None. **This screen's restraint is its argument.** A light ground, black type, two marks, white space.
@@ -469,11 +464,13 @@ After six screens of black, the shift is arresting on its own.
 
 ### CTAs
 `ABOUT ATHLIMA, ENSPORT AND ENARR →` → `/about` *(ghost variant)*
+Beneath it, quieter, Tier 3 outbound: `Explore the Group →` → `https://www.enarr.com` (`rel="noopener"`,
+new tab, announced) — decision B3 §3.
 
-**As built (13 September 2026):** only the locked relationship sentence and ATHLIMA's own line render;
-the ENARR history and the Group's belief are held in `screen07.pendingApproval` and never render until
-B3. The two marks are named `--paper-warm` plates until vectors arrive (B2). Marker, lime word, ghost arrow
-and focus ring are `--lime-ink` on this surface.
+**As built (13 September 2026):** the approved B3 paragraph and ATHLIMA's own line render; the withdrawn
+ENARR history line is gone. The two marks are the supplied cut-outs at their own colours — the one raster
+exception on the site (`components.md` MARKS), replaced by the Group's vectors on arrival (B2). Marker,
+lime word, ghost arrow and focus ring are `--lime-ink` on this surface.
 
 ### Exit intent
 > *There is a real institution behind this. It is not a promoter's event.*

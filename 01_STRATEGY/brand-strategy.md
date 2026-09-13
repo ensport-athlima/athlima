@@ -178,21 +178,26 @@ Currently a back-cover logo. It should be a section.
 
 > ATHLIMA is not an event company's event.
 >
-> It is an IP of **ENSPORT Ventures**, the dedicated sports platform of **The ENARR Group** — built on a
-> multi-generational institutional history across enterprise, industry and philanthropy.
->
-> The Group's belief is straightforward: **long-term change is created by building institutions, not by
-> executing occasions.**
+> ATHLIMA is an ENSPORT Ventures initiative within the ENARR Group, bringing together sport, business,
+> capital, institutions and ideas around the future of performance in India. Built on the Group's broader
+> experience across finance, enterprise, industry, media and philanthropy, ATHLIMA exists to create **the
+> room** where the people shaping Indian sport can connect, collaborate and build what comes next.
 
-ENSPORT's own line — *Built to inspire victory* — is available and usable.
+*Approved by the project owner, 13 September 2026 — `08_OPERATIONS/decisions-b3-provenance.md` §4a. The
+earlier "multi-generational institutional history" line is withdrawn. The public word is **initiative**,
+never "IP" (§5) — "IP" stays internal, for the six sub-brands as a portfolio.*
+
+ENSPORT's own line — *Built to inspire victory* — is available and usable; it is set inside the ENSPORT
+lock-up itself.
 
 **Visual treatment:** the ENARR and ENSPORT marks belong to their own identities (ENARR: navy and gold;
 ENSPORT: gold and white). They are **not** recoloured to lime. They appear on a black ground at modest
 scale, with generous clear space, in a section that is quieter and more formal than the rest of the site.
 The contrast in register is the point — it reads as provenance.
 
-`[TO VERIFY — B3]` — the description of The ENARR Group's history and sectors, and any reference to the
-Singhania Family Sports Foundation, must be approved by the Group before publication.
+B3 is closed. `[TO VERIFY — B3a]` the registered office, telephone and email for the statutory footer
+line remain open (`decisions-b3-provenance.md` §2). The Singhania Family Sports Foundation is not
+mentioned anywhere on the site.
 
 ---
 

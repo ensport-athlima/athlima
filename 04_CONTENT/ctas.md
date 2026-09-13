@@ -67,7 +67,7 @@ These are subordinate text links, not buttons. They do not count against the two
 | `/apply/received` | `EXPLORE THE JOURNAL →` | `/journal` |
 | `/apply/declined` | `STAY IN TOUCH FOR 2027 →` | inline email capture on the same page |
 | Mobile, after Home screen 04 | `WHY SHOULD YOU CARE? IT DEPENDS WHO YOU ARE ↓` | `#doorways` |
-| `/about` *(only if B3 confirms a corporate site exists)* | `ABOUT ENSPORT VENTURES →` | external `[TO VERIFY — B3]` |
+| Home screen 07 · `/about` section 03 *(decision B3 §3)* | `Explore the Group →` | `https://www.enarr.com` — outbound, `rel="noopener"`, new tab, announced. Sentence case, not a button: it sits quietly beneath the institutional copy. |
 | `/the-world` section 05 | `THE TWO DAYS →` | `/programme` |
 | `/the-world` section 06 | `SEE THE FULL COMPOSITION →` | `/the-room` |
 | `/programme` section 04 | `SEE THE EVENING →` | `/afterhours#evening` |

@@ -92,6 +92,17 @@ question; route count 36 → 35; the conversion-strategy CTA table now declares 
 while `components.md` and the B4 default assumed a stakeholder grid that no content file defined.
 Resolved by the project owner: the grid. `homepage.md` screen 02 now specifies it, with the four titles.
 
+**B3 applied (13 September 2026):** `decisions-b3-provenance.md` closed the Group copy. Applied to
+`CLAUDE.md` II and IX, `00_README.md`, `website-thesis.md` §2, `positioning.md` §6, `brand-strategy.md`
+§7, `navigation.md` §5, `homepage.md` 07, `people.md` (/about 01 and 03), `ctas.md` Tier 3,
+`voice-and-tone.md` §4, `apply.md`, `contact.md`, `press.md`, `content-qa.md`, `launch-checklist.md`
+T-3 and T-14, `components.md` MARKS, `05_MEDIA/README.md`, and the build. Two judgement calls, stated:
+the diagnosis headline *ONE ECOSYSTEM. MULTIPLE IPs.* keeps "IPs" — there it means the ecosystem's
+sporting properties, not ATHLIMA's relationship to ENSPORT, and B3 §5 targets the latter; and the ENSPORT
+line *BUILT TO INSPIRE VICTORY* is no longer repeated beneath the marks because the ENSPORT lock-up
+carries it. Also recorded: the ENARR/ENSPORT marks ship as raster cut-outs — the one exception to "marks
+are never raster" — and Vercel Postgres is the datastore (`tech-stack.md` §2).
+
 **Not fixable in this pass, and said so:** the brochure PDFs are image-only; *brochure-sourced* marks
 follow the repository's own attributions and are tagged for verbatim verification.
 

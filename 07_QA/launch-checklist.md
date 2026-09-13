@@ -18,7 +18,11 @@
 - [ ] Legal pages published and reviewed.
 - [ ] **The Journal gate (decision D34):** six articles live — one per pillar plus a second BUILD piece —
       each 900+ words, each with a real named byline and photo, each sourced. `04_CONTENT/journal.md` §2.
-- [ ] Every ATHLIMA-owned wordmark and the A device delivered as SVG (`05_MEDIA/README.md`).
+- [ ] Every ATHLIMA-owned wordmark and the A device delivered as SVG (`05_MEDIA/README.md`). ATHLIMA
+      CONNECT and ATHLIMA 20 lock-ups drawn — no typeset fallback (`data-typeset-fallback`) left in the DOM.
+- [ ] **Each placeholder vector overlaid on its supplied raster at the same size and the outlines
+      confirmed to match** (`05_MEDIA/logos/vector/README.md`). The ENARR and ENSPORT marks replaced with
+      the Group's vectors, or the raster exception consciously kept.
 - [ ] `content-qa.md` passed on every page.
 
 ---
@@ -46,6 +50,11 @@
 
 ## T-3 DAYS — INFRASTRUCTURE
 
+- [ ] **The statutory block is complete and checked against the MCA record** (decision B3, `[TO VERIFY —
+      B3a/B3b]`): Companies Act 2013 s.12(3)(c) requires the site to display the company's name, registered
+      office address, CIN, telephone number and email address. The footer renders name and CIN today; the
+      registered office (per MCA — not assumed to be the Lower Parel corporate office), telephone and email
+      must be supplied, rendered, and verified against the record before launch.
 - [ ] Domain configured, DNS TTL lowered ahead of the switch.
 - [ ] SSL valid, HTTPS enforced, HSTS set.
 - [ ] `www` / non-`www` canonicalisation decided and redirecting.

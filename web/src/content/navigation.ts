@@ -4,7 +4,7 @@
  */
 import { routes, journalPillar, pillars, type Pillar } from "@/lib/routes"
 import type { IPId } from "@/components/marks/IPMark"
-import { site } from "./site"
+import { site, entity } from "./site"
 
 export const primaryNav = [
   { label: "THE WORLD", href: routes.theWorld, hasPanel: true },
@@ -112,13 +112,19 @@ export const footer = {
     { label: "FOR INSTITUTIONS", href: routes.forInstitutions },
     { label: "FOR BRANDS", href: routes.forBrands },
   ],
-  entityLine: site.builtBy,
+  /**
+   * The footer block — decision B3 §4d. Line one is brand; the rest is the statutory block.
+   * [TO VERIFY — B3a/B3b] The registered office, telephone and email (Companies Act 2013 s.12(3)(c))
+   * are not yet supplied; until they are, only these two lines render. Launch checklist T-3.
+   */
+  brandLine: `${site.edition} · ${site.institutionalLine}`,
+  statutoryLine: `${entity.legalName} · CIN ${entity.cin}`,
   legal: [
     { label: "Privacy", href: routes.legalPrivacy },
     { label: "Terms", href: routes.legalTerms },
     { label: "Cookies", href: routes.legalCookies },
   ],
-  copyright: "© 2026 ENSPORT Ventures Pvt. Ltd.",
+  copyright: `© 2026 ${entity.legalName}`,
   /** The Advisory Council route exists only with five written confirmations (sitemap.md §4). CMS later. */
   advisoryCouncilLive: false,
   advisoryCouncil: { label: "Advisory Council", href: routes.advisoryCouncil },

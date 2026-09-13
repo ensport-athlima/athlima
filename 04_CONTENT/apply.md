@@ -43,7 +43,7 @@ a persistent visible label, the correct `inputmode` and `autocomplete`, and a 44
 ### The trust panel *(beside the form on desktop, beneath it on mobile — `conversion-strategy.md` §7)*
 | | |
 |---|---|
-| **Who is behind this** | An IP of ENSPORT Ventures Pvt. Ltd., within The ENARR Group. `[TO VERIFY — B3]` |
+| **Who is behind this** | ATHLIMA is an ENSPORT Ventures initiative within the ENARR Group. |
 | **What happens to your data** | We use it to consider your application and to tell you our decision. Nothing else. *(then a Tier-3 link to `/legal/privacy`)* |
 | **When you will hear** | By **[DATE]** `[TO VERIFY]`, either way. |
 | **Who will contact you** | The ATHLIMA guest team `[TO VERIFY — a named team or person]`. |

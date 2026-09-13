@@ -16,11 +16,34 @@ export const site = {
   venueLabel: "THE ST. REGIS MUMBAI",
   floor: "9th floor",
   domain: "athlima.in",
-  builtBy: "An IP of ENSPORT Ventures Pvt. Ltd., within The ENARR Group.",
+  /** The relationship, as a sentence — decision B3 (08_OPERATIONS/decisions-b3-provenance.md §4a, §5). */
+  builtBy: "ATHLIMA is an ENSPORT Ventures initiative within the ENARR Group.",
+  /** The institutional line (B3 §4c). The middot is a middot. */
+  institutionalLine: "An ENSPORT Ventures initiative · ENARR Group",
   diagnosis: "THE ECOSYSTEM IS ACTIVE. BUT NOT CONNECTED.",
   /** ISO-8601, Asia/Kolkata. For Event JSON-LD. */
   startDate: "2026-12-14",
   endDate: "2026-12-15",
+} as const
+
+/**
+ * The entity — decision B3 (08_OPERATIONS/decisions-b3-provenance.md §1–§3). The full legal name and
+ * the CIN appear in the statutory line and the legal pages only; running copy says "ENSPORT Ventures".
+ *
+ * [TO VERIFY — B3a] The registered office per the MCA record, a telephone number and an email address
+ * are required on the site by s.12(3)(c) of the Companies Act 2013. Until supplied, `statutory` has no
+ * such fields and the footer renders the two lines it can (B3b). The address below is the corporate
+ * office — it is never labelled "Registered Office" until B3a confirms it is.
+ */
+export const entity = {
+  legalName: "ENSPORT Ventures Private Limited",
+  cin: "U93110MH2026PTC474328",
+  group: "ENARR Group",
+  groupUrl: "https://www.enarr.com",
+  corporateOffice: {
+    label: "Corporate Office",
+    lines: ["324, A to Z Estate, G K Marg", "Lower Parel West, Mumbai – 400013", "Maharashtra, India"],
+  },
 } as const
 
 export const pillarsInOrder = ["BUILD", "EQUIP", "ENABLE", "PERFORM", "GOVERN"] as const
