@@ -21,6 +21,23 @@
 06 INVITATION     two CTAs
 ```
 
+**As built (13 September 2026):** one template, `web/src/components/templates/IPPage.tsx`, six content
+objects in `web/src/content/experiences.ts`, six thin routes. The entry is the page's one `100svh`; an
+in-page functional CTA (`#themes`, `#zones`, `#evening`, `#how`, `#alert`) sits in the entry, a route CTA
+in the invitation. The proposition is the pull line as headline with the paragraph beneath; the pull
+quotes (Connect's reframe, ATHLIMA 20's philosophy) are set apart. Components are `IndexGrid`s (the
+Symposium runs themes then formats; ATHLIMA 20 runs the twenty then the stages) or, for Connect, the
+`SequenceRail` with the disclaimer verbatim beneath. `IPRail` closes every page. AFTERHOURS carries
+`data-accent="dusk"`: markers, rules and the other five marks' accents go dusk-blue / one-colour; nav,
+footer and buttons stay lime (D15). **Every `[TO VERIFY]` in this file is honoured by omission** — the
+partner counts, the two-week lead, the lawn and the Astor Terrace, the 60ft, the evening flow (its day
+and its recognition moment are unsettled, so the flow is not on the page; `#evening` anchors the six
+elements), the Selection Council's name, ATHLIMA 20 NIGHT, the under-20 line, the opening month and the
+unattributed quotation. **Held pending the access decision** (project owner, 13 September, not yet in
+the repository): the guest-facing CTAs to `/apply` — the Symposium's and ACTIV8's emotional CTAs and the
+guest doorways' links render as statements until `conversion-strategy.md`, `ctas.md` and `sitemap.md`
+are amended.
+
 ---
 
 # 01 — ATHLIMAX

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react"
 import { Display, type DisplayLine } from "@/components/primitives/Display"
 import { Button } from "@/components/primitives/Button"
 import { AthlimaA } from "@/components/marks/AthlimaA"
@@ -27,6 +28,8 @@ export interface ApplyBlockProps {
   functional?: { label: string; href: string }
   /** A Tier-3 inline link instead of a Tier-2 pair — for pages whose pair lives elsewhere. */
   tertiary?: { label: string; href: string }
+  /** The functional CTA as a form — /athlima-20's pre-window EmailCapture (decision D4). */
+  children?: ReactNode
   className?: string
 }
 
@@ -40,6 +43,7 @@ export function ApplyBlock({
   emotional,
   functional,
   tertiary,
+  children,
   className,
 }: ApplyBlockProps) {
   const headingId = `${id}-headline`
@@ -91,6 +95,11 @@ export function ApplyBlock({
                 {functional.label}
               </Button>
             ) : null}
+          </Reveal>
+        ) : null}
+        {children ? (
+          <Reveal className="mt-12 w-full max-w-measure text-left">
+            {children}
           </Reveal>
         ) : null}
         {tertiary ? (

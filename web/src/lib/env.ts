@@ -58,4 +58,5 @@ export const configured = {
   sanity: Boolean(env.NEXT_PUBLIC_SANITY_PROJECT_ID && env.NEXT_PUBLIC_SANITY_DATASET),
   analytics: Boolean(env.NEXT_PUBLIC_GA_ID),
   sentry: Boolean(env.NEXT_PUBLIC_SENTRY_DSN),
+  postgres: Boolean(env.POSTGRES_URL),
 } as const

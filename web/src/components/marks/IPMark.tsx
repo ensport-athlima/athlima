@@ -88,7 +88,9 @@ function Artwork({
           <path key={i} d={d} />
         ))}
       </g>
-      <g fill={dusk ? `url(#${gradientId})` : "var(--lime)"} transform={artwork.transform}>
+      {/* The lime accent yields to currentColor inside the AFTERHOURS page (decision D15) — a one-colour
+          rendering of the mark, never a recolouring of it. */}
+      <g fill={dusk ? `url(#${gradientId})` : "var(--mark-accent, var(--lime))"} transform={artwork.transform}>
         {artwork.accent.map((d, i) => (
           <path key={i} d={d} />
         ))}

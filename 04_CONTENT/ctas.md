@@ -177,6 +177,12 @@ not publish a commitment the team has not agreed to.
 **Button:** `TELL ME WHEN NOMINATIONS OPEN`
 **Confirmation, inline:** `You'll hear from us the day nominations open.`
 
+**As built (13 September 2026):** the headline is withheld until the month is supplied — the block renders
+*Twenty athletes. Twenty sports. One future.* as display type with the third line beneath. The form is
+`EmailCapture` → server action → Vercel Postgres (`web/db/001_email_captures.sql`); it renders **only when
+`POSTGRES_URL` is configured**, and the entry's `#alert` CTA renders only then too — never a form that
+posts nowhere, never an anchor to nothing. Adults only: the list is the alert, not the nomination.
+
 ### 4b. The `open` state — v2
 
 **Page intro**

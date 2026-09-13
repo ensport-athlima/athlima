@@ -452,6 +452,15 @@
       padding-bottom: 0;
     }
   }
+  /* A 100svh hero's bottom edge: the tight pad, the safe area, and — while the apply bar is present — its height. */
+  .pb-hero {
+    padding-bottom: calc(var(--section-pad-tight) + env(safe-area-inset-bottom) + var(--apply-bar-h));
+  }
+  @media (min-width: 64rem) {
+    .pb-hero {
+      padding-bottom: calc(var(--section-pad-tight) + env(safe-area-inset-bottom));
+    }
+  }
 }
 
 /* accessibility.md §2 — the safety net. gsap.matchMedia() in src/motion/registry.ts is the strategy. */
@@ -463,5 +472,30 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * THE AFTERHOURS PAGE (colour.md §5, decision D15). The page's accent is dusk, not lime: markers, rules,
+ * hairlines and lime words become --dusk-blue (5.21 on black — the only dusk value that passes AA).
+ * Lime survives in exactly three places: the nav, the footer, and the CTA buttons — the page's frame and
+ * ATHLIMA's conversion path — so nothing inside a button or a link is touched.
+ */
+@layer utilities {
+  [data-accent="dusk"] .text-lime:not(a *, button *) {
+    color: var(--dusk-blue);
+  }
+  [data-accent="dusk"] .border-lime:not(a *, button *) {
+    border-color: var(--dusk-blue);
+  }
+  /* The other five marks render one-colour here — their lime accents would be lime on the dusk page. */
+  [data-accent="dusk"] {
+    --mark-accent: currentColor;
+  }
+  @media (hover: hover) {
+    [data-accent="dusk"] .index-item:hover,
+    [data-accent="dusk"] .index-item:focus-within {
+      border-color: var(--dusk-blue);
+    }
   }
 }

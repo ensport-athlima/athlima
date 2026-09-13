@@ -6,7 +6,8 @@ import { cn } from "@/lib/cn"
  * BLOCK: IndexGrid
  * ROLE IN EXPERIENCE: Credibility — structure is the proof. The L5 index: pavilions, zones, themes,
  *   disciplines, the four groups. Rules and space, NOT cards (components.md, "read this one carefully").
- * POSITION: Homepage screen 05 (the four groups); every IP page.
+ * POSITION: Homepage screen 05 (the four groups); every IP page (pavilions, themes, formats, zones,
+ *   elements, disciplines, stages).
  * PRIMARY CTA: none.
  * SOURCE OF TRUTH: the calling page's content file.
  * MOTION: REVEAL (items, STAGGER_TIGHT) via <Reveal>; hover in CSS — the hairline turns lime and the
@@ -14,7 +15,8 @@ import { cn } from "@/lib/cn"
  */
 export interface IndexItem {
   title: string
-  line: string
+  /** Optional — the twenty disciplines are titles alone. */
+  line?: string
   /** Optional structured detail beneath the line — a list, a label row. */
   detail?: ReactNode
 }
@@ -52,7 +54,7 @@ export function IndexGrid({ items, columns = 3, startAt = 1, className }: IndexG
               {String(startAt + i).padStart(2, "0")}
             </span>
             <h3 className="display mt-4 text-display-sm text-paper">{item.title}</h3>
-            <p className="mt-3 text-body-sm text-ink-200">{item.line}</p>
+            {item.line ? <p className="mt-3 text-body-sm text-ink-200">{item.line}</p> : null}
             {item.detail ? <div className="mt-4">{item.detail}</div> : null}
           </div>
         </li>

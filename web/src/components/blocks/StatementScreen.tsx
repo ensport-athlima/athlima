@@ -174,21 +174,27 @@ export function StatementScreen({
           {/* THE STILL belongs here (B2): a single graded image, not a film — the film is the homepage's. */}
           <div aria-hidden="true" className="absolute inset-0 bg-ink-950" />
           <Scrim toward="bottom" />
-          <div
-            className="relative z-20 flex flex-1 flex-col px-margin pt-[calc(var(--nav-h)+var(--section-pad-dense))]"
-            style={{
-              paddingBottom: "calc(var(--section-pad-tight) + env(safe-area-inset-bottom))",
-            }}
-          >
+          <div className="pb-hero relative z-20 flex flex-1 flex-col px-margin pt-[calc(var(--nav-h)+var(--section-pad-dense))]">
             <div className="mx-auto flex w-full max-w-content-max flex-1 flex-col">
               {eyebrow ? (
                 <Reveal>
                   <Eyebrow wide>{eyebrow}</Eyebrow>
                 </Reveal>
               ) : null}
+              {mark ? (
+                // The IP's mark, above the statement (experiences.md 01 ENTRY: "the mark, the line").
+                <Reveal ease="arch" duration="slow" className="mt-8 text-display-md text-paper">
+                  {mark}
+                </Reveal>
+              ) : null}
               <Reveal variant="lines" className="mt-auto pt-section-dense">
                 <Display as="h1" id={headingId} size={size} lines={lines} narrow={narrow} />
               </Reveal>
+              {sub ? (
+                <Reveal variant="lines" className="mt-6">
+                  <Display as="p" size="md" lines={sub} narrow={subNarrow} wholeLime={subWholeLime} />
+                </Reveal>
+              ) : null}
               {ctas && (ctas.emotional || ctas.functional) ? (
                 <Reveal className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">
                   {ctas.emotional ? (

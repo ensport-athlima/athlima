@@ -50,10 +50,7 @@ export function EntrySequence({ nextId, overlay, className }: EntrySequenceProps
       <div aria-hidden="true" className="absolute inset-0 bg-ink-950" />
       <Scrim toward="bottom" />
 
-      <div
-        className="relative z-20 flex flex-1 flex-col px-margin pt-[calc(var(--nav-h)+var(--section-pad-dense))]"
-        style={{ paddingBottom: "calc(var(--section-pad-tight) + env(safe-area-inset-bottom))" }}
-      >
+      <div className="pb-hero relative z-20 flex flex-1 flex-col px-margin pt-[calc(var(--nav-h)+var(--section-pad-dense))]">
         <Eyebrow wide>{screen01.eyebrow}</Eyebrow>
 
         <Display

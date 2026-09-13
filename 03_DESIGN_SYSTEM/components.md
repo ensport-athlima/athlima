@@ -105,10 +105,10 @@ Full-width page sections. Each carries the mandatory header comment from `06_BUI
 | `RoomComposition` | The 350, by group and pillar. **Static variant** on `/` screen 05; **filterable variant** (Signature 04) on `/the-room` section 03. Composition figures are labelled as the **target** composition until the room is confirmed. | `/`, `/the-room` |
 | `ProofNumbers` | A row of 3–4 statistics. **Every one carries a visible source and year.** | `/`, `/the-world` |
 | `IndexGrid` | The L5 index: pavilions, zones, themes, disciplines. Rules and space, **not cards**. | The six IP pages |
-| `SequenceRail` | A numbered horizontal sequence with chevrons. The partner journey, the Connect steps. | `/partner/journey`, `/connect` |
+| `SequenceRail` | A numbered horizontal sequence with chevrons. The partner journey, the Connect steps. Four columns at `lg`, two at `md`, one below; the chevron (`>` in the display face, lime) appears at `lg` only and is hidden from AT, which reads an ordered list. | `/partner/journey`, `/connect` |
 | `TwoDayFlow` | The programme timeline. Two columns on desktop, stacked on mobile. | `/programme`, `/the-world` |
 | `ProvenanceBlock` | ENSPORT and ENARR. Quieter and more formal than everything around it. | `/`, `/about` |
-| `IPRail` | The other five IPs, at the foot of every IP page. | The six IP pages |
+| `IPRail` | The other five IPs, at the foot of every IP page. A ruled list — mark left, role right — with the `IndexGrid` hover; the page's own IP omitted. | The six IP pages |
 | `JournalRail` | 3–4 featured articles. **Not on the homepage** — the nine-screen script has no Journal surface; JOURNAL is a top-level nav item instead. | IP pages, `/journal`, article footers |
 | `ApplyBlock` | The closing invitation. One emotional CTA, one functional. | Every page |
 | `FloorPlan` | The venue floor, annotated and navigable. **`/programme` only in v1** (decision D21) — an operational artefact, not a proposition. Shows whichever commercial architecture B1 confirms. | `/programme` |
