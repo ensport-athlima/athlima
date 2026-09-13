@@ -18,8 +18,7 @@ import { cn } from "@/lib/cn"
  *   through the `overlay` slot. It draws over this finished hero; it never hides, delays or creates
  *   anything rendered here, and it is absent from the server HTML.
  *
- * Provisional until the layout tier lands: the eyebrow "appears with the nav" — its top offset is the
- * section padding today and is set to clear the Nav when Nav exists.
+ * The eyebrow "appears with the nav": its top offset is the nav's height plus the dense section padding.
  */
 export interface EntrySequenceProps {
   /** The id of the next screen. When absent the scroll cue is text — never a dead href. */
@@ -52,7 +51,7 @@ export function EntrySequence({ nextId, overlay, className }: EntrySequenceProps
       <Scrim toward="bottom" />
 
       <div
-        className="relative z-20 flex flex-1 flex-col px-margin pt-section-dense"
+        className="relative z-20 flex flex-1 flex-col px-margin pt-[calc(var(--nav-h)+var(--section-pad-dense))]"
         style={{ paddingBottom: "calc(var(--section-pad-tight) + env(safe-area-inset-bottom))" }}
       >
         <Eyebrow wide>{screen01.eyebrow}</Eyebrow>

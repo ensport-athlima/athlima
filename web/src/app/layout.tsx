@@ -4,6 +4,11 @@ import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { SmoothScrollProvider } from "@/motion/SmoothScrollProvider"
+import { SkipLink } from "@/components/layout/SkipLink"
+import { Nav } from "@/components/layout/Nav"
+import { Footer } from "@/components/layout/Footer"
+import { ApplyBar } from "@/components/layout/ApplyBar"
+import { CookieNotice } from "@/components/layout/CookieNotice"
 import { env } from "@/lib/env"
 import { site } from "@/content/site"
 import "./globals.css"
@@ -56,18 +61,15 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-IN" className={archivo.variable}>
-      <body className="bg-void text-ink-100 antialiased">
-        {/*
-          accessibility.md §1.3 — the first focusable element. Reachable from the first frame of the
-          entry overlay. Becomes the SkipLink layout component when the layout tier is built (D22).
-        */}
-        <a
-          href="#content"
-          className="sr-only-focusable label fixed top-4 left-4 z-50 bg-lime px-4 py-3 text-void"
-        >
-          SKIP TO CONTENT
-        </a>
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+      <body className="has-apply-bar bg-void text-ink-100 antialiased">
+        <SkipLink />
+        <SmoothScrollProvider>
+          <Nav />
+          {children}
+          <Footer />
+        </SmoothScrollProvider>
+        <ApplyBar />
+        <CookieNotice gaId={env.NEXT_PUBLIC_GA_ID} />
         <Analytics />
         <SpeedInsights />
       </body>

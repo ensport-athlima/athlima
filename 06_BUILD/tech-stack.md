@@ -80,6 +80,11 @@ Rule of thumb — *if it is a state change under 300ms, use CSS. If it is choreo
 |---|---|
 | `@sentry/nextjs` | Error tracking. **Lazy-loaded after the page is interactive**; never in the critical path; outside the 200 KB homepage allocation (decision D2). |
 
+### Accessible primitives
+| Package | Purpose |
+|---|---|
+| `@radix-ui/react-dialog` | The mobile menu only: focus trap, Escape, scroll lock, focus return. Unstyled — §5.2. Added with the layout tier, 13 September 2026. |
+
 ---
 
 ## 3. FILE & FOLDER CONVENTIONS

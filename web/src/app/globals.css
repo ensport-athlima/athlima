@@ -106,6 +106,8 @@
   --spacing-lime-rule: var(--lime-rule-w);
   --spacing-touch: var(--touch-min);
   --spacing-section-tall: var(--section-tall);
+  --spacing-nav: var(--nav-h);
+  --spacing-apply-bar: var(--apply-bar-h);
   --spacing-portal: var(--portal-w);
 
   --ease-out: var(--easing-out);
@@ -381,6 +383,67 @@
     }
     .marquee-track > [aria-hidden] {
       display: none;
+    }
+  }
+}
+
+/*
+ * THE NAV (navigation.md §3). Transparent at rest; a near-black backdrop past 100px — never a blur;
+ * inverts to void type over a light section via data-on-light. Never hides on desktop.
+ */
+@layer components {
+  .site-nav {
+    color: var(--paper);
+    transition:
+      background-color var(--dur-fast) var(--easing-sharp),
+      color var(--dur-fast) var(--easing-sharp);
+  }
+  .site-nav[data-scrolled] {
+    background-color: color-mix(in srgb, var(--ink-900) 95%, transparent);
+  }
+  .site-nav[data-on-light] {
+    color: var(--void);
+    background-color: color-mix(in srgb, var(--paper) 95%, transparent);
+  }
+  .site-nav .nav-item {
+    position: relative;
+    padding-block: var(--space-2);
+  }
+  .site-nav .nav-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: var(--lime);
+    transition: width var(--dur-fast) var(--easing-sharp);
+  }
+  .site-nav[data-on-light] .nav-item::after {
+    background: var(--lime-ink);
+  }
+  .site-nav .nav-item:hover::after,
+  .site-nav .nav-item:focus-visible::after,
+  .site-nav .nav-item[aria-current="page"]::after,
+  .site-nav .nav-item[aria-expanded="true"]::after {
+    width: 100%;
+  }
+  /* The cookie notice sits above the mobile APPLY bar below lg, at the bottom from lg. */
+  .cookie-notice {
+    bottom: calc(var(--apply-bar-h) + env(safe-area-inset-bottom));
+  }
+  @media (min-width: 64rem) {
+    .cookie-notice {
+      bottom: 0;
+    }
+  }
+  /* The page carries bottom padding for the mobile APPLY bar below lg (navigation.md §3). */
+  .has-apply-bar {
+    padding-bottom: calc(var(--apply-bar-h) + env(safe-area-inset-bottom));
+  }
+  @media (min-width: 64rem) {
+    .has-apply-bar {
+      padding-bottom: 0;
     }
   }
 }

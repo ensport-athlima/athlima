@@ -114,6 +114,8 @@
   --section-tall: 80svh; /* grid.md §4 "Tall" — major sections, stacked portal panels on touch */
   --portal-w: min(60vw, 64rem); /* one portal panel in the desktop track — ~1.6 panels visible */
   --touch-min: 2.75rem; /* 44px */
+  --nav-h: 4rem; /* the fixed nav's height; the hero's eyebrow clears it */
+  --apply-bar-h: 4.5rem; /* the mobile APPLY bar; pages carry this as bottom padding below lg */
 
   /* ── Motion — CSS mirrors of src/motion/easings.ts and durations.ts (exposed to Tailwind as ease-* utilities) ──────── */
   --easing-out: cubic-bezier(0.16, 1, 0.3, 1);

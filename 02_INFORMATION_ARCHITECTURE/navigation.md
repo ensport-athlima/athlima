@@ -56,6 +56,9 @@ a dropdown list.
 
 Every other nav item is a direct link. No other dropdowns.
 
+**As built (13 September 2026):** no background media in the panel until the loops exist (B2) — the type
+is the navigation. The six IPs use the typeset mark fallback (B2).
+
 ---
 
 ## 3. NAVIGATION BEHAVIOUR
@@ -141,7 +144,11 @@ and worth reading.
 **Rules**
 - The ENARR and ENSPORT marks appear at their own colours, never recoloured to lime, with generous clear space.
 - No newsletter form in the footer — the Journal owns subscription, in context, where it is earned.
-- Social icons are small and last. They are an exit, not a destination.
+- Social icons are small and last. They are an exit, not a destination. `[TO VERIFY]` Which accounts
+  exist (LinkedIn, Instagram, X, YouTube?) — none render until confirmed.
+- **As built (13 September 2026):** the ENARR and ENSPORT marks are named plates until their vectors
+  arrive (B2); "ENSPORT Ventures" and "The ENARR Group" in MORE link to `/about` until B3 confirms
+  outbound corporate sites.
 - **`*` Advisory Council is conditional.** The link renders only when the route exists (five or more
   members confirmed — see `sitemap.md` §4). It is never a link to a 404, because `06_BUILD/seo.md`
   requires zero 404s from internal links.
