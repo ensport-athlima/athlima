@@ -4,6 +4,8 @@ import { SectionMarker } from "@/components/primitives/SectionMarker"
 import { Eyebrow } from "@/components/primitives/Eyebrow"
 import { Button } from "@/components/primitives/Button"
 import { Scrim } from "@/components/media/Scrim"
+import { MediaSlot } from "@/components/media/MediaSlot"
+import type { SlotName } from "@/content/media"
 import { Reveal } from "@/motion/Reveal"
 import { cn } from "@/lib/cn"
 
@@ -37,6 +39,8 @@ export interface StatementScreenProps {
   uppercase?: boolean
   /** The heading level. Entry variants are h1; a statement that opens a sub-page (the model, the journey) is h1 too. */
   heading?: "h1" | "h2"
+  /** Entry variant: the still behind the statement — a slot name from content/media.ts. */
+  media?: SlotName
   sub?: readonly DisplayLine[]
   subNarrow?: readonly DisplayLine[]
   /** The sub-line is lime in full — screen 03 only (decision D14). */
@@ -74,6 +78,7 @@ export function StatementScreen({
   size = "lg",
   uppercase = true,
   heading,
+  media,
   sub,
   subNarrow,
   subWholeLime = false,
@@ -189,8 +194,8 @@ export function StatementScreen({
             underSubNav ? "min-h-[calc(100svh-var(--nav-h)-var(--subnav-h))]" : "min-h-svh",
           )}
         >
-          {/* THE STILL belongs here (B2): a single graded image, not a film — the film is the homepage's. */}
-          <div aria-hidden="true" className="absolute inset-0 bg-ink-950" />
+          {/* THE STILL (B2): the page's entry slot — a single graded image, not a film. */}
+          {media ? <MediaSlot name={media} sizes="100vw" priority /> : <div aria-hidden="true" className="absolute inset-0 bg-ink-950" />}
           <Scrim toward="bottom" />
           <div
             className={cn(

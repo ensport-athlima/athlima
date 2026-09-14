@@ -43,6 +43,7 @@ export default function PartnerPage() {
       <StatementScreen
         id={reframe.id}
         variant="entry"
+        media="entry.partner"
         underSubNav
         eyebrow={reframe.eyebrow}
         size="xl"

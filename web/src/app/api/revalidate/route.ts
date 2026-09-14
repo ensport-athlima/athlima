@@ -16,6 +16,7 @@ const TYPE_TO_TAG: Record<string, Tag> = {
   event: TAGS.events,
   partner: TAGS.partners,
   siteSettings: TAGS.site,
+  mediaSlot: TAGS.site,
 }
 
 interface WebhookBody {

@@ -77,3 +77,12 @@ export const articleQuery = defineQuery(
     "pillarPiece": *[_type == "article" && isPillarPiece == true && defined(slug.current) && _id != ^._id && ^.pillars[0] in pillars] | order(publishedAt desc)[0]{ title, "slug": slug.current }
   }`,
 )
+
+/** The media slots the content team has filled (content/media.ts). The CMS wins over the code registry. */
+export const siteMediaQuery = defineQuery(
+  `*[_type == "mediaSlot" && defined(slot) && defined(image.asset)]{
+    slot,
+    "image": image{ "ref": asset._ref, alt, credit, hotspot, crop },
+    film
+  }`,
+)

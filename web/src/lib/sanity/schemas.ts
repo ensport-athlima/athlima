@@ -107,6 +107,20 @@ export type Article = Infer<typeof articleSchema>
 /** `[0]` on an empty match is null. */
 export const articleOrNullSchema = articleSchema.nullable()
 
+export const siteMediaSchema = array(
+  object({
+    slot: string().min(1),
+    image: imageRefSchema,
+    film: object({
+      mp4: string().min(1),
+      webm: string().nullish(),
+      hls: string().nullish(),
+      captions: string().nullish(),
+    }).nullish(),
+  }),
+)
+export type SiteMedia = Infer<typeof siteMediaSchema>
+
 /** Wraps a schema so a bad payload throws with the query's name in the message. */
 export function parser<T>(name: string, schema: ZodType<T>) {
   return (raw: unknown): T => {

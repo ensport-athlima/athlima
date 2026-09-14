@@ -2,6 +2,8 @@ import type { ReactNode } from "react"
 import { Display } from "@/components/primitives/Display"
 import { Eyebrow } from "@/components/primitives/Eyebrow"
 import { Scrim } from "@/components/media/Scrim"
+import { MediaSlot } from "@/components/media/MediaSlot"
+import { filmLabels } from "@/content/navigation"
 import { screen01 } from "@/content/homepage"
 import { cn } from "@/lib/cn"
 
@@ -41,13 +43,10 @@ export function EntrySequence({ nextId, overlay, className }: EntrySequenceProps
       className={cn("relative flex min-h-svh flex-col bg-void", className)}
     >
       {/*
-        THE HERO POSTER — Mumbai at night — belongs here (B2). When it exists this element becomes:
-          <Image fill priority sizes="100vw" alt="…" src={poster} style={{ objectPosition: focalPoint }} />
-        AVIF ≤ 120 KB, focal point from the CMS, graded to the ATHLIMA LUT, the page's one `priority`
-        image and its LCP element (performance.md §2–3). Until then: a correctly sized, correctly
-        positioned slot on --ink-950, so the layout, the scrim and the type are already right.
+        THE HERO — Mumbai at night (B2): the `home.hero` slot. A still is the page's one priority image
+        and its LCP element; a film adds itself after load with the poster as frame one (VideoHero).
       */}
-      <div aria-hidden="true" className="absolute inset-0 bg-ink-950" />
+      <MediaSlot name="home.hero" sizes="100vw" priority film="hero" filmLabels={filmLabels} />
       <Scrim toward="bottom" />
 
       <div className="pb-hero relative z-20 flex flex-1 flex-col px-margin pt-[calc(var(--nav-h)+var(--section-pad-dense))]">

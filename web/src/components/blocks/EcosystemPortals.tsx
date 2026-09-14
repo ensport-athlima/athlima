@@ -3,6 +3,7 @@ import { Display, type DisplayLine } from "@/components/primitives/Display"
 import { SectionMarker } from "@/components/primitives/SectionMarker"
 import { IPMark, IP_NAMES, type IPId } from "@/components/marks/IPMark"
 import { Scrim } from "@/components/media/Scrim"
+import { MediaSlot } from "@/components/media/MediaSlot"
 import { Reveal } from "@/motion/Reveal"
 import { PinnedSequence } from "@/motion/PinnedSequence"
 import { cn } from "@/lib/cn"
@@ -78,12 +79,8 @@ export function EcosystemPortals({
                   href={portal.href}
                   className="portal group relative block h-full min-h-(--section-tall) overflow-hidden focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-lime lg:min-h-svh"
                 >
-                  {/*
-                    THE SIGNATURE MICRO-FILM belongs here (B2): the IP's 5–8s loop via `MicroFilm` —
-                    ≤ 1.5 MB, poster-first, IntersectionObserver-gated, at most one playing at a time,
-                    poster only on touch and under save-data. Until then, a correctly sized slot.
-                  */}
-                  <div data-media aria-hidden="true" className="absolute inset-0 bg-ink-950" />
+                  {/* THE SIGNATURE MICRO-FILM (B2): the `portal.*` slot — a 5–8 s loop, poster-first, gated. */}
+                  <MediaSlot name={`portal.${portal.ip}`} sizes="(min-width: 64rem) 60vw, 100vw" />
                   <Scrim toward="bottom" />
                   <span
                     aria-hidden="true"

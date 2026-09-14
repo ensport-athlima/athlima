@@ -31,6 +31,7 @@ export default function TheRoomPage() {
       <StatementScreen
         id={entry.id}
         variant="entry"
+        media="entry.the-room"
         eyebrow={entry.eyebrow}
         size="xl"
         lines={entry.headline}

@@ -221,28 +221,33 @@ export const screen06 = {
       audience: "FOUNDER OR BUSINESS LEADER",
       line: "Find the people shaping sport's next economy.",
       href: routes.forBusiness,
+      slot: "doorway.business",
     },
     {
       audience: "ATHLETE, COACH OR PERFORMANCE PROFESSIONAL",
       line: "Find your next level.",
       href: routes.forAthletes,
+      slot: "doorway.athletes",
     },
     {
       audience: "INVESTOR OR FAMILY OFFICE",
       line: "Find the opportunities behind India's sporting growth.",
       href: routes.forCapital,
+      slot: "doorway.capital",
     },
     {
       audience: "DEVELOPER, ARCHITECT OR OPERATOR",
       line: "Sport needs places. Meet the people who decide where they get built.",
       href: routes.forInfrastructure,
+      slot: "doorway.infrastructure",
     },
     {
       audience: "GOVERNMENT, FEDERATION OR INSTITUTION",
       line: "Build the infrastructure around India's sporting future.",
       href: routes.forInstitutions,
+      slot: "doorway.institutions",
     },
-    { audience: "BRAND", line: "Own a territory, not a logo.", href: routes.forBrands },
+    { audience: "BRAND", line: "Own a territory, not a logo.", href: routes.forBrands, slot: "doorway.brands" },
   ],
 } as const
 

@@ -107,6 +107,7 @@ export function IPPage({ content }: { content: IPContent }) {
       <StatementScreen
         id="entry"
         variant="entry"
+        media={`entry.${ip}`}
         eyebrow={entry.eyebrow}
         mark={entry.showMark ? <IPMark ip={ip} decorative /> : undefined}
         size="xl"

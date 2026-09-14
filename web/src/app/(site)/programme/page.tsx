@@ -28,7 +28,7 @@ export default function ProgrammePage() {
   const { entry, shape, floor, night, invitation } = programme
   return (
     <main id="content">
-      <StatementScreen id={entry.id} variant="entry" eyebrow={entry.eyebrow} size="xl" lines={entry.headline} lead={entry.lead} />
+      <StatementScreen id={entry.id} variant="entry" media="entry.programme" eyebrow={entry.eyebrow} size="xl" lines={entry.headline} lead={entry.lead} />
 
       <TwoDayFlow id={shape.id} marker={shape.marker} headline={shape.headline} facts={shape.facts} body={shape.body} />
 

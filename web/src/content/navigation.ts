@@ -51,6 +51,9 @@ export const tertiaryNav = [
 
 export const menuStrings = { open: "MENU", close: "CLOSE", skip: "SKIP TO CONTENT" } as const
 
+/** ctas.md §5 — the video pause control. */
+export const filmLabels = { pause: "PAUSE FILM", play: "PLAY FILM" } as const
+
 export const cookieNotice = {
   text: "We use a small number of cookies to understand how the site is used. Nothing else.",
   accept: "ACCEPT",

@@ -29,6 +29,7 @@ export default function TheWorldPage() {
       <StatementScreen
         id={entry.id}
         variant="entry"
+        media="entry.the-world"
         eyebrow={entry.eyebrow}
         size="xl"
         lines={entry.headline}

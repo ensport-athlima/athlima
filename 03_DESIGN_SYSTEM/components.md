@@ -88,6 +88,17 @@ where the mask is unsupported or under reduced motion.
 The gradient overlay for text-over-image. Black, 0 → 70%, direction configurable. Not decoration — it is
 how contrast is guaranteed.
 
+### `MediaSlot` *(as built, 14 September 2026)*
+The one way photography and film enter a block. Every place that carries media is a **named slot**
+(`web/src/content/media.ts` — the registry, with the subject, ratio and minimum size each slot needs);
+a slot resolves to the CMS's `mediaSlot` document for that name if the content team has filled one,
+else the registry's asset, else the black ground. A still renders through `next/image` (`fill`,
+mandatory `sizes`, `object-position` from the focal point, `priority` only for the homepage hero); a film
+through `VideoHero` (the hero: poster first, the film after load, `PAUSE FILM` / `PLAY FILM`) or
+`MicroFilm` (the loop: `preload="none"`, IntersectionObserver-gated, pauses off-screen). Poster only
+under reduced motion, save-data and 2g. `ImageReveal` and `MediaFrame` are expressed through it plus the
+existing `REVEAL-COVER` and hover rules rather than as separate components.
+
 ---
 
 ## TIER 3 — BLOCKS

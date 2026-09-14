@@ -27,7 +27,7 @@ export default function AboutPage() {
   const { what, pillars, provenance, whyNow, standard } = about
   return (
     <main id="content">
-      <StatementScreen id={what.id} variant="entry" eyebrow={what.eyebrow} size="xl" lines={what.headline} lead={what.lead[0]} body={[what.lead[1]]} />
+      <StatementScreen id={what.id} variant="entry" media="entry.about" eyebrow={what.eyebrow} size="xl" lines={what.headline} lead={what.lead[0]} body={[what.lead[1]]} />
       <section aria-label="Institutional line" className="bg-void px-margin pb-section-standard">
         <div className="mx-auto max-w-content-max lg:grid lg:grid-cols-12 lg:gap-x-gutter">
           <div className="lg:col-start-2 lg:col-end-9">

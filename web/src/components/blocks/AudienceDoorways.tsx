@@ -3,6 +3,8 @@ import { Display, type DisplayLine } from "@/components/primitives/Display"
 import { SectionMarker } from "@/components/primitives/SectionMarker"
 import { Reveal } from "@/motion/Reveal"
 import { cn } from "@/lib/cn"
+import { MediaSlot } from "@/components/media/MediaSlot"
+import type { SlotName } from "@/content/media"
 
 /**
  * BLOCK: AudienceDoorways
@@ -20,6 +22,8 @@ export interface Doorway {
   audience: string
   line: string
   href: string
+  /** The scene behind it — a `doorway.*` slot (content/media.ts). */
+  slot: SlotName
 }
 
 export interface AudienceDoorwaysProps {
@@ -63,12 +67,8 @@ export function AudienceDoorways({
                 href={d.href}
                 className="doorway relative block py-8 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime lg:py-10"
               >
-                {/* THE SCENE belongs here (B2): a portrait or scene of this audience, resolving at 40% behind the line. */}
-                <span
-                  data-media
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-ink-950"
-                />
+                {/* THE SCENE (B2): the `doorway.*` slot, resolving at 40% behind the line on hover (globals.css). */}
+                <MediaSlot name={d.slot} sizes="100vw" className="pointer-events-none" />
                 <span className="relative block lg:grid lg:grid-cols-12 lg:gap-x-gutter">
                   <span className="display block text-display-sm text-paper lg:col-span-5">
                     {d.audience}

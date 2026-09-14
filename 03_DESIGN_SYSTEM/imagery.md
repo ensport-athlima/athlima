@@ -109,6 +109,11 @@ Each: ≤ 1.5 MB, AV1/WebM with an H.264 MP4 fallback, `muted playsinline loop p
 One person, one idea, direct to camera or in conversation. The ATHLIMA signature content format, and the
 backbone of ATHLIMA 20 and the Journal. Captioned, always.
 
+**HLS in a native `<video>` (as built):** Safari and iOS play a Mux `.m3u8` natively; Chrome and Firefox
+do not without hls.js (~70 KB), which is not in the stack (decision D2). So every film element lists the
+HLS source first and Mux's MP4 rendition second — Safari takes the stream, everyone else the MP4, and
+no player library ships. Enable static MP4 renditions on the Mux asset.
+
 ### Video rules
 - The hero **never** loads a video file before LCP. The LCP element is the poster plus the headline.
 - Maximum **two** videos playing on any screen.

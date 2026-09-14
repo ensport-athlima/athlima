@@ -4,6 +4,7 @@ import { Button } from "@/components/primitives/Button"
 import { Marquee } from "@/components/primitives/Marquee"
 import { IPMark } from "@/components/marks/IPMark"
 import { Scrim } from "@/components/media/Scrim"
+import { MediaSlot } from "@/components/media/MediaSlot"
 import { Reveal } from "@/motion/Reveal"
 import { cn } from "@/lib/cn"
 
@@ -110,17 +111,13 @@ export function DisciplineGrid({
         </div>
       </div>
 
-      {/*
-        THE IMAGE belongs here (B2): the strongest single image on the homepage — young Indian athletes,
-        backs to camera, facing the city and the light; para athletes included, not as a category.
-        next/image, fill, 21:9 at lg, focal point from the CMS, graded to the LUT. Until then: the slot.
-      */}
+      {/* THE IMAGE (B2): the `home.athlima20` slot — the strongest single image on the homepage; real alt. */}
       <Reveal
         variant="cover"
         direction="up"
         className="relative mt-16 min-h-(--section-tall) lg:aspect-[21/9] lg:min-h-0"
       >
-        <div aria-hidden="true" className="absolute inset-0 bg-ink-950" />
+        <MediaSlot name="home.athlima20" sizes="100vw" meaningful />
         <Scrim toward="bottom" />
         <div data-cover aria-hidden="true" className="absolute inset-0 z-20 bg-void" />
         <div className="relative z-10 flex h-full min-h-(--section-tall) flex-col justify-end px-margin pb-12 lg:min-h-0 lg:pb-16">
