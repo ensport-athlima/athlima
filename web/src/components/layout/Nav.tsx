@@ -112,6 +112,16 @@ export function Nav() {
                     aria-expanded={hasPanel ? panelOpen : undefined}
                     aria-controls={hasPanel ? panelId : undefined}
                     onFocus={hasPanel ? openPanel : undefined}
+                    // Tabbing on to the next item closes the panel — otherwise a keyboard user walks
+                    // through its twelve links before reaching the page. Moving into the panel keeps it.
+                    onBlur={
+                      hasPanel
+                        ? (e) => {
+                            const panel = document.getElementById(panelId)
+                            if (!panel?.contains(e.relatedTarget as Node | null)) scheduleClose()
+                          }
+                        : undefined
+                    }
                     onKeyDown={
                       hasPanel
                         ? (e) => {
@@ -155,6 +165,7 @@ export function Nav() {
             onEscape={closeAndRestore}
             onMouseEnter={openPanel}
             onMouseLeave={scheduleClose}
+            onFocus={openPanel}
           />
         </div>
       </nav>

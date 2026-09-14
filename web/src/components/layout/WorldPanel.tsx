@@ -20,6 +20,8 @@ export interface WorldPanelProps {
   onEscape: () => void
   onMouseEnter: () => void
   onMouseLeave: () => void
+  /** Focus arriving inside the panel cancels a pending close. */
+  onFocus: () => void
 }
 
 export function WorldPanel({
@@ -29,6 +31,7 @@ export function WorldPanel({
   onEscape,
   onMouseEnter,
   onMouseLeave,
+  onFocus,
 }: WorldPanelProps) {
   const ref = useRef<HTMLDivElement | null>(null)
 
@@ -75,6 +78,7 @@ export function WorldPanel({
       onKeyDown={onKeyDown}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onFocus={onFocus}
       onBlur={(e) => {
         if (!e.currentTarget.contains(e.relatedTarget as Node)) onClose()
       }}
