@@ -268,6 +268,12 @@ The five questions, as a statement of how ATHLIMA operates. They are good copy a
 No Tier-2 CTA (decision A1). Tier 3 inline: `Explore the Group →` → `https://www.enarr.com` (decision
 B3 §3) — see `ctas.md` §1. The permanent `BUILD WITH ATHLIMA` is in the chrome.
 
+**As built (14 September 2026):** the entry carries the display and the two B3 micro-copy paragraphs;
+the institutional line and the three body paragraphs follow in the band beneath. `PillarDiagram` as on
+`/the-world`. `ProvenanceBlock` (the light section) with the B3 paragraph, the marks, the Corporate
+Office address and `Explore the Group →` — no ghost CTA (this is the page it pointed at). The five
+questions are a ruled ordered list in sentence case.
+
 ---
 
 # THE PEOPLE CONTENT CHECKLIST

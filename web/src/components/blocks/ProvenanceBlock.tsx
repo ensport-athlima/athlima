@@ -28,7 +28,10 @@ export interface ProvenanceBlockProps {
   marker: { number: number; label: string }
   headline: readonly DisplayLine[]
   body: readonly RichParagraph[]
-  cta: { label: string; href: string }
+  /** The corporate office (decision B3 §2) — labelled Corporate Office, never Registered Office (B3a). */
+  office?: { label: string; lines: readonly string[] }
+  /** Homepage: ABOUT ATHLIMA, ENSPORT AND ENARR → /about. Absent on /about itself. */
+  cta?: { label: string; href: string }
   groupCta: { label: string; href: string }
   className?: string
 }
@@ -46,6 +49,7 @@ export function ProvenanceBlock({
   marker,
   headline,
   body,
+  office,
   cta,
   groupCta,
   className,
@@ -92,10 +96,23 @@ export function ProvenanceBlock({
             ))}
           </ul>
 
+          {office ? (
+            <address className="mt-8 text-caption text-ink-500 not-italic">
+              <span className="label block text-ink-600">{office.label}</span>
+              {office.lines.map((l) => (
+                <span key={l} className="block">
+                  {l}
+                </span>
+              ))}
+            </address>
+          ) : null}
+
           <div className="mt-12 flex flex-col items-start gap-6">
-            <Button variant="ghost" href={cta.href}>
-              {cta.label}
-            </Button>
+            {cta ? (
+              <Button variant="ghost" href={cta.href}>
+                {cta.label}
+              </Button>
+            ) : null}
             <a
               href={groupCta.href}
               target="_blank"
