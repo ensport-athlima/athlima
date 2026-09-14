@@ -60,7 +60,8 @@ export function IndexGrid({ items, columns = 3, startAt = 1, className }: IndexG
             {item.line ? <p className="mt-3 text-body-sm text-ink-200">{item.line}</p> : null}
             {item.detail ? <div className="mt-4">{item.detail}</div> : null}
             {item.href ? (
-              <span aria-hidden="true" className="mt-4 block text-lime">
+              // Ink at rest, lime on hover/focus — four linked items in a viewport must not be four lime marks.
+              <span aria-hidden="true" className="mt-4 block text-ink-300 transition-colors duration-(--dur-fast) ease-sharp group-hover:text-lime group-focus-visible:text-lime">
                 →
               </span>
             ) : null}
@@ -72,7 +73,7 @@ export function IndexGrid({ items, columns = 3, startAt = 1, className }: IndexG
               <Link
                 href={item.href}
                 data-shift
-                className="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
+                className="group block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
               >
                 {inner}
               </Link>

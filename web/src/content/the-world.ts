@@ -81,7 +81,7 @@ export const theWorld = {
           "ATHLIMAX, The Symposium, ACTIV8, ATHLIMA Connect — running as one floor, not a schedule of rooms.",
       },
       { term: "The night", detail: "AFTERHOURS." },
-      { term: "The close", detail: "ATHLIMA 20." },
+      // "The close — ATHLIMA 20" waits: recognition on Day 2 is gated on the programme (experiences.md).
     ],
     cta: { label: "THE TWO DAYS", href: routes.programme },
   },

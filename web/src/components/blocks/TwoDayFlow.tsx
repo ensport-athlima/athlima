@@ -23,11 +23,14 @@ export interface TwoDayFlowProps {
   marker: { number: number; label: string }
   headline: readonly DisplayLine[]
   facts: readonly TwoDayFact[]
-  cta: { label: string; href: string }
+  /** A Tier-3 route; absent on /programme itself. */
+  cta?: { label: string; href: string }
+  /** Copy beneath the facts — /programme's "confirmed in stages" paragraph. */
+  body?: readonly string[]
   className?: string
 }
 
-export function TwoDayFlow({ id, marker, headline, facts, cta, className }: TwoDayFlowProps) {
+export function TwoDayFlow({ id, marker, headline, facts, cta, body, className }: TwoDayFlowProps) {
   const headingId = `${id}-headline`
   return (
     <section
@@ -39,11 +42,22 @@ export function TwoDayFlow({ id, marker, headline, facts, cta, className }: TwoD
         <Reveal className="lg:col-span-5">
           <SectionMarker number={marker.number} label={marker.label} />
           <Display as="h2" id={headingId} size="md" lines={headline} className="mt-4" />
-          <div className="mt-12">
-            <Button variant="ghost" href={cta.href}>
-              {cta.label}
-            </Button>
-          </div>
+          {body ? (
+            <div className="stack-p mt-8 max-w-measure">
+              {body.map((p) => (
+                <p key={p} className="text-body text-ink-200">
+                  {p}
+                </p>
+              ))}
+            </div>
+          ) : null}
+          {cta ? (
+            <div className="mt-12">
+              <Button variant="ghost" href={cta.href}>
+                {cta.label}
+              </Button>
+            </div>
+          ) : null}
         </Reveal>
         <Reveal
           as="dl"

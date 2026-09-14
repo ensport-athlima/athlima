@@ -103,6 +103,15 @@ any label is published.
 control with an accessible name. Legible and complete as a static picture. On mobile, a simplified plan
 with zones listed beneath it — never scrolled sideways. Contrast on every label per `colour.md`.
 
+**As built (14 September 2026):** the `FloorPlan` block is **not built**. It depends on B1 (22 spaces vs
+six pavilions), on the venue's nomenclature, and on a drawing of the floor that is the venue's — a trace
+of the brochure PNG would be a guess presented as a plan. Until those exist the section renders the
+display line, the lead and the four zones as linked `IndexGrid` items (marketplace floor, Symposium
+stage, outdoors, terrace). Section 02 renders the five settled rows; "the lawn" is withheld
+(nomenclature) and the ATHLIMA 20 "close" row is withheld (recognition on Day 2 is gated) — on
+`/the-world` §05 too. Section 04's sentence about the evening flow being on the AFTERHOURS page is not
+rendered: the flow is not on that page (its day is unsettled).
+
 ---
 
 ## SECTION 04 — THE NIGHT
