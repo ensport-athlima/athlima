@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { JournalIndex } from "@/components/journal/JournalIndex"
 import { journal } from "@/content/journal"
 import { sanityFetch } from "@/lib/sanity/client"
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
   title: journal.meta.title,
   description: journal.meta.description,
   alternates: { canonical: journal.path },
+  ...og(journal.meta.title),
 }
 
 export default async function JournalPage() {

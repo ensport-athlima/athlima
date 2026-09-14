@@ -13,7 +13,7 @@ import { site } from "./site"
 export const programme = {
   meta: {
     title: "The Programme",
-    description: `Two days. One floor. ${site.dates}, ${site.venue}, ${site.floor}. Six experiences, running as one room.`,
+    description: `Two days. One floor. ${site.dates}, ${site.venue}, ${site.floor}. Six experiences, running as one room rather than a schedule of separate halls.`,
   },
   entry: {
     id: "entry",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { notFound } from "next/navigation"
 import { JournalIndex } from "@/components/journal/JournalIndex"
 import { journal, seriesClusters } from "@/content/journal"
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ series: s
     title: `${c.label} — ${journal.meta.title}`,
     description: c.line,
     alternates: { canonical: c.href },
+    ...og(c.label, journal.meta.title),
   }
 }
 

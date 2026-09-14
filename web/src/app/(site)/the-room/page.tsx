@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { Suspense } from "react"
 import { ApplyBlock } from "@/components/blocks/ApplyBlock"
 import { CompositionFromUrl, CompositionView } from "@/components/blocks/CompositionView"
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
   title: theRoom.meta.title,
   description: theRoom.meta.description,
   alternates: { canonical: theRoom.path },
+  ...og(theRoom.meta.title),
 }
 
 export default function TheRoomPage() {

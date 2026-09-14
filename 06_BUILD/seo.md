@@ -25,6 +25,17 @@
 **Rendering:** the homepage and all marketing routes must serve complete HTML. If the hero headline only
 exists after JS runs, the page has no SEO value and no LCP.
 
+**As built (14 September 2026):** `Organization` and `Event` JSON-LD in the root layout (the Event's
+`location` is The St. Regis Mumbai as a `Place` with locality and country only — no street address is in
+the repository; no `offers`, there are no tickets); `BreadcrumbList` on every nested route; `Article` on
+every Journal piece. OG images: a `/og?title=&kicker=` image route set in the type system, wired into
+every route's metadata through `lib/og.ts`; root `opengraph-image` / `twitter-image` carry the
+proposition; articles carry their own with the byline. Satori cannot read the variable woff2, so two
+static Archivo instances (display: wght 850 · wdth 66; text: wght 500) ship beside it, generated with
+fontTools. `sanityFetch` fails soft — a CMS outage renders empty states and logs, never kills a deploy —
+which is what lets `sitemap.xml` and the Journal clusters build without a project. Descriptions were
+brought toward 150–160 characters from lines already on each page.
+
 ---
 
 ## 2. THE CONTENT ENGINE

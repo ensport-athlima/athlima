@@ -18,6 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: path === "/" ? 1 : 0.7,
   }))
 
+  // A CMS outage must not kill a deploy: sanityFetch returns null on failure and the static routes ship.
   const articles =
     (await sanityFetch({
       query: journalSlugsQuery,

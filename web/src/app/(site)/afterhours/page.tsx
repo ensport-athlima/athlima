@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { IPPage } from "@/components/templates/IPPage"
 import { afterhours } from "@/content/experiences"
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: afterhours.meta.title,
   description: afterhours.meta.description,
   alternates: { canonical: afterhours.path },
+  ...og(afterhours.meta.title),
 }
 
 export default function Page() {

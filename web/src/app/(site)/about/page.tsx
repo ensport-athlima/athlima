@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { PillarDiagram } from "@/components/blocks/PillarDiagram"
 import { ProvenanceBlock } from "@/components/blocks/ProvenanceBlock"
 import { StatementScreen } from "@/components/blocks/StatementScreen"
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
   title: about.meta.title,
   description: about.meta.description,
   alternates: { canonical: about.path },
+  ...og(about.meta.title),
 }
 
 export default function AboutPage() {

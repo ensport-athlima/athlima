@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { Breadcrumb } from "@/components/layout/Breadcrumb"
 import { PartnerEnquiryForm } from "@/components/forms/PartnerEnquiryForm"
 import { Display } from "@/components/primitives/Display"
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   description: partnerEnquiry.intro.lead,
   alternates: { canonical: routes.partnerEnquire },
   robots: { index: true, follow: true },
+  ...og(partnerEnquiry.intro.headline.charAt(0) + partnerEnquiry.intro.headline.slice(1).toLowerCase()),
 }
 
 export default function PartnerEnquirePage() {

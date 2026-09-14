@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { notFound } from "next/navigation"
 import { JournalIndex } from "@/components/journal/JournalIndex"
 import { journal, pillarClusters } from "@/content/journal"
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ pillar: s
     title: `${c.label} — ${journal.meta.title}`,
     description: `${c.definition} The ${c.label} cluster of the ATHLIMA Journal.`,
     alternates: { canonical: c.href },
+    ...og(c.label, journal.meta.title),
   }
 }
 

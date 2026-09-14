@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { ApplyBlock } from "@/components/blocks/ApplyBlock"
 import { IndexGrid } from "@/components/blocks/IndexGrid"
 import { StatementScreen } from "@/components/blocks/StatementScreen"
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
   title: programme.meta.title,
   description: programme.meta.description,
   alternates: { canonical: programme.path },
+  ...og(programme.meta.title),
 }
 
 export default function ProgrammePage() {

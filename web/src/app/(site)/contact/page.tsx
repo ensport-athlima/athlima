@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { IndexGrid } from "@/components/blocks/IndexGrid"
 import { ContactForm } from "@/components/forms/ContactForm"
 import { Display } from "@/components/primitives/Display"
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
   title: contact.meta.title,
   description: contact.meta.description,
   alternates: { canonical: routes.contact },
+  ...og(contact.meta.title),
 }
 
 export default function ContactPage() {

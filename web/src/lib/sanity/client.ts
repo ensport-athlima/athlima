@@ -40,8 +40,17 @@ export async function sanityFetch<T>({
   parse,
 }: SanityFetchOptions<T>): Promise<T | null> {
   if (!sanityClient) return null
-  const raw: unknown = await sanityClient.fetch(query, params, {
-    next: { revalidate, tags: [...tags] },
-  })
+  let raw: unknown
+  try {
+    raw = await sanityClient.fetch(query, params, {
+      next: { revalidate, tags: [...tags] },
+    })
+  } catch (error) {
+    // A CMS outage must not kill a deploy or a page: the caller renders its empty state, the error is
+    // logged, and the next revalidation tries again. A bad payload (parse) still throws — that is a
+    // content bug, and it must be visible.
+    console.error("[sanity] fetch failed; rendering without CMS content.", error)
+    return null
+  }
   return parse(raw)
 }

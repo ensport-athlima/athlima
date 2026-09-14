@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { AudienceDoorways } from "@/components/blocks/AudienceDoorways"
 import { screen06 } from "@/content/homepage"
 import { routes } from "@/lib/routes"
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description: "Same ecosystem. Different doorway. Six ways into ATHLIMA, one for each kind of reader.",
   alternates: { canonical: routes.forIndex },
   robots: { index: false, follow: true },
+  ...og("Your Doorway"),
 }
 
 export default function ForIndexPage() {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { IPPage } from "@/components/templates/IPPage"
 import { connect } from "@/content/experiences"
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: connect.meta.title,
   description: connect.meta.description,
   alternates: { canonical: connect.path },
+  ...og(connect.meta.title),
 }
 
 export default function Page() {

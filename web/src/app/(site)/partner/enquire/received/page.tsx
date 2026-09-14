@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { Display } from "@/components/primitives/Display"
 import { Reveal } from "@/motion/Reveal"
 import { partnerEnquiry } from "@/content/forms"
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: routes.partnerEnquireReceived },
   // A confirmation is a real URL for conversion tracking (sitemap.md) but not a search result.
   robots: { index: false, follow: true },
+  ...og("Thank you"),
 }
 
 export default function PartnerEnquiryReceivedPage() {

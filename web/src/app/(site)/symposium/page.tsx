@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { IPPage } from "@/components/templates/IPPage"
 import { symposium } from "@/content/experiences"
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: symposium.meta.title,
   description: symposium.meta.description,
   alternates: { canonical: symposium.path },
+  ...og(symposium.meta.title),
 }
 
 export default function Page() {

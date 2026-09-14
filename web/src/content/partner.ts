@@ -25,7 +25,7 @@ export const partner = {
   meta: {
     title: "Partner",
     description:
-      "Don't just partner with an event. Help build the ecosystem. The Founding Partner proposition — access, conversation, experience, positioning and impact — for ATHLIMA, 14–15 December 2026, The St. Regis Mumbai.",
+      "Don't just partner with an event. Help build the ecosystem. The Founding Partner proposition: access, conversation, experience, positioning and impact.",
   },
   reframe: {
     id: "entry",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { ApplyBlock } from "@/components/blocks/ApplyBlock"
 import { IndexGrid } from "@/components/blocks/IndexGrid"
 import { StatementScreen } from "@/components/blocks/StatementScreen"
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
   title: partnerModel.meta.title,
   description: partnerModel.meta.description,
   alternates: { canonical: routes.partnerModel },
+  ...og(partnerModel.meta.title),
 }
 
 export default function PartnerModelPage() {

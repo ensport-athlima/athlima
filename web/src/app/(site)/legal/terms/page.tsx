@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { LegalPage } from "@/components/templates/LegalPage"
 import { terms } from "@/content/legal"
 
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: terms.title,
   description: terms.description,
   alternates: { canonical: terms.path },
+  ...og(terms.title),
 }
 
 export default function Page() {

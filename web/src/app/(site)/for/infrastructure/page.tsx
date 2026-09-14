@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { DoorwayPage } from "@/components/templates/DoorwayPage"
 import { forInfrastructure } from "@/content/doorways"
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: forInfrastructure.meta.title,
   description: forInfrastructure.meta.description,
   alternates: { canonical: forInfrastructure.path },
+  ...og(forInfrastructure.meta.title),
 }
 
 export default function Page() {

@@ -9,7 +9,7 @@ import { pillarDefs } from "./pillars"
 export const journal = {
   meta: {
     title: "The Journal",
-    description: "The thinking. Ideas that move India — the business of Indian sport, in topic clusters by pillar, and three series.",
+    description: "The thinking. Ideas that move India — the business of Indian sport in five clusters, one per pillar, and three series: conversations, research, athlete stories.",
   },
   entry: {
     eyebrow: "THE JOURNAL",

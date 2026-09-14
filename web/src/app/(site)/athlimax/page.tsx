@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { IPPage } from "@/components/templates/IPPage"
 import { athlimax } from "@/content/experiences"
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: athlimax.meta.title,
   description: athlimax.meta.description,
   alternates: { canonical: athlimax.path },
+  ...og(athlimax.meta.title),
 }
 
 export default function Page() {

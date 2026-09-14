@@ -74,7 +74,7 @@ export const partnerEnquiry = {
 
 /** contact.md — the general route and the institutional route. Confirmations withhold [N] and [NAME]. */
 export const contact = {
-  meta: { title: "Contact", description: "Write to us. Institutional and press enquiries start here; partnership conversations start at the partner enquiry." },
+  meta: { title: "Contact", description: "Write to us. Institutional and press enquiries start here — a separate, quieter route for government, federations and sporting bodies. Partnerships start at the partner enquiry." },
   entry: {
     eyebrow: "CONTACT",
     headline: "WRITE TO US.",

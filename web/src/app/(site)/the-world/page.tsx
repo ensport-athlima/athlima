@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { ApplyBlock } from "@/components/blocks/ApplyBlock"
 import { EcosystemPortals } from "@/components/blocks/EcosystemPortals"
 import { PillarDiagram } from "@/components/blocks/PillarDiagram"
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
   title: theWorld.meta.title,
   description: theWorld.meta.description,
   alternates: { canonical: routes.theWorld },
+  ...og(theWorld.meta.title),
 }
 
 export default function TheWorldPage() {

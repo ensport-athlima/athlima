@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { IPPage } from "@/components/templates/IPPage"
 import { athlima20 } from "@/content/experiences"
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: athlima20.meta.title,
   description: athlima20.meta.description,
   alternates: { canonical: athlima20.path },
+  ...og(athlima20.meta.title),
 }
 
 export default function Page() {

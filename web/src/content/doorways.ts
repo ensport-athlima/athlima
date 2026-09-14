@@ -32,7 +32,7 @@ export const doorwayMarkers = markers
 export const forBusiness: DoorwayContent = {
   path: routes.forBusiness,
   audience: "FOR BUSINESS",
-  meta: { title: "For Business", description: "Find the people shaping sport's next economy. Why a founder or business leader should care about ATHLIMA." },
+  meta: { title: "For Business", description: "Find the people shaping sport's next economy. Why a founder or business leader should care about ATHLIMA — 350 people, cross-sector, by design." },
   line: [{ text: "FIND THE PEOPLE" }, { text: "SHAPING SPORT'S" }, { text: "NEXT ECONOMY.", lime: true }],
   question: "Where is the sporting economy actually being decided?",
   proofs: [
@@ -68,7 +68,7 @@ export const forAthletes: DoorwayContent = {
 export const forCapital: DoorwayContent = {
   path: routes.forCapital,
   audience: "FOR CAPITAL",
-  meta: { title: "For Capital", description: "The opportunities behind India's sporting growth, in one room. Why an investor or family office should care about ATHLIMA." },
+  meta: { title: "For Capital", description: "The opportunities behind India's sporting growth, in one room. Why an investor or family office should care about ATHLIMA — curated, not filled." },
   line: [{ text: "THE OPPORTUNITIES BEHIND" }, { text: "INDIA'S SPORTING GROWTH," }, { text: "IN ONE ROOM.", lime: true }],
   question: "Is there real deal flow here, or is this a party?",
   proofs: [
@@ -123,7 +123,7 @@ export const forInstitutions: DoorwayContent = {
 export const forBrands: DoorwayContent = {
   path: routes.forBrands,
   audience: "FOR BRANDS",
-  meta: { title: "For Brands", description: "Don't sponsor sport. Own a territory inside it. Why a brand should care about ATHLIMA." },
+  meta: { title: "For Brands", description: "Don't sponsor sport. Own a territory inside it. Why a brand should care about ATHLIMA: six levels, a value architecture, and a journey through the two days." },
   line: [{ text: "DON'T SPONSOR SPORT." }, { text: "OWN A TERRITORY", lime: true }, { text: "INSIDE IT.", lime: true }],
   question: "What can I own here that I cannot own anywhere else?",
   proofs: [

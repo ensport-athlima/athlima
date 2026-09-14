@@ -39,7 +39,7 @@ export const privacy: LegalContent = {
   path: routes.legalPrivacy,
   name: "PRIVACY",
   title: "Privacy",
-  description: `How ${site.name} collects and uses personal data.`,
+  description: `How ${site.name} collects and uses personal data: what each form asks for, why, and how to ask what we hold or have it deleted.`,
   summaryLabel,
   summary:
     "We collect what we need to answer your enquiry or send you the Journal — and we tell you, on each form, what that is. We do not sell it. You can ask us what we hold and ask us to delete it.",
@@ -51,7 +51,7 @@ export const terms: LegalContent = {
   path: routes.legalTerms,
   name: "TERMS",
   title: "Terms",
-  description: `The terms for using ${site.domain}.`,
+  description: `The terms for using ${site.domain}. Attendance at ATHLIMA is by invitation; enquiring about partnership does not create an agreement.`,
   summaryLabel,
   summary:
     "These are the terms for using this website. Attendance at ATHLIMA is by invitation, and enquiring about partnership does not create an agreement — a proposition does, separately and in writing.",
@@ -63,7 +63,7 @@ export const cookies: LegalContent = {
   path: routes.legalCookies,
   name: "COOKIES",
   title: "Cookies",
-  description: `What ${site.domain} sets in your browser, and why.`,
+  description: `What ${site.domain} sets in your browser, and why. Analytics runs only if you accept it; nothing here follows you around the internet.`,
   summaryLabel,
   summary:
     "We use a small number of cookies to understand how the site is used. Analytics runs only if you accept it. Nothing here follows you around the internet.",

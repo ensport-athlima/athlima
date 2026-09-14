@@ -10,7 +10,7 @@ import { entity, site, pillarsInOrder, ips } from "./site"
 export const press = {
   meta: {
     title: "Press",
-    description: "The facts, in one place. Everything a journalist needs to write about ATHLIMA accurately, without having to ask.",
+    description: "The facts, in one place. Everything a journalist needs to write about ATHLIMA accurately, without having to ask: the fact sheet and the approved boilerplate.",
   },
   entry: {
     eyebrow: "PRESS",

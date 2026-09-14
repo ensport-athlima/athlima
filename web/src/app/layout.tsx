@@ -10,7 +10,8 @@ import { Footer } from "@/components/layout/Footer"
 import { CtaBar } from "@/components/layout/CtaBar"
 import { CookieNotice } from "@/components/layout/CookieNotice"
 import { env } from "@/lib/env"
-import { site } from "@/content/site"
+import { eventJsonLd, organizationJsonLd, serializeJsonLd } from "@/lib/json-ld"
+import { site, entity } from "@/content/site"
 import "./globals.css"
 
 /**
@@ -30,6 +31,25 @@ const archivo = localFont({
 
 const siteUrl = env.NEXT_PUBLIC_SITE_URL || `https://${site.domain}`
 
+const organization = organizationJsonLd({
+  name: site.name,
+  url: siteUrl,
+  logo: `${siteUrl}/icons/icon-512.png`,
+  parent: { name: entity.legalName, url: entity.groupUrl },
+})
+const event = eventJsonLd({
+  name: site.edition,
+  description: `${site.descriptor}. ${site.dates}, ${site.venue}.`,
+  url: siteUrl,
+  startDate: site.startDate,
+  endDate: site.endDate,
+  venue: site.venue,
+  locality: "Mumbai",
+  country: "IN",
+  organizerId: `${siteUrl}#organization`,
+  image: `${siteUrl}/opengraph-image`,
+})
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -44,6 +64,8 @@ export const metadata: Metadata = {
     siteName: site.name,
     locale: "en_IN",
   },
+  // The default OG image is the file convention beside this file (opengraph-image.tsx); routes set
+  // their own through lib/og.ts.
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
   // Icons come from the file conventions beside this file: icon0.png (32), icon1.svg, apple-icon.png
@@ -61,6 +83,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en-IN" className={archivo.variable}>
       <body className="has-cta-bar bg-void text-ink-100 antialiased">
+        {/* seo.md §1, §3 — Organization sitewide, Event as the primary schema. Our own serialised object. */}
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd([organization, event]) }}
+        />
         <SkipLink />
         <SmoothScrollProvider>
           <Nav />

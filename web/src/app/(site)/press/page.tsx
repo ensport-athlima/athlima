@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { og } from "@/lib/og"
 import { Display } from "@/components/primitives/Display"
 import { Eyebrow } from "@/components/primitives/Eyebrow"
 import { SectionMarker } from "@/components/primitives/SectionMarker"
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
   title: press.meta.title,
   description: press.meta.description,
   alternates: { canonical: press.path },
+  ...og(press.meta.title),
 }
 
 export default function PressPage() {
