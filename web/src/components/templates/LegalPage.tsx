@@ -16,7 +16,7 @@ export function LegalPage({ content, children }: { content: LegalContent; childr
   const { name, summary, summaryLabel, sections, pendingCounsel } = content
   const slug = (h: string) => h.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
   return (
-    <main id="content" className="px-margin pt-8 pb-section-dramatic">
+    <main id="content" className="px-margin pt-[calc(var(--nav-h)+var(--section-pad-dense))] pb-section-dramatic">
       <div className="mx-auto max-w-content-max">
         <Breadcrumb crumbs={[{ name: "LEGAL", path: routes.legalPrivacy }, { name, path: content.path }]} />
         <Reveal className="mt-16 lg:grid lg:grid-cols-12 lg:gap-x-gutter">

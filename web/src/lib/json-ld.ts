@@ -22,3 +22,28 @@ export function serializeJsonLd(data: unknown): string {
     .replace(/\u2028/g, "\\u2028")
     .replace(/\u2029/g, "\\u2029")
 }
+
+/** `Article` on every Journal piece (seo.md; journal.md §9): author, dates, publisher. */
+export function articleJsonLd(a: {
+  url: string
+  title: string
+  description: string
+  datePublished: string
+  dateModified: string
+  authorName: string
+  image?: string
+  publisher: { name: string; url: string }
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    mainEntityOfPage: a.url,
+    headline: a.title,
+    description: a.description,
+    datePublished: a.datePublished,
+    dateModified: a.dateModified,
+    author: { "@type": "Person", name: a.authorName },
+    publisher: { "@type": "Organization", name: a.publisher.name, url: a.publisher.url },
+    ...(a.image ? { image: [a.image] } : {}),
+  }
+}

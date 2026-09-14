@@ -76,11 +76,6 @@ export const journalSeries = (s: Series) => `${routes.journal}/series/${s}` as c
 /** Routes that never appear in sitemap.xml. */
 export const noindexRoutes: readonly RoutePath[] = [routes.contactInstitutional, routes.partnerEnquireReceived]
 
-/** Every static route that belongs in sitemap.xml, in sitemap order. */
-export const indexableStaticRoutes: readonly RoutePath[] = (
-  Object.values(routes) as RoutePath[]
-).filter((p) => !noindexRoutes.includes(p) && p !== routes.forIndex)
-
 /** sitemap.md §5 — configure on day one. */
 export const redirects: ReadonlyArray<{ source: string; destination: RoutePath }> = [
   { source: "/home", destination: routes.home },
@@ -103,3 +98,12 @@ export const redirects: ReadonlyArray<{ source: string; destination: RoutePath }
   { source: "/ensport", destination: routes.about },
   { source: "/enarr", destination: routes.about },
 ]
+
+/** Every static route that belongs in sitemap.xml, in sitemap order. */
+export const indexableStaticRoutes: readonly string[] = [
+  ...(Object.values(routes) as RoutePath[]).filter((p) => !noindexRoutes.includes(p) && p !== routes.forIndex),
+  // The Journal clusters are indexable, with their own metadata (journal.md §9).
+  ...pillars.map(journalPillar),
+  ...series.map(journalSeries),
+]
+

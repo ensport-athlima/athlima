@@ -59,7 +59,7 @@ Rule of thumb — *if it is a state change under 300ms, use CSS. If it is choreo
 | Package / service | Purpose |
 |---|---|
 | `next-sanity` | The client, `defineQuery`, the revalidation webhook parser. **This is the only Sanity package in `web/`.** Journal, People, Events, Partners — structured content, not hardcoded arrays. |
-| Sanity Studio (`sanity`) | **Not embedded in the Next app.** Embedding it pulls in `styled-components`, which §5.3 prohibits, and that prohibition outranks the literal dependency line. The Studio lives in a separate `studio/` package or is Sanity-hosted; its schemas are the source for the zod schemas in `web/src/lib/sanity/schemas.ts`. |
+| Sanity Studio (`sanity`) | **Not embedded in the Next app.** Embedding it pulls in `styled-components`, which §5.3 prohibits, and that prohibition outranks the literal dependency line. The Studio lives in a separate `studio/` package or is Sanity-hosted; its schemas are the source for the zod schemas in `web/src/lib/sanity/schemas.ts`. **As built:** `studio/` at the repository root — `npm install`, `npm run dev`, `npm run deploy`; `SANITY_STUDIO_PROJECT_ID` in its own `.env`. |
 | `@portabletext/react` | Rendering rich text with custom serialisers. |
 
 ### Forms & data capture

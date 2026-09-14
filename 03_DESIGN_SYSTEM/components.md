@@ -153,10 +153,10 @@ Added by decision D22 — these were always required and were never in the inven
 
 | Component | Specification |
 |---|---|
-| `JournalCard` | One index entry: pillar tag, title, standfirst, byline, date, reading time, hairline. Not a card in the boxed sense — rules and space, as `IndexGrid`. |
+| `JournalCard` | One index entry: pillar tag, title, standfirst, byline, date, reading time, hairline. Not a card in the boxed sense — rules and space, as `IndexGrid`. **As built:** the whole entry is the link; a `featured` variant at display-lg for the index's one full-width piece. |
 | `ArticleBody` | Portable Text serialisers with the typographic care in `journal.md` §6. 34em measure. |
 | `PullQuote` | `display-sm`, a lime rule, breaks the measure. |
-| `ShareRow` | Copy link, LinkedIn, X, WhatsApp. Small, last, in the sticky aside. |
+| `ShareRow` | Copy link, LinkedIn, X, WhatsApp. Small, last, in the sticky aside. **As built:** share intents as text links, no SDKs, the copied state announced. |
 | `SubscribeInline` | The Journal subscription, in context. Uses `EmailCapture`. Never in the footer, never a modal. |
 
 ## TIER 7 — STATES
@@ -164,7 +164,7 @@ Added by decision D22 — these were always required and were never in the inven
 | Component | Specification |
 |---|---|
 | `Skeleton` | A designed placeholder matching the final layout's exact dimensions. Never a spinner, never the word "loading". |
-| `EmptyState` | On-brand copy with a route out — e.g. `Nothing here yet. The [PILLAR] thinking is being written.` |
+| `EmptyState` | On-brand copy with a route out — e.g. `Nothing here yet. The [PILLAR] thinking is being written.` **As built** (`components/states/EmptyState.tsx`). |
 | `ErrorState` | The content of every `error.tsx` boundary. `SOMETHING BROKE.` Never a white screen, never a stack trace. |
 
 ## MARKS (`components/marks/`)

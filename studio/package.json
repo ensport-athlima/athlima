@@ -1,0 +1,24 @@
+{
+  "name": "athlima-studio",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Sanity Studio for athlima.in — a separate package; never embedded in web/ (06_BUILD/tech-stack.md §2).",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sanity/vision": "^5.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sanity": "^5.0.0",
+    "styled-components": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.5.1",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.9.0"
+  }
+}

@@ -204,6 +204,20 @@ The Journal only works if it is maintained. This is an editorial commitment, not
 | During the 20-day reveal | Daily athlete stories |
 | Post-event | Symposium sessions extended into articles — the highest-value, lowest-cost content ATHLIMA will ever have |
 
+**As built (14 September 2026):** the Studio is a separate package, `studio/` (`sanity`,
+`@sanity/vision`; schemas `article` and `author` mirror §5–§6 — one primary intent, one or two pillars,
+an optional series, a real byline, a sourced `dataMoment`, `pullQuote`, `figure`; `isPillarPiece` marks
+a cluster's definitive piece). The site reads it through `web/src/lib/sanity/` — GROQ in `queries.ts`,
+zod in `schemas.ts` (proved against a Studio-shaped fixture by `web/scripts/check-sanity-schemas.ts`),
+image URLs built from the asset ref with the focal point. Routes: `/journal`, `/journal/pillar/[pillar]`,
+`/journal/series/[series]` (one `JournalIndex` — filters as real links, one featured piece, the
+editorial list, `SubscribeInline`), `/journal/[slug]` (`ArticleView` — L6 aside, `ArticleBody`
+serialisers, `PullQuote`, `ShareRow`, the reading-progress rule, `Article` + `BreadcrumbList` JSON-LD,
+a `next/og` image set in the type system), ISR 60s with the webhook. **No Sanity project exists yet:**
+every Journal page renders its designed empty state; the first real article is tested the day the
+project does. `JournalRail` on the IP pages waits for there to be something to rail. **The six-article
+launch gate is open.**
+
 **The post-event conversion is the one to build the habit around.** A Symposium roundtable becomes a
 2,000-word article becomes a citation becomes an inbound link becomes a reason someone applies for 2027.
 That loop is what turns an annual event into an institution.

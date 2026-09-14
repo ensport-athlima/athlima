@@ -185,6 +185,10 @@
     font-variation-settings: "wdth" var(--wdth-display);
     text-transform: uppercase;
   }
+  /* Sentence case for display type at md and below (typography.md §3) — the compound selector outranks .display. */
+  .display.normal-case {
+    text-transform: none;
+  }
   /* Wordmark-adjacent eyebrows and section titles: wide, bold. */
   .wide {
     font-weight: 700;
