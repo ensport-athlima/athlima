@@ -71,3 +71,54 @@ export const partnerEnquiry = {
   /** Rendered in place of the form while storage is not configured — never a form that posts nowhere. */
   unavailable: "Partner enquiries open shortly.",
 } as const
+
+/** contact.md — the general route and the institutional route. Confirmations withhold [N] and [NAME]. */
+export const contact = {
+  meta: { title: "Contact", description: "Write to us. Institutional and press enquiries start here; partnership conversations start at the partner enquiry." },
+  entry: {
+    eyebrow: "CONTACT",
+    headline: "WRITE TO US.",
+    lead: "Two routes. Partnership conversations start at the partner enquiry. Everything else — including institutional and press enquiries — starts here.",
+  },
+  routes: {
+    institutions: { title: "INSTITUTIONS", line: "Government, federations, universities and sporting bodies. A separate, quieter route." },
+    press: { title: "PRESS", line: "Fact sheet and boilerplate, in one place." },
+    partnerships: { title: "PARTNERSHIPS", line: "Founding Partner conversations start with what you want to own." },
+  },
+  general: {
+    marker: "GENERAL ENQUIRIES",
+    fields: {
+      name: { label: "FULL NAME" },
+      email: { label: "EMAIL" },
+      organisation: { label: "ORGANISATION", helper: "Optional." },
+      message: { label: "YOUR MESSAGE", helper: "What can we help with?" },
+      consent: { label: "I agree to ATHLIMA contacting me about this message." },
+    },
+    button: "SEND MESSAGE",
+    confirmation: "Thank you. We'll reply.",
+  },
+  institutional: {
+    marker: "INSTITUTIONS",
+    headline: "A SEPARATE ROUTE.",
+    body: [
+      site.builtBy,
+      "Enquiries from government bodies, federations, sports authorities, universities and sporting institutions are handled separately from commercial conversations, by a named person, without a sales process. Write to us here.",
+    ],
+    fields: {
+      institution: { label: "INSTITUTION" },
+      name: { label: "YOUR NAME" },
+      role: { label: "YOUR ROLE" },
+      email: { label: "EMAIL", helper: "An institutional address, where possible." },
+      enquiry: { label: "THE NATURE OF YOUR ENQUIRY", helper: "Participation, association, the Symposium, the Advisory Council, or something else." },
+      consent: { label: "I agree to ATHLIMA contacting me about this enquiry." },
+    },
+    button: "SEND INSTITUTIONAL ENQUIRY",
+    confirmation: "Thank you. We'll reply.",
+  },
+  trust: [
+    { term: "WHO IS BEHIND THIS", detail: site.builtBy },
+    { term: "WHAT HAPPENS TO YOUR DATA", detail: "We use it to reply to you. Nothing else." },
+  ],
+  /** Rendered in place of a form while storage is not configured — never a form that posts nowhere. */
+  unavailable: "The contact forms open shortly.",
+} as const

@@ -117,3 +117,12 @@ person and the response time; this audience notices a missed commitment more tha
 - Both forms: persistent labels, correct `inputmode`/`autocomplete`, error summary linked to fields,
   honeypot and rate limiting, data stored before email is sent.
 - No `[TO VERIFY]` and no bare bracket token renders.
+
+**As built (14 September 2026):** `ContactForm` in two variants on the Tier-5 components, one action
+`submitContact(kind)` → `contact_messages` (`web/db/003_contact_messages.sql`) before any email; Resend
+confirms to the sender and forwards to `CONTACT_NOTIFY_EMAIL` or `INSTITUTIONAL_NOTIFY_EMAIL` — separate
+env, never a shared inbox. Confirmations are inline and say *Thank you. We'll reply.* — no `[N]`, no
+`[NAME]`. The plain email addresses beneath the forms and "or directly" are withheld until monitored
+addresses exist. The routes index links INSTITUTIONS → `#institutional`, PRESS → `/press`, PARTNERSHIPS
+→ `/partner/enquire`; the institutional section itself links to nothing commercial. Forms render only
+when `POSTGRES_URL` is configured — one line otherwise.
