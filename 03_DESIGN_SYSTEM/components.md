@@ -102,7 +102,7 @@ Full-width page sections. Each carries the mandatory header comment from `06_BUI
 | `PillarDiagram` | Five pillars converging on the mark. Navigable inline SVG. | `/the-world`, `/about` |
 | `EcosystemPortals` | The six IPs. Pinned horizontal scrub on desktop, stacked on touch. | `/`, `/the-world` |
 | `AudienceDoorways` | The six doorways. Type-led, not cards. Signature 03. | `/` |
-| `RoomComposition` | The 350, by group and pillar. **Static variant** on `/` screen 05; **filterable variant** (Signature 04) on `/the-room` section 03. Composition figures are labelled as the **target** composition until the room is confirmed. | `/`, `/the-room` |
+| `RoomComposition` | The 350, by group and pillar. **Static variant** on `/` screen 05; **filterable variant** (Signature 04) on `/the-room` section 03 — built as `CompositionView`: URL-state filters, four groups around the number, adjacency examples; no proportions until supplied. Composition figures are labelled as the **target** composition until the room is confirmed. | `/`, `/the-room` |
 | `ProofNumbers` | A row of 3–4 statistics. **Every one carries a visible source and year.** | `/`, `/the-world` |
 | `IndexGrid` | The L5 index: pavilions, zones, themes, disciplines. Rules and space, **not cards**. | The six IP pages |
 | `SequenceRail` | A numbered horizontal sequence with chevrons. The partner journey, the Connect steps. Four columns at `lg`, two at `md`, one below; the chevron (`>` in the display face, lime) appears at `lg` only and is hidden from AT, which reads an ordered list. | `/partner/journey`, `/connect` |

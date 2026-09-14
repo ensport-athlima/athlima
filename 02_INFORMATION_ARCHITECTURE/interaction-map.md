@@ -108,6 +108,10 @@ for the visitor. It shows **structure and proportion**, not necessarily individu
 **Why it earns its place:** "The value is not how many people attend. The value is who you meet." This is
 the only way to demonstrate that on a screen.
 
+**As built (14 September 2026):** `web/src/components/blocks/CompositionView.tsx` — see `people.md` §03.
+Filters are `<Link>`s to `?group=` / `?pillar=`; the results remount under a keyed REVEAL; reduced
+motion gets the ≤150ms fade, effectively instant. Zero names; zero proportions until supplied.
+
 ---
 
 ## 2. THE CRAFT INTERACTIONS

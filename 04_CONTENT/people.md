@@ -113,6 +113,17 @@ cannot back.
 Do not invent them. Until they exist, the view shows the four groups and the adjacency examples without
 proportions.
 
+**As built (14 September 2026):** `CompositionView` — the filter is the URL (`?group=` / `?pillar=`,
+real links, shareable), read on the client inside a Suspense boundary so the page stays static; the
+server HTML is the unfiltered view. The four groups sit around the number 350 under the label `TARGET
+COMPOSITION`, the selected group held and the others receding; beneath, the selected group's "what they
+take from it" line (or the pillar's definition) and the adjacency examples that involve the selection.
+**The adjacencies carry group and pillar tags for the filter** (developer/federation = BUSINESS ·
+INSTITUTIONS, BUILD · GOVERN; founder/authority = BUSINESS · INSTITUTIONS, EQUIP · GOVERN;
+investor/academy = CAPITAL · SPORT, ENABLE · PERFORM; brand/coach = BUSINESS · SPORT, EQUIP · PERFORM)
+— a classification by the site's own taxonomy, not a claim about anyone. No proportions render. Section
+04 carries the holding copy; `/the-room/advisory-council` does not exist.
+
 ---
 
 ## Section 04 — THE ADVISORY COUNCIL *(conditional)*
