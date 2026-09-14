@@ -2,7 +2,7 @@
   "name": "athlima-web",
   "version": "0.1.0",
   "private": true,
-  "description": "athlima.in — the door to the room. See ../CLAUDE.md before touching anything.",
+  "description": "athlima.in \u2014 the door to the room. See ../CLAUDE.md before touching anything.",
   "engines": {
     "node": ">=20"
   },
@@ -16,7 +16,10 @@
     "format:check": "prettier --check .",
     "routes:check": "node scripts/check-routes.mjs",
     "analyze": "ANALYZE=1 next build",
-    "test:a11y": "playwright test"
+    "test:a11y": "playwright test tests/a11y.spec.ts",
+    "test": "playwright test",
+    "test:content": "playwright test tests/content.spec.ts",
+    "schemas:check": "tsx scripts/check-sanity-schemas.ts"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

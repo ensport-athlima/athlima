@@ -90,17 +90,10 @@ export function Footer() {
                 key={m.src}
                 className={cn(
                   "flex min-h-20 items-center px-6 py-4",
-                  m.plate === "light" ? "bg-paper-warm" : "bg-void",
+                  m.plateTone === "light" ? "bg-paper-warm" : "bg-void",
                 )}
               >
-                <Image
-                  src={m.src}
-                  alt={m.alt}
-                  width={Math.round((m.width * 48) / m.height)}
-                  height={48}
-                  sizes="100px"
-                  className="h-12 w-auto"
-                />
+                <Image src={m.src} alt={m.alt} width={m.footer.width} height={m.footer.height} sizes={`${m.footer.width}px`} className="block" />
               </li>
             ))}
           </ul>

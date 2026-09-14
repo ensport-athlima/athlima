@@ -74,7 +74,13 @@ export const journalPillar = (pillar: Pillar) => `${routes.journal}/pillar/${pil
 export const journalSeries = (s: Series) => `${routes.journal}/series/${s}` as const
 
 /** Routes that never appear in sitemap.xml. */
-export const noindexRoutes: readonly RoutePath[] = [routes.contactInstitutional, routes.partnerEnquireReceived]
+export const noindexRoutes: readonly RoutePath[] = [
+  routes.contactInstitutional,
+  routes.partnerEnquireReceived,
+  // Conditional — the route exists only with five written confirmations (sitemap.md §4). Until then it
+  // is a 404 and must not be in the sitemap. Remove from this list when it goes live.
+  routes.advisoryCouncil,
+]
 
 /** sitemap.md §5 — configure on day one. */
 export const redirects: ReadonlyArray<{ source: string; destination: RoutePath }> = [

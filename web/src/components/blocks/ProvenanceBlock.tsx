@@ -39,9 +39,10 @@ export interface ProvenanceBlockProps {
 /** The 2× cut-outs (360px); next/image derives the 1× and the modern formats. Displayed at 180px. */
 export const CORPORATE_MARKS = [
   // ENARR is navy and gold — 1.97 on --void, so it lives on a light plate (colour.md §1).
-  { src: "/marks/enarr.png", alt: "The ENARR Group", width: 180, height: 126, plate: "light" },
+  // Rendered sizes are exact integer reductions of the 360px cut-out, so nothing shifts on load.
+  { src: "/marks/enarr.png", alt: "The ENARR Group", plate: { width: 120, height: 84 }, footer: { width: 60, height: 42 }, plateTone: "light" },
   // ENSPORT is gold and white — it lives on black, whatever the surface around it.
-  { src: "/marks/ensport.png", alt: "ENSPORT Ventures", width: 180, height: 94, plate: "dark" },
+  { src: "/marks/ensport.png", alt: "ENSPORT Ventures", plate: { width: 180, height: 94 }, footer: { width: 90, height: 47 }, plateTone: "dark" },
 ] as const
 
 export function ProvenanceBlock({
@@ -81,18 +82,10 @@ export function ProvenanceBlock({
                 key={m.src}
                 className={cn(
                   "flex min-h-40 items-center justify-center px-8 py-8",
-                  m.plate === "light" ? "bg-paper-warm" : "bg-void",
+                  m.plateTone === "light" ? "bg-paper-warm" : "bg-void",
                 )}
               >
-                {/* Explicit rendered size (96px tall, width from the mark's ratio) — no layout shift on load. */}
-                <Image
-                  src={m.src}
-                  alt={m.alt}
-                  width={Math.round((m.width * 96) / m.height)}
-                  height={96}
-                  sizes="200px"
-                  className="h-24 w-auto"
-                />
+                <Image src={m.src} alt={m.alt} width={m.plate.width} height={m.plate.height} sizes={`${m.plate.width}px`} className="block" />
               </li>
             ))}
           </ul>
