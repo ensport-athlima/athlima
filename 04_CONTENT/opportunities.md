@@ -282,11 +282,23 @@ a statement, not a link (decisions D17, D18). Where the two differ, that is by d
 | Page | Line | Question | The three proofs | The fear, answered |
 |---|---|---|---|---|
 | `/for/business` | Find the people shaping sport's next economy. | Where is the sporting economy actually being decided? | The cross-sector composition of the 350 · The Founding Partner model · ATHLIMA Connect, for organisations that partner | *"Another networking event that wastes two days."* → 350, not 5,000. A room designed so the people you need are in it — and, for Founding Partners, conversations arranged before you arrive. |
-| `/for/athletes` | Find your next level. | What is here for me that isn't just business people talking about us? | ATHLIMA 20 · ACTIV8 · Athletes on the Symposium stage, not only in the subject matter | *"Being decoration at a corporate event."* → ATHLIMA 20 is an athlete platform with independent selection. |
-| `/for/capital` | Find the opportunities behind India's sporting growth. | Is there real deal flow here, or is this a party? | The Investment, Policy & Impact pavilion · Investment & Economics theme · The founder and infrastructure cohort | *"A low-quality pipeline."* → Curated composition. The room is designed, not filled. |
+| `/for/athletes` | The people building your future are in one room. So are you. | What is here for me that isn't just business people talking about us? | ATHLIMA 20 · ACTIV8 · Athletes on the Symposium stage, not only in the subject matter | *"Being decoration at a corporate event."* → ATHLIMA 20 is an athlete platform with independent selection. |
+| `/for/capital` | The opportunities behind India's sporting growth, in one room. | Is there real deal flow here, or is this a party? | The Investment, Policy & Impact pavilion · Investment & Economics theme · The founder and infrastructure cohort | *"A low-quality pipeline."* → Curated composition. The room is designed, not filled. |
 | `/for/infrastructure` | Sport needs places. Meet the people who decide where they get built. | Will the people who commission and operate facilities actually be there? | The BUILD pillar · Infrastructure & Active Cities pavilion · Federations, government and operators in the same room | *"I'll just meet other developers."* → The cross-sector composition is the entire design of the room. |
 | `/for/institutions` | Build the infrastructure around India's sporting future. | Is this serious, and is it appropriate for us to be associated with it? | ENSPORT Ventures and The ENARR Group · The Policy & Governance theme · No pricing, no ticketing, anywhere | *"A commercial event using institutional names for legitimacy."* → Register and restraint. **This journey never passes through a commercial page.** |
-| `/for/brands` | Own a territory, not a logo. | What can I own here that I cannot own anywhere else? | The six-level model · The value architecture · The seven-stage journey | *"Paying for a logo on a wall."* → *The value isn't measured in logos.* |
+| `/for/brands` | Don't sponsor sport. Own a territory inside it. | What can I own here that I cannot own anywhere else? | The six-level model · The value architecture · The seven-stage journey | *"Paying for a logo on a wall."* → *The value isn't measured in logos.* |
 
 **Build note for `/for/institutions`:** its functional CTA is `INSTITUTIONAL ENQUIRY` → `/contact#institutional`,
 a distinct, quieter route. It must not link to `/partner/enquire`.
+
+**As built (14 September 2026):** `DoorwayPage` template, six content objects. The Line column above
+was corrected to `audiences.md` §2 (it had drifted to the homepage doorway strings for athletes,
+capital and brands — D17 makes `audiences.md` the source for the page's opening line and `ctas.md` for
+the emotional statement). The question and the quoted fear are set in sentence case at `display-md`
+(`typography.md` §3 permits it there). Each proof is an `IndexGrid` item linking to where it lives
+(`/the-room`, `/partner/model`, `/connect`, `/athlima-20`, `/activ8`, `/symposium#themes`,
+`/athlimax#pavilions`, `/the-world#ecosystem`, `/the-room?group=…`, `/about`, `/partner#value`,
+`/partner/journey`); the institutions page links to no commercial page. Functional CTAs per decision A5:
+`BUILD WITH ATHLIMA` (business, capital, infrastructure), `INSTITUTIONAL ENQUIRY` (institutions),
+`START A PARTNER CONVERSATION` (brands); athletes carries the Tier-3 `SEE ATHLIMA 20 →` only. `/for`
+renders the six doors, `noindex`.

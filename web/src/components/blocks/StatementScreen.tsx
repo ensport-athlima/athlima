@@ -33,6 +33,8 @@ export interface StatementScreenProps {
   lines: readonly DisplayLine[]
   narrow?: readonly DisplayLine[]
   size?: "xl" | "lg" | "md"
+  /** Sentence case — permitted at md only (typography.md §3): a question, a quoted fear. */
+  uppercase?: boolean
   sub?: readonly DisplayLine[]
   subNarrow?: readonly DisplayLine[]
   /** The sub-line is lime in full — screen 03 only (decision D14). */
@@ -68,6 +70,7 @@ export function StatementScreen({
   lines,
   narrow,
   size = "lg",
+  uppercase = true,
   sub,
   subNarrow,
   subWholeLime = false,
@@ -118,6 +121,7 @@ export function StatementScreen({
           size={size}
           lines={lines}
           narrow={narrow}
+          uppercase={uppercase}
         />
       </Reveal>
 

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import Link from "next/link"
 import { Reveal } from "@/motion/Reveal"
 import { cn } from "@/lib/cn"
 
@@ -17,6 +18,8 @@ export interface IndexItem {
   title: string
   /** Optional — the twenty disciplines are titles alone. */
   line?: string
+  /** Optional — the item is a link to where its subject lives (the doorway proofs). */
+  href?: string
   /** Optional structured detail beneath the line — a list, a label row. */
   detail?: ReactNode
 }
@@ -44,9 +47,9 @@ export function IndexGrid({ items, columns = 3, startAt = 1, className }: IndexG
       variant="items"
       className={cn("grid grid-cols-1 gap-x-gutter gap-y-12", COLS[columns], className)}
     >
-      {items.map((item, i) => (
-        <li key={item.title} data-item className="index-item pb-6">
-          <div data-shift>
+      {items.map((item, i) => {
+        const inner = (
+          <>
             <span
               className="display block text-display-sm leading-none text-ink-500"
               aria-hidden="true"
@@ -56,9 +59,29 @@ export function IndexGrid({ items, columns = 3, startAt = 1, className }: IndexG
             <h3 className="display mt-4 text-display-sm text-paper">{item.title}</h3>
             {item.line ? <p className="mt-3 text-body-sm text-ink-200">{item.line}</p> : null}
             {item.detail ? <div className="mt-4">{item.detail}</div> : null}
-          </div>
-        </li>
-      ))}
+            {item.href ? (
+              <span aria-hidden="true" className="mt-4 block text-lime">
+                →
+              </span>
+            ) : null}
+          </>
+        )
+        return (
+          <li key={item.title} data-item className="index-item pb-6">
+            {item.href ? (
+              <Link
+                href={item.href}
+                data-shift
+                className="block focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
+              >
+                {inner}
+              </Link>
+            ) : (
+              <div data-shift>{inner}</div>
+            )}
+          </li>
+        )
+      })}
     </Reveal>
   )
 }
