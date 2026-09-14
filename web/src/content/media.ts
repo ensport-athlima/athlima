@@ -47,6 +47,8 @@ export interface SlotSpec {
   minLongEdge: number
   /** Whether the visual carries meaning (real alt) or sits behind type (decorative). */
   meaningful: boolean
+  /** What renders while the slot is empty: the black ground, or the hero's drawn scene. */
+  fallback?: "architecture"
   asset: MediaAsset | null
 }
 
@@ -87,6 +89,7 @@ export const mediaSlots: Record<SlotName, SlotSpec> = {
     ratio: "viewport",
     minLongEdge: 3840,
     meaningful: false,
+    fallback: "architecture",
     asset: null,
   },
   "home.athlima20": {

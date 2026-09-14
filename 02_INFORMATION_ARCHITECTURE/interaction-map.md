@@ -28,6 +28,8 @@ Over that finished hero, the ATHLIMA **A** is drawn as an architectural form —
 rising to the apex and down — in an overlay, over 900ms, in the hero's void beside the headline. The
 overlay then dissolves completely. The hero was never hidden; the arrival was drawn on top of it and
 leaves nothing behind. *(Decision D1; the settle-onto-the-poster transform returns with the poster, B2.)*
+**As built:** the hero's void carries a drawn architectural A (`imagery.md` §6, as built) in the same box
+the overlay draws in, so the stroke lands on the structure and the dissolve leaves it standing.
 
 **Constraints — all binding:**
 - The overlay completes within **1500ms** of JS becoming available; the poster is the LCP element and is

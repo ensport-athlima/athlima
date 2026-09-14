@@ -144,6 +144,17 @@ gateway. It is the strongest visual device the brand has.
 - Rotated, skewed, or distorted
 - More than **once per viewport**
 
+**As built (14 September 2026) — the hero's drawn scene, until photography exists:** `HeroArchitecture`
+renders in the `home.hero` slot while it is empty: a one-point perspective floor in `--ink-700` /
+`--ink-600` hairlines whose horizon is the structure's baseline; the A standing at the right void as
+architecture — `--ink-900`, a hairline edge, and one lime edge on the outer right leg as an LED light
+source — with its reflection in the floor at 6%; a band of `--ink-700` crossing the floor every 16 s and
+the floor breathing over 40 s (transform and opacity only, static under reduced motion); a few pixels of
+depth against the pointer on hover-capable devices. The entry overlay draws its stroke exactly onto the
+structure and dissolves — the A is on screen once, and D1's deferred "settle onto the poster" is now
+what happens. No blur, no gradient, no glow, no particles, no second colour. Replaced, or kept as a
+layer beneath, when the hero still or film arrives.
+
 ---
 
 ## 7. THE AI IMAGERY QUESTION — IMPORTANT

@@ -102,11 +102,11 @@ export function EntryOverlay() {
       ref={overlayRef}
       aria-hidden="true"
       data-entry-overlay
-      className="pointer-events-none fixed inset-0 z-40 flex items-start justify-center px-margin pt-[14svh] text-lime [--a-w:min(50vw,55svh)] sm:items-center sm:justify-end sm:pt-0 sm:[--a-w:min(30vw,55svh)]"
+      className="pointer-events-none fixed inset-0 z-40 flex items-start justify-center px-margin pt-[22svh] text-lime [--a-w:min(50vw,55svh)] sm:items-center sm:justify-end sm:pt-0 sm:[--a-w:min(30vw,55svh)]"
     >
       {/*
         The A occupies the hero's void, never the headline: from sm up the empty right half, vertically
-        centred; below sm (portrait phones), the empty upper half (top at 14svh — one-off geometry, hence the arbitrary
+        centred; below sm (portrait phones), the empty upper half (top at 22svh — one-off geometry, hence the arbitrary
         value). Width = min(30vw, 42svh × 460/348) from sm — 50vw on portrait phones — never taller than
         42% of the viewport.
       */}

@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { MicroFilm } from "./MicroFilm"
 import { VideoHero } from "./VideoHero"
+import { HeroArchitecture } from "./HeroArchitecture"
 import { mediaSlots, type SlotName } from "@/content/media"
 import { mediaUrl, objectPosition, type MediaAsset } from "@/lib/media"
 import { resolveMedia } from "@/lib/site-media"
@@ -36,6 +37,7 @@ export async function MediaSlot({ name, sizes, priority = false, film = "loop", 
   const still = asset?.kind === "image" ? asset : asset?.kind === "film" ? asset.poster : null
   return (
     <div aria-hidden={decorative ? "true" : undefined} data-media data-slot={name} className={cn("absolute inset-0 overflow-hidden bg-ink-950", className)}>
+      {!asset && spec.fallback === "architecture" ? <HeroArchitecture /> : null}
       {still ? (
         <Image
           src={mediaUrl(still)}

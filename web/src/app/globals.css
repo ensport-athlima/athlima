@@ -527,3 +527,74 @@
     }
   }
 }
+
+/*
+ * THE HERO'S DRAWN SCENE (HeroArchitecture). The floor's horizon is the structure's baseline — the same
+ * box the entry overlay uses (--a-w), so the two agree at every width. Motion is transform and opacity
+ * only: the floor breathes toward the viewer over 40 s; a band of light crosses it every 16 s. Static
+ * under reduced motion. No blur, no gradient, no glow.
+ */
+@layer components {
+  .hero-scene {
+    /* Portrait phones: the structure sits at 22svh (EntryOverlay agrees); from sm it is vertically centred. */
+    --a-w: min(50vw, 55svh);
+    --a-h: calc(var(--a-w) * 348 / 460);
+    --horizon: calc(22svh + var(--a-h));
+  }
+  @media (min-width: 40rem) {
+    .hero-scene {
+      --a-w: min(30vw, 55svh);
+      --horizon: calc(50svh + var(--a-h) / 2);
+    }
+  }
+  .hero-floor {
+    top: var(--horizon);
+    height: calc(100% - var(--horizon));
+    transform-origin: 50% 0;
+    animation: hero-floor-breathe 40s ease-in-out infinite alternate;
+  }
+  .hero-light {
+    top: var(--horizon);
+    height: 22svh;
+    opacity: 0;
+    animation: hero-light-pass 16s ease-in-out infinite;
+  }
+  @keyframes hero-floor-breathe {
+    from {
+      transform: scaleY(1);
+    }
+    to {
+      transform: scaleY(1.12);
+    }
+  }
+  @keyframes hero-light-pass {
+    0% {
+      transform: translateY(-22svh);
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.35;
+    }
+    45% {
+      opacity: 0.35;
+    }
+    60% {
+      transform: translateY(calc(100svh - var(--horizon)));
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(calc(100svh - var(--horizon)));
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-floor,
+    .hero-light {
+      animation: none;
+    }
+    .hero-light {
+      opacity: 0.2;
+      transform: translateY(30svh);
+    }
+  }
+}
