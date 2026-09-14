@@ -59,8 +59,10 @@ Each page:
 ## `/legal/terms` — TERMS
 
 **Summary line**
-> These are the terms for using this website. Applying to attend, or enquiring about partnership, does not
-> create an agreement — a decision or a proposition does, separately and in writing.
+> These are the terms for using this website. Attendance at ATHLIMA is by invitation, and enquiring about
+> partnership does not create an agreement — a proposition does, separately and in writing.
+
+*(Amended by decision A1 — there is no application to attend.)*
 
 **Must cover** `[TO VERIFY — LEGAL]`:
 - The entity operating the site and the governing law and jurisdiction.
@@ -105,3 +107,13 @@ never a modal, `ACCEPT` · `DECLINE`, remembered per viewer.
 - The entity name and registration details match the footer and `/about` `[TO VERIFY — B3]`.
 - `Last updated` is real.
 - No `[TO VERIFY]` and no bare bracket token renders.
+
+**As built (14 September 2026):** `LegalPage` template — `LEGAL / NAME` breadcrumb, the name, the
+plain-English summary labelled as a summary, the sections with real headings and a sticky in-page list,
+the entity block (name, CIN, Corporate Office). **Counsel's text does not exist yet:** `/legal/privacy`
+and `/legal/terms` render the summary, the entity block and one sentence — *The full text is being
+prepared with counsel.* — and are **not launch-ready** (checklist T-14, "Legal pages published and
+reviewed"). `/legal/cookies` renders the build's real inventory (the `athlima:consent` choice in local
+storage, the `athlima:entry` session flag, GA4 only after ACCEPT, Vercel Analytics/Speed Insights
+cookieless, nothing else) and a `CLEAR MY COOKIE CHOICE` control that clears the choice and reloads.
+"Last updated" is withheld until it is real.

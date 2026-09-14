@@ -25,3 +25,12 @@ export function writeConsent(value: Consent): void {
     // Storage unavailable: the notice will show again next visit. Acceptable.
   }
 }
+
+/** Withdraws the choice: the notice shows again on the next load, and analytics does not run until then. */
+export function clearConsent(): void {
+  try {
+    window.localStorage.removeItem(KEY)
+  } catch {
+    // Storage unavailable: nothing was stored to clear.
+  }
+}

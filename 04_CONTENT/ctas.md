@@ -215,6 +215,7 @@ posts nowhere, never an anchor to nothing. Adults only: the list is the alert, n
 | **Contact — general form button** | `SEND MESSAGE` — see `contact.md` §02 |
 | **Contact — institutional form button** | `SEND INSTITUTIONAL ENQUIRY` — see `contact.md` §03 |
 | **Press — copy control on boilerplate** | `COPY` / `COPIED` |
+| **Cookies page — withdraw consent** | `CLEAR MY COOKIE CHOICE` — clears the remembered choice and reloads, so the notice returns (`legal.md`) |
 | **Email captures** | `TELL ME WHEN NOMINATIONS OPEN` (ATHLIMA 20) · `STAY IN TOUCH FOR 2027` (legacy homepage) · `SUBSCRIBE` (Journal). Each has its own one-line confirmation in its content file. |
 
 ---

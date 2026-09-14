@@ -144,3 +144,11 @@ No form. A journalist on a deadline wants an address and a number, not a submit 
 - The press kit downloads, opens, and contains what section 04 says it contains.
 - The email receives mail and the phone is answered (launch checklist, T-1).
 - No `[TO VERIFY]` and no bare bracket token renders.
+
+**As built (14 September 2026):** sections 01–03 — the entry, the fact sheet as a `<dl>`, the three
+boilerplates byte for byte from `positioning.md` §9 (diffed against the file), each with `COPY` /
+`COPIED` (`CopyBlock`; the text stays plain and selectable when the clipboard is unavailable).
+**Sections 04 and 05 are withheld:** no press kit can exist until B2 — the marks in the build are traced
+placeholders and must not be distributed as brand assets, and there is no photography — so
+`DOWNLOAD THE PRESS KIT` does not render; the press contact is four `[TO VERIFY]`s. Both return the day
+they exist. Journey 06's "complete at launch" requirement is therefore **open** on the launch checklist.
