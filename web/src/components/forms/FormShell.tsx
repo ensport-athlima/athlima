@@ -18,11 +18,13 @@ export interface FormShellProps {
   errors: readonly SummaryError[]
   summaryRef?: RefObject<HTMLDivElement | null>
   trust: readonly { term: string; detail: string }[]
+  /** The aside's accessible name — unique when two forms share a page. */
+  trustLabel?: string
   children: ReactNode
   className?: string
 }
 
-export function FormShell({ summary, errors, summaryRef, trust, children, className }: FormShellProps) {
+export function FormShell({ summary, errors, summaryRef, trust, trustLabel = "Before you send", children, className }: FormShellProps) {
   return (
     <div className={cn("lg:grid lg:grid-cols-12 lg:gap-x-gutter", className)}>
       <div className="lg:col-span-7">
@@ -44,7 +46,7 @@ export function FormShell({ summary, errors, summaryRef, trust, children, classN
         </div>
         {children}
       </div>
-      <aside aria-label="Before you send" className="mt-16 border-t border-ink-800 pt-8 lg:col-span-4 lg:col-start-9 lg:mt-0 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-gutter">
+      <aside aria-label={trustLabel} className="mt-16 border-t border-ink-800 pt-8 lg:col-span-4 lg:col-start-9 lg:mt-0 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-gutter">
         <dl className="flex flex-col gap-8">
           {trust.map((t) => (
             <div key={t.term}>

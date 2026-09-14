@@ -26,6 +26,8 @@ export interface AudienceDoorwaysProps {
   id: string
   marker: { number: number; label: string }
   headline: readonly DisplayLine[]
+  /** h2 on the homepage; h1 when the block is a page (/for). */
+  headingAs?: "h1" | "h2"
   doorways: readonly Doorway[]
   className?: string
 }
@@ -34,6 +36,7 @@ export function AudienceDoorways({
   id,
   marker,
   headline,
+  headingAs = "h2",
   doorways,
   className,
 }: AudienceDoorwaysProps) {
@@ -49,7 +52,7 @@ export function AudienceDoorways({
         <Reveal className="lg:grid lg:grid-cols-12 lg:gap-x-gutter">
           <div className="lg:col-start-2 lg:col-end-9">
             <SectionMarker number={marker.number} label={marker.label} />
-            <Display as="h2" id={headingId} size="md" lines={headline} className="mt-4" />
+            <Display as={headingAs} id={headingId} size="md" lines={headline} className="mt-4" />
           </div>
         </Reveal>
 

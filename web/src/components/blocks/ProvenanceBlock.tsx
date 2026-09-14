@@ -84,13 +84,14 @@ export function ProvenanceBlock({
                   m.plate === "light" ? "bg-paper-warm" : "bg-void",
                 )}
               >
+                {/* Explicit rendered size (96px tall, width from the mark's ratio) — no layout shift on load. */}
                 <Image
                   src={m.src}
                   alt={m.alt}
-                  width={m.width}
-                  height={m.height}
-                  sizes="180px"
-                  className="h-auto w-auto max-h-24"
+                  width={Math.round((m.width * 96) / m.height)}
+                  height={96}
+                  sizes="200px"
+                  className="h-24 w-auto"
                 />
               </li>
             ))}
@@ -117,7 +118,7 @@ export function ProvenanceBlock({
               href={groupCta.href}
               target="_blank"
               rel="noopener"
-              className="inline-flex min-h-8 items-center gap-2 text-body-sm text-ink-600 underline-offset-4 transition-colors duration-(--dur-fast) ease-sharp hover:text-void hover:underline"
+              className="inline-flex min-h-8 items-center gap-2 text-body-sm text-ink-600 underline decoration-ink-300 underline-offset-4 transition-colors duration-(--dur-fast) ease-sharp hover:text-void hover:decoration-void"
             >
               {groupCta.label}
               <span aria-hidden="true">→</span>

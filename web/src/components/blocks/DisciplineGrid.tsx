@@ -41,7 +41,10 @@ function Strip({ disciplines, itemised }: { disciplines: readonly string[]; item
           {...(itemised ? { "data-item": true } : {})}
           className="label inline-flex items-baseline gap-2 whitespace-nowrap"
         >
-          <span className="text-ink-500 tabular-nums">{String(i + 1).padStart(2, "0")}</span>
+          {/* Label-size numerals: --ink-400 (6.69). --ink-500 is for ≥24px only (colour.md). */}
+          <span aria-hidden="true" className="text-ink-400 tabular-nums">
+            {String(i + 1).padStart(2, "0")}
+          </span>
           {d}
           <span aria-hidden="true" className="px-2 text-ink-600">
             ·

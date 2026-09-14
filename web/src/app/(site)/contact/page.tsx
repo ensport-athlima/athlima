@@ -39,6 +39,7 @@ export default function ContactPage() {
           </Reveal>
           <IndexGrid
             columns={3}
+            headingAs="h2"
             className="mt-16"
             items={[
               { ...r.institutions, href: routes.contactInstitutional },

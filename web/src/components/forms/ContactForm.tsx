@@ -75,6 +75,7 @@ export function ContactForm({ kind }: { kind: ContactKind }) {
       errors={submitCount > 0 || state.status === "invalid" ? summary : []}
       summaryRef={summaryRef}
       trust={contact.trust}
+      trustLabel={kind === "general" ? "Before you send your message" : "Before you send your enquiry"}
     >
       {state.status === "failed" ? (
         <p role="alert" className="mb-10 border-l-2 border-signal-error pl-6 text-body text-paper">

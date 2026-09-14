@@ -41,6 +41,34 @@ HLS source. `@next/bundle-analyzer` output is checked against this table before 
 
 These are checked in CI. A PR that breaks a budget does not merge.
 
+**As measured (14 September 2026, production build, Lighthouse 12 mobile with devtools throttling, on a
+MacBook — not yet on a mid-range Android; that test is on the launch checklist):**
+
+| Route | Perf | LCP | TBT | CLS | JS on the wire (gzipped) |
+|---|---|---|---|---|---|
+| `/` | 91–99 (TBT varies run to run) | 1.6–1.9 s | 20–360 ms | 0 | **238 KB** |
+| `/athlimax` | 99 | 1.7 s | 80 ms | 0 | 240 KB |
+| `/the-room` | 99 | 1.6 s | 30 ms | 0 | 242 KB |
+| `/partner/enquire` | 99 | 1.6 s | 20 ms | 0 | 277 KB |
+| `/journal` | 99 | 1.6 s | 20 ms | 0 | 240 KB |
+
+Accessibility 96–100, Best Practices 100, SEO 100 on every route sampled; **axe: zero violations on all
+32 routes at 1440 and 390**.
+
+**The JS budget is not met, and the cause is the framework.** The homepage carries 238 KB gzipped against
+the 200 KB allocation: React 19.3's `react-dom` (70 KB) plus Next 16's client runtime (44 KB) is 114 KB
+where this table costed 90; GSAP + ScrollTrigger + CustomEase 48 KB (costed 40); Lenis, Radix Dialog,
+the motion layer and the app code 35 KB (costed 54 — under); the rest is Vercel Analytics' loader and
+route chunks. What was fixed to get here: Sentry no longer downloads on page load at all (it arrives on
+the first interaction or the first error, with early errors buffered — 60 KB gone from every page);
+zod's 61 locales were being bundled through a namespace import (100 KB on every form route — named
+imports and `zod/mini` fixed it); reveal setup moved off the hydration task and never re-hides content
+already in view (TBT 480 → ~100 ms; the LCP element is the hero headline); the display voice got a
+size-adjusted fallback face so display lines wrap the same before and after the font lands (CLS 0.06 →
+0); the corporate marks got explicit rendered sizes. **Decision needed:** either re-cost this table for
+the Next 16 / React 19 runtime (≈ 240 KB), or accept that 200 KB requires dropping GSAP for the reveals
+(CSS-only entrances; the pinned portals would go) — the owner's call, recorded here, not taken silently.
+
 ---
 
 ## 2. VIDEO — THE BIGGEST RISK

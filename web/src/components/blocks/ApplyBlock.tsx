@@ -50,7 +50,9 @@ export function ApplyBlock({
   return (
     <section
       id={id}
-      aria-labelledby={headingId}
+      // Named "The invitation", not by its headline: on several pages the closing statement repeats
+      // the entry's line, and two regions with one name are indistinguishable to assistive technology.
+      aria-label="The invitation"
       className={cn("bg-void px-margin py-section-dramatic", className)}
     >
       <div className="mx-auto flex max-w-content-max flex-col items-center text-center">

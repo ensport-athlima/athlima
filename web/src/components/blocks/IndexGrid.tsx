@@ -30,6 +30,8 @@ export interface IndexGridProps {
   columns?: 2 | 3 | 4 | 6
   /** Numbering starts here (1 → "01"). */
   startAt?: number
+  /** h3 beneath a section headline; h2 when the grid follows the page's h1 directly. */
+  headingAs?: "h2" | "h3"
   className?: string
 }
 
@@ -40,7 +42,7 @@ const COLS: Record<NonNullable<IndexGridProps["columns"]>, string> = {
   6: "md:grid-cols-3 lg:grid-cols-6",
 }
 
-export function IndexGrid({ items, columns = 3, startAt = 1, className }: IndexGridProps) {
+export function IndexGrid({ items, columns = 3, startAt = 1, headingAs: H = "h3", className }: IndexGridProps) {
   return (
     <Reveal
       as="ol"
@@ -56,7 +58,7 @@ export function IndexGrid({ items, columns = 3, startAt = 1, className }: IndexG
             >
               {String(startAt + i).padStart(2, "0")}
             </span>
-            <h3 className="display mt-4 text-display-sm text-paper">{item.title}</h3>
+            <H className="display mt-4 text-display-sm text-paper">{item.title}</H>
             {item.line ? <p className="mt-3 text-body-sm text-ink-200">{item.line}</p> : null}
             {item.detail ? <div className="mt-4">{item.detail}</div> : null}
             {item.href ? (

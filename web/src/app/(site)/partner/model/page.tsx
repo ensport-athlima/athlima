@@ -37,7 +37,7 @@ export default function PartnerModelPage() {
           ]}
         />
       </div>
-      <StatementScreen id={entry.id} size="xl" lines={entry.headline} body={entry.body} padding="standard" />
+      <StatementScreen id={entry.id} heading="h1" size="xl" lines={entry.headline} body={entry.body} padding="standard" />
 
       <section id={levels.id} aria-labelledby={`${levels.id}-headline`} className="bg-void px-margin py-section-standard">
         <div className="mx-auto max-w-content-max">

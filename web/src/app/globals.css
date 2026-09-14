@@ -117,6 +117,23 @@
   --ease-arch: var(--easing-arch);
 }
 
+/*
+ * The display voice's fallback. next/font sizes its Arial fallback to Archivo at width 100; the display
+ * face runs at wdth 66 / wght 850, which measures 73% of Arial Bold's advance width — so while the font
+ * is still arriving on a slow connection, display lines set in the plain fallback wrap differently and
+ * the whole page shifts when the swap lands (CLS 0.06 on /journal). This face sizes the fallback to the
+ * condensed voice; the ascent/descent overrides are next/font's, rescaled for the size-adjust.
+ */
+@font-face {
+  font-family: "archivo-display-fallback";
+  src: local("Arial Bold"), local("Arial"), local("Roboto");
+  font-weight: 100 900;
+  size-adjust: 73%;
+  ascent-override: 120.3%;
+  descent-override: 28.8%;
+  line-gap-override: 0%;
+}
+
 @layer base {
   html {
     background: var(--void);
@@ -181,9 +198,15 @@
 @layer utilities {
   /* Display type: condensed athletic voice, uppercase, tracked in (typography.md §3). */
   .display {
+    /* "archivo" is next/font's family for archivo-var.woff2 (layout.tsx); its own Arial fallback is skipped here. */
+    font-family: archivo, "archivo-display-fallback", system-ui, sans-serif;
     font-weight: 850;
     font-variation-settings: "wdth" var(--wdth-display);
     text-transform: uppercase;
+  }
+  /* Labels on the light surface: --ink-300 is a dark-ground value (2.22 on paper); --ink-600 reads 8.6:1. */
+  [data-surface="light"] .label {
+    color: var(--ink-600);
   }
   /* Sentence case for display type at md and below (typography.md §3) — the compound selector outranks .display. */
   .display.normal-case {

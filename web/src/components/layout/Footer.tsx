@@ -37,8 +37,8 @@ export function Footer() {
 
         <div className="mt-16 grid grid-cols-2 gap-x-gutter gap-y-12 border-t border-ink-800 pt-12 md:grid-cols-4">
           {footer.columns.map((col) => (
-            <nav key={col.heading} aria-labelledby={`footer-${col.heading}`}>
-              <h2 id={`footer-${col.heading}`} className="label text-paper">
+            <nav key={col.heading} aria-label={`Footer — ${col.heading}`}>
+              <h2 id={`footer-${col.heading.toLowerCase().replace(/\s+/g, "-")}`} className="label text-paper">
                 {col.heading}
               </h2>
               <ul className="mt-4 flex flex-col gap-2">
@@ -96,10 +96,10 @@ export function Footer() {
                 <Image
                   src={m.src}
                   alt={m.alt}
-                  width={m.width}
-                  height={m.height}
-                  sizes="120px"
-                  className="h-auto w-auto max-h-12"
+                  width={Math.round((m.width * 48) / m.height)}
+                  height={48}
+                  sizes="100px"
+                  className="h-12 w-auto"
                 />
               </li>
             ))}

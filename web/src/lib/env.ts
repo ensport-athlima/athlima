@@ -3,28 +3,29 @@
  * never silently render an empty section. In `next dev` it warns — so a developer without every
  * credential can still run the site; in `next build` it throws.
  */
-import { z } from "zod"
+import { string, object, url } from "zod"
+import type { infer as Infer } from "zod"
 
-const schema = z.object({
-  NEXT_PUBLIC_SITE_URL: z.url(),
-  NEXT_PUBLIC_SANITY_PROJECT_ID: z.string().min(1),
-  NEXT_PUBLIC_SANITY_DATASET: z.string().min(1),
-  SANITY_API_READ_TOKEN: z.string().min(1),
-  SANITY_REVALIDATE_SECRET: z.string().min(1),
-  MUX_TOKEN_ID: z.string().min(1),
-  MUX_TOKEN_SECRET: z.string().min(1),
-  RESEND_API_KEY: z.string().min(1),
-  POSTGRES_URL: z.string().min(1),
-  EMAIL_FROM: z.string().min(1),
-  ENQUIRY_NOTIFY_EMAIL: z.string().optional(),
-  CONTACT_NOTIFY_EMAIL: z.string().optional(),
-  INSTITUTIONAL_NOTIFY_EMAIL: z.string().optional(),
-  NEXT_PUBLIC_GA_ID: z.string().min(1),
-  SENTRY_DSN: z.string().min(1),
-  NEXT_PUBLIC_SENTRY_DSN: z.string().min(1),
+const schema = object({
+  NEXT_PUBLIC_SITE_URL: url(),
+  NEXT_PUBLIC_SANITY_PROJECT_ID: string().min(1),
+  NEXT_PUBLIC_SANITY_DATASET: string().min(1),
+  SANITY_API_READ_TOKEN: string().min(1),
+  SANITY_REVALIDATE_SECRET: string().min(1),
+  MUX_TOKEN_ID: string().min(1),
+  MUX_TOKEN_SECRET: string().min(1),
+  RESEND_API_KEY: string().min(1),
+  POSTGRES_URL: string().min(1),
+  EMAIL_FROM: string().min(1),
+  ENQUIRY_NOTIFY_EMAIL: string().optional(),
+  CONTACT_NOTIFY_EMAIL: string().optional(),
+  INSTITUTIONAL_NOTIFY_EMAIL: string().optional(),
+  NEXT_PUBLIC_GA_ID: string().min(1),
+  SENTRY_DSN: string().min(1),
+  NEXT_PUBLIC_SENTRY_DSN: string().min(1),
 })
 
-export type Env = z.infer<typeof schema>
+export type Env = Infer<typeof schema>
 
 const raw: Record<keyof Env, string | undefined> = {
   NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,

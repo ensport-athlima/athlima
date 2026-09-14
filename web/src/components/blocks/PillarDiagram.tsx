@@ -72,7 +72,7 @@ export function PillarDiagram({
         <Reveal variant="items" stagger="loose" className="mt-16 hidden md:block">
           <svg
             viewBox={`0 0 ${VB.w} ${VB.h}`}
-            role="img"
+            role="group"
             aria-labelledby={`${id}-diagram-title`}
             className="mx-auto block h-auto w-full max-w-4xl"
           >

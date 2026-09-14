@@ -41,7 +41,7 @@ export function CookieNotice({ gaId }: { gaId: string }) {
               {cookieNotice.text}{" "}
               <Link
                 href={cookieNotice.policyHref}
-                className="text-lime underline-offset-4 hover:underline"
+                className="text-lime underline underline-offset-4 decoration-lime/40 hover:decoration-lime"
               >
                 {cookieNotice.policyLabel}
               </Link>

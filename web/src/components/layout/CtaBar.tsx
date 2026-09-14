@@ -18,7 +18,8 @@ export function CtaBar() {
   const dir = useScrollDirection()
   if (pathname === permanentCta.href || pathname.startsWith(`${permanentCta.href}/`)) return null
   return (
-    <div
+    <nav
+      aria-label={permanentCta.label}
       className={cn(
         "fixed inset-x-0 bottom-0 z-40 border-t border-ink-800 bg-ink-900 px-margin pt-3 transition-transform duration-(--dur-base) ease-sharp lg:hidden",
         dir === "down" && "translate-y-full",
@@ -28,6 +29,6 @@ export function CtaBar() {
       <Button variant="primary" href={permanentCta.href} className="w-full">
         {permanentCta.label}
       </Button>
-    </div>
+    </nav>
   )
 }

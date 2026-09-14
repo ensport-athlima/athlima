@@ -38,7 +38,7 @@ export default function PartnerJourneyPage() {
           ]}
         />
       </div>
-      <StatementScreen id={entry.id} size="lg" lines={entry.headline} sub={entry.sub} lead={entry.lead} padding="standard" />
+      <StatementScreen id={entry.id} heading="h1" size="lg" lines={entry.headline} sub={entry.sub} lead={entry.lead} padding="standard" />
 
       <section id={stages.id} aria-labelledby={`${stages.id}-headline`} className="bg-void px-margin py-section-standard">
         <div className="mx-auto max-w-content-max">

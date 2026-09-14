@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function ForIndexPage() {
   return (
     <main id="content" className="pt-nav">
-      <AudienceDoorways id={screen06.id} marker={screen06.marker} headline={screen06.headline} doorways={screen06.doorways} />
+      <AudienceDoorways id={screen06.id} marker={screen06.marker} headline={screen06.headline} headingAs="h1" doorways={screen06.doorways} />
     </main>
   )
 }

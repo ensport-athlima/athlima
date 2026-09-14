@@ -97,8 +97,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </SmoothScrollProvider>
         <CtaBar />
         <CookieNotice gaId={env.NEXT_PUBLIC_GA_ID} />
-        <Analytics />
-        <SpeedInsights />
+        {/* Vercel's cookieless analytics inject their own script on Vercel only; off Vercel they 404. */}
+        {process.env.VERCEL ? (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        ) : null}
       </body>
     </html>
   )

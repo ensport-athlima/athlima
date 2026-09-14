@@ -76,76 +76,102 @@ export function useReveal<T extends HTMLElement = HTMLElement>(
       if (!el) return
       const mm = gsap.matchMedia()
 
-      mm.add(MOTION.full, () => {
-        const scrollTrigger = { trigger: el, start, once: true }
-        if (variant === "lines") {
-          const lines = el.querySelectorAll<HTMLElement>("[data-line]")
-          gsap.from(lines, {
-            yPercent: 100,
+      // Two rules that keep the entrances honest on a slow phone (performance.md §1; motion.md §7):
+      // 1. Setup waits for an idle moment after hydration, so ~40 reveals do not sit inside the
+      //    hydration long task (Style & Layout thrash from forty immediate style writes).
+      // 2. Anything already inside the viewport when setup runs has been painted and read — it is
+      //    left exactly as it is. A reveal never hides something the visitor has already seen; the
+      //    server HTML is the resting state, and the animation is progressive enhancement.
+      const alreadySeen = () => el.getBoundingClientRect().top < window.innerHeight * 0.85
+      const idle = (fn: () => void) =>
+        typeof window.requestIdleCallback === "function"
+          ? window.requestIdleCallback(fn, { timeout: 300 })
+          : window.setTimeout(fn, 32)
+      const cancelIdle = (id: number) =>
+        typeof window.cancelIdleCallback === "function"
+          ? window.cancelIdleCallback(id)
+          : window.clearTimeout(id)
+
+      const idleId = idle(() => {
+        if (alreadySeen()) {
+          el.querySelector<HTMLElement>("[data-cover]")?.remove()
+          return
+        }
+
+        mm.add(MOTION.full, () => {
+          const scrollTrigger = { trigger: el, start, once: true }
+          if (variant === "lines") {
+            const lines = el.querySelectorAll<HTMLElement>("[data-line]")
+            gsap.from(lines, {
+              yPercent: 100,
+              opacity: 0,
+              duration: sec(DURATIONS.SLOW),
+              ease: ease.EASE_ARCH,
+              stagger: sec(STAGGERS.STAGGER_LINE),
+              delay,
+              immediateRender: true,
+              scrollTrigger,
+            })
+            return
+          }
+          if (variant === "items") {
+            const items = el.querySelectorAll<HTMLElement>("[data-item]")
+            gsap.from(items, {
+              y: REVEAL_OFFSET_PX,
+              opacity: 0,
+              duration: sec(DURATIONS.MEDIUM),
+              ease: ease.EASE_OUT,
+              stagger: sec(itemStagger),
+              delay,
+              immediateRender: true,
+              scrollTrigger,
+            })
+            return
+          }
+          if (variant === "cover") {
+            const cover = el.querySelector<HTMLElement>("[data-cover]")
+            if (!cover) return
+            gsap.to(cover, {
+              ...coverVector(direction),
+              duration: sec(DURATIONS.SLOW),
+              ease: ease.EASE_ARCH,
+              delay,
+              scrollTrigger,
+              onComplete: () => cover.remove(),
+            })
+            return
+          }
+          gsap.from(el, {
+            ...(fromSide === "left"
+              ? { x: -REVEAL_OFFSET_PX }
+              : fromSide === "right"
+                ? { x: REVEAL_OFFSET_PX }
+                : { y: REVEAL_OFFSET_PX }),
             opacity: 0,
-            duration: sec(DURATIONS.SLOW),
-            ease: ease.EASE_ARCH,
-            stagger: sec(STAGGERS.STAGGER_LINE),
+            duration: sec(baseDuration),
+            ease: baseEase,
             delay,
             immediateRender: true,
             scrollTrigger,
           })
-          return
-        }
-        if (variant === "items") {
-          const items = el.querySelectorAll<HTMLElement>("[data-item]")
-          gsap.from(items, {
-            y: REVEAL_OFFSET_PX,
+        })
+
+        mm.add(MOTION.reduced, () => {
+          // Present, no transform. A fade of at most 150ms — the layout carries the meaning.
+          el.querySelector<HTMLElement>("[data-cover]")?.remove()
+          gsap.from(el, {
             opacity: 0,
-            duration: sec(DURATIONS.MEDIUM),
-            ease: ease.EASE_OUT,
-            stagger: sec(itemStagger),
-            delay,
-            immediateRender: true,
-            scrollTrigger,
+            duration: sec(REDUCED_FADE_MAX),
+            ease: "none",
+            scrollTrigger: { trigger: el, start, once: true },
           })
-          return
-        }
-        if (variant === "cover") {
-          const cover = el.querySelector<HTMLElement>("[data-cover]")
-          if (!cover) return
-          gsap.to(cover, {
-            ...coverVector(direction),
-            duration: sec(DURATIONS.SLOW),
-            ease: ease.EASE_ARCH,
-            delay,
-            scrollTrigger,
-            onComplete: () => cover.remove(),
-          })
-          return
-        }
-        gsap.from(el, {
-          ...(fromSide === "left"
-            ? { x: -REVEAL_OFFSET_PX }
-            : fromSide === "right"
-              ? { x: REVEAL_OFFSET_PX }
-              : { y: REVEAL_OFFSET_PX }),
-          opacity: 0,
-          duration: sec(baseDuration),
-          ease: baseEase,
-          delay,
-          immediateRender: true,
-          scrollTrigger,
         })
       })
 
-      mm.add(MOTION.reduced, () => {
-        // Present, no transform. A fade of at most 150ms — the layout carries the meaning.
-        el.querySelector<HTMLElement>("[data-cover]")?.remove()
-        gsap.from(el, {
-          opacity: 0,
-          duration: sec(REDUCED_FADE_MAX),
-          ease: "none",
-          scrollTrigger: { trigger: el, start, once: true },
-        })
-      })
-
-      return () => mm.revert()
+      return () => {
+        cancelIdle(idleId)
+        mm.revert()
+      }
     },
     {
       scope: ref,

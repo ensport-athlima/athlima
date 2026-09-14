@@ -35,6 +35,8 @@ export interface StatementScreenProps {
   size?: "xl" | "lg" | "md"
   /** Sentence case — permitted at md only (typography.md §3): a question, a quoted fear. */
   uppercase?: boolean
+  /** The heading level. Entry variants are h1; a statement that opens a sub-page (the model, the journey) is h1 too. */
+  heading?: "h1" | "h2"
   sub?: readonly DisplayLine[]
   subNarrow?: readonly DisplayLine[]
   /** The sub-line is lime in full — screen 03 only (decision D14). */
@@ -71,6 +73,7 @@ export function StatementScreen({
   narrow,
   size = "lg",
   uppercase = true,
+  heading,
   sub,
   subNarrow,
   subWholeLime = false,
@@ -116,7 +119,7 @@ export function StatementScreen({
         className={cn(mark ? "mt-16" : entry ? "mt-auto pt-section-dense" : "mt-4")}
       >
         <Display
-          as={entry ? "h1" : "h2"}
+          as={heading ?? (entry ? "h1" : "h2")}
           id={headingId}
           size={size}
           lines={lines}

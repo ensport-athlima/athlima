@@ -1,6 +1,6 @@
 "use server"
 
-import { z } from "zod"
+import * as z from "zod/mini"
 import { configured } from "@/lib/env"
 
 /**
@@ -22,7 +22,7 @@ const schema = z.object({
   email: z.email(),
   list: z.enum(["athlima20-alert", "list-2027", "journal"]),
   /** Honeypot — a real visitor never fills it. */
-  company: z.string().max(0),
+  company: z.string().check(z.maxLength(0)),
 })
 
 export async function captureEmail(
