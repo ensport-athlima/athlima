@@ -5,7 +5,6 @@ import { AthlimaWordmark } from "@/components/marks/AthlimaWordmark"
 import { Button } from "@/components/primitives/Button"
 import { footer, permanentCta } from "@/content/navigation"
 import { routes } from "@/lib/routes"
-import { cn } from "@/lib/cn"
 
 /**
  * THE FOOTER (navigation.md §5) — where the completeness lives, so the header can stay minimal. A real
@@ -83,16 +82,10 @@ export function Footer() {
         </nav>
 
         <div className="mt-12 border-t border-ink-800 pt-8">
-          {/* ENARR and ENSPORT at their own colours on their own plates — see ProvenanceBlock's MARKS note. */}
-          <ul className="flex flex-wrap gap-4" aria-label="Built by">
+          {/* ENARR and ENSPORT at their own colours, directly on the ground — the owner's call: no plates. */}
+          <ul className="flex flex-wrap items-center gap-x-12 gap-y-6" aria-label="Built by">
             {CORPORATE_MARKS.map((m) => (
-              <li
-                key={m.src}
-                className={cn(
-                  "flex min-h-20 items-center px-6 py-4",
-                  m.plateTone === "light" ? "bg-paper-warm" : "bg-void",
-                )}
-              >
+              <li key={m.src} className="flex items-center">
                 <Image src={m.src} alt={m.alt} width={m.footer.width} height={m.footer.height} sizes={`${m.footer.width}px`} className="block" />
               </li>
             ))}

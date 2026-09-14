@@ -16,7 +16,9 @@ import { cn } from "@/lib/cn"
  * SOURCE OF TRUTH: 04_CONTENT/homepage.md screen 07; 08_OPERATIONS/decisions-b3-provenance.md §4a.
  * MOTION: REVEAL only. The calmest moment on the page.
  * MARKS: ENARR (navy and gold) and ENSPORT (gold and white) at their own colours, never recoloured,
- *   each on a --paper-warm plate (colour.md §1). They are the supplied raster, cut out with alpha —
+ *   placed directly on the surface — the owner's call, no plates. The one exception is ENSPORT on this
+ *   light section: its supplied artwork is white-on-transparent and vanishes on paper, so it keeps a
+ *   --void plate here until a dark-on-light version arrives (B2). They are the supplied raster, cut out with alpha —
  *   deliberately not traced: a single-colour trace would destroy two gradient marks, and a bad trace of
  *   someone else's corporate mark is worse than a clean raster (05_MEDIA/logos/vector/README.md). The
  *   one raster-mark exception on the site, recorded in components.md MARKS; replaced by the Group's
@@ -40,9 +42,9 @@ export interface ProvenanceBlockProps {
 export const CORPORATE_MARKS = [
   // ENARR is navy and gold — 1.97 on --void, so it lives on a light plate (colour.md §1).
   // Rendered sizes are exact integer reductions of the 360px cut-out, so nothing shifts on load.
-  { src: "/marks/enarr.png", alt: "The ENARR Group", plate: { width: 120, height: 84 }, footer: { width: 60, height: 42 }, plateTone: "light" },
+  { src: "/marks/enarr.png", alt: "The ENARR Group", plate: { width: 120, height: 84 }, footer: { width: 90, height: 63 }, plateTone: "light" },
   // ENSPORT is gold and white — it lives on black, whatever the surface around it.
-  { src: "/marks/ensport.png", alt: "ENSPORT Ventures", plate: { width: 180, height: 94 }, footer: { width: 90, height: 47 }, plateTone: "dark" },
+  { src: "/marks/ensport.png", alt: "ENSPORT Ventures", plate: { width: 180, height: 94 }, footer: { width: 120, height: 63 }, plateTone: "dark" },
 ] as const
 
 export function ProvenanceBlock({
@@ -76,14 +78,11 @@ export function ProvenanceBlock({
             ))}
           </div>
 
-          <ul className="mt-16 grid grid-cols-1 gap-gutter sm:grid-cols-2" aria-label="Built by">
+          <ul className="mt-16 flex flex-wrap items-center gap-x-16 gap-y-8" aria-label="Built by">
             {CORPORATE_MARKS.map((m) => (
               <li
                 key={m.src}
-                className={cn(
-                  "flex min-h-40 items-center justify-center px-8 py-8",
-                  m.plateTone === "light" ? "bg-paper-warm" : "bg-void",
-                )}
+                className={cn("flex items-center", m.plateTone === "dark" && "bg-void px-8 py-6")}
               >
                 <Image src={m.src} alt={m.alt} width={m.plate.width} height={m.plate.height} sizes={`${m.plate.width}px`} className="block" />
               </li>
