@@ -35,27 +35,46 @@ function floorLines() {
   return { radials: radials.join(" "), rows }
 }
 
-export function HeroArchitecture() {
+/** The floor alone — the perspective plane from its horizon to the bottom edge, and the light that crosses it. */
+export function Floor({ depth = false }: { depth?: boolean }) {
   const { radials, rows } = floorLines()
   return (
-    <div data-hero-scene aria-hidden="true" className="hero-scene absolute inset-0 overflow-hidden">
-      {/* THE FLOOR — from the horizon (the structure's baseline) to the bottom edge. */}
+    <>
       <svg
-        data-depth="floor"
+        data-depth={depth ? "floor" : undefined}
         viewBox={`0 0 ${FLOOR.w} ${FLOOR.h}`}
         preserveAspectRatio="none"
         className="hero-floor absolute inset-x-0 bottom-0 w-full"
       >
-        <g className="hero-floor-rows" fill="none" strokeWidth="1" vectorEffect="non-scaling-stroke">
+        <g fill="none" strokeWidth="1" vectorEffect="non-scaling-stroke">
           {rows.map((y, i) => (
             <line key={y} x1="0" x2={FLOOR.w} y1={y} y2={y} stroke={i % 3 === 2 ? "var(--ink-600)" : "var(--ink-700)"} vectorEffect="non-scaling-stroke" />
           ))}
         </g>
         <path d={radials} fill="none" stroke="var(--ink-700)" strokeWidth="1" vectorEffect="non-scaling-stroke" />
       </svg>
+      <div className="hero-light absolute inset-x-0" />
+    </>
+  )
+}
 
-      {/* THE LIGHT — a band crossing the floor. */}
-      <div className="hero-light absolute inset-x-0 bg-ink-700" />
+/**
+ * The floor as an entry page's empty state: the same plane, horizon at the lower third, no structure —
+ * the A is the homepage's alone (imagery.md §6: once per viewport, never a pattern).
+ */
+export function EntryFloor() {
+  return (
+    <div aria-hidden="true" className="hero-scene entry-floor absolute inset-0 overflow-hidden">
+      <Floor />
+    </div>
+  )
+}
+
+export function HeroArchitecture() {
+  return (
+    <div data-hero-scene aria-hidden="true" className="hero-scene absolute inset-0 overflow-hidden">
+      {/* THE FLOOR — from the horizon (the structure's baseline) to the bottom edge. */}
+      <Floor depth />
 
       {/* THE STRUCTURE — in the entry overlay's box, so the arrival stroke lands on it. */}
       <div className="absolute inset-0 flex items-start justify-center px-margin pt-[22svh] [--a-w:min(50vw,55svh)] sm:items-center sm:justify-end sm:pt-0 sm:[--a-w:min(30vw,55svh)]">

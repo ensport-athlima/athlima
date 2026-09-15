@@ -47,8 +47,8 @@ export interface SlotSpec {
   minLongEdge: number
   /** Whether the visual carries meaning (real alt) or sits behind type (decorative). */
   meaningful: boolean
-  /** What renders while the slot is empty: the black ground, or the hero's drawn scene. */
-  fallback?: "architecture"
+  /** What renders while the slot is empty: the black ground, the hero's drawn scene, or the floor alone. */
+  fallback?: "architecture" | "floor"
   asset: MediaAsset | null
 }
 
@@ -77,6 +77,7 @@ const entry = (page: string, subject: string): SlotSpec => ({
   ratio: "viewport",
   minLongEdge: 3000,
   meaningful: false,
+  fallback: "floor",
   asset: null,
 })
 

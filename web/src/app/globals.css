@@ -547,6 +547,11 @@
       --horizon: calc(50svh + var(--a-h) / 2);
     }
   }
+  /* An entry page's floor: no structure, the horizon at the lower third at every width. */
+  .entry-floor,
+  .entry-floor.hero-scene {
+    --horizon: 62svh;
+  }
   .hero-floor {
     top: var(--horizon);
     height: calc(100% - var(--horizon));
@@ -555,7 +560,9 @@
   }
   .hero-light {
     top: var(--horizon);
-    height: 22svh;
+    height: 30svh;
+    /* A soft-edged band of ink — light on a floor, like the scrim: an edge you cannot see, not a glow. */
+    background: linear-gradient(to bottom, transparent, var(--ink-700) 50%, transparent);
     opacity: 0;
     animation: hero-light-pass 16s ease-in-out infinite;
   }
@@ -573,10 +580,10 @@
       opacity: 0;
     }
     15% {
-      opacity: 0.35;
+      opacity: 0.28;
     }
     45% {
-      opacity: 0.35;
+      opacity: 0.28;
     }
     60% {
       transform: translateY(calc(100svh - var(--horizon)));
@@ -593,8 +600,8 @@
       animation: none;
     }
     .hero-light {
-      opacity: 0.2;
-      transform: translateY(30svh);
+      opacity: 0.16;
+      transform: translateY(24svh);
     }
   }
 }
