@@ -239,8 +239,8 @@ until `[TO VERIFY — B3a]` is resolved)*
 The previous ENARR history line (*"multi-generational institutional history…"*) is **withdrawn** by the
 Group — B3 §4. The Singhania Family Sports Foundation is not mentioned.
 
-**Marks:** ENARR and ENSPORT, at their own colours — navy and gold, gold and white. Never recoloured to
-lime. Generous clear space. A quieter, more formal register than the rest of the site.
+**Marks:** ENARR alone on this section (owner, 15 September 2026) — navy and gold, never recoloured,
+directly on the paper, generous clear space. ENSPORT is named in the copy and marked in the footer.
 
 ### Section 04 — WHY NOW
 

@@ -28,7 +28,7 @@ export function SectionMarker({ number, label, className }: SectionMarkerProps) 
         aria-hidden="true"
       />
       <Eyebrow as="span">
-        <span className="sr-only">Section {numeral}: </span>
+        <span className="sr-only select-none">Section {numeral}: </span>
         {label}
       </Eyebrow>
     </div>

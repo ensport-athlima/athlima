@@ -254,10 +254,8 @@ export const screen06 = {
 export const screen07 = {
   id: "provenance",
   marker: { number: 6, label: "WHO IS BUILDING THIS" },
-  headline: [
-    { text: "ATHLIMA IS NOT" },
-    { text: "AN EVENT COMPANY'S EVENT." },
-  ] satisfies readonly DisplayLine[],
+  /** Owner's line, 15 September 2026 — states what it is; the contrast is implied, not argued. */
+  headline: [{ text: "AN INSTITUTION," }, { text: "NOT AN OCCASION." }] satisfies readonly DisplayLine[],
   /**
    * The provenance paragraph, approved verbatim — decision B3 (decisions-b3-provenance.md §4a) — with
    * "the room" carrying the weight, and ATHLIMA's own line beneath it.

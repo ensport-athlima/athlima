@@ -436,10 +436,12 @@ slot behind each row is positioned and empty (B2). The mobile anchor line after 
 06 ──── WHO IS BUILDING THIS
 ```
 
-**Display — `--fs-display-md`, `--void` on `--paper`**
+**Display — `--fs-display-md`, `--void` on `--paper`** *(owner, 15 September 2026 — the earlier negation,
+"ATHLIMA IS NOT AN EVENT COMPANY'S EVENT.", was judged too blunt; this states what it is and lets the
+contrast be implied)*
 ```
-ATHLIMA IS NOT
-AN EVENT COMPANY'S EVENT.
+AN INSTITUTION,
+NOT AN OCCASION.
 ```
 
 **Body — `--fs-body`, `--ink-700`** *(approved — decision B3, `08_OPERATIONS/decisions-b3-provenance.md` §4a)*
@@ -451,9 +453,9 @@ AN EVENT COMPANY'S EVENT.
 > ATHLIMA is being built as an institution. The two days in December are its annual convergence point,
 > not its purpose.
 
-**The two marks** — ENARR and ENSPORT, at their own colours, generous clear space, modest scale. ENARR
-on a light plate, ENSPORT on black (`colour.md` §1). The ENSPORT lock-up carries its own line — *BUILT TO
-INSPIRE VICTORY* — so the screen does not repeat it.
+**The mark** — ENARR alone, at its own colours, directly on the paper, generous clear space, modest scale
+*(owner, 15 September 2026: no plates, and no ENSPORT mark on this screen — ENSPORT is named in the
+paragraph and marked in the footer)*.
 
 ### Media
 None. **This screen's restraint is its argument.** A light ground, black type, two marks, white space.

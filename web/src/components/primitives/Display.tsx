@@ -108,7 +108,8 @@ export function Display({
       id={id}
       className={cn("display text-paper", SIZE_CLASS[size], !uppercase && "normal-case", className)}
     >
-      <span className="sr-only">{accessible}</span>
+      {/* Read by assistive technology, never copied: selecting the headline yields it once. */}
+      <span className="sr-only select-none">{accessible}</span>
       <Lines lines={lines} hiddenAt={narrow ? "narrow" : undefined} wholeLime={wholeLime} />
       {narrow ? <Lines lines={narrow} hiddenAt="wide" wholeLime={wholeLime} /> : null}
     </Tag>

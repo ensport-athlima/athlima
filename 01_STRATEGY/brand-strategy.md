@@ -176,7 +176,8 @@ Currently a back-cover logo. It should be a section.
 
 **How to express it, in one screen:**
 
-> ATHLIMA is not an event company's event.
+> An institution, not an occasion. *(The site's headline for this screen, owner's choice, 15 September
+> 2026 — replacing "ATHLIMA is not an event company's event.", which argued the point instead of stating it.)*
 >
 > ATHLIMA is an ENSPORT Ventures initiative within the ENARR Group, bringing together sport, business,
 > capital, institutions and ideas around the future of performance in India. Built on the Group's broader
