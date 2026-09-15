@@ -104,6 +104,11 @@ export function HeroArchitecture() {
               <line x1="230" y1="0" x2="460" y2="348" stroke="url(#hero-edge-reflection)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
             </g>
             <path fill="var(--ink-900)" stroke="var(--ink-600)" strokeWidth="1" vectorEffect="non-scaling-stroke" d="M230 0 460 348 360 348 230 153 98 348 0 348Z" />
+            {/* The bloom (decision H): the lit edge again, wide and blurred in CSS — light behaving as light, not a halo behind a mark. */}
+            <g className="hero-bloom">
+              <line x1="230" y1="0" x2="460" y2="348" stroke="var(--lime)" strokeWidth="14" strokeLinecap="round" />
+              <line x1="230" y1="0" x2="460" y2="348" stroke="var(--lime-bright)" strokeWidth="5" strokeLinecap="round" />
+            </g>
             {/* The LED strip: the edge, lit, with light travelling down it. */}
             <line x1="230" y1="0" x2="460" y2="348" stroke="var(--lime)" strokeWidth="3" vectorEffect="non-scaling-stroke" strokeLinecap="butt" />
             <line className="hero-led-travel" x1="230" y1="0" x2="460" y2="348" stroke="var(--lime-bright)" strokeWidth="3" vectorEffect="non-scaling-stroke" strokeLinecap="butt" pathLength="100" />

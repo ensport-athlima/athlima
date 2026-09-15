@@ -140,7 +140,7 @@ gateway. It is the strongest visual device the brand has.
 - As a repeating background pattern
 - Watermarked over photography
 - As a bullet point or a list marker
-- With a glow behind it
+- With a glow behind it *(the light it emits in a scene may bloom — decision H; a halo behind the mark still may not)*
 - Rotated, skewed, or distorted
 - More than **once per viewport**
 
@@ -152,7 +152,7 @@ source — with its reflection in the floor at 6%; a band of `--ink-700` crossin
 the floor breathing over 40 s (transform and opacity only, static under reduced motion); a few pixels of
 depth against the pointer on hover-capable devices. The entry overlay draws its stroke exactly onto the
 structure and dissolves — the A is on screen once, and D1's deferred "settle onto the poster" is now
-what happens. No blur, no gradient, no glow, no particles, no second colour. Replaced, or kept as a
+what happens. No particles, no second colour; the LED edge blooms as light does (decision H). Replaced, or kept as a
 layer beneath, when the hero still or film arrives.
 
 ---

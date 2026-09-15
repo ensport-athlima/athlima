@@ -124,7 +124,7 @@ Do not build, and do not accept if generated:
 - Accordions used to hide content that should have been cut.
 - Gradient-text headlines.
 - Glassmorphism / frosted panels.
-- Glow effects on lime. (See `03_DESIGN_SYSTEM/colour.md` — this is a named prohibition.)
+- Glow effects on lime type, controls or marks. (See `03_DESIGN_SYSTEM/colour.md` — a named prohibition; the one exception is decision H, a light source inside a scene.)
 - Parallax on everything. Parallax is a spotlight, not a wallpaper.
 - Counting-up numbers that count up every time they re-enter the viewport.
 - A "Back to top" button.

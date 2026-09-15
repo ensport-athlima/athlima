@@ -45,7 +45,7 @@
 
 - [ ] Lime is used as a **signal**, not a surface. Count its appearances in the **content** of the viewport
       (the section marker and the permanent CTA are chrome and do not count): more than three → review.
-- [ ] No glow, no neon bloom, no lime drop-shadows.
+- [ ] No glow, no neon bloom, no lime drop-shadows — on type, controls or marks. The hero scene's light may bloom (decision H); if the hero reads as Web3, its `--hero-bloom-opacity` comes down first.
 - [ ] No gradient text.
 - [ ] Blacks are the token black, not `#000` unless the token says so.
 - [ ] Every text/background pair passes contrast. Check the lime-on-black and black-on-lime pairs specifically.

@@ -536,6 +536,9 @@
  */
 @layer components {
   .hero-scene {
+    /* Decision H — the light's bloom. Two dials; if the hero ever reads as Web3, lower the opacity first. */
+    --hero-bloom-opacity: 0.55;
+    --hero-bloom-radius: 10px;
     /* Portrait phones: the structure sits at 22svh (EntryOverlay agrees); from sm it is vertically centred. */
     --a-w: min(50vw, 55svh);
     --a-h: calc(var(--a-w) * 348 / 460);
@@ -593,6 +596,10 @@
       transform: translateY(calc(100svh - var(--horizon)));
       opacity: 0;
     }
+  }
+  .hero-bloom {
+    opacity: var(--hero-bloom-opacity);
+    filter: blur(var(--hero-bloom-radius));
   }
   /* Light travelling down the LED strip: a short bright dash on a 100-unit path, every 6 s. */
   .hero-led-travel {

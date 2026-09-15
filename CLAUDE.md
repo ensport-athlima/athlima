@@ -14,7 +14,7 @@ Before building anything, read in this order:
 ```
 1.  CLAUDE.md                              this file
 2.  08_OPERATIONS/decisions-2026-09-13.md  BINDING. Part 1 is applied throughout; Part 2 (B1–B5) is what is still open
-    08_OPERATIONS/decisions-b3-provenance.md and decisions-2026-09-13-access.md — later decisions, binding, applied
+    08_OPERATIONS/decisions-b3-provenance.md, decisions-2026-09-13-access.md and decisions-2026-09-15-hero-light.md — later decisions, binding, applied
 3.  01_STRATEGY/website-thesis.md          the parent document
 4.  01_STRATEGY/positioning.md             especially §6, the claims discipline
 5.  01_STRATEGY/brand-strategy.md
@@ -148,7 +148,9 @@ a source, or a fact about ATHLIMA, ENSPORT or ENARR.
   triggers a review. The `SectionMarker` and the permanent `BUILD WITH ATHLIMA` are chrome and do not count (D3).
 - **White text on lime is forbidden.** Contrast 1.41. A lime surface always carries black text.
 - **Lime text on white is forbidden.** Use `--lime-ink` (`#5A6B04`).
-- **No glow. No gradient text. No glassmorphism. No card grids with shadows and rounded corners.**
+- **No glow on type, controls or marks. No gradient text. No glassmorphism. No card grids with shadows and rounded corners.**
+  *(Decision H, owner override: a bloom is permitted only on a real light source inside a scene — the hero's
+  LED edge — built from the source itself, never a halo behind a mark. `08_OPERATIONS/decisions-2026-09-15-hero-light.md`.)*
 - **No second accent colour.** AFTERHOURS' dusk gradient is the one exception, contained to one page.
 - Every value comes from a token. `text-[43px]`, `mt-[37px]` and `#C7E70C` in a component are all bugs.
 - Only `transform` and `opacity` animate on scroll.

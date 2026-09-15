@@ -121,7 +121,7 @@ way this site ends up looking like a crypto project.
 - Body copy of any length
 - A full headline
 - A large background area *(the exception: a single CTA block per page)*
-- Anything with a glow, bloom, or shadow
+- Anything with a glow, bloom, or shadow *(except a real light source inside a scene, decision H)*
 - Gradients
 - A whole set of icons
 - More than three **content** elements in one viewport — see the counting rule below

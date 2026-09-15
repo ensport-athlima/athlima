@@ -104,7 +104,7 @@ looks empty or broken, motion was carrying meaning that the layout should have c
 These are named because they are the *easiest* interpretations of a black-and-lime brief, and easy is how
 this site becomes a template.
 
-- ❌ **Glow.** No neon bloom, no lime `box-shadow`, no `text-shadow` on lime, no radial glow behind the mark.
+- ❌ **Glow.** No neon bloom on type or controls, no lime `box-shadow`, no `text-shadow` on lime, no radial glow behind the mark. *(Decision H: a real light source inside a scene — the hero's LED edge — may bloom, as light does; nothing else.)*
 - ❌ **Gradient text.** Ever. The one gradient in the system belongs to AFTERHOURS and it is used on the
   AFTERHOURS wordmark only.
 - ❌ **Glassmorphism.** No frosted panels, no `backdrop-filter` blur surfaces.

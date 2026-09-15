@@ -116,6 +116,12 @@ application — access is by invitation and the public site does not process it
 — and the build (`routes.ts`, the chrome, `homepage.ts`, `experiences.ts`). `apply.md` is deleted.
 `/apply` redirects to `/the-room`. The permanent CTA is `BUILD WITH ATHLIMA` → `/partner`.
 
+**Decision H (15 September 2026, owner override):** the owner asked for the hero's light to glow. The
+prohibition was put to them with its reasoning (Part III); they chose to proceed. Amended in the same
+commit: `CLAUDE.md` V.4, `design-principles.md`, `colour.md`, `imagery.md` §6, `component-rules.md`,
+`visual-qa.md`. The exception is narrow — a real light source inside a scene, built from the source
+itself — and dialled by two tokens on the scene so it can be turned down in one line.
+
 **Not fixable in this pass, and said so:** the brochure PDFs are image-only; *brochure-sourced* marks
 follow the repository's own attributions and are tagged for verbatim verification.
 
