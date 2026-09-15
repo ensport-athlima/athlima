@@ -1,4 +1,4 @@
-import { AthlimaA, ATHLIMA_A_VIEWBOX } from "@/components/marks/AthlimaA"
+import { ATHLIMA_A_VIEWBOX } from "@/components/marks/AthlimaA"
 import { HeroDepth } from "./HeroDepth"
 
 /**
@@ -48,10 +48,10 @@ export function Floor({ depth = false }: { depth?: boolean }) {
       >
         <g fill="none" strokeWidth="1" vectorEffect="non-scaling-stroke">
           {rows.map((y, i) => (
-            <line key={y} x1="0" x2={FLOOR.w} y1={y} y2={y} stroke={i % 3 === 2 ? "var(--ink-600)" : "var(--ink-700)"} vectorEffect="non-scaling-stroke" />
+            <line key={y} x1="0" x2={FLOOR.w} y1={y} y2={y} stroke={i % 3 === 2 ? "var(--ink-500)" : "var(--ink-600)"} vectorEffect="non-scaling-stroke" />
           ))}
         </g>
-        <path d={radials} fill="none" stroke="var(--ink-700)" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+        <path d={radials} fill="none" stroke="var(--ink-600)" strokeWidth="1" vectorEffect="non-scaling-stroke" />
       </svg>
       <div className="hero-light absolute inset-x-0" />
     </>
@@ -79,15 +79,35 @@ export function HeroArchitecture() {
       {/* THE STRUCTURE — in the entry overlay's box, so the arrival stroke lands on it. */}
       <div className="absolute inset-0 flex items-start justify-center px-margin pt-[22svh] [--a-w:min(50vw,55svh)] sm:items-center sm:justify-end sm:pt-0 sm:[--a-w:min(30vw,55svh)]">
         <div data-depth="structure" className="relative" style={{ width: "var(--a-w)" }}>
-          <svg viewBox={ATHLIMA_A_VIEWBOX} className="block h-auto w-full">
-            <path fill="var(--ink-900)" stroke="var(--ink-700)" strokeWidth="1" vectorEffect="non-scaling-stroke" d="M230 0 460 348 360 348 230 153 98 348 0 348Z" />
-            {/* The one light source: the outer right leg as an LED edge. */}
-            <line x1="230" y1="0" x2="460" y2="348" stroke="var(--lime)" strokeWidth="2" vectorEffect="non-scaling-stroke" strokeLinecap="butt" />
+          {/*
+            The structure and its light. The box is the A's (the overlay draws in the same box); the
+            light the LED edge casts on the floor and its reflection overflow it, below the baseline. The light is a
+            source in the scene — an LED strip on the outer right leg, the pool it throws on the floor,
+            its reflection in the surface — not a halo behind the mark (imagery.md §6).
+          */}
+          <svg viewBox={ATHLIMA_A_VIEWBOX} overflow="visible" className="block h-auto w-full overflow-visible">
+            <defs>
+              <linearGradient id="hero-pool" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="var(--lime)" stopOpacity="0.26" />
+                <stop offset="1" stopColor="var(--lime)" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="hero-edge-reflection" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stopColor="var(--lime)" stopOpacity="0.5" />
+                <stop offset="1" stopColor="var(--lime)" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+            {/* The pool of light the edge throws across the floor, from the foot of the leg. */}
+            <polygon points="330,348 460,348 600,540 160,540" fill="url(#hero-pool)" />
+            {/* The reflection of the structure and of the lit edge in the floor. */}
+            <g transform="translate(0,696) scale(1,-1)" className="hero-reflection">
+              <path fill="var(--ink-800)" d="M230 0 460 348 360 348 230 153 98 348 0 348Z" />
+              <line x1="230" y1="0" x2="460" y2="348" stroke="url(#hero-edge-reflection)" strokeWidth="2" vectorEffect="non-scaling-stroke" />
+            </g>
+            <path fill="var(--ink-900)" stroke="var(--ink-600)" strokeWidth="1" vectorEffect="non-scaling-stroke" d="M230 0 460 348 360 348 230 153 98 348 0 348Z" />
+            {/* The LED strip: the edge, lit, with light travelling down it. */}
+            <line x1="230" y1="0" x2="460" y2="348" stroke="var(--lime)" strokeWidth="3" vectorEffect="non-scaling-stroke" strokeLinecap="butt" />
+            <line className="hero-led-travel" x1="230" y1="0" x2="460" y2="348" stroke="var(--lime-bright)" strokeWidth="3" vectorEffect="non-scaling-stroke" strokeLinecap="butt" pathLength="100" />
           </svg>
-          {/* The reflection in the floor. */}
-          <div className="absolute inset-x-0 top-full opacity-[0.06] [transform:scaleY(-1)]">
-            <AthlimaA variant="filled" decorative className="text-ink-300" />
-          </div>
         </div>
       </div>
 

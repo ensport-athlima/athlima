@@ -580,10 +580,10 @@
       opacity: 0;
     }
     15% {
-      opacity: 0.28;
+      opacity: 0.4;
     }
     45% {
-      opacity: 0.28;
+      opacity: 0.4;
     }
     60% {
       transform: translateY(calc(100svh - var(--horizon)));
@@ -594,10 +594,29 @@
       opacity: 0;
     }
   }
+  /* Light travelling down the LED strip: a short bright dash on a 100-unit path, every 6 s. */
+  .hero-led-travel {
+    stroke-dasharray: 14 100;
+    stroke-dashoffset: 14;
+    animation: hero-led-travel 6s linear infinite;
+  }
+  @keyframes hero-led-travel {
+    from {
+      stroke-dashoffset: 14;
+    }
+    to {
+      stroke-dashoffset: -100;
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .hero-floor,
-    .hero-light {
+    .hero-light,
+    .hero-led-travel {
       animation: none;
+    }
+    .hero-led-travel {
+      stroke-dasharray: none;
+      opacity: 0.6;
     }
     .hero-light {
       opacity: 0.16;
