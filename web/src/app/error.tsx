@@ -31,7 +31,7 @@ export default function GlobalError({
       <button
         type="button"
         onClick={reset}
-        className="label mt-12 inline-flex min-h-touch w-fit items-center bg-lime px-8 text-void transition-colors duration-(--dur-base) ease-sharp hover:bg-lime-bright"
+        className="mt-12 inline-flex min-h-touch w-fit items-center bg-lime px-8 text-label font-medium tracking-(--ls-label) text-void uppercase transition-colors duration-(--dur-base) ease-sharp hover:bg-lime-bright focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
       >
         TRY AGAIN
       </button>

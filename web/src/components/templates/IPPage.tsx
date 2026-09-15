@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ApplyBlock } from "@/components/blocks/ApplyBlock"
 import { IndexGrid } from "@/components/blocks/IndexGrid"
 import { IPRail } from "@/components/blocks/IPRail"
+import { JournalRail } from "@/components/journal/JournalRail"
 import { SequenceRail } from "@/components/blocks/SequenceRail"
 import { StatementScreen } from "@/components/blocks/StatementScreen"
 import { EmailCapture } from "@/components/forms/EmailCapture"
@@ -188,6 +189,9 @@ export function IPPage({ content }: { content: IPContent }) {
       ) : null}
 
       <IPRail id="rail" marker={{ number: next(), label: "THE OTHER FIVE" }} current={ip} rail={ipRail} />
+
+      {/* Three pieces of the thinking — last in the numbering because it renders nothing while the Journal is empty. */}
+      <JournalRail marker={{ number: next(), label: "FROM THE JOURNAL" }} />
 
       <ApplyBlock
         id="invitation"

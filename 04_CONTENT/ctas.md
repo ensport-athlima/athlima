@@ -203,6 +203,7 @@ posts nowhere, never an anchor to nothing. Adults only: the list is the alert, n
 | **404 heading** | `THIS ROOM DOESN'T EXIST.` |
 | **404 body** | `The page you're looking for isn't here. The rest of ATHLIMA is.` |
 | **500 heading** | `SOMETHING BROKE.` |
+| **500 control** | `TRY AGAIN` — re-renders the boundary (as built) |
 | **500 body** | `Not your fault. Try again in a moment, or write to us at [email].` `[TO VERIFY — B5 — a monitored address]`. **Until B5 lands the page ships the first sentence only** — a bare bracket never renders. |
 | **Empty Journal filter** | `Nothing here yet. The [PILLAR] thinking is being written.` |
 | **Loading** | Nothing. A designed skeleton, never the word "loading". |
