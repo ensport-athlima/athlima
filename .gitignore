@@ -15,4 +15,8 @@ test-results/
 
 # Next.js generated
 web/next-env.d.ts
+
+# The image pipeline's products (web/scripts/build-media.ts) — rebuilt from 05_MEDIA/photography/
+web/public/media/
+web/src/generated/
 *.tsbuildinfo

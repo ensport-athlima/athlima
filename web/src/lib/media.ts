@@ -16,6 +16,15 @@ export interface ImageAsset {
   /** 0–1 across, 0–1 down. Default centre. */
   focal?: { x: number; y: number }
   credit?: string
+  /**
+   * Pre-built responsive sets from scripts/build-media.ts (a repository still). When present the slot
+   * renders a native <picture> from them and next/image is not involved; absent for a CMS still.
+   */
+  sources?: { avif: string; webp: string; widths: number[] }
+  /** A tiny WebP data URI painted under the image while it loads. */
+  blur?: string
+  /** imagery.md §7.1 — a generated frame that depicts ATHLIMA itself carries the label. */
+  impression?: boolean
 }
 
 export interface FilmAsset {

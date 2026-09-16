@@ -50,7 +50,12 @@ const nextConfig: NextConfig = {
     ],
   },
   async headers() {
-    return [{ source: "/(.*)", headers: securityHeaders }]
+    return [
+      { source: "/(.*)", headers: securityHeaders },
+      // The pipeline's derivatives carry a content hash in their name (scripts/build-media.ts), so
+      // they are immutable — a re-delivery changes the URL, never the bytes behind one.
+      { source: "/media/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },
+    ]
   },
   async redirects() {
     // sitemap.md §5 — every one is a 301 and reads from the manifest, never a hardcoded string.

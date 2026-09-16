@@ -52,7 +52,8 @@ Rule of thumb — *if it is a state change under 300ms, use CSS. If it is choreo
 | Mux (hosting + HLS delivery) | All hero and long-form video is uploaded to Mux and served as adaptive HLS with a chosen poster frame. |
 | Native `<video>` + Mux HLS source | **The homepage hero.** A poster image painted at first byte, then a native `<video>` playing the Mux HLS URL after interactive (Safari plays HLS natively; elsewhere `hls.js` is lazy-loaded after interactive and counted in the app-code allocation). The Mux player component is **not** on the homepage (decision D2). |
 | `@mux/mux-player-react` | Long-form and captioned video UI only (Journal films, ATHLIMA 20 films, Symposium extensions). **Dynamically imported on those routes only.** Never in the shared layout. |
-| `next/image` | All stills. `sizes` is mandatory on every instance. |
+| `next/image` | CMS stills (the Sanity CDN) and the corporate marks. `sizes` is mandatory on every instance. |
+| Native `<picture>` from `scripts/build-media.ts` | Stills committed to `05_MEDIA/photography/`: AVIF + WebP at five widths, content-hashed and immutable-cached, a blur placeholder, never upscaled. Pre-built at deploy, so the image optimiser is not re-encoding a finished AVIF per request. |
 | Inline `<video>` with `muted playsinline loop preload="none"` | Micro-films (5–8s loops) only, served as MP4 (H.264) + WebM, under 1.5 MB each. |
 
 ### Content
@@ -159,7 +160,8 @@ the empty value as "not configured" and renders nothing — never a placeholder.
 2. Install a UI kit (Material, Chakra, Ant, shadcn/ui, DaisyUI, Bootstrap). ATHLIMA's components are built
    for ATHLIMA. Radix **primitives** are permitted for accessible dialog/dropdown behaviour only, unstyled.
 3. Use a CSS-in-JS runtime (styled-components, Emotion).
-4. Use `<img>` where `next/image` applies, or a `<video>` without a Mux HLS source for hero-scale content
+4. Use a bare `<img>` for a still that has no responsive set — `next/image` for a CMS still, the pipeline's
+   `<picture>` for a repository still (`MediaSlot` is the only place either is written) — or a `<video>` without a Mux HLS source for hero-scale content
    (a native `<video>` playing Mux HLS is the homepage hero by design — decision D2).
 5. Ship a `TODO`, a `lorem ipsum`, a placeholder image from an external service, or a dead `href="#"`.
 6. Disable TypeScript strict mode, add `// @ts-ignore`, or set `ignoreBuildErrors`.

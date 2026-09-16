@@ -197,6 +197,8 @@ export function StatementScreen({
           {/* THE STILL (B2): the page's entry slot — a single graded image, not a film. */}
           {media ? <MediaSlot name={media} sizes="100vw" priority /> : <div aria-hidden="true" className="absolute inset-0 bg-ink-950" />}
           <Scrim toward="bottom" />
+          {/* The nav sits on the image too (colour.md §7): a short scrim under it, three and a half nav heights deep, so the eyebrow is under it too. */}
+          {media ? <Scrim toward="top" className="bottom-auto h-[calc(var(--nav-h)*3.5)]" /> : null}
           <div
             className={cn(
               "pb-hero relative z-20 flex flex-1 flex-col px-margin",

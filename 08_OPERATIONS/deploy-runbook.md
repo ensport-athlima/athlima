@@ -26,6 +26,9 @@
 ## 2. FIRST DEPLOY (PREVIEW)
 
 1. Vercel → New Project → import the repository → **Root Directory: `web`** → Framework: Next.js.
+   Leave **"Include files outside the root directory in the build step"** on (it is by default): the
+   image pipeline reads `../05_MEDIA/photography/` at build. The first build is about a minute longer
+   for it (24 frames → 170 files); nothing is cached between builds.
 2. Environment Variables → paste every line of `web/.env.example` with real values, for Preview and
    Production. `NEXT_PUBLIC_SITE_URL` may be the preview URL for now.
 3. Storage → Postgres → create → copy `POSTGRES_URL` into the project. Then, in the Query tab, run

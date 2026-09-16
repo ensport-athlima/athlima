@@ -92,8 +92,12 @@ how contrast is guaranteed.
 The one way photography and film enter a block. Every place that carries media is a **named slot**
 (`web/src/content/media.ts` — the registry, with the subject, ratio and minimum size each slot needs);
 a slot resolves to the CMS's `mediaSlot` document for that name if the content team has filled one,
-else the registry's asset, else the black ground. A still renders through `next/image` (`fill`,
-mandatory `sizes`, `object-position` from the focal point, `priority` only for the homepage hero); a film
+else the pipeline's manifest for a still in `05_MEDIA/photography/`, else the registry's asset, else
+the black ground. A repository still renders as a native `<picture>` from the pipeline's AVIF/WebP sets
+(`web/scripts/build-media.ts`: mandatory `sizes`, `object-position` from the focal point, its blur
+placeholder under it, `loading="lazy"` below the fold, a hoisted `<link rel="preload">` and
+`fetchpriority="high"` only for the page's hero); a CMS still through `next/image` (`fill`). A generated
+frame that depicts ATHLIMA itself carries "Artist's impression" in its corner (imagery.md §7.1). A film
 through `VideoHero` (the hero: poster first, the film after load, `PAUSE FILM` / `PLAY FILM`) or
 `MicroFilm` (the loop: `preload="none"`, IntersectionObserver-gated, pauses off-screen). Poster only
 under reduced motion, save-data and 2g. `ImageReveal` and `MediaFrame` are expressed through it plus the

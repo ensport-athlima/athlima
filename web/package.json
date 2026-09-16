@@ -2,15 +2,18 @@
   "name": "athlima-web",
   "version": "0.1.0",
   "private": true,
-  "description": "athlima.in \u2014 the door to the room. See ../CLAUDE.md before touching anything.",
+  "description": "athlima.in — the door to the room. See ../CLAUDE.md before touching anything.",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
+    "predev": "npm run media:build",
     "dev": "next dev",
+    "prebuild": "npm run media:build",
     "build": "npm run routes:check && next build",
     "start": "next start",
     "lint": "eslint .",
+    "pretypecheck": "npm run media:build",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
@@ -19,7 +22,8 @@
     "test:a11y": "playwright test tests/a11y.spec.ts",
     "test": "playwright test",
     "test:content": "playwright test tests/content.spec.ts",
-    "schemas:check": "tsx scripts/check-sanity-schemas.ts"
+    "schemas:check": "tsx scripts/check-sanity-schemas.ts",
+    "media:build": "tsx scripts/build-media.ts"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -60,6 +64,7 @@
     "postcss": "^8.5.6",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.0"
   }

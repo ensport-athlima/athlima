@@ -31,7 +31,7 @@ as a real light source in the frame.** No crowds, no smiling-at-camera, no dayli
 | Releases | A signed model release for every recognisable person, a licence for every third-party image, **before** delivery |
 | Micro-films | 5–8 s, silent, loop-clean (last frame cuts to first), 1920 × 1080, H.264 MP4 ≤ 1.5 MB (+ optional AV1/WebM); a poster JPEG that is frame one |
 | The hero film | 15–30 s, directed, no dialogue (or captioned); delivered as a master to Mux with **static MP4 renditions enabled**; a poster that is frame one at 3840 px |
-| Repository | Nothing over 500 KB in git. Films and full-size stills live on Mux / in the Studio. |
+| Repository | A still may be delivered straight into `05_MEDIA/photography/<slot>.png` (committed; the pipeline builds from it at deploy) **or** into the Studio as a Media slot (no deploy; the CMS wins). Films live on Mux. Nothing derived is committed. |
 
 ## 3. THE SLOTS
 
@@ -78,6 +78,42 @@ The six portal loops are one set: one ratio, one grade, one length. The six door
 All entries: viewport ratio, 3000 px, a single graded still (the film is the homepage's). Text sits on
 the lower-left; keep it quiet there.
 
+## 3a. STATE OF THE SLOTS — 16 September 2026
+
+Twenty-four generated frames arrived in `05_MEDIA/photography/`. All twenty-four are placed. Every one
+is below the brief's minimum on the long edge; nothing is upscaled — each is served at its own size, so
+on a 2× desktop display the hero and the entries are soft. The pipeline prints this table on every build.
+
+| Slots | Delivered | Brief minimum | Placed | Note |
+|---|---|---|---|---|
+| `home.hero` | 1672 × 941 | 3840 | **cropped to rows 0–66%** | The headline was baked into the lower-left third, where the site sets its own. **Re-deliver without type**, 3840 wide, lower-left quiet. |
+| `home.athlima20` | 1915 × 821 | 3000 | **cropped to rows 29.5–100%** | ATHLIMA, PEOPLE · SPORT · PROGRESS and ONE FUTURE baked in above the athletes; the block sets its own line. **Re-deliver without type.** The 21:9 frame then crops the outermost athletes at desktop width. |
+| `portal.athlimax` `.symposium` `.activ8` `.connect` `.athlima20` | 1672 × 941 | 1920 | as delivered | 87% of spec — marginal, fine on a phone. |
+| `portal.afterhours` | — | 1920 | **empty** | The one slot not delivered. Keeps the black ground. |
+| `doorway.*` (six) | 1915 × 821 | 2400 | as delivered | Delivered as `doorway.athlete.png`; renamed to the slot name `doorway.athletes`. |
+| `entry.*` (eleven) | 1536 × 1024 | 3000 | as delivered | 51% of spec, and these fill the viewport behind the statement. Delivered as `entry.athlima-20.png`; renamed to `entry.athlima20`. |
+
+**What re-delivery must fix, in order:** (1) the two frames with baked type; (2) size — 3840 for the hero,
+3000 for the entries and `home.athlima20`; (3) the grade — `entry.programme` and `entry.about` are daylit
+and bright against `imagery.md` §2 and §3 ("no flat daylight… controlled highlights"), and the nav needed a
+second scrim to stay legible over them; (4) `portal.afterhours`; (5) the in-frame ATHLIMA signage and
+slogans (PEOPLE · SPORT · PROGRESS, A BIGGER TOMORROW, STRONGER · BRIGHTER · MORE · HUMAN · TOMORROW,
+IDEAS MOVE PEOPLE) are not the brand's marks or lines — small at the sizes served, but a re-shoot or
+re-render should carry the real wordmark or none.
+
+**Labelling (imagery.md §7.1):** the frames that depict ATHLIMA itself — the venue, a pavilion, a stage,
+the room, the terrace, ATHLIMA signage — carry "Artist's impression" in the slot's corner: the five
+portals except ATHLIMA 20, the business, athletes and infrastructure doorways, and every entry except
+`/about` and `/athlima-20`. The city, the building, the athlete alone are not labelled (§7.3). The
+doorway label appears with the image, at 40% on hover; if that reads oddly in use, the alternative is one
+line in the footer covering all imagery — a change to `04_CONTENT/legal.md`, not made here.
+
+**Alt text:** every frame is decorative behind type (empty alt) except `home.athlima20`, whose alt is
+written in the registry and describes what is in the frame, not who. Owner to approve or rewrite.
+
+**Model releases and licences (imagery.md §8):** none on file. Generated frames need no model release; the
+licence terms of the generator used must be on file before launch (launch checklist T-14).
+
 ## 4. NOT PHOTOGRAPHY, BUT STILL B2
 
 | Asset | Needed for | State |
@@ -92,8 +128,11 @@ the lower-left; keep it quiet there.
 
 ## 5. WHAT THE PIPELINE DOES WITH EACH ASSET
 
-A still goes into the Studio as a **Media slot** (slot name, image, focal point, alt, credit) — it appears
-on the site within the hour, or at once through the webhook. A film goes to Mux; its MP4 rendition URL
+A still goes either into `05_MEDIA/photography/` under its slot name — `web/scripts/build-media.ts` builds
+the AVIF/WebP set, the blur placeholder and the manifest at every `dev`, `typecheck` and `build`, and
+`npm run media:build` runs it alone — or into the Studio as a **Media slot** (slot name, image, focal
+point, alt, credit), which appears on the site within the hour, or at once through the webhook, and wins
+over the repository. A film goes to Mux; its MP4 rendition URL
 (and the HLS URL) go into the same document beside the poster. The site serves AVIF/WebP at the right
 size for the device from the focal point, loads the hero poster first and the film only after the page
 has loaded, never downloads a loop that is not on screen, and shows posters only under reduced motion,

@@ -49,17 +49,26 @@ spaces / 12 categories, and 350 guests vs 500+ leaders. Both are flagged in
 `01_STRATEGY/positioning.md` §8 and in `CLAUDE.md` Part IX, each with a working assumption the content
 files use. **Confirm both with the commercial team before launch; do not change either silently.**
 
-### `/photography`, `/video`, `/textures`
-Empty. See `03_DESIGN_SYSTEM/imagery.md` for the brief, the grade specification, the micro-film shot list,
-and the AI-imagery policy in §7.
+### `/photography` — the image pipeline's input
+One file per slot, named exactly as the slot in `web/src/content/media.ts` (`home.hero.png`,
+`entry.about.png` …). `web/scripts/build-media.ts` turns each into AVIF and WebP at 640 / 1024 / 1536 /
+2048 / 3000 (never wider than the file) plus a blur placeholder, and writes the manifest the site reads.
+The derivatives are build products and are not committed; these sources are. A file here that no slot
+names is listed by the script and left alone — it never invents a slot. Status per file:
+`08_OPERATIONS/asset-brief.md` §3a. Delivered 16 September 2026: 24 of 25 slots, all generated
+frames, all below the brief's minimum size (imagery.md §7 and §8 apply).
+
+### `/video`, `/textures`
+Empty. See `03_DESIGN_SYSTEM/imagery.md` for the micro-film shot list and the AI-imagery policy in §7.
 
 ---
 
 ## The rules
 
-1. **No source files in git.** Nothing over 500KB in the repository once the build starts. Production
-   assets live in the CMS and on the CDN. The files here are reference material for the brief, not the
-   pipeline.
+1. **No derivatives in git.** The one committed source set is `/photography` — the pipeline's input, one
+   file per slot (owner's decision, 16 September 2026, overriding the earlier 500 KB rule for that
+   folder alone). Films and CMS-managed stills live on Mux and in the Studio; the CMS wins over the
+   repository for any slot it fills.
 2. **Every asset is graded** with the ATHLIMA LUT before it is used. Consistency of grade matters more
    than the quality of any individual image.
 3. **Every asset has a signed licence or release on file before it ships**, including a model release for

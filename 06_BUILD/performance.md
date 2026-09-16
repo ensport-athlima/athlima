@@ -47,10 +47,17 @@ MacBook — not yet on a mid-range Android; that test is on the launch checklist
 | Route | Perf | LCP | TBT | CLS | JS on the wire (gzipped) |
 |---|---|---|---|---|---|
 | `/` | 91–99 (TBT varies run to run) | 1.6–1.9 s | 20–360 ms | 0 | **238 KB** |
+| `/` with the hero still (16 Sept) | 93–99 | 1.6–1.8 s | 30–270 ms | 0 | 238 KB + 20 KB AVIF (1024w) |
 | `/athlimax` | 99 | 1.7 s | 80 ms | 0 | 240 KB |
 | `/the-room` | 99 | 1.6 s | 30 ms | 0 | 242 KB |
 | `/partner/enquire` | 99 | 1.6 s | 20 ms | 0 | 277 KB |
 | `/journal` | 99 | 1.6 s | 20 ms | 0 | 240 KB |
+
+**The hero image (16 September):** the 1024-w AVIF is 20 KB, requested at ~650 ms from a `<link rel=preload>`
+in the document, complete at ~1.7 s on the 4G profile; Lighthouse's LCP element and timing did not move.
+Below-the-fold stills are `loading="lazy"`; nothing on a page fetches another page's hero (the preload
+is a hoisted `<link>`, not a `ReactDOM.preload()` directive, which a prefetched route's payload would
+also execute).
 
 Accessibility 96–100, Best Practices 100, SEO 100 on every route sampled; **axe: zero violations on all
 32 routes at 1440 and 390**.
@@ -93,7 +100,8 @@ Video is where this site will die if it is handled casually.
 
 ## 3. IMAGES
 
-- `next/image` everywhere. AVIF first, WebP fallback.
+- Every still through `MediaSlot`: the pipeline's `<picture>` for a repository still, `next/image` for a
+  CMS still. AVIF first, WebP fallback. Nothing is ever upscaled — a frame below spec is served at its own size.
 - `sizes` is mandatory and accurate. A wrong `sizes` is the most common cause of a 3 MB image on a phone.
 - `priority` on exactly one image per page — the LCP image. Never more.
 - Everything else lazy-loads with a blur or dominant-colour placeholder.

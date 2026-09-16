@@ -48,6 +48,8 @@ export function EntrySequence({ nextId, overlay, className }: EntrySequenceProps
       */}
       <MediaSlot name="home.hero" sizes="100vw" priority film="hero" filmLabels={filmLabels} />
       <Scrim toward="bottom" />
+      {/* The nav sits on the image too (colour.md §7): a short scrim under it, three and a half nav heights deep, so the eyebrow is under it too. */}
+      <Scrim toward="top" className="bottom-auto h-[calc(var(--nav-h)*3.5)]" />
 
       <div className="pb-hero relative z-20 flex flex-1 flex-col px-margin pt-[calc(var(--nav-h)+var(--section-pad-dense))]">
         <Eyebrow wide>{screen01.eyebrow}</Eyebrow>

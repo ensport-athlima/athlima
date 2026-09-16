@@ -1,6 +1,7 @@
 import { cache } from "react"
 import { mediaSlots, type SlotName } from "@/content/media"
 import type { ImageAsset, MediaAsset } from "@/lib/media"
+import { manifestAsset } from "@/lib/media-manifest"
 import { sanityImageSize } from "@/lib/sanity/image"
 import { sanityFetch } from "@/lib/sanity/client"
 import { siteMediaQuery, TAGS } from "@/lib/sanity/queries"
@@ -41,7 +42,8 @@ const loadCmsMedia = cache(async () => {
   return map
 })
 
+/** The CMS wins; then the pipeline's manifest (a still in the repository); then the registry's own asset. */
 export async function resolveMedia(name: SlotName): Promise<MediaAsset | null> {
   const cms = await loadCmsMedia()
-  return cms.get(name) ?? mediaSlots[name].asset
+  return cms.get(name) ?? manifestAsset(name) ?? mediaSlots[name].asset
 }
