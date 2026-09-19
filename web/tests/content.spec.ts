@@ -19,7 +19,8 @@ for (const path of paths) {
   test(`${path} — content discipline and metadata`, async ({ page }) => {
     const console_: string[] = []
     page.on("console", (m) => {
-      if (m.type() === "error" || m.type() === "warning") console_.push(m.text())
+      // The URL travels in the location, not the text ("Failed to load resource" alone says nothing).
+      if (m.type() === "error" || m.type() === "warning") console_.push(`${m.text()} ${m.location().url ?? ""}`.trim())
     })
     page.on("pageerror", (e) => console_.push(e.message))
     await page.goto(path, { waitUntil: "networkidle" })
@@ -37,8 +38,10 @@ for (const path of paths) {
     expect(await page.locator('meta[property="og:image"]').count(), "an og:image").toBeGreaterThan(0)
     expect(await page.locator("h1").count(), "exactly one h1").toBe(1)
 
-    // Vercel's analytics loaders 404 off Vercel; everything else must be clean.
-    const real = console_.filter((c) => !/_vercel\//.test(c))
+    // Vercel's analytics loaders 404 off Vercel, and on Vercel until Web Analytics and Speed Insights
+    // are enabled in the project (they load from /_vercel/… or a hashed /<16 hex>/script.js path).
+    // Everything else must be clean.
+    const real = console_.filter((c) => !/_vercel\/|\/[0-9a-f]{16}\/script\.js/.test(c))
     expect(real, "console clean").toEqual([])
   })
 }
@@ -68,5 +71,9 @@ test("sitemap and robots", async ({ request }) => {
   expect(sitemap).not.toContain("/apply")
   const robots = await (await request.get("/robots.txt")).text()
   expect(robots).toContain("Sitemap:")
-  expect(robots).not.toMatch(/Disallow: \/\s*$/m)
+  // A .vercel.app address is staging and is meant to carry `Disallow: /` (lib/env isStaging); the
+  // real domain, and localhost, must not.
+  const staging = /\.vercel\.app/.test(process.env.PLAYWRIGHT_BASE_URL ?? "")
+  if (staging) expect(robots).toMatch(/Disallow: \/\s*$/m)
+  else expect(robots).not.toMatch(/Disallow: \/\s*$/m)
 })
