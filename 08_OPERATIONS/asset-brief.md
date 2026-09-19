@@ -80,7 +80,7 @@ the lower-left; keep it quiet there.
 
 ## 3a. STATE OF THE SLOTS — 16 September 2026
 
-Twenty-four generated frames arrived in `05_MEDIA/photography/`. All twenty-four are placed. Every one
+Twenty-four generated frames arrived in `05_MEDIA/photography/` on 16 September and the twenty-fifth on the 19th. All are placed. Every one
 is below the brief's minimum on the long edge; nothing is upscaled — each is served at its own size, so
 on a 2× desktop display the hero and the entries are soft. The pipeline prints this table on every build.
 
@@ -89,7 +89,7 @@ on a 2× desktop display the hero and the entries are soft. The pipeline prints 
 | `home.hero` | 1672 × 941 | 3840 | **cropped to rows 0–66%** | The headline was baked into the lower-left third, where the site sets its own. **Re-deliver without type**, 3840 wide, lower-left quiet. |
 | `home.athlima20` | 1915 × 821 | 3000 | **cropped to rows 29.5–100%** | ATHLIMA, PEOPLE · SPORT · PROGRESS and ONE FUTURE baked in above the athletes; the block sets its own line. **Re-deliver without type.** The 21:9 frame then crops the outermost athletes at desktop width. |
 | `portal.athlimax` `.symposium` `.activ8` `.connect` `.athlima20` | 1672 × 941 | 1920 | as delivered | 87% of spec — marginal, fine on a phone. |
-| `portal.afterhours` | — | 1920 | **empty** | The one slot not delivered. Keeps the black ground. |
+| `portal.afterhours` | 1672 × 941 | 1920 | as delivered | Delivered 19 September; the last of the 25. |
 | `doorway.*` (six) | 1915 × 821 | 2400 | as delivered | Delivered as `doorway.athlete.png`; renamed to the slot name `doorway.athletes`. |
 | `entry.*` (eleven) | 1536 × 1024 | 3000 | as delivered | 51% of spec, and these fill the viewport behind the statement. Delivered as `entry.athlima-20.png`; renamed to `entry.athlima20`. |
 

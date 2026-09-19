@@ -55,7 +55,7 @@ One file per slot, named exactly as the slot in `web/src/content/media.ts` (`hom
 2048 / 3000 (never wider than the file) plus a blur placeholder, and writes the manifest the site reads.
 The derivatives are build products and are not committed; these sources are. A file here that no slot
 names is listed by the script and left alone — it never invents a slot. Status per file:
-`08_OPERATIONS/asset-brief.md` §3a. Delivered 16 September 2026: 24 of 25 slots, all generated
+`08_OPERATIONS/asset-brief.md` §3a. Delivered 16–19 September 2026: all 25 slots, all generated
 frames, all below the brief's minimum size (imagery.md §7 and §8 apply).
 
 ### `/video`, `/textures`

@@ -150,7 +150,7 @@ export const mediaSlots: Record<SlotName, SlotSpec> = {
   "portal.athlimax": portal("ATHLIMAX", "The marketplace floor in motion: a conversation across a table, a product in a hand, a card exchanged.", impression("portal.athlimax.png")),
   "portal.symposium": portal("THE SYMPOSIUM", "The stage: a speaker mid-sentence from the wings, a listening face, the light on the room.", impression("portal.symposium.png")),
   "portal.activ8": portal("ACTIV8", "Daylight and movement: shoes hitting the floor, a training rep, breath.", impression("portal.activ8.png", { x: 0.5, y: 0.6 })),
-  "portal.afterhours": portal("AFTERHOURS", "The night: the terrace, the city behind, glass, music, the Runway."),
+  "portal.afterhours": portal("AFTERHOURS", "The night: the terrace, the city behind, glass, music, the Runway.", impression("portal.afterhours.png", { x: 0.65, y: 0.45 })),
   "portal.connect": portal("ATHLIMA CONNECT", "Two people in conversation, close; hands; a name on a card.", impression("portal.connect.png")),
   "portal.athlima20": portal("ATHLIMA 20", "One young athlete, cinematically: a face, a pause, the moment before.", atmosphere("portal.athlima20.png", { x: 0.3, y: 0.4 })),
   "doorway.business": doorway("business", "A founder in a room that is not an office.", impression("doorway.business.png", { x: 0.7, y: 0.5 })),

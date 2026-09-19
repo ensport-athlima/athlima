@@ -10,7 +10,7 @@
 | Item | State | Note |
 |---|---|---|
 | Zero `[TO VERIFY]`, zero bare bracket tokens in rendered HTML | **machine** | `tests/content.spec.ts`, every route |
-| Every image final, licensed, optimised | **owner — B2** | 24 of 25 slots carry generated frames (16 Sept), all below the brief's size, two cropped around baked type, labelled per imagery.md §7 — `asset-brief.md` §3a. Optimisation is machine (`build-media.ts`). Final and licensed are the owner's. |
+| Every image final, licensed, optimised | **owner — B2** | All 25 slots carry generated frames (16–19 Sept), all below the brief's size, two cropped around baked type, labelled per imagery.md §7 — `asset-brief.md` §3a. Optimisation is machine (`build-media.ts`). Final and licensed are the owner's. |
 | Hero film on Mux, poster chosen | **owner — B2** | |
 | Micro-films | **owner — B2** | |
 | People confirmed by those people | n/a | No person is named anywhere on the site. |
