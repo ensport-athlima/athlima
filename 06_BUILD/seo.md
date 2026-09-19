@@ -14,7 +14,7 @@
 | Description | 150–160 chars, written by a human, unique per page, in the ATHLIMA voice. |
 | Canonical | Self-referencing canonical on every page. |
 | `sitemap.xml` | Generated from `lib/routes.ts` + Sanity. Never hand-maintained. |
-| `robots.txt` | Generated. Blocks `/api/`, preview routes, and the Sanity Studio. |
+| `robots.txt` | Generated. Blocks `/api/`, preview routes, and the Sanity Studio. On any `.vercel.app` address the whole site is `Disallow: /` and every page is `noindex` (`lib/env.ts` `isStaging`) — the guard lifts itself when `NEXT_PUBLIC_SITE_URL` is `https://athlima.in`, so the launch checklist's "staging Disallow gone" is a check of that one variable. |
 | Open Graph | `og:image` at 1200×630, generated per page with `next/og` using the ATHLIMA type system. Not a logo on a black square. |
 | Twitter | `summary_large_image`. |
 | Structured data | JSON-LD: `Organization` sitewide, **`Event` as the primary schema** for ATHLIMA 2026, `Article` on every Journal piece, `BreadcrumbList` on nested routes. **No `Person`** — there is no People route. **No `FAQPage`** — FAQs are forbidden (`sitemap.md` §3). **No `LocalBusiness`** for ATHLIMA (decision D28). |

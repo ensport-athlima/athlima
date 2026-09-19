@@ -63,6 +63,12 @@ function validate(): Env {
 
 export const env: Env = validate()
 
+/**
+ * A `.vercel.app` address is a preview of the site, not the site: search engines are told not to
+ * index it (robots.ts, layout.tsx). athlima.in — and localhost, where the suite runs — are indexable.
+ */
+export const isStaging = /\.vercel\.app$/i.test((() => { try { return new URL(env.NEXT_PUBLIC_SITE_URL).hostname } catch { return "" } })())
+
 /** `true` when a subsystem has real credentials. Consumers render nothing — not a placeholder — otherwise. */
 export const configured = {
   sanity: Boolean(env.NEXT_PUBLIC_SANITY_PROJECT_ID && env.NEXT_PUBLIC_SANITY_DATASET),

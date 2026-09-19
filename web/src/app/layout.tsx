@@ -9,7 +9,7 @@ import { Nav } from "@/components/layout/Nav"
 import { Footer } from "@/components/layout/Footer"
 import { CtaBar } from "@/components/layout/CtaBar"
 import { CookieNotice } from "@/components/layout/CookieNotice"
-import { env } from "@/lib/env"
+import { env, isStaging } from "@/lib/env"
 import { eventJsonLd, organizationJsonLd, serializeJsonLd } from "@/lib/json-ld"
 import { site, entity } from "@/content/site"
 import "./globals.css"
@@ -67,7 +67,8 @@ export const metadata: Metadata = {
   // The default OG image is the file convention beside this file (opengraph-image.tsx); routes set
   // their own through lib/og.ts.
   twitter: { card: "summary_large_image" },
-  robots: { index: true, follow: true },
+  // A .vercel.app preview is never indexed (lib/env isStaging); athlima.in is.
+  robots: isStaging ? { index: false, follow: false } : { index: true, follow: true },
   // Icons come from the file conventions beside this file: icon0.png (32), icon1.svg, apple-icon.png
   // (180) and manifest.ts (192, 512) — the A device, lime on black (05_MEDIA/logos/vector/icons; B2).
 }

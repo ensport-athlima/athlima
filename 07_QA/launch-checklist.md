@@ -60,7 +60,8 @@
 - [ ] `www` / non-`www` canonicalisation decided and redirecting.
 - [ ] Security headers: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy.
 - [ ] `robots.txt` correct — **confirm the staging `Disallow: /` is gone.** This is the single most common
-      launch disaster.
+      launch disaster. The build emits it automatically on any `.vercel.app` address and drops it when
+      `NEXT_PUBLIC_SITE_URL` is `https://athlima.in` — so the check is: that variable, then `curl athlima.in/robots.txt`.
 - [ ] `sitemap.xml` generating and submitted to Google Search Console and Bing Webmaster Tools.
 - [ ] Google Analytics 4 live (consent-gated), with conversion events defined for: partner enquiry started,
       partner enquiry submitted, institutional enquiry submitted, journal subscription, ATHLIMA 20 alert captured,
