@@ -8,14 +8,16 @@
  * frame below the brief's minimum long edge is recorded as `belowSpec` in the manifest and printed.
  *
  * Runs before dev, typecheck and build (package.json); incremental — a frame whose hash is already on
- * disk is skipped, and stale derivatives of a replaced frame are removed. The derivatives and the
+ * disk is skipped, and stale derivatives of a replaced frame are removed. The derivatives are mirrored
+ * into .next/cache/media, which Vercel keeps between builds, so only a changed frame is re-encoded on a
+ * deploy (a cold encode of 24 frames is ~5 minutes on a 2-core build machine). The derivatives and the
  * manifest are build products and are not committed; the sources and this script are.
  *
  *   npx tsx scripts/build-media.ts            build what is missing
  *   npx tsx scripts/build-media.ts --force    rebuild everything
  */
 import { createHash } from "node:crypto"
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs"
+import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs"
 import path from "node:path"
 import sharp from "sharp"
 import { mediaSlots, slotNames, type SlotName } from "../src/content/media"
@@ -23,6 +25,8 @@ import { mediaSlots, slotNames, type SlotName } from "../src/content/media"
 const ROOT = path.resolve(import.meta.dirname, "..")
 const SOURCE_DIR = path.resolve(ROOT, "../05_MEDIA/photography")
 const OUT_DIR = path.join(ROOT, "public/media")
+/** Survives between Vercel builds (only .next/cache does); public/ is rebuilt from it. */
+const CACHE_DIR = path.join(ROOT, ".next/cache/media")
 const MANIFEST = path.join(ROOT, "src/generated/media-manifest.json")
 const PUBLIC_PREFIX = "/media"
 
@@ -148,9 +152,25 @@ async function buildSlot(name: SlotName): Promise<ManifestEntry | null> {
   }
 }
 
+/** Copy every file in `from` into `to` that `to` does not already have. */
+function mirror(from: string, to: string) {
+  mkdirSync(to, { recursive: true })
+  if (!existsSync(from)) return 0
+  let n = 0
+  for (const f of readdirSync(from)) {
+    const target = path.join(to, f)
+    if (existsSync(target) && statSync(target).size > 0) continue
+    copyFileSync(path.join(from, f), target)
+    n++
+  }
+  return n
+}
+
 async function main() {
   mkdirSync(OUT_DIR, { recursive: true })
   mkdirSync(path.dirname(MANIFEST), { recursive: true })
+  const restored = mirror(CACHE_DIR, OUT_DIR)
+  if (restored) console.log(`build-media: restored ${restored} files from the build cache`)
 
   const onDisk = existsSync(SOURCE_DIR) ? readdirSync(SOURCE_DIR).filter((f) => /\.(png|jpe?g|tiff?)$/i.test(f)) : []
   const declared = new Set(slotNames.map((n) => mediaSlots[n].source?.file).filter(Boolean))
@@ -170,6 +190,8 @@ async function main() {
   }
 
   writeFileSync(MANIFEST, JSON.stringify(manifest, null, 2) + "\n")
+  mirror(OUT_DIR, CACHE_DIR)
+  for (const f of readdirSync(CACHE_DIR)) if (!existsSync(path.join(OUT_DIR, f))) rmSync(path.join(CACHE_DIR, f))
 
   const below = Object.entries(manifest).filter(([, e]) => e.belowSpec)
   if (below.length) {

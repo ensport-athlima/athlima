@@ -15,7 +15,8 @@ const schema = object({
   MUX_TOKEN_ID: string().min(1),
   MUX_TOKEN_SECRET: string().min(1),
   RESEND_API_KEY: string().min(1),
-  POSTGRES_URL: string().min(1),
+  // Optional: without it every form renders its honest not-configured state (tech-stack.md §2).
+  POSTGRES_URL: string().optional(),
   EMAIL_FROM: string().min(1),
   ENQUIRY_NOTIFY_EMAIL: string().optional(),
   CONTACT_NOTIFY_EMAIL: string().optional(),

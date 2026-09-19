@@ -21,7 +21,10 @@
 | **Domain** | `athlima.in` DNS at the registrar | `NEXT_PUBLIC_SITE_URL=https://athlima.in` |
 
 `web/.env.example` is the complete list. `next build` refuses to run with any required value missing
-(`web/src/lib/env.ts`) — that is deliberate.
+(`web/src/lib/env.ts`) — that is deliberate. `POSTGRES_URL` and the three inboxes are the optional ones:
+without the database every form renders its honest not-configured line, so a first preview can go up
+before Storage is created. Services not yet opened (Sanity, Mux, Resend, GA4, Sentry) take a placeholder
+value for the first preview — the CMS fails soft, nothing plays, no email sends — and the real value later.
 
 ## 2. FIRST DEPLOY (PREVIEW)
 
